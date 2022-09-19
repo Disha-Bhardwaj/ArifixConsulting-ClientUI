@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy dev
 
 variables:
   DOCKER_HOST: tcp://docker:2376
@@ -15,13 +16,20 @@ default:
       major_version=$(echo $CI_COMMIT_REF_SLUG | cut -d. -f1)
 
 
-build:build:
-  image: docker:20.10.16
-  services:
-    - name: docker:20-dind
-  stage: build
-  before_script:
-    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+# build:build:
+#   image: docker:20.10.16
+#   services:
+#     - name: docker:20-dind
+#   stage: build
+#   before_script:
+#     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+#   script:
+#     - docker build -t $container_image .
+#     - docker push $container_image
+
+deploy_dev:
+  image: 
+    name: devth/helm:v3.9.0
+  stage: deploy dev
   script:
-    - docker build -t $container_image .
-    - docker push $container_image
+    - kubectl config get-contexts
