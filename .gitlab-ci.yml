@@ -32,4 +32,6 @@ deploy_dev:
     name: devth/helm:v3.9.0
   stage: deploy dev
   script:
-    - kubectl config get-contexts
+    - kubectl config use-context afirix-proj-apps/app-reservation/app-reservation-kubernetes:app-reservation-dev
+    - helm list
+    - kubectl get pods
