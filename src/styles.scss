@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+// labels
+label.form-label.label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #312f2f;
+}
+// input
+input.form-control.input {
+  padding: 10px;
+  border: none;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 6px;
+}
+// label Upload
+label.labelUpload {
+  margin-top: 7%;
+  font-size: 18px;
+}
+// p text 
+p.texthead {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.24px;
+  color: #312f2f;
+}
+// cursor pointer
+.editIcon{
+  cursor: pointer;
+}
+// button designs
+button.btn.btn-primary.savebtn,
+button.btn.btn-primary.cancelbtn,
+.labelUpload {
+  width: 100%;
+  padding: 10px 20px;
+  height: 50px;
+  background: #5e5ce6;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+}
+button.btn.btn-primary.cancelbtn,
+.labelUpload {
+  color: #312f2f;
+  background: #ffffff;
+  border: 1px solid #000000;
+}

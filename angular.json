@@ -3,14 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clientUI": {
+    "ClientUILatest": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/clientUI",
+            "outputPath": "dist/client-uilatest",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "clientUI:build:production"
+              "browserTarget": "ClientUILatest:build:production"
             },
             "development": {
-              "browserTarget": "clientUI:build:development"
+              "browserTarget": "ClientUILatest:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "clientUI:build"
+            "browserTarget": "ClientUILatest:build"
           }
         },
         "test": {
@@ -107,5 +104,7 @@
       }
     }
   },
-  "defaultProject": "clientUI"
+  "cli": {
+    "analytics": false
+  }
 }
