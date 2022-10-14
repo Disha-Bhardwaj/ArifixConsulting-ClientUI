@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 .col-lg-6.col-md-6.col-sm-12 {
-    border-radius: 6px;
+  border-radius: 6px;
   background: #e4e4e4;
   width: 49%;
 }
@@ -22,7 +22,45 @@ label.labelUpload {
   align-items: flex-end;
   justify-content: space-between;
 }
-button.btn.btn-primary.cancelbtn,
-button.btn.btn-primary.savebtn {
-  width: 48%;
+.addbtn {
+  width: 15% !important;
+  margin-right: 14px !important;
+}
+.btns {
+  width: 48% !important;
+  margin-right: 0px !important;
+}
+.formCol {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+p.texthead,
+.colHeadTime,label.form-label.label.daysLabel {
+  color: #000000;
+}
+.colHeadTime {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
+}
+label.form-label.label.daysLabel {
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.41px;
+}
+.dayRow{
+  display: flex;
+  align-items: center;
 }

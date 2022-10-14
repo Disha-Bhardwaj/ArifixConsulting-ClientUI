@@ -1,0 +1,137 @@
+.col-lg-12.col-md-12.col-sm-12.mainHeadCOl {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1.Mainheading {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.35px;
+    color: #000000;
+  }
+  h2.heading {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    font-family: "Overpass";
+    align-items: center;
+    letter-spacing: -0.24px;
+    color: #000000;
+  }
+  p.detailText {
+    font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 26px;
+line-height: 31px;
+/* or 119% */
+
+display: flex;
+align-items: center;
+letter-spacing: -0.41px;
+
+/* Dark Text */
+
+color: #312F2F;
+  }
+  .textSpan {
+    font-family: "Maven Pro";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    padding-left: 12px;
+    line-height: 30px;
+    background: none;
+    border: none;
+  }
+  .card {
+    padding: 20px;
+    background: #e4e4e4;
+    border-radius: 6px;
+    border: none;
+  }
+  button.btn.btn-primary.editBtn,
+  .btn.btn-primary.editOpt {
+    height: 53px;
+    background: #004fcb;
+    border-radius: 6px;
+    padding: 10px 40px;
+    text-align: center;
+    letter-spacing: -0.32px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+    margin-top: 23px;
+  }
+  button.filterBtn,
+  .btn.btn-primary.editOpt.cancelBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    height: 53px;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: -0.32px;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    background: transparent;
+    margin-top: 23px;
+  }
+  .afterClickEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  button.btn.btn-primary.editOpt.cancelBtn {
+    padding: 6px 22px;
+  }
+  @media (max-width: 1199px) and (min-width: 200px) {
+    .afterClickEdit {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 993px) and (min-width: 200px) {
+    .textSpan {
+      font-size: 18px;
+    }
+    .p.detailText {
+      font-size: 18px;
+    }
+    .col-lg-4.col-md-4.col-sm-12 {
+      margin-bottom: 24px;
+    }
+  }
+  @media (max-width: 470px) and (min-width: 200px) {
+    .col-lg-12.col-md-12.col-sm-12.mainHeadCOl {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    button.filterBtn{
+      margin-bottom: 15%;
+      margin-left: 60%;
+    }
+  }
+  @media (max-width: 769px) and (min-width: 200px) {
+    .container {
+      padding: 0px;
+    }
+    .row.m-4 {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+  

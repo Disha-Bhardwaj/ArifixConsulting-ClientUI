@@ -65,6 +65,7 @@ p.texthead {
   align-items: center;
   letter-spacing: -0.24px;
   color: #312f2f;
+  font-family: 'Overpass';
 }
 // h2 head text {
 .h2Text {
@@ -95,6 +96,7 @@ button.btn.btn-primary.cancelbtn,
   text-align: center;
   letter-spacing: -0.32px;
   color: #ffffff;
+  font-family: 'Open Sans';
 }
 button.btn.btn-primary.cancelbtn,
 .labelUpload {
@@ -102,11 +104,24 @@ button.btn.btn-primary.cancelbtn,
   background: #ffffff;
   border: 1px solid #000000;
 }
-html,
-body {
-  height: 100%;
+// container
+.container{
+  padding-left: 27px;
+  padding-right: 27px;
+  margin-bottom: 147px;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+// edit icon
+.editIcn{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
+
+// html,
+// body {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
