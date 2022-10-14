@@ -1,0 +1,28 @@
+.row.infoBox {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+.col-lg-6.col-md-6.col-sm-12 {
+    border-radius: 6px;
+  background: #e4e4e4;
+  width: 49%;
+}
+.camColm {
+  text-align: center;
+  padding-top: 183px;
+  padding-bottom: 183px;
+}
+label.labelUpload {
+  margin-top: 14%;
+  font-size: 18px;
+}
+.col-6.btnCol {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+button.btn.btn-primary.cancelbtn,
+button.btn.btn-primary.savebtn {
+  width: 48%;
+}

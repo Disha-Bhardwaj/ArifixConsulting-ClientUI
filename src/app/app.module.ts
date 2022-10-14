@@ -16,6 +16,13 @@ import { PositionsComponent } from './views/components/positions/positions.compo
 import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
 import { StaffComponent } from './views/components/staff/staff.component'
 import { HeaderComponent } from './views/common/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -38,6 +45,13 @@ import { HeaderComponent } from './views/common/header/header.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

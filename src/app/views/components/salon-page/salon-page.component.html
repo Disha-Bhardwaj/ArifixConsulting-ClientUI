@@ -7,84 +7,163 @@
         </div>
     </div>
     <div class="row" style="margin-top: 42px; background-color: #C4C4C4;">
-        <!-- <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: end;"> -->
-            
-            <img src="assets/icons/camera.png" >
-        <!-- </div> -->
+        <div class="col-lg-12 col-md-12 col-sm-12 camColm">
+        <img src="assets/icons/camera.png" class="camIcon">
+        </div>
     </div>
     <div class="row p-0 infoBox">
-        <div
-            style="display: flex;flex-direction: row;align-content: stretch;justify-content: space-between; align-items: center;margin-top: 10px;">
-            <p class="texthead">Company Information</p>
-            <img src="assets/icons/edit.png">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div
+                style="display: flex;flex-direction: row;align-content: stretch;justify-content: space-between; align-items: center;margin-top: 10px;">
+                <p class="texthead">Company Information</p>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Address</label>
+                            <input type="text" placeholder="Enter address" class="form-control input ">
+
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label label" for="repeatPassword">Work Phone Number</label>
+                            <input type="text" placeholder="Enter Phone number" class="form-control input ">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">City</label>
+                            <input type="text" placeholder="Enter city" class="form-control input ">
+
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label label" for="repeatPassword">Salon name </label>
+                            <input type="text" placeholder="Enter Salon name" class="form-control input ">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Country</label>
+                            <input type="text" placeholder="Enter Country" class="form-control input ">
+
+                        </div>
+                        <div class="col-6">
+                            <label for="myfile" class="labelUpload">Upload Document</label>
+                            <input type="file" id="myfile" name="myfile" style="display:none;">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Zipcode</label>
+                            <input type="text" placeholder="Enter Zipcode" class="form-control input ">
+
+                        </div>
+                        <div class="col-6">
+                            <label for="myfile" class="labelUpload">Upload Document</label>
+                            <input type="file" id="myfile" name="myfile" style="display:none;">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Currency</label>
+                            <input type="text" placeholder="Default" class="form-control input ">
+
+                        </div>
+                        <div class="col-6 btnCol">
+                            <button class="btn btn-primary cancelbtn">Cancel</button>
+                            <button class="btn btn-primary savebtn">Save</button>
+                        </div>
+                    </div>
+                </div>
+               
+            </form>
         </div>
-        <form>
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-6 ">
-                        <label class="form-label label" for="passwordInput">Business Address</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div
+                style="display: flex;flex-direction: row;align-content: stretch;justify-content: space-between; align-items: center;margin-top: 10px;">
+                <p class="texthead">Company Information</p>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Business Address</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
-                    </div>
-                    <div class="col-6">
-                        <label class="form-label label" for="repeatPassword">Vat ID</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label label" for="repeatPassword">Vat ID</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-6 ">
-                        <label class="form-label label" for="passwordInput">City</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">City</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
-                    </div>
-                    <div class="col-6">
-                        <label class="form-label label" for="repeatPassword">Business Email </label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label label" for="repeatPassword">Business Email </label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-6 ">
-                        <label class="form-label label" for="passwordInput">Country</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Country</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
-                    </div>
-                    <div class="col-6">
-                        <label class="form-label label" for="repeatPassword">Registration number</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label label" for="repeatPassword">Registration number</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-6 ">
-                        <label class="form-label label" for="passwordInput">Country</label>
-                        <input type="text" placeholder="enter" placeholder="enter" class="form-control input ">
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <label class="form-label label" for="passwordInput">Country</label>
+                            <input type="text" placeholder="Enter" class="form-control input ">
 
-                    </div>
-                    <div class="col-6">
-                        <label for="myfile" class="labelUpload">Upload Document</label>
-                        <input type="file" id="myfile" name="myfile" style="display:none;">
+                        </div>
+                        <div class="col-6">
+                            <label for="myfile" class="labelUpload">Upload Document</label>
+                            <input type="file" id="myfile" name="myfile" style="display:none;">
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <div class="row">
-                    <div class="col-6 ">
-                        <button class="btn btn-primary savebtn">Save</button>
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-primary cancelbtn">Cancel</button>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <button class="btn btn-primary savebtn">Save</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary cancelbtn">Cancel</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
     </div>
 </div>
