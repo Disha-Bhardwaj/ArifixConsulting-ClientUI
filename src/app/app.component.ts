@@ -9,8 +9,8 @@ import {ChangeDetectorRef,  OnDestroy, Output, EventEmitter} from '@angular/core
 })
 export class AppComponent {
 
-  @ViewChild('menuBtn', {static:false})
-  private menuBtn!: ElementRef
+  @ViewChild('snav', {static:false})
+  private snav!: ElementRef
 
   mobileQuery: MediaQueryList;
 
@@ -24,7 +24,7 @@ export class AppComponent {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
-    this.menuBtn.nativeElement.click()
+    this.snav.nativeElement.toggle()
   }
   // @Output() public snav = new EventEmitter();
   // public onToggleSidenav = () => {
