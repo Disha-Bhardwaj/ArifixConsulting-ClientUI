@@ -50,6 +50,13 @@ input.form-control.input {
   height: 50px;
   background: #ffffff;
   border-radius: 6px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #000000;
 }
 // label Upload
 label.labelUpload {
@@ -65,7 +72,7 @@ p.texthead {
   align-items: center;
   letter-spacing: -0.24px;
   color: #312f2f;
-  font-family: 'Overpass';
+  font-family: "Overpass";
 }
 // h2 head text {
 .h2Text {
@@ -78,7 +85,8 @@ p.texthead {
   color: #312f2f !important;
 }
 // cursor pointer
-.editIcon, .quesIcon {
+.editIcon,
+.quesIcon {
   cursor: pointer;
 }
 // button designs
@@ -96,7 +104,7 @@ button.btn.btn-primary.cancelbtn,
   text-align: center;
   letter-spacing: -0.32px;
   color: #ffffff;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
 }
 button.btn.btn-primary.cancelbtn,
 .labelUpload {
@@ -105,13 +113,13 @@ button.btn.btn-primary.cancelbtn,
   border: 1px solid #000000;
 }
 // container
-.container{
+.container {
   padding-left: 27px;
   padding-right: 27px;
   margin-bottom: 147px;
 }
 // edit icon
-.editIcn{
+.editIcn {
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -133,7 +141,7 @@ button.btn.btn-primary.cancelbtn,
   margin-left: 6px;
 }
 .switch input {
-  display:none;
+  display: none;
 }
 .slider {
   background-color: #979798;
@@ -143,16 +151,16 @@ button.btn.btn-primary.cancelbtn,
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
 }
 .slider:before {
-  background-color: #D0E3F1;
+  background-color: #d0e3f1;
   bottom: 2px;
   content: "";
   height: 22px;
   left: 1px;
   position: absolute;
-  transition: .4s;
+  transition: 0.4s;
   width: 22px;
 }
 input:checked + .slider {
@@ -167,4 +175,30 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
+}
+// time div
+p.texthead,
+.colHeadTime,
+label.form-label.label.daysLabel {
+  color: #000000;
+}
+.colHeadTime {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 26px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.32px !important;
+}
+label.form-label.label.daysLabel {
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.41px;
+}
+.dayRow {
+  display: flex;
+  align-items: center;
 }

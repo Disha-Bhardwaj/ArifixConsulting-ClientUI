@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionsComponent implements OnInit {
 
+  addPosition = false
+showStep = ''
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  addPositionBTN(){
+    this.addPosition = true
+  }
+  showStepsFun(showValue: any){
+    this.showStep = showValue
+  }
 }

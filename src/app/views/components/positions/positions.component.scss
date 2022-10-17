@@ -1,97 +1,157 @@
+.staffBox {
+  background: #e4e4e4;
+  border-radius: 6px;
+  padding: 10px;
+}
 button.btn.btn-primary.savebtn.addPosBtn {
-    width: 16%;
-    margin-right: 14px;
-  }
-  input.email {
-    box-sizing: border-box;
-    background: #e4e4e4;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 40px;
-    letter-spacing: -0.25px;
-    color: #989898;
-    padding-left: 10px;
-  }
-  button.btn.btn-primary.sendbtn {
-    width: 81px;
-    height: 44px;
-    background: #3066be;
-    border-radius: 10px;
-  }
-  .col-lg-4.col-md-4.col-sm-12.topbtncol {
-    display: flex;
-    margin-top: 4%;
-    align-items: center;
-  }
-  .imgCol {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-  img.quesIcon {
-    width: 30px;
-    height: 30px;
-  }
-  img.editIcon {
-    margin-right: 15px;
-  }
-  .staffBox {
-    background: #e4e4e4;
-    border-radius: 6px;
-    padding: 10px;
-  }
-  .col-lg-12.col-md-12.col-sm-12.profileCol {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 21px;
-  }
-  h2.nameH {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 40px;
-    letter-spacing: -0.25px;
-    color: #000000;
-  }
-  select.form-control.select,
-  .addtoCalDiv {
-    font-family: "Maven Pro";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.41px;
-    color: #000000;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  .addtoCalDiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .col-lg-12.col-md-12.col-sm-12.editdetailCol {
-    margin-top: 20px;
-  }
-  .editBtnsDiv {
-    display: flex;
-    justify-content: space-between;
-  }
-  button.btn.btn-primary.cancelbtn,
-  button.btn.btn-primary.savebtn {
-    width: 48%;
-    border: none;
-  }
-  
+  width: 16%;
+  margin-right: 14px;
+}
+input.JobTit {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #000000;
+  padding-bottom: 20px;
+  width: 100%;
+}
+img.quesIcon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-bottom: 18px;
+  margin-left: 365px;
+}
+.imgCol {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.col-lg-12.col-md-12.col-sm-12.profileCol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+h2.nameH {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin-bottom: 0px;
+}
+button.btn.btn-primary.nextBtn {
+  height: 36px;
+  padding: 6px 20px;
+  background: #004fcb;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+.stepDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+span.stepSpan {
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.41px;
+  color: #312f2f;
+  background: #ffffff;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-right: 18px;
+  padding-right: 11px;
+  padding-left: 11px;
+  padding-top: 2px;
+}
+.selectStep {
+  background: #ffffff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 0px;
+  margin-right: 18px;
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #312f2f;
+}
+span.stepSpan.selected {
+  background-color: #5e5ce6;
+  color: #ffffff;
+  margin-right: 10px;
+}
+.col-lg-12.col-md-12.col-sm-12.detailOptCol {
+  margin-top: 20px;
+}
+img.quesMarkStep {
+  width: 30px;
+  height: 30px;
+}
+img.editIcon {
+  margin-right: 10px;
+}
+select.form-control.select,
+.addtoCalDiv {
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.41px;
+  color: #000000;
+  height: 50px;
+  margin-bottom: 10px;
+}
+p.textStep {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #312f2f;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+input.form-control.input.ser {
+  font-size: 13px;
+}
