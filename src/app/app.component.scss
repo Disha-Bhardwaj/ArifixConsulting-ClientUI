@@ -67,5 +67,16 @@ span.spanImg {
   margin-left: 12px;
 }
 .mat-drawer {
-  overflow-y: none !important;
+  position: relative;
+  z-index: 4;
+  display: block;
+  position: absolute;
+  top: 0;
+  height: auto !important;
+  bottom: 0;
+  z-index: 3;
+  outline: 0;
+  box-sizing: border-box;
+  overflow-y: none !important; 
+  transform: translate3d(-100%, 0, 0);
 }
