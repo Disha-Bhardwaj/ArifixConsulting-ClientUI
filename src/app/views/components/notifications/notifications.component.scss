@@ -58,3 +58,9 @@ p.serviceP {
 span.serviceSpan {
   font-weight: 500;
 }
+.notiDivUpper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}

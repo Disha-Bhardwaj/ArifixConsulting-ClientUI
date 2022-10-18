@@ -30,11 +30,11 @@
                 [src]="positions.isActive ? 'assets/icons/positionHover.png' : 'assets/icons/position.png'"
                 class="icon">
         </div>
-        <div class="box" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-            #dashboard="routerLinkActive">
+        <div class="box" routerLink="/calendar" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+            #calender="routerLinkActive">
             <p class="text">Calendar</p>
             <img src="assets/icons/calender.png"
-                [src]="dashboard.isActive ? 'assets/icons/dashboardHover.png' : 'assets/icons/dashboard.png'"
+                [src]="calender.isActive ? 'assets/icons/calendarHover.png' : 'assets/icons/calender.png'"
                 class="icon">
         </div>
         <div class="box" routerLink="/bookings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
