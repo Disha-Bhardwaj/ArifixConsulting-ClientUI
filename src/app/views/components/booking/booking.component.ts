@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from '../../common/dialog/dialog.component';
 
 @Component({
   selector: 'app-booking',
@@ -12,8 +14,14 @@ export class BookingComponent implements OnInit {
   editFirst = false
    show = 'all'
   // show = 'pending'
-  constructor() { }
-
+  constructor(public dialog: MatDialog) { }
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      data: {
+        fromPage: 'booking',
+      },
+    });
+  }
   ngOnInit(): void {
   }
   showbooking(value:any){

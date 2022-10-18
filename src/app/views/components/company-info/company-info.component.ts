@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from '../../common/dialog/dialog.component';
 
 @Component({
   selector: 'app-company-info',
@@ -11,8 +13,15 @@ export class CompanyInfoComponent implements OnInit {
   infoForm!: FormGroup;
   showEdit = false
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,public dialog: MatDialog) { }
 
+  openDialog() {
+    this.dialog.open(DialogComponent, {
+      data: {
+        fromPage: 'companyInfo',
+      },
+    });
+  }
   ngOnInit(): void {
     this.formInitialize();
   }

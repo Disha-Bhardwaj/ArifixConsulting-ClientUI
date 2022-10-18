@@ -23,6 +23,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './views/common/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {MatListModule} from '@angular/material/list';
     PositionsComponent,
     SalonPageComponent,
     StaffComponent,
-    BookingComponent
+    BookingComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
