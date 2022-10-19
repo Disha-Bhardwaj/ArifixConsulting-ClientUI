@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../common/dialog/dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-positions',
@@ -8,15 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class PositionsComponent implements OnInit {
 
   addPosition = false
-showStep = ''
-  constructor() { }
+  showStep = ''
+  constructor(public dialog: MatDialog, private toastr: ToastrService) { }
+
+  openDialog(value:any) {
+    this.dialog.open(DialogComponent, {
+      data: {
+        fromPage: value,
+      },
+    });
+  }
 
   ngOnInit(): void {
   }
-  addPositionBTN(){
+  addPositionBTN() {
     this.addPosition = true
   }
-  showStepsFun(showValue: any){
+  showStepsFun(showValue: any) {
     this.showStep = showValue
   }
 }

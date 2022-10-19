@@ -71,6 +71,15 @@
         <li>Click send</li>
     </ul>
 </div>
+<!-- dialog box for offer new time in booking page -->
+<div *ngIf="data.fromPage == 'BookOfferTime'">
+    <h2 class="textNewTime">New Time</h2>
+    <div class="timeIn">
+        <input class="form-control input " placeholder="From">
+        <input class="form-control input " placeholder="To">
+    </div>
+    <button class="btn btn-primary savebtn" (click)="sendNewOfferTime()">Send</button>
+</div>
 <!-- coming from company Notification page -->
 <div *ngIf="data.fromPage == 'notification'">
     <h2 class="headingDialog">Turn notifications off</h2>
@@ -108,7 +117,7 @@
     <h2 class="headingDialog">Changing calendar date</h2>
     <ul>
         <li>
-            Click change date 
+            Click change date
         </li>
         <li>
             Pick a date
@@ -121,10 +130,82 @@
 
 
 
-
-
-
-
-
-
-
+<!-- coming from Position page step 1 -->
+<div *ngIf="data.fromPage == 'Pos1'">
+    <h2 class="headingDialog">Add Position.</h2>
+    <ul>
+        <li>
+            Click add position
+        </li>
+    </ul>
+</div>
+<!-- coming from Position page step 2 -->
+<div *ngIf="data.fromPage == 'Pos2'">
+    <h2 class="headingDialog">Name</h2>
+    <ul>
+        <li>
+            Enter job title
+        </li>
+        <li>Click next</li>
+    </ul>
+</div>
+<!-- coming from Position page step 3 -->
+<div *ngIf="data.fromPage == 'Pos3'">
+    <h2 class="headingDialog">Setting up the Time</h2>
+    <ul>
+        <li>
+            Enter the time the position works within the salon.
+        </li>
+        <li>Click next</li>
+    </ul>
+</div>
+<!-- coming from Position page step 4 -->
+<div *ngIf="data.fromPage == 'Pos4'">
+    <h2 class="headingDialog">Setting up the permissions</h2>
+    <ul>
+        <li>
+            Click the dropdown menu, and pick a permission the job can access within the software.
+        </li>
+        <li>Click add permission to add more permissions</li>
+        <li>Repeat previous steps</li>
+        <li>When finished, click next</li>
+    </ul>
+</div>
+<!-- coming from Position page step 5 -->
+<div *ngIf="data.fromPage == 'Pos5'">
+    <h2 class="headingDialog">Setting up the employee type</h2>
+    <ul>
+        <li>
+            Click the dropdown
+        </li>
+        <li>Pick employed or self-employed</li>
+        <li>Click next</li>
+    </ul>
+</div>
+<!-- coming from Position page step 6 -->
+<div *ngIf="data.fromPage == 'Pos6'">
+    <h2 class="headingDialog">Setting up the services</h2>
+    <ul>
+        <li>
+            Click the dropdown category and pick one
+        </li>
+        <li>Enter a service name</li>
+        <li>Enter the time that service takes</li>
+        <li>Enter price</li>
+    </ul>
+    <h2 class="headingDialog">To add more service</h2>
+    <ul>
+        <li>
+            Click add service
+        </li>
+        <li>Repeat step 2 to 4 as before</li>
+    </ul>
+    <h2 class="headingDialog">Adding a new category</h2>
+    <ul>
+        <li>
+            Click add category
+        </li>
+        <li>Repeat service steps 1 to 4</li>
+    </ul>
+    <h2 class="headingDialog">When finished, click save</h2>
+</div>

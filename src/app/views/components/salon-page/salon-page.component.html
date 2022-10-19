@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row p-0 infoBox">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Salon Details</p>
                 <img src="assets/icons/edit.png" class="editIcn">
@@ -20,12 +20,12 @@
             <form>
                 <div class="mb-3">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Address</label>
                             <input type="text" placeholder="Enter address" class="form-control input ">
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 columnInp">
                             <label class="form-label label" for="repeatPassword">Work Phone Number</label>
                             <input type="text" placeholder="Enter Phone number" class="form-control input ">
 
@@ -34,12 +34,12 @@
                 </div>
                 <div class="mb-3">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">City</label>
                             <input type="text" placeholder="Enter city" class="form-control input ">
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 columnInp">
                             <label class="form-label label" for="repeatPassword">Salon name </label>
                             <input type="text" placeholder="Enter Salon name" class="form-control input ">
                         </div>
@@ -48,12 +48,12 @@
 
                 <div class="mb-3">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Country</label>
                             <input type="text" placeholder="Enter Country" class="form-control input ">
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 columnInp">
                             <label for="myfile" class="labelUpload">Upload Banner</label>
                             <input type="file" id="myfile" name="myfile" style="display:none;">
 
@@ -62,12 +62,12 @@
                 </div>
                 <div class="mb-3">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Zipcode</label>
                             <input type="text" placeholder="Enter Zipcode" class="form-control input ">
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 columnInp">
                             <label for="myfile" class="labelUpload">Upload Logo</label>
                             <input type="file" id="myfile" name="myfile" style="display:none;">
 
@@ -76,12 +76,12 @@
                 </div>
                 <div class="mb-3">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Currency</label>
                             <input type="text" placeholder="Default" class="form-control input ">
 
                         </div>
-                        <div class="col-6 btnCol">
+                        <div class="col-6 columnInp btnCol">
                             <button class="btn btn-primary cancelbtn btns">Cancel</button>
                             <button class="btn btn-primary savebtn btns">Save</button>
                         </div>
@@ -90,7 +90,7 @@
 
             </form>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Opening Times</p>
                 <img src="assets/icons/edit.png" class="editIcn">
@@ -115,7 +115,24 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Monday</label>
+                            <label class="form-label label daysLabel webView" for="passwordInput">Monday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                        </div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="row dayRow">
+                        <div class="col-4 ">
+                            <label class="form-label label daysLabel webView" for="passwordInput">Tuesday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Tue</label>
 
                         </div>
                         <div class="col-4">
@@ -131,7 +148,8 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Tuesday</label>
+                            <label class="form-label label daysLabel webView" for="passwordInput">Wednesday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Wed</label>
 
                         </div>
                         <div class="col-4">
@@ -147,8 +165,8 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Wednesday</label>
-
+                            <label class="form-label label daysLabel webView" for="passwordInput">Thursday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Thur</label>
                         </div>
                         <div class="col-4">
                             <input type="text" placeholder="Enter" class="form-control input ">
@@ -163,8 +181,8 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Thursday</label>
-
+                            <label class="form-label label daysLabel webView" for="passwordInput">Friday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
                             <input type="text" placeholder="Enter" class="form-control input ">
@@ -179,8 +197,8 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Friday</label>
-
+                            <label class="form-label label daysLabel webView" for="passwordInput">Saturday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
                             <input type="text" placeholder="Enter" class="form-control input ">
@@ -195,24 +213,8 @@
                 <div class="mb-3">
                     <div class="row dayRow">
                         <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Saturday</label>
-
-                        </div>
-                        <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                        </div>
-                        <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="row dayRow">
-                        <div class="col-4 ">
-                            <label class="form-label label daysLabel" for="passwordInput">Sunday</label>
-
+                            <label class="form-label label daysLabel webView" for="passwordInput">Sunday</label>
+                            <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
                             <input type="text" placeholder="Enter" class="form-control input ">

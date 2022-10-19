@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() { }
+  steps= ''
+  initialBox = true
 
   ngOnInit(): void {
+  }
+  start(value:any){
+    this.initialBox = false
+    this.steps = value
   }
 
 }

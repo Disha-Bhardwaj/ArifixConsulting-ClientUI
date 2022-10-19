@@ -155,3 +155,12 @@ p.textStep {
 input.form-control.input.ser {
   font-size: 13px;
 }
+/* media query */
+@media (max-width: 767px) and (min-width: 200px) {
+  button.btn.btn-primary.savebtn.addPosBtn {
+    width: 47%;
+  }
+  .staffBox {
+    margin-top: 15%;
+  }
+}

@@ -1,7 +1,6 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  // position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -21,18 +20,19 @@
   flex: 1 0 auto;
 }
 .mat-toolbar-multiple-rows {
-  background: #312F2F;
+  background: #312f2f;
   color: white;
 }
-.mat-toolbar-row{
+.mat-toolbar-row {
   display: flex;
   justify-content: space-between;
 }
-.mat-list-base{
+.mat-list-base {
   padding-top: 0px;
 }
 mat-sidenav-content.mat-drawer-content.mat-sidenav-content {
-  background: #FFFFFF;
+  background: #ffffff;
+  min-height: 114vh;
 }
 .boxGlobal {
   display: flex;
@@ -48,12 +48,12 @@ mat-sidenav-content.mat-drawer-content.mat-sidenav-content {
   gap: 8px;
   width: 362px;
   height: 34px;
-  background: #FFFFFF;
-  border: 1px solid #312F2F;
+  background: #ffffff;
+  border: 1px solid #312f2f;
   border-radius: 4px;
 }
 p.boxP {
-  font-family: 'Actor';
+  font-family: "Actor";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -61,7 +61,7 @@ p.boxP {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #312F2F;
+  color: #312f2f;
 }
 span.spanImg {
   margin-left: 12px;
@@ -77,6 +77,28 @@ span.spanImg {
   z-index: 3;
   outline: 0;
   box-sizing: border-box;
-  overflow-y: none !important; 
+  overflow-y: none !important;
   transform: translate3d(-100%, 0, 0);
+}
+#menuIcon {
+  display: none;
+}
+.mat-drawer-inner-container {
+  background: #e4e4e4 !important;
+}
+/* media query */
+@media (max-width: 767px) and (min-width: 200px) {
+  #menuIcon {
+    display: block;
+  }
+  .mat-toolbar-row{
+    padding: 0px;
+  }
+  .iconsDiv {
+    display: contents;
+  }
+  .topBox {
+    padding: 22px 6px 10px 10px;
+    width: 139px;
+  }
 }

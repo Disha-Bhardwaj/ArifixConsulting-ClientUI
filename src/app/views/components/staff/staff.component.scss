@@ -94,3 +94,12 @@ button.btn.btn-primary.savebtn {
   width: 48%;
   border: none;
 }
+/* media query */
+@media (max-width: 767px) and (min-width: 200px) {
+  button.btn.btn-primary.savebtn.addPosBtn {
+    width: 47%;
+  }
+  .col-lg-4.col-md-4.col-sm-12.topbtncol.emailCol {
+    margin-bottom: 5%;
+  }
+}

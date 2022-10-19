@@ -13,7 +13,7 @@
         <form [formGroup]="infoForm" autocomplete="off">
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="passwordInput">Business Address</label>
                         <input type="text" formControlName="address" placeholder="Enter Business Address"
                             class="form-control input "
@@ -27,7 +27,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="repeatPassword">Vat ID</label>
                         <input type="text" formControlName="vatID" placeholder="Enter Vat ID"
                             class="form-control input "
@@ -45,7 +45,7 @@
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="passwordInput">City</label>
                         <input type="text" formControlName="city" placeholder="Enter city" class="form-control input "
                             [class.is-invalid]="city.invalid && (city.dirty || city.touched)" maxlength="30">
@@ -58,7 +58,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="repeatPassword">Business Email </label>
                         <input type="text" formControlName="email" placeholder="Enter Business Email"
                             class="form-control input "
@@ -81,7 +81,7 @@
 
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="passwordInput">County</label>
                         <input type="text" formControlName="county" placeholder="Enter County"
                             class="form-control input "
@@ -96,7 +96,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="repeatPassword">Registration number</label>
                         <input type="text" formControlName="regId" placeholder="Enter Registration number"
                             class="form-control input "
@@ -114,7 +114,7 @@
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="passwordInput">Country</label>
                         <input type="text" formControlName="country" placeholder="Enter Country"
                             class="form-control input "
@@ -129,7 +129,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp emptyCol">
                         <!-- <label for="myfile" class="labelUpload">Upload Document</label>
                         <input type="file" id="myfile" name="myfile" style="display:none;"> -->
                     </div>
@@ -137,7 +137,7 @@
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <label class="form-label label" for="passwordInput">Zipcode</label>
                         <input type="text" formControlName="zipCode" placeholder="Enter Zipcode"
                             class="form-control input "
@@ -151,7 +151,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp">
                         <label for="myfile" class="labelUpload">Upload Document</label>
                         <input type="file" id="myfile" name="myfile" style="display:none;">
                     </div>
@@ -159,10 +159,10 @@
             </div>
             <div class="mb-3" *ngIf="showEdit">
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6 columnInp">
                         <button class="btn btn-primary savebtn">Save</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 columnInp">
                         <button class="btn btn-primary cancelbtn" (click)="cancel()">Cancel</button>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-booking',
@@ -8,13 +9,13 @@ import { DialogComponent } from '../../common/dialog/dialog.component';
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements OnInit {
-
-  editsecond= false
+  expanded: boolean = false;
+  editsecond = false
   editthird = false
   editFirst = false
-   show = 'all'
+  show = 'all'
   // show = 'pending'
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private toastr: ToastrService) { }
   openDialog() {
     this.dialog.open(DialogComponent, {
       data: {
@@ -22,28 +23,50 @@ export class BookingComponent implements OnInit {
       },
     });
   }
+  openDialogOfferTime() {
+    this.dialog.open(DialogComponent, {
+      data: {
+        fromPage: 'BookOfferTime',
+      },
+    });
+  }
+
   ngOnInit(): void {
   }
-  showbooking(value:any){
-      this.show = value
+  showbooking(value: any) {
+    this.show = value
   }
-  editFirstBox(){
-  this.editFirst = true
+  editFirstBox() {
+    this.editFirst = true
   }
-  editSecondBox(){
-    this.editsecond= true
+  editSecondBox() {
+    this.editsecond = true
   }
-  editThirdBox(){
-  this.editthird = true
+  editThirdBox() {
+    this.editthird = true
   }
-  saveFirst(){
+  saveFirst() {
     this.editFirst = false
   }
-  saveSecond(){
-    this.editsecond= false
+  saveSecond() {
+    this.editsecond = false
   }
-  saveThird(){
+  saveThird() {
     this.editthird = false
+  }
+  acceptReject(value: any) {
+    if (value == 'accept') {
+      this.toastr.success('Your booking is accepted', '', {
+        timeOut: 3000,
+      });
+    }
+    else {
+      this.toastr.error('Your booking is rejected', '', {
+        timeOut: 3000,
+      });
+
+    }
+
   }
 
 }

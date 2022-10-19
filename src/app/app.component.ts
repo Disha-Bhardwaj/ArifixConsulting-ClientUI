@@ -1,6 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild,AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef,  OnDestroy, Output, EventEmitter} from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,15 @@ import {ChangeDetectorRef,  OnDestroy, Output, EventEmitter} from '@angular/core
 })
 export class AppComponent {
 
-  @ViewChild('snav', {static:false})
-  private snav!: ElementRef
+  @ViewChild('snav')
+  snav!: MatSidenav
 
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
+  
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2) {
     this.mobileQuery = media.matchMedia('(max-width: 767px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -24,11 +26,11 @@ export class AppComponent {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
-    this.snav.nativeElement.toggle()
   }
-  // @Output() public snav = new EventEmitter();
-  // public onToggleSidenav = () => {
-  //   this.snav.emit();
-  // }
+  ngAfterViewInit(): void {
+
+    this.renderer.setStyle(this.snav._content.nativeElement,  'scrollbar-width', 'none')
+  }
+  
 
 }

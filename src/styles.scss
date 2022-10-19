@@ -17,7 +17,7 @@ $ClientUILatest-theme: mat.define-light-theme(
   )
 );
 @include mat.all-component-themes($ClientUILatest-theme);
-
+@import '~ngx-toastr/toastr.css';
 // labels
 label.form-label.label {
   font-weight: 400;
@@ -57,6 +57,7 @@ p.texthead {
   letter-spacing: -0.24px;
   color: #312f2f;
   font-family: "Overpass";
+  margin-bottom: 0px;
 }
 // h2 head text {
 .h2Text {
@@ -191,4 +192,17 @@ label.form-label.label.daysLabel {
   background: #E4E4E4 !important;
   box-shadow: 0px 1px 4px rgb(0 0 0 / 8%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 16%)!important;
   border-radius: 6px !important;
+}
+.mat-drawer-inner-container {
+  background: #E4E4E4 !important;
+}
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+mat-sidenav-container {
+  position: fixed;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
 }

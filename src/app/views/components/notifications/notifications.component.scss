@@ -64,3 +64,32 @@ span.serviceSpan {
   justify-content: flex-end;
   align-items: center;
 }
+/* media query */
+@media (max-width: 490px) and (min-width: 200px) {
+  input.timeInput {
+    padding: 0px 10px;
+    width: 110px;
+    margin-right: 3px;
+    font-size: 17px;
+  }
+  .h2Text {
+    margin-right: 0% !important;
+  }
+  p.serviceP,
+  span.serviceSpan {
+    font-family: "Actor";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    color: #312f2f;
+    text-align: start;
+  }
+}
+@media (max-width: 360px) and (min-width: 200px) {
+  .notiBox {
+    height: 96px;
+  }
+}

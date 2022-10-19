@@ -1,106 +1,114 @@
-<div class="container-fluid">
-    <div class="container">
-        <aside class="sidebar">
-            <p class="filtertext">Filters</p>   
-            <input class="form-control input " placeholder="Date">
-            <input class="form-control input " placeholder="Time">
-            <input class="form-control input " placeholder="Staus">
-            <input class="form-control input " placeholder="Employee">
-        </aside>
-        <div class="row m-4">
-            <div class="col-lg-10 col-md-10 col-sm-12">
-                <div class="row m-4" style="margin-top: 45px !important;" >
-                    <div class="bookHead">
-                        <h2 class="heading">Pending Bookings</h2>
-                        <img src="assets/icons/quesmark.png" class="quesIcon quesmark" mat-button (click)="openDialog()">
-                    </div>
-                    
-                    <div class="col-lg-6 col-md-6 col-sm-12 ">
-                        <div class="card">
-                            <p class="detailText">Service 1</p>
-                            <p class="detailText">Service: <span class="textSpan">The Wolf
-                                    Cut</span></p>
-                            <p class="detailText">Salon: <span class="textSpan">A cut
-                                    above</span></p>
-                            <p class="detailText">With: <span class="textSpan">Elizabeth
-                                    Smith</span></p>
-                            <p class="detailText">Time: <span class="textSpan">11:00am -
-                                    12:00pm</span></p>
-                            <p class="detailText">Date: <span class="textSpan"
-                                   >21/2/2022</span></p>
-                            <p class="detailText">Price: <span class="textSpan">£20</span>
-                            </p>
-                            <button class="btn btn-primary cancelbtn btnOff">Offer new time</button>
-                            <div class="afterClickEdit">
-                                <button class="btn btn-primary cancelbtn">Reject</button>
-                                <button class="btn btn-primary savebtn" >Accept</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 ">
-                        <div class="card">
-                            <p class="detailText">Service 1</p>
-                            <p class="detailText">Service: <span class="textSpan">The Wolf
-                                    Cut</span></p>
-                            <p class="detailText">Salon: <span class="textSpan">A cut
-                                    above</span></p>
-                            <p class="detailText">With: <span class="textSpan">Elizabeth
-                                    Smith</span></p>
-                            <p class="detailText">Time: <span class="textSpan">11:00am -
-                                    12:00pm</span></p>
-                            <p class="detailText">Date: <span class="textSpan"
-                                   >21/2/2022</span></p>
-                            <p class="detailText">Price: <span class="textSpan">£20</span>
-                            </p>
-                            <button class="btn btn-primary cancelbtn btnOff">Offer new time</button>
-                            <div class="afterClickEdit">
-                                <button class="btn btn-primary cancelbtn">Reject</button>
-                                <button class="btn btn-primary savebtn" >Accept</button>
-                            </div>
-                            
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row" style="margin-top: 48px;" id="filterMob">
+        <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
+            <button class="btn btn-primary savebtn filtersBtn" (click)="expanded = !expanded">Filters</button>
+            <img src="assets/icons/quesmark.png" class="quesIcon" mat-button
+            (click)="openDialog()">
+        </div>
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12 topbtncol" > -->
+            <aside class="optionFilter" *ngIf="expanded">
+                <!-- <p class="filtertext">Filters</p> -->
+                <input class="form-control input " placeholder="Date">
+                <input class="form-control input " placeholder="Time">
+                <input class="form-control input " placeholder="Staus">
+                <input class="form-control input " placeholder="Employee">
+            </aside>
+        <!-- </div> -->
+       
+    </div>
+    <aside class="sidebar">
+        <p class="filtertext">Filters</p>
+        <input class="form-control input " placeholder="Date">
+        <input class="form-control input " placeholder="Time">
+        <input class="form-control input " placeholder="Staus">
+        <input class="form-control input " placeholder="Employee">
+    </aside>
+    <div class="row m-4 firstRow" style="margin-top: 45px !important;">
+        <div class="bookHead">
+            <h2 class="heading">Pending Bookings</h2>
+            <img src="assets/icons/quesmark.png" id="quesWeb" class="quesIcon quesmark" mat-button
+                (click)="openDialog()">
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">Service 1</p>
+                <p class="detailText">Service: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">Salon: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">With: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">Time: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">Price: <span class="textSpan">£20</span>
+                </p>
+                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialogOfferTime()">Offer new time</button>
+                <div class="afterClickEdit">
+                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">Reject</button>
+                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">Accept</button>
                 </div>
-                <div class="row m-4" style="margin-top: 45px !important;" >
-                    <h2 class="heading">Confirmed Bookings</h2>
-                    <div class="col-lg-6 col-md-6 col-sm-12 ">
-                        <div class="card">
-                            <p class="detailText">Service 1</p>
-                            <p class="detailText">Service: <span class="textSpan">The Wolf
-                                    Cut</span></p>
-                            <p class="detailText">Salon: <span class="textSpan">A cut
-                                    above</span></p>
-                            <p class="detailText">With: <span class="textSpan">Elizabeth
-                                    Smith</span></p>
-                            <p class="detailText">Time: <span class="textSpan">11:00am -
-                                    12:00pm</span></p>
-                            <p class="detailText">Date: <span class="textSpan"
-                                   >21/2/2022</span></p>
-                            <p class="detailText">Price: <span class="textSpan">£20</span>
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 ">
-                        <div class="card">
-                            <p class="detailText">Service 1</p>
-                            <p class="detailText">Service: <span class="textSpan">The Wolf
-                                    Cut</span></p>
-                            <p class="detailText">Salon: <span class="textSpan">A cut
-                                    above</span></p>
-                            <p class="detailText">With: <span class="textSpan">Elizabeth
-                                    Smith</span></p>
-                            <p class="detailText">Time: <span class="textSpan">11:00am -
-                                    12:00pm</span></p>
-                            <p class="detailText">Date: <span class="textSpan"
-                                   >21/2/2022</span></p>
-                            <p class="detailText">Price: <span class="textSpan">£20</span>
-                            </p>
-                            
-                        </div>
-                    </div>
+
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">Service 1</p>
+                <p class="detailText">Service: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">Salon: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">With: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">Time: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">Price: <span class="textSpan">£20</span>
+                </p>
+                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialogOfferTime()">Offer new time</button>
+                <div class="afterClickEdit">
+                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">Reject</button>
+                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">Accept</button>
                 </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row m-4 firstRow" style="margin-top: 45px !important;">
+        <h2 class="heading">Confirmed Bookings</h2>
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">Service 1</p>
+                <p class="detailText">Service: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">Salon: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">With: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">Time: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">Price: <span class="textSpan">£20</span>
+                </p>
+
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">Service 1</p>
+                <p class="detailText">Service: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">Salon: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">With: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">Time: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">Price: <span class="textSpan">£20</span>
+                </p>
+
             </div>
         </div>
     </div>

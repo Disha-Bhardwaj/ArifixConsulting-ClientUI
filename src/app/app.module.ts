@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ToastrModule } from "ngx-toastr";
 import { AppComponent } from './app.component';
 import { BookingComponent } from './views/components/booking/booking.component';
 import { FooterComponent } from './views/common/footer/footer.component';
@@ -15,21 +16,19 @@ import { NotificationsComponent } from './views/components/notifications/notific
 import { PositionsComponent } from './views/components/positions/positions.component';
 import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
 import { StaffComponent } from './views/components/staff/staff.component'
-import { HeaderComponent } from './views/common/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './views/common/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     CalendarComponent,
     SidebarComponent,
@@ -55,7 +54,12 @@ import { DialogComponent } from './views/common/dialog/dialog.component';
     MatIconModule,
     MatDividerModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
