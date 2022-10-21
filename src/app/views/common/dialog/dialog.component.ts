@@ -20,5 +20,5 @@ export class DialogComponent implements OnInit {
   }
 }
 export interface DialogData {
-  fromPage: 'salonPage' | 'calendar' | 'companyInfo' | 'booking' | 'notification' | 'BookOfferTime' | 'Pos1' | 'Pos2' | 'Pos3' | 'Pos4' | 'Pos5' | 'Pos6';
+  fromPage: 'salonPage' | 'calendar' | 'companyInfo' | 'booking' | 'notification' | 'BookOfferTime' | 'Pos1' | 'Pos2' | 'Pos3' | 'Pos4' | 'Pos5' | 'Pos6' | 'Staff1' | 'Staff2';
 }

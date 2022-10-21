@@ -209,3 +209,27 @@
     </ul>
     <h2 class="headingDialog">When finished, click save</h2>
 </div>
+<!-- coming from Staff page step 1 -->
+<div *ngIf="data.fromPage == 'Staff1'">
+    <h2 class="headingDialog">Adding staff</h2>
+    <ul>
+        <li>
+            Click add staff
+        </li>
+        <li>Enter your employee email</li>
+        <li>Click send</li>
+    </ul>
+</div>
+<!-- coming from Staff page step 2 -->
+<div *ngIf="data.fromPage == 'Staff2'">
+    <h2 class="headingDialog">Setting up the employee</h2>
+    <ul>
+        <li>
+            Click the dropdown details 
+        </li>
+        <li>Click dropdown, position, and pick one</li>
+        <li>For the employee to take booking, click add to calendar</li>
+        <li>Break from and to are optional for employees who go on holiday</li>
+        <li>Employee details will be auto-setup when your employee joins</li>
+    </ul>
+</div>
