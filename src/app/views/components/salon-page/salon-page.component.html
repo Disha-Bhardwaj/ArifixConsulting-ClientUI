@@ -15,20 +15,38 @@
         <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Salon Details</p>
-                <img src="assets/icons/edit.png" class="editIcn">
+                <img src="assets/icons/edit.png" class="editIcn" (click)="editSalonDetail('edit')">
             </div>
-            <form>
+            <form [formGroup]="salonDetailForm" autocomplete="off">
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Address</label>
-                            <input type="text" placeholder="Enter address" class="form-control input ">
+                            <input type="text" placeholder="Enter Address" class="form-control input " formControlName="address"
+                            [class.is-invalid]="address.invalid && (address.dirty || address.touched)" maxlength="300">
+                            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
+                                <div *ngIf="address.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="address.errors?.['maxlength']">
+                                    Please add maximum 300 charaters
+                                </div>
+                            </div>
 
                         </div>
                         <div class="col-6 columnInp">
                             <label class="form-label label" for="repeatPassword">Work Phone Number</label>
-                            <input type="text" placeholder="Enter Phone number" class="form-control input ">
-
+                            <input type="text" placeholder="Enter Phone Number" class="form-control input " formControlName="phoneNo"
+                            [class.is-invalid]="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)"
+                            minlength="10" maxlength="15">
+                            <div *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)" class="invalid-feedback">
+                                <div *ngIf="phoneNo.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="phoneNo.errors?.['maxlength'] || phoneNo.errors?.['minlength'] || phoneNo.errors?.['pattern']">
+                                    Please add valid phone number
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -36,12 +54,33 @@
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">City</label>
-                            <input type="text" placeholder="Enter city" class="form-control input ">
+                            <input type="text" placeholder="Enter City" class="form-control input " formControlName="city"
+                            [class.is-invalid]="city.invalid && (city.dirty || city.touched)" maxlength="30">
+                            <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
+                                <div *ngIf="city.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="city.errors?.['maxlength']">
+                                    Please add maximum 30 charaters
+                                </div>
+                                <div *ngIf="city.errors?.['pattern']">
+                                    Please add valid city
+                                </div>
+                            </div>
 
                         </div>
                         <div class="col-6 columnInp">
                             <label class="form-label label" for="repeatPassword">Salon name </label>
-                            <input type="text" placeholder="Enter Salon name" class="form-control input ">
+                            <input type="text" placeholder="Enter Salon name" class="form-control input " formControlName="salonName"
+                            [class.is-invalid]="salonName.invalid && (salonName.dirty || salonName.touched)" maxlength="60" minlength="2">
+                            <div *ngIf="salonName.invalid && (salonName.dirty || salonName.touched)" class="invalid-feedback">
+                                <div *ngIf="salonName.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="salonName.errors?.['maxlength'] || salonName.errors?.['minlength']" >
+                                    Please add atleast 2 and max 60 characters
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,12 +89,29 @@
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Country</label>
-                            <input type="text" placeholder="Enter Country" class="form-control input ">
+                            <input type="text" placeholder="Enter Country" class="form-control input " formControlName="country"
+                            [class.is-invalid]="country.invalid && (country.dirty || country.touched)" maxlength="30">
+                            <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                                <div *ngIf="country.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="country.errors?.['maxlength']">
+                                    Please add maximum 30 charaters
+                                </div>
+                                <div *ngIf="country.errors?.['pattern']">
+                                    Please add valid country
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="col-6 columnInp">
+                        <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
                             <label for="myfile" class="labelUpload">Upload Banner</label>
                             <input type="file" id="myfile" name="myfile" style="display:none;">
+
+                        </div>
+                        <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                            <label for="myfile" class="labelUpload">Upload Banner</label>
+                            <input type="file" id="myfile" disabled name="myfile" style="display:none;">
 
                         </div>
                     </div>
@@ -64,12 +120,29 @@
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Zipcode</label>
-                            <input type="text" placeholder="Enter Zipcode" class="form-control input ">
+                            <input type="text" placeholder="Enter Zipcode" class="form-control input " formControlName="zipCode"
+                            [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)" maxlength="15">
+                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="invalid-feedback">
+                                <div *ngIf="zipCode.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                                  <div *ngIf="zipCode.errors?.['maxlength']">
+                                    Please add maximum 15 charaters
+                                </div>
+                                <div *ngIf="zipCode.errors?.['pattern']">
+                                    Please add valid zip code
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="col-6 columnInp">
+                        <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
                             <label for="myfile" class="labelUpload">Upload Logo</label>
                             <input type="file" id="myfile" name="myfile" style="display:none;">
+
+                        </div>
+                        <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                            <label for="myfile" class="labelUpload">Upload Logo</label>
+                            <input type="file" id="myfile" disabled name="myfile" style="display:none;">
 
                         </div>
                     </div>
@@ -78,12 +151,18 @@
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Currency</label>
-                            <input type="text" placeholder="Default" class="form-control input ">
+                            <input type="text" placeholder="Default" class="form-control input " formControlName="currency"
+                            [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                            <div *ngIf="currency.invalid && (currency.dirty || currency.touched)" class="invalid-feedback">
+                                <div *ngIf="currency.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
-                        <div class="col-6 columnInp btnCol">
-                            <button class="btn btn-primary cancelbtn btns">Cancel</button>
-                            <button class="btn btn-primary savebtn btns">Save</button>
+                        <div class="col-6 columnInp btnCol" *ngIf="showEditSalonBtn">
+                            <button class="btn btn-primary cancelbtn btns"  (click)="editSalonDetail('cancel')">Cancel</button>
+                            <button class="btn btn-primary savebtn btns" (click)="saveSalonDetails()">Save</button>
                         </div>
                     </div>
                 </div>
@@ -93,9 +172,9 @@
         <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Opening Times</p>
-                <img src="assets/icons/edit.png" class="editIcn">
+                <img src="assets/icons/edit.png" class="editIcn"  (click)="editOpenTime('edit')">
             </div>
-            <form>
+            <form [formGroup]="openingTimeForm" autocomplete="off">
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-4 ">
@@ -119,11 +198,23 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="monOpen"
+                            [class.is-invalid]="monOpen.invalid && (monOpen.dirty || monOpen.touched)">
+                            <div *ngIf="monOpen.invalid && (monOpen.dirty || monOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="monOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="monClose"
+                            [class.is-invalid]="monClose.invalid && (monClose.dirty || monClose.touched)">
+                            <div *ngIf="monClose.invalid && (monClose.dirty || monClose.touched)" class="invalid-feedback">
+                                <div *ngIf="monClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -136,11 +227,23 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="tuesOpen"
+                            [class.is-invalid]="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)">
+                            <div *ngIf="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="tuesOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="tuesClose"
+                            [class.is-invalid]="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)">
+                            <div *ngIf="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)" class="invalid-feedback">
+                                <div *ngIf="tuesClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -153,11 +256,23 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="wedOpen"
+                            [class.is-invalid]="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)">
+                            <div *ngIf="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="wedOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="wedClose"
+                            [class.is-invalid]="wedClose.invalid && (wedClose.dirty || wedClose.touched)">
+                            <div *ngIf="wedClose.invalid && (wedClose.dirty || wedClose.touched)" class="invalid-feedback">
+                                <div *ngIf="wedClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -169,11 +284,23 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Thur</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="thursOpen"
+                            [class.is-invalid]="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)">
+                            <div *ngIf="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="thursOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="thursClose"
+                            [class.is-invalid]="thursClose.invalid && (thursClose.dirty || thursClose.touched)">
+                            <div *ngIf="thursClose.invalid && (thursClose.dirty || thursClose.touched)" class="invalid-feedback">
+                                <div *ngIf="thursClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -185,11 +312,23 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="friOpen"
+                            [class.is-invalid]="friOpen.invalid && (friOpen.dirty || friOpen.touched)">
+                            <div *ngIf="friOpen.invalid && (friOpen.dirty || friOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="friOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="friClose"
+                            [class.is-invalid]="friClose.invalid && (friClose.dirty || friClose.touched)">
+                            <div *ngIf="friClose.invalid && (friClose.dirty || friClose.touched)" class="invalid-feedback">
+                                <div *ngIf="friClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -201,11 +340,23 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="satOpen"
+                             [class.is-invalid]="satOpen.invalid && (satOpen.dirty || satOpen.touched)">
+                             <div *ngIf="satOpen.invalid && (satOpen.dirty || satOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="satOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="satClose"
+                            [class.is-invalid]="satClose.invalid && (satClose.dirty || satClose.touched)">
+                            <div *ngIf="satClose.invalid && (satClose.dirty || satClose.touched)" class="invalid-feedback">
+                                <div *ngIf="satClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
@@ -217,28 +368,38 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="sunOpen"
+                            [class.is-invalid]="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)">
+                            <div *ngIf="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)" class="invalid-feedback">
+                                <div *ngIf="sunOpen.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter" class="form-control input ">
+                            <input type="text" placeholder="Enter" class="form-control input " formControlName="sunClose"
+                            [class.is-invalid]="sunClose.invalid && (sunClose.dirty || sunClose.touched)">
+                            <div *ngIf="sunClose.invalid && (sunClose.dirty || sunClose.touched)" class="invalid-feedback">
+                                <div *ngIf="sunClose.errors?.['required']">
+                                    This field is required.
+                                  </div>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" *ngIf="showEditOpenTimeBtn">
                     <div class="row dayRow">
                         <div class="col-6 ">
-                            <button class="btn btn-primary cancelbtn">Cancel</button>
-
+                            <button class="btn btn-primary cancelbtn" (click)="editOpenTime('cancel')">Cancel</button>
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-primary savebtn">Save</button>
+                            <button class="btn btn-primary savebtn"  (click)="saveTimings()">Save</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-
     </div>
 </div>

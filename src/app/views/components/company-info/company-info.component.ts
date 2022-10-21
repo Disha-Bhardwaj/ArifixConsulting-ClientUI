@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-company-info',
@@ -12,8 +13,8 @@ export class CompanyInfoComponent implements OnInit {
 
   infoForm!: FormGroup;
   showEdit = false
-
-  constructor(private fb: FormBuilder,public dialog: MatDialog) { }
+  uploadDoc: any
+  constructor(private fb: FormBuilder,public dialog: MatDialog, private toastr: ToastrService) { }
 
   openDialog() {
     this.dialog.open(DialogComponent, {
@@ -37,6 +38,18 @@ export class CompanyInfoComponent implements OnInit {
       zipCode: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(15), Validators.pattern('^[0-9]+$')]]
     })
   }
+  saveInfo(){
+    if(this.infoForm.valid ){
+      this.toastr.success('Your company information saved successfully', '', {
+        timeOut: 3000,
+      });
+    }else{
+      this.toastr.error('Please fill all the details', 'Error', {
+        timeOut: 3000
+      });
+    }
+    
+  }
   // validation functions
   get address() {
     return this.infoForm.get('address')!;
@@ -48,16 +61,16 @@ export class CompanyInfoComponent implements OnInit {
     return this.infoForm.get('country')!;
   }
   get county() {
-    return this.infoForm.get('zipCode')!;
+    return this.infoForm.get('county')!;
   }
   get vatID() {
-    return this.infoForm.get('address')!;
+    return this.infoForm.get('vatID')!;
   }
   get email() {
-    return this.infoForm.get('city')!;
+    return this.infoForm.get('email')!;
   }
   get regId() {
-    return this.infoForm.get('country')!;
+    return this.infoForm.get('regId')!;
   }
   get zipCode() {
     return this.infoForm.get('zipCode')!;
@@ -70,9 +83,11 @@ export class CompanyInfoComponent implements OnInit {
     }
   }
   cancel() {
+    this.showEdit = false
     for (const control of Object.keys(this.infoForm.controls)) {
       this.infoForm.controls[control].disable()
     }
   }
+ 
 
 }

@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'notifications', component: NotificationsComponent },
   { path: 'bookings', component: BookingComponent },
   { path: 'calendar', component: CalendarComponent },
+  { path: '**', component: DashboardComponent },
 ];
 
 @NgModule({
