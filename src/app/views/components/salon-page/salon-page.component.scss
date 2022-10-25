@@ -1,0 +1,86 @@
+.row.infoBox {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+.col-lg-6.col-md-6.col-sm-12 {
+  border-radius: 6px;
+  background: #e4e4e4;
+  width: 49%;
+}
+.camColm {
+  text-align: center;
+  padding-top: 183px;
+  padding-bottom: 183px;
+}
+label.labelUpload {
+  margin-top: 14%;
+  font-size: 18px;
+}
+.col-6.btnCol {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.addbtn {
+  width: 16% !important;
+  margin-right: 14px !important;
+}
+.btns {
+  width: 48% !important;
+  margin-right: 0px !important;
+}
+.formCol {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.webView{
+    display: block !important;
+  }
+  .mobileView{
+    display: none !important;
+  }
+/* media query */
+@media (max-width: 767px) and (min-width: 200px) {
+  .col-6.columnInp,
+  .col-lg-6.col-md-6.col-sm-12 {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .mb-3 {
+    margin-bottom: 0px !important;
+  }
+  label.labelUpload {
+    margin-top: 0% !important;
+    font-size: 18px;
+  }
+  .row.infoBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  .dayRow {
+    margin-bottom: 8px;
+  }
+  .webView{
+    display: none !important;
+  }
+  .mobileView{
+    display: block !important;
+  }
+  .addbtn {
+    width: 39% !important;
+    font-size: 18px !important;
+    line-height: 16px !important;
+    margin-right: 6px !important;
+  }
+}
+@media (max-width: 419px) and (min-width: 200px){
+
+}

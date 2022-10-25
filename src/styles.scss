@@ -1,0 +1,214 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@include mat.core();
+
+$ClientUILatest-primary: mat.define-palette(mat.$indigo-palette);
+$ClientUILatest-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$ClientUILatest-warn: mat.define-palette(mat.$red-palette);
+
+$ClientUILatest-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ClientUILatest-primary,
+      accent: $ClientUILatest-accent,
+      warn: $ClientUILatest-warn,
+    ),
+  )
+);
+@include mat.all-component-themes($ClientUILatest-theme);
+@import "~ngx-toastr/toastr.css";
+// labels
+label.form-label.label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #312f2f;
+}
+// input
+input.form-control.input {
+  padding: 10px;
+  border: none;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 6px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #000000;
+}
+// label Upload
+label.labelUpload {
+  margin-top: 7%;
+  font-size: 18px;
+  padding: 12px 20px;
+}
+// p text
+p.texthead {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.24px;
+  color: #312f2f;
+  font-family: "Overpass";
+  margin-bottom: 0px;
+}
+// h2 head text {
+.h2Text {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 26px !important;
+  line-height: 31px !important;
+  letter-spacing: -0.41px !important;
+  color: #312f2f !important;
+}
+// cursor pointer
+.editIcon,
+.quesIcon {
+  cursor: pointer;
+}
+// button designs
+button.btn.btn-primary.savebtn,
+button.btn.btn-primary.cancelbtn,
+.labelUpload {
+  width: 100%;
+  padding: 10px 20px;
+  height: 50px;
+  background: #5e5ce6;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+  font-family: "Open Sans";
+}
+button.btn.btn-primary.cancelbtn,
+.labelUpload {
+  color: #312f2f;
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+// container
+.container {
+  padding-left: 27px;
+  padding-right: 27px;
+  margin-bottom: 147px;
+}
+// edit icon
+.editIcn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+// button top
+.col-lg-12.col-md-12.col-sm-12.topbtncol {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+// toggle switch
+.switch {
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 41px;
+  margin-left: 6px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  background-color: #979798;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.slider:before {
+  background-color: #d0e3f1;
+  bottom: 2px;
+  content: "";
+  height: 22px;
+  left: 1px;
+  position: absolute;
+  transition: 0.4s;
+  width: 22px;
+}
+input:checked + .slider {
+  background-color: #5e5ce6;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+  left: -8px;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+// time div
+p.texthead,
+.colHeadTime,
+label.form-label.label.daysLabel {
+  color: #000000;
+}
+.colHeadTime {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 26px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.32px !important;
+}
+label.form-label.label.daysLabel {
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.41px;
+}
+.dayRow {
+  display: flex;
+  align-items: center;
+}
+// dialog box
+.mat-dialog-container {
+  background: #e4e4e4 !important;
+  box-shadow: 0px 1px 4px rgb(0 0 0 / 8%), 0px 1px 2px rgb(0 0 0 / 8%),
+    0px 4px 12px rgb(0 0 0 / 16%) !important;
+  border-radius: 6px !important;
+}
+.mat-drawer-inner-container {
+  background: #e4e4e4 !important;
+}
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+mat-sidenav-container {
+  position: fixed;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+// select input
+select {
+  -webkit-appearance: listbox !important;
+}
