@@ -16,22 +16,47 @@ default:
       major_version=$(echo $CI_COMMIT_REF_SLUG | cut -d. -f1)
 
 
-# build:build:
-#   image: docker:20.10.16
-#   services:
-#     - name: docker:20-dind
-#   stage: build
-#   before_script:
-#     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
-#   script:
-#     - docker build -t $container_image .
-#     - docker push $container_image
+build:build:
+  image: docker:20.10.16
+  services:
+    - name: docker:20-dind
+  stage: build
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  script:
+    - docker build -t $container_image .
+    - docker push $container_image
 
 deploy_dev:
   image: 
     name: devth/helm:v3.9.0
   stage: deploy dev
   script:
-    - kubectl config use-context afirix-proj-apps/app-reservation/app-reservation-kubernetes:app-reservation-dev
-    - helm list
-    - kubectl get pods
+    - kubectl config use-context afirix-proj-apps/app-reservation/app-reservation-fe-web:web-fe-dev
+    - kubectl create secret docker-registry ${kube_env_secret_name} --docker-server="$CI_REGISTRY" --docker-username="$CI_DEPLOY_USER" --docker-password="$CI_DEPLOY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" -o yaml --dry-run=client | kubectl apply -f -
+    - |
+      helm upgrade --install $deployment_name fe-web-owner-chart \
+      --set APP_PORT="80" \
+      --set ingress_host=${deployment_fqdn} \
+      --set image_pull_secrets_name=${kube_env_secret_name} \
+      --set container_image=${container_image}
+  environment:
+    name: dev/$CI_COMMIT_REF_SLUG
+    url: https://$deployment_fqdn
+    on_stop: stop_dev
+  only:
+    - branches
+
+stop_dev:
+  image: 
+    name: devth/helm:v3.9.0
+  stage: deploy dev
+  script:
+    - kubectl config use-context afirix-proj-apps/app-reservation/app-reservation-fe-web:web-fe-dev
+    - helm uninstall $deployment_name
+  when: manual
+  environment:
+    name: dev/$CI_COMMIT_REF_SLUG
+    action: stop
+  only:
+    - branches
