@@ -1,0 +1,8 @@
+# Default values for salon-server-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+APP_PORT: ""
+ingress_host: ""
+image_pull_secrets_name: ""
+container_image: ""
