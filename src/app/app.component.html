@@ -1,0 +1,37 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" autosize>
+  <mat-toolbar class="example-toolbar">
+    <mat-toolbar-row>
+      <div class="iconsDiv">
+        <button id="menuIcon" #menuBtn mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a class="navbar-brand mx-lg-4 mx-sm-4" routerLink="/home"><img src="assets/icons/home.png" class="vector" /></a>
+      </div>
+     
+      <div class="boxGlobal">
+        <div class="topBox">
+          <p class="boxP">The Colorist <span class="spanImg"><img src="assets/icons/plus.png"></span></p>
+        </div>
+        
+      </div>
+      <a class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.png" class="globeIcon" /></a>
+      
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container  class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0" >
+    <mat-sidenav  opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
+      <!-- fixedTopGap="56" -->
+      <mat-nav-list>
+        <app-sidebar></app-sidebar>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div>
+
+

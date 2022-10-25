@@ -1,0 +1,176 @@
+<div class="container" >
+    <div class="row" style="margin-top: 48px;">
+        <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: end;">
+            <img src="assets/icons/quesmark.png" mat-button (click)="openDialog()">
+        </div>
+    </div>
+    <div class="row p-0 infoBox">
+        <div
+            style="display: flex;flex-direction: row;align-content: stretch;justify-content: space-between; align-items: center;margin-top: 10px;">
+            <p class="texthead">Company Information</p>
+            <img src="assets/icons/edit.png" class="editIcon" (click)="editInfo()">
+        </div>
+        <form [formGroup]="infoForm" autocomplete="off">
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="passwordInput">Business Address</label>
+                        <input type="text" formControlName="address" placeholder="Enter Business Address"
+                            class="form-control input "
+                            [class.is-invalid]="address.invalid && (address.dirty || address.touched)" maxlength="300">
+                        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
+                            <div *ngIf="address.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="address.errors?.['maxlength']">
+                                Please add maximum 300 charaters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="repeatPassword">Vat ID</label>
+                        <input type="text" formControlName="vatID" placeholder="Enter Vat ID"
+                            class="form-control input "
+                            [class.is-invalid]="vatID.invalid && (vatID.dirty || vatID.touched)" maxlength="15">
+                        <div *ngIf="vatID.invalid && (vatID.dirty || vatID.touched)" class="invalid-feedback">
+                            <div *ngIf="vatID.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="vatID.errors?.['maxlength'] || vatID.errors?.['pattern']">
+                                Please add valid vat ID
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="passwordInput">City</label>
+                        <input type="text" formControlName="city" placeholder="Enter city" class="form-control input "
+                            [class.is-invalid]="city.invalid && (city.dirty || city.touched)" maxlength="30">
+                        <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
+                            <div *ngIf="city.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="city.errors?.['maxlength'] || city.errors?.['pattern']">
+                                Please add valid city
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="repeatPassword">Business Email </label>
+                        <input type="text" formControlName="email" placeholder="Enter Business Email"
+                            class="form-control input "
+                            [class.is-invalid]="email.invalid && (email.dirty || email.touched)" minlength="6"
+                            maxlength="60">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+                            <div *ngIf="email.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="email.errors?.['email']">
+                                Please enter valid email.
+                            </div>
+                            <div *ngIf="email.errors?.['maxlength'] || email.errors?.['minlength']">
+                                Please add atleast 6 and max 60 characters
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="passwordInput">County</label>
+                        <input type="text" formControlName="county" placeholder="Enter County"
+                            class="form-control input "
+                            [class.is-invalid]="county.invalid && (county.dirty || county.touched)" maxlength="30">
+                        <div *ngIf="county.invalid && (county.dirty || county.touched)" class="invalid-feedback">
+                            <div *ngIf="county.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div
+                                *ngIf="county.errors?.['maxlength'] || county.errors?.['minlength'] || county.errors?.['pattern']">
+                                Please add valid phone county
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="repeatPassword">Registration number</label>
+                        <input type="text" formControlName="regId" placeholder="Enter Registration number"
+                            class="form-control input "
+                            [class.is-invalid]="regId.invalid && (regId.dirty || regId.touched)" maxlength="15">
+                        <div *ngIf="regId.invalid && (regId.dirty || regId.touched)" class="invalid-feedback">
+                            <div *ngIf="regId.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="regId.errors?.['maxlength']">
+                                Please add valid registration name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="passwordInput">Country</label>
+                        <input type="text" formControlName="country" placeholder="Enter Country"
+                            class="form-control input "
+                            [class.is-invalid]="country.invalid && (country.dirty || country.touched)" maxlength="30">
+                        <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                            <div *ngIf="country.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div
+                                *ngIf="country.errors?.['maxlength'] || country.errors?.['minlength'] || country.errors?.['pattern']">
+                                Please add valid country
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 columnInp emptyCol">
+                        <!-- <label for="myfile" class="labelUpload">Upload Document</label>
+                        <input type="file" id="myfile" name="myfile" style="display:none;"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <label class="form-label label" for="passwordInput">Zipcode</label>
+                        <input type="text" formControlName="zipCode" placeholder="Enter Zipcode"
+                            class="form-control input "
+                            [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)" maxlength="15">
+                        <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="invalid-feedback">
+                            <div *ngIf="zipCode.errors?.['required']">
+                                This field is required.
+                            </div>
+                            <div *ngIf="zipCode.errors?.['maxlength'] || zipCode.errors?.['pattern']">
+                                Please add valid zipCode
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 columnInp" *ngIf="showEdit">
+                        <label for="myfile" class="labelUpload">Upload Document</label>
+                        <input type="file" id="myfile" name="myfile" style="display:none;">
+                    </div>
+                    <div class="col-6 columnInp" *ngIf="!showEdit">
+                        <label for="myfile" class="labelUpload">Upload Document</label>
+                        <input type="file" disabled id="myfile" name="myfile" style="display:none;">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3" *ngIf="showEdit">
+                <div class="row">
+                    <div class="col-6 columnInp">
+                        <button class="btn btn-primary savebtn" (click)="saveInfo()">Save</button>
+                    </div>
+                    <div class="col-6 columnInp">
+                        <button class="btn btn-primary cancelbtn" (click)="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

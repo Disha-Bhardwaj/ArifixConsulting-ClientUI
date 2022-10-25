@@ -1,0 +1,307 @@
+<div class="container">
+    <div class="row" style="margin-top: 48px;">
+        <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
+            <button class="btn btn-primary savebtn addPosBtn" (click)="addPositionBTN()">Add Position</button>
+            <img src="assets/icons/quesmark.png" class="quesIcon" mat-button
+            (click)="openDialog('Pos1')">
+        </div>
+    </div>
+    <div class="row p-0 infoBox" *ngIf="addPosition">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="staffBox">
+                <div class="row imgRow">
+                    <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
+                        <input class="JobTit" placeholder="Enter Job title">
+                        <img src="assets/icons/quesmark.png" class="quesIcon quesJob" mat-button
+                        (click)="openDialog('Pos2')">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
+                        <h2 class="nameH">Not asign to</h2>
+                        <div class="editCloseDiv">
+                            <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
+                            <img src="assets/icons/editWhite.png" class="editIcon">
+                            <img src="assets/icons/closeIcon.png" class="closeIcon">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
+
+                        <!-- opening time schedule step 1-->
+                        <div *ngIf="showStep == 'schedule'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <div class="selectStep"><span class="stepSpan selected">1</span> Schedule</div>
+                                    <span class="stepSpan">2</span>
+                                    <span class="stepSpan">3</span>
+                                    <span class="stepSpan">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep"
+                                mat-button
+            (click)="openDialog('Pos3')">
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-4 ">
+                                            <h3 class="colHeadTime">Day</h3>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <h3 class="colHeadTime">Opening</h3>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <h3 class="colHeadTime">Closing</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel" for="passwordInput">Monday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel"
+                                                for="passwordInput">Tuesday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel"
+                                                for="passwordInput">Wednesday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel"
+                                                for="passwordInput">Thursday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel" for="passwordInput">Friday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel"
+                                                for="passwordInput">Saturday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel" for="passwordInput">Sunday</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" placeholder="Enter" class="form-control input ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-6 ">
+                                            <button class="btn btn-primary cancelbtn">Cancel</button>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-primary savebtn"  (click)="showStepsFun('permission')">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- permissions step 2-->
+                        <div *ngIf="showStep == 'permission'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpan">1</span>
+                                    <div class="selectStep"><span class="stepSpan selected">2</span> Permissions</div>
+                                    <span class="stepSpan">3</span>
+                                    <span class="stepSpan">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep"
+                                mat-button
+            (click)="openDialog('Pos4')">
+                            </div>
+                            <p class="textStep">Permissions</p>
+                            <select class="form-control select">
+                                <option>Select</option>
+                            </select>
+                            <div class="mb-3">
+                                <button class="btn btn-primary cancelbtn">Add Permission</button>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn">Cancel</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" (click)="showStepsFun('employee type')">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employee type step 3-->
+                        <div *ngIf="showStep == 'employee type'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpan">1</span>
+                                    <span class="stepSpan">2</span>
+                                    <div class="selectStep"><span class="stepSpan selected">3</span> Employe type</div>
+                                    <span class="stepSpan">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep"
+                                mat-button
+            (click)="openDialog('Pos5')">
+                            </div>
+                            <p class="textStep">Employee type</p>
+                            <select class="form-control select">
+                                <option>Select</option>
+                            </select>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn">Cancel</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" (click)="showStepsFun('service')">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services step 4 -->
+                        <div *ngIf="showStep == 'service'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpan">1</span>
+                                    <span class="stepSpan">2</span>
+                                    <span class="stepSpan">3</span>
+                                    <div class="selectStep"><span class="stepSpan selected">4</span> Services</div>
+                                </div>
+                                <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep"
+                                mat-button
+            (click)="openDialog('Pos6')">
+                            </div>
+                            <select class="form-control select">
+                                <option>Category</option>
+                            </select>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-8 ">
+                                        <input class="form-control input ser" placeholder="Service">
+                                    </div>
+                                    <div class="col-2">
+                                        <input class="form-control input ser" placeholder="Time">
+                                    </div>
+                                    <div class="col-2">
+                                        <input class="form-control input ser" placeholder="Price">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn">Add service</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary cancelbtn">Add category</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn">Cancel</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

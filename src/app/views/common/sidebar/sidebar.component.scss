@@ -1,0 +1,43 @@
+section {
+    padding: 10px 0px;
+    width: 263px;
+    background: #e4e4e4;
+  }
+  .userProfile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .listItem {
+    padding: 10px;
+    margin-bottom: 230px;
+  }
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 47px;
+    background: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .active {
+    background: #5e5ce6;
+  }
+  p.text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.32px;
+    color: #312f2f;
+    margin-bottom: 0px;
+  }
+  .active .text {
+    color: #ffffff;
+  }
+  
