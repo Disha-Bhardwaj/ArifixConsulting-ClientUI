@@ -126,7 +126,78 @@
     </ul>
     <p class="impTextP">Customers booking with the salon app will be auto-entered into the calendar</p>
 </div>
+<!-- coming from calendar page for add appointment-->
+<div *ngIf="data.fromPage == 'addAppointment'">
+    <form [formGroup]="addAppointForm" autocomplete="off">
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-12 columnInp ">
+                    <label class="form-label label" for="passwordInput">Name</label>
+                    <input type="text"  autocomplete="off" placeholder="Enter Name" class="form-control input formIn" formControlName="name"
+                    [class.is-invalid]="name.invalid && (name.dirty || name.touched)" maxlength="60" minlength="2">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+                        <div *ngIf="name.errors?.['required']">
+                            This field is required.
+                          </div>
+                          <div *ngIf="name.errors?.['maxlength'] || name.errors?.['minlength']">
+                            Please add valid name
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-6 columnInp ">
+                    <label class="form-label label" for="passwordInput">Start Time</label>
+                    <input type="text" placeholder="Start Time" class="form-control input formIn" formControlName="startTime"
+                    [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)">
+                    <div *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)" class="invalid-feedback">
+                        <div *ngIf="startTime.errors?.['required']">
+                            This field is required.
+                          </div>
+                    </div>
 
+                </div>
+                <div class="col-6 columnInp">
+                    <label class="form-label label" for="repeatPassword">Finish Time </label>
+                    <input type="text" placeholder="Finish Time" class="form-control input formIn" formControlName="finishTime"
+                    [class.is-invalid]="finishTime.invalid && (finishTime.dirty || finishTime.touched)"  minlength="2">
+                    <div *ngIf="finishTime.invalid && (finishTime.dirty || finishTime.touched)" class="invalid-feedback">
+                        <div *ngIf="finishTime.errors?.['required']">
+                            This field is required.
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-12 columnInp ">
+                    <label class="form-label label" for="passwordInput">Date</label>
+                    <input type="text" placeholder="Enter Date" class="form-control input formIn" formControlName="date"
+                    [class.is-invalid]="date.invalid && (date.dirty || date.touched)" maxlength="60" minlength="2">
+                    <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
+                        <div *ngIf="date.errors?.['required']">
+                            This field is required.
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3" >
+            <div class="row dayRow">
+                <div class="col-6 ">
+                    <button class="btn btn-primary savebtn saveApp" style="background-color: #5E5CE6;">Save</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary cancelbtn cancelApp">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</div>
 
 
 
