@@ -175,23 +175,31 @@
             <div class="row">
                 <div class="col-12 columnInp ">
                     <label class="form-label label" for="passwordInput">Date</label>
-                    <input type="text" placeholder="Enter Date" class="form-control input formIn" formControlName="date"
+                    <ngx-datepicker formControlName="date" [options]="options"
+                    [class.is-invalid]="date.invalid && (date.dirty || date.touched)"></ngx-datepicker>
+                    <!-- <input type="text" placeholder="Enter Date" class="form-control input formIn" formControlName="date"
                     [class.is-invalid]="date.invalid && (date.dirty || date.touched)" maxlength="60" minlength="2">
                     <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
                         <div *ngIf="date.errors?.['required']">
                             This field is required.
                           </div>
+                    </div> -->
+                    <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
+                        <div *ngIf="date.errors?.['required']">
+                            This field is required.
+                          </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
         <div class="mb-3" >
             <div class="row dayRow">
                 <div class="col-6 ">
-                    <button class="btn btn-primary savebtn saveApp" style="background-color: #5E5CE6;">Save</button>
+                    <button class="btn btn-primary savebtn saveApp" style="background-color: #5E5CE6;" (click)="saveAppointment()">Save</button>
                 </div>
                 <div class="col-6">
-                    <button class="btn btn-primary cancelbtn cancelApp">Cancel</button>
+                    <button class="btn btn-primary cancelbtn cancelApp" (click)="addAppointForm.reset()">Cancel</button>
                 </div>
             </div>
         </div>

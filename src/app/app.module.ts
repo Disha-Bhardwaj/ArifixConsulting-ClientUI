@@ -25,7 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './views/common/dialog/dialog.component';
-
+import { CookieService } from 'ngx-cookie-service';
+import { DatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -56,13 +57,14 @@ import { DialogComponent } from './views/common/dialog/dialog.component';
     MatDividerModule,
     MatListModule,
     MatDialogModule,
+    DatepickerModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -11,3 +11,40 @@ img.rightArr {
 .calendarDiv {
   margin-top: 48px;
 }
+.btns {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  height: 50px;
+  padding: 10px;
+  margin-right: 10px;
+}
+// media query
+@media (max-width: 1000px) and (min-width: 531px) {
+  button.btn.btn-primary.savebtn.addPosBtn{
+    width: 38%;
+  }
+}
+@media (max-width: 577px) and (min-width: 200px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button.btn.btn-primary.savebtn.addPosBtn{
+  font-size: 18px;
+}
+}
+@media (max-width: 531px) and (min-width: 200px) {
+  .col-lg-12.col-md-12.col-sm-12.topbtncol {
+    display: flex;
+    flex-direction: column;
+}
+button.btn.btn-primary.savebtn.addPosBtn{
+  font-size: 18px;
+  width: 307px;
+    margin-bottom: 21px;
+}
+}

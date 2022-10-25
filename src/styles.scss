@@ -72,7 +72,7 @@ p.texthead {
 }
 // cursor pointer
 .editIcon,
-.quesIcon {
+.quesIcon,.leftArr,.rightArr {
   cursor: pointer;
 }
 // button designs
@@ -211,4 +211,35 @@ mat-sidenav-container {
 // select input
 select {
   -webkit-appearance: listbox !important;
+}
+// date form field
+.datepicker-container,
+input.dateIn {
+  width: 100% !important;
+}
+input.dateIn {
+  border: none;
+  text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #000000;
+}
+.datepicker-default .day-unit.is-selected,
+.datepicker-default .day-unit:hover,
+.datepicker-default .year-unit.is-selected,
+.datepicker-default .year-unit:hover {
+  background: #004fcb !important;
+  color: #fff;
+}
+
+// media query
+@media (max-width: 767px) and (min-width: 200px) {
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 }

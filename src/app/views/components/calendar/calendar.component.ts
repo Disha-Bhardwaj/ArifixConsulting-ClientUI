@@ -3,7 +3,8 @@ import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { CalendarOptions, defineFullCalendarElement } from '@fullcalendar/web-component';
 import dayGridPlugin from '@fullcalendar/daygrid';
-// import resourceTimelinePlugin from '@fullcalendar/';
+import { DatepickerOptions } from 'ng2-datepicker';
+import { ToastrService } from 'ngx-toastr';
 import {
   DateSelectArg,
   EventClickArg,
@@ -13,7 +14,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { INITIAL_EVENTS, createEventId } from '../../common/event-utils';
-// import { INITIAL_EVENTS, createEventId } from '';
 
 
 defineFullCalendarElement();
@@ -25,6 +25,8 @@ defineFullCalendarElement();
 export class CalendarComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
+  date: any
+  options: DatepickerOptions = {};
   openDialog(value: any) {
     this.dialog.open(DialogComponent, {
       data: {
@@ -34,6 +36,12 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.options= {
+      placeholder: 'dd/mm/yyyy',
+      format: 'dd/MM/yyyy',
+      position: 'bottom',
+      inputClass: 'dateIn',
+    };
   }
 
   // calendarVisible = true;
@@ -110,6 +118,18 @@ export class CalendarComponent implements OnInit {
     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
       clickInfo.event.remove();
     }
+  }
+  backDate(){
+    // if(this.previousDate.toISOString().split('T')[0] === this.date.toISOString().split('T')[0]){
+    //   this.toastr.error('Please select valid date', 'Error', {
+    //     timeOut: 3000,
+    //   });
+    // }else{
+      this.date = new Date(this.date.setDate((this.date.getDate() - 1)));
+    // }
+  }
+  nextDate(){
+    this.date = new Date(this.date.setDate((this.date.getDate() + 1)));
   }
 
   handleEvents(events: EventApi[]) {
