@@ -33,7 +33,7 @@ deploy_dev:
   stage: deploy dev
   script:
     - kubectl config use-context afirix-proj-apps/app-reservation/app-reservation-kubernetes:app-reservation-dev
-    - kubectl create secret docker-registry ${kube_env_secret_name} --docker-server="$CI_REGISTRY" --docker-username="$CI_DEPLOY_USER" --docker-password="$CI_DEPLOY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" -o yaml --dry-run=client | kubectl apply -f -
+    - kubectl create secret docker-registry ${kube_env_secret_name} --docker-server="$CI_REGISTRY" --docker-username="$CI_REGISTRY_USER" --docker-password="$CI_REGISTRY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" -o yaml --dry-run=client | kubectl apply -f -
     - |
       helm upgrade --install $deployment_name fe-web-owner-chart \
       --set APP_PORT="80" \
