@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-salon-page',
@@ -10,27 +12,34 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./salon-page.component.scss']
 })
 export class SalonPageComponent implements OnInit {
-  constructor(public dialog: MatDialog, private fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(public dialog: MatDialog, private fb: FormBuilder, private toastr: ToastrService,
+    private cookies: CookieService, private route: Router) { }
 
   salonDetailForm!: FormGroup;
   openingTimeForm!: FormGroup;
   showEditSalonBtn = false
   showEditOpenTimeBtn = false
-
+  showWizard = false
   ngOnInit(): void {
+    if (this.cookies.get('wizardStart') == 'true') {
+      this.showWizard = true
+    }
     this.formInitialize();
     this.disableForm('salon')
     this.disableForm('opentime')
   }
+  nextWizard(){
+    this.route.navigateByUrl('/positions')
+  }
   formInitialize() {
     this.salonDetailForm = this.fb.group({
-      address: ['', [Validators.required,Validators.maxLength(300)]],
-      city: ['', [Validators.required,Validators.maxLength(30),Validators.pattern('^[a-zA-Z]+$')]],
-      country: ['', [Validators.required,Validators.maxLength(30),Validators.pattern('^[a-zA-Z]+$')]],
-      zipCode: ['', [Validators.required,Validators.maxLength(15),Validators.pattern('^[0-9]+$')]],
+      address: ['', [Validators.required, Validators.maxLength(300)]],
+      city: ['', [Validators.required, Validators.maxLength(30), Validators.pattern('^[a-zA-Z]+$')]],
+      country: ['', [Validators.required, Validators.maxLength(30), Validators.pattern('^[a-zA-Z]+$')]],
+      zipCode: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('^[0-9]+$')]],
       currency: ['', [Validators.required]],
-      phoneNo: ['', [Validators.required,Validators.minLength(10), Validators.maxLength(15), Validators.pattern('^[0-9]+$')]],
-      salonName: ['', [Validators.required,Validators.minLength(2), Validators.maxLength(60)]],
+      phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15), Validators.pattern('^[0-9]+$')]],
+      salonName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     })
     this.openingTimeForm = this.fb.group({
       monOpen: ['', [Validators.required]],
@@ -49,65 +58,65 @@ export class SalonPageComponent implements OnInit {
       sunClose: ['', [Validators.required]],
     })
   }
-  editSalonDetail(value:any){
-    if(value == 'edit'){
+  editSalonDetail(value: any) {
+    if (value == 'edit') {
       this.showEditSalonBtn = true
       this.enableForm('salon')
-    } else{
+    } else {
       this.showEditSalonBtn = false
       this.disableForm('salon')
     }
-    
+
   }
-  editOpenTime(value:any){
-    if(value == 'edit'){
+  editOpenTime(value: any) {
+    if (value == 'edit') {
       this.showEditOpenTimeBtn = true
       this.enableForm('opentime')
     }
-    else{
+    else {
       this.showEditOpenTimeBtn = false
       this.disableForm('opentime')
     }
   }
-  enableForm(formValue:any){
-    if(formValue == 'salon'){
+  enableForm(formValue: any) {
+    if (formValue == 'salon') {
       for (const control of Object.keys(this.salonDetailForm.controls)) {
         this.salonDetailForm.controls[control].enable()
       }
-    }else{
+    } else {
       for (const control of Object.keys(this.openingTimeForm.controls)) {
         this.openingTimeForm.controls[control].enable()
       }
     }
   }
-  disableForm(formValue:any){
-    if(formValue == 'salon'){
+  disableForm(formValue: any) {
+    if (formValue == 'salon') {
       for (const control of Object.keys(this.salonDetailForm.controls)) {
         this.salonDetailForm.controls[control].disable()
       }
-    } else{
+    } else {
       for (const control of Object.keys(this.openingTimeForm.controls)) {
         this.openingTimeForm.controls[control].disable()
       }
     }
   }
-  saveSalonDetails(){
-    if(this.salonDetailForm.valid ){
+  saveSalonDetails() {
+    if (this.salonDetailForm.valid) {
       this.toastr.success('Salon details saved successfully', '', {
         timeOut: 3000,
       });
-    }else{
+    } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
       });
     }
   }
-  saveTimings(){
-    if(this.openingTimeForm.valid ){
+  saveTimings() {
+    if (this.openingTimeForm.valid) {
       this.toastr.success('Timings saved successfully', '', {
         timeOut: 3000,
       });
-    }else{
+    } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
       });
@@ -180,7 +189,7 @@ export class SalonPageComponent implements OnInit {
 
 
 
-  
+
   openDialog() {
     // const dialogRef = this.dialog.open(DialogComponent);
     this.dialog.open(DialogComponent, {

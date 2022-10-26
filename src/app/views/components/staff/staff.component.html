@@ -5,6 +5,35 @@
             <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div>
     </div>
+    <div class="row p-0 infoBox" *ngIf="showWizard">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="staffBox">
+                <div class="row imgRow">
+                    <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
+                        <h2 class="textH2">Step Four</h2>
+                        <img src="assets/icons/closeGrey.png" class="closeIcon">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
+                       <ul>
+                        <li>Click add staff</li>
+                        <li>In the box, click the pencil to edit</li>
+                        <li>Fill out the form</li>
+                        <li>If you get stuck, click on the question mark for help at anytime</li>
+                       </ul>
+                    </div>
+                    <div class="stepDiv">
+                        <div class="steps">
+                            <span class="stepSpan">1</span>
+                            <span class="stepSpan">2</span>
+                            <span class="stepSpan">3</span>
+                            <span class="stepSpan" style="background:#5E5CE6; color:#FFFFFF;">4</span>
+                        </div>
+                        <button class="btn btn-primary savebtn" (click)="finishWizard()">Finish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row p-0 infoBox" *ngIf="showStep == 'One'">
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol">
 

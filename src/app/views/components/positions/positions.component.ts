@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-positions',
@@ -17,7 +19,10 @@ export class PositionsComponent implements OnInit {
   arr!: FormArray;
   servicesForm!: FormGroup;
   categoryCount = 0
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder) { }
+  showWizard = false
+
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
+    private cookies: CookieService, private route: Router) { }
 
   openDialog(value: any) {
     this.dialog.open(DialogComponent, {
@@ -28,6 +33,9 @@ export class PositionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.cookies.get('wizardStart') == 'true') {
+      this.showWizard = true
+    }
     this.permissionForm = this.fb.group({
       permission: this.fb.array([this.fb.control('')])
     })
@@ -37,6 +45,9 @@ export class PositionsComponent implements OnInit {
         serviceList: this.fb.array([])
       })]),
     })
+  }
+  nextWizard(){
+    this.route.navigateByUrl('/staff')
   }
   // services form
   categories(): FormArray {

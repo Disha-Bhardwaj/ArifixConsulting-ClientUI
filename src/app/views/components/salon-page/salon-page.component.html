@@ -6,6 +6,34 @@
             <img src="assets/icons/quesmark.png" mat-button (click)="openDialog()" class="quesIcon">
         </div>
     </div>
+    <div class="row p-0 infoBox" *ngIf="showWizard">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="staffBox">
+                <div class="row imgRow">
+                    <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
+                        <h2 class="textH2">Step Two</h2>
+                        <img src="assets/icons/closeGrey.png" class="closeIcon">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
+                       <ul>
+                        <li>Click on the salon page</li>
+                        <li>Fill out both forms</li>
+                        <li>If you get stuck, click on the question mark for help</li>
+                       </ul>
+                    </div>
+                    <div class="stepDiv">
+                        <div class="steps">
+                            <span class="stepSpan">1</span>
+                            <span class="stepSpan" style="background:#5E5CE6; color:#FFFFFF;">2</span>
+                            <span class="stepSpan">3</span>
+                            <span class="stepSpan">4</span>
+                        </div>
+                        <button class="btn btn-primary savebtn" (click)="nextWizard()">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row" style="margin-top: 42px; background-color: #C4C4C4;">
         <div class="col-lg-12 col-md-12 col-sm-12 camColm">
             <img src="assets/icons/camera.png" class="camIcon">

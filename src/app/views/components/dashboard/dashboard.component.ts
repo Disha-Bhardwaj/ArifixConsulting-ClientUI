@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-  steps= ''
-  initialBox = true
+  constructor(private cookies: CookieService, private route : Router) { }
+  // steps= ''
+  // initialBox = true
 
   ngOnInit(): void {
   }
   start(value:any){
-    this.initialBox = false
-    this.steps = value
+    this.cookies.set('wizardStart','true')
+    this.route.navigateByUrl('/company-Info')
+    // this.initialBox = false
+    // this.steps = value
   }
 
 }

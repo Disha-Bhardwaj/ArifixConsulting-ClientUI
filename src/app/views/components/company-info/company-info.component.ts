@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-info',
@@ -14,7 +16,9 @@ export class CompanyInfoComponent implements OnInit {
   infoForm!: FormGroup;
   showEdit = false
   uploadDoc: any
-  constructor(private fb: FormBuilder,public dialog: MatDialog, private toastr: ToastrService) { }
+  showWizard = false
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService, 
+    private cookies: CookieService, private route: Router) { }
 
   openDialog() {
     this.dialog.open(DialogComponent, {
@@ -24,7 +28,13 @@ export class CompanyInfoComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    if (this.cookies.get('wizardStart') == 'true') {
+      this.showWizard = true
+    }
     this.formInitialize();
+  }
+  nextWizard(){
+    this.route.navigateByUrl('/salon-page')
   }
   formInitialize() {
     this.infoForm = this.fb.group({
@@ -38,17 +48,17 @@ export class CompanyInfoComponent implements OnInit {
       zipCode: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(15), Validators.pattern('^[0-9]+$')]]
     })
   }
-  saveInfo(){
-    if(this.infoForm.valid ){
+  saveInfo() {
+    if (this.infoForm.valid) {
       this.toastr.success('Your company information saved successfully', '', {
         timeOut: 3000,
       });
-    }else{
+    } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
       });
     }
-    
+
   }
   // validation functions
   get address() {
@@ -88,6 +98,6 @@ export class CompanyInfoComponent implements OnInit {
       this.infoForm.controls[control].disable()
     }
   }
- 
+
 
 }

@@ -73,7 +73,7 @@ export class CalendarComponent implements OnInit {
       center: 'title',
       right: ''
     },
-    initialView: 'timeGridWeek',
+    initialView: 'timeGridDay',
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
     // weekends: true,
     // editable: true,
