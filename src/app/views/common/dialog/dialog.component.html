@@ -75,8 +75,8 @@
 <div *ngIf="data.fromPage == 'BookOfferTime'">
     <h2 class="textNewTime">New Time</h2>
     <div class="timeIn">
-        <input class="form-control input " placeholder="From">
-        <input class="form-control input " placeholder="To">
+        <input type="time" class="form-control input " placeholder="From">
+        <input type="time" class="form-control input " placeholder="To">
     </div>
     <button class="btn btn-primary savebtn" (click)="sendNewOfferTime()">Send</button>
 </div>
