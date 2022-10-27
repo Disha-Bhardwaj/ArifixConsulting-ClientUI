@@ -155,6 +155,12 @@ p.textStep {
 input.form-control.input.ser {
   font-size: 13px;
 }
+.webView {
+  display: block !important;
+}
+.mobileView {
+  display: none !important;
+}
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {
@@ -162,5 +168,11 @@ input.form-control.input.ser {
   }
   .staffBox {
     margin-top: 15%;
+  }
+  .webView {
+    display: none !important;
+  }
+  .mobileView {
+    display: block !important;
   }
 }

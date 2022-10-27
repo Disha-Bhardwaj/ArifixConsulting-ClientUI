@@ -314,3 +314,8 @@ li,span.stepSpan  {
     font-size: 16px;
   }
 }
+// time field
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+  display:none; 
+}

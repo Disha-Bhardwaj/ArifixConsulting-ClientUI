@@ -58,12 +58,12 @@
                         <label class="form-label label" for="repeatPassword">Vat ID</label>
                         <input type="text" formControlName="vatID" placeholder="Enter Vat ID"
                             class="form-control input "
-                            [class.is-invalid]="vatID.invalid && (vatID.dirty || vatID.touched)" maxlength="15">
+                            [class.is-invalid]="vatID.invalid && (vatID.dirty || vatID.touched)" minlength="5" maxlength="30">
                         <div *ngIf="vatID.invalid && (vatID.dirty || vatID.touched)" class="invalid-feedback">
                             <div *ngIf="vatID.errors?.['required']">
                                 This field is required.
                             </div>
-                            <div *ngIf="vatID.errors?.['maxlength'] || vatID.errors?.['pattern']">
+                            <div *ngIf="vatID.errors?.['maxlength'] || vatID.errors?.['minlength']">
                                 Please add valid vat ID
                             </div>
                         </div>
@@ -127,12 +127,12 @@
                         <label class="form-label label" for="repeatPassword">Registration number</label>
                         <input type="text" formControlName="regId" placeholder="Enter Registration number"
                             class="form-control input "
-                            [class.is-invalid]="regId.invalid && (regId.dirty || regId.touched)" maxlength="15">
+                            [class.is-invalid]="regId.invalid && (regId.dirty || regId.touched)"  minlength="5" maxlength="30">
                         <div *ngIf="regId.invalid && (regId.dirty || regId.touched)" class="invalid-feedback">
                             <div *ngIf="regId.errors?.['required']">
                                 This field is required.
                             </div>
-                            <div *ngIf="regId.errors?.['maxlength']">
+                            <div *ngIf="regId.errors?.['maxlength'] || regId.errors?.['minlength']">
                                 Please add valid registration name
                             </div>
                         </div>

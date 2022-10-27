@@ -21,10 +21,10 @@ export class SalonPageComponent implements OnInit {
   showEditOpenTimeBtn = false
   showWizard = false
   ngOnInit(): void {
+    this.formInitialize();
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
-    this.formInitialize();
     this.disableForm('salon')
     this.disableForm('opentime')
   }

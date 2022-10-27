@@ -25,7 +25,7 @@ button.btn.btn-primary.sendbtn {
 .col-lg-4.col-md-4.col-sm-12.topbtncol {
   display: flex;
   margin-top: 4%;
-  align-items: center;
+  align-items: flex-start;
 }
 .imgCol {
   display: flex;
@@ -93,6 +93,10 @@ button.btn.btn-primary.cancelbtn,
 button.btn.btn-primary.savebtn {
   width: 48%;
   border: none;
+}
+.form-control:disabled, .form-control[readonly] {
+  background-color: #ffffff; 
+  opacity: 1;
 }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {

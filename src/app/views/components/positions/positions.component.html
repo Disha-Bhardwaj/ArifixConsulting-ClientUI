@@ -8,20 +8,20 @@
     <div class="row p-0 infoBox" *ngIf="showWizard">
         <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="staffBox">
-                <div class="row imgRow" >
+                <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Three</h2>
                         <img src="assets/icons/closeGrey.png" class="closeIcon">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
-                       <ul>
-                        <li>Click on Positions</li>
-                        <li>Click add Positions</li>
-                        <li>Enter email</li>
-                        <li>Click on pencil</li>
-                        <li>Fill out the forms</li>
-                        <li>If you get stuck, click on the question mark for help at anytime</li>
-                       </ul>
+                        <ul>
+                            <li>Click on Positions</li>
+                            <li>Click add Positions</li>
+                            <li>Enter email</li>
+                            <li>Click on pencil</li>
+                            <li>Fill out the forms</li>
+                            <li>If you get stuck, click on the question mark for help at anytime</li>
+                        </ul>
                     </div>
                     <div class="stepDiv">
                         <div class="steps">
@@ -41,7 +41,7 @@
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <input class="JobTit" placeholder="Enter Job title">
+                        <input class="JobTit" placeholder="Enter Job title" [(ngModel)]="jobTitle">
                         <img src="assets/icons/quesmark.png" class="quesIcon quesJob" mat-button
                             (click)="openDialog('Pos2')">
                     </div>
@@ -67,7 +67,7 @@
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos3')">
                             </div>
-                            <form>
+                            <form [formGroup]="openingTimeForm" autocomplete="off">
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-4 ">
@@ -87,15 +87,29 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel" for="passwordInput">Monday</label>
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Monday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Mon</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="monOpen" [class.is-invalid]="monOpen.invalid && (monOpen.dirty || monOpen.touched)">
+                                            <div *ngIf="monOpen.invalid && (monOpen.dirty || monOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="monOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="monClose" [class.is-invalid]="monClose.invalid && (monClose.dirty || monClose.touched)">
+                                            <div *ngIf="monClose.invalid && (monClose.dirty || monClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="monClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -103,16 +117,30 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel"
+                                            <label class="form-label label daysLabel webView"
                                                 for="passwordInput">Tuesday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Tue</label>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="tuesOpen" [class.is-invalid]="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)">
+                                            <div *ngIf="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="tuesOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="tuesClose" [class.is-invalid]="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)">
+                                            <div *ngIf="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="tuesClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -120,16 +148,30 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel"
+                                            <label class="form-label label daysLabel webView"
                                                 for="passwordInput">Wednesday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Wed</label>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="wedOpen" [class.is-invalid]="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)">
+                                            <div *ngIf="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="wedOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="wedClose" [class.is-invalid]="wedClose.invalid && (wedClose.dirty || wedClose.touched)">
+                                            <div *ngIf="wedClose.invalid && (wedClose.dirty || wedClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="wedClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -137,16 +179,29 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel"
+                                            <label class="form-label label daysLabel webView"
                                                 for="passwordInput">Thursday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Thur</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="thursOpen" [class.is-invalid]="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)">
+                                            <div *ngIf="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="thursOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="thursClose" [class.is-invalid]="thursClose.invalid && (thursClose.dirty || thursClose.touched)">
+                                            <div *ngIf="thursClose.invalid && (thursClose.dirty || thursClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="thursClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -154,15 +209,29 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel" for="passwordInput">Friday</label>
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Friday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Fri</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="friOpen" [class.is-invalid]="friOpen.invalid && (friOpen.dirty || friOpen.touched)">
+                                            <div *ngIf="friOpen.invalid && (friOpen.dirty || friOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="friOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="friClose" [class.is-invalid]="friClose.invalid && (friClose.dirty || friClose.touched)">
+                                            <div *ngIf="friClose.invalid && (friClose.dirty || friClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="friClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -170,16 +239,29 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel"
+                                            <label class="form-label label daysLabel webView"
                                                 for="passwordInput">Saturday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Sat</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="satOpen" [class.is-invalid]="satOpen.invalid && (satOpen.dirty || satOpen.touched)">
+                                            <div *ngIf="satOpen.invalid && (satOpen.dirty || satOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="satOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="satClose" [class.is-invalid]="satClose.invalid && (satClose.dirty || satClose.touched)">
+                                            <div *ngIf="satClose.invalid && (satClose.dirty || satClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="satClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -187,15 +269,29 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
-                                            <label class="form-label label daysLabel" for="passwordInput">Sunday</label>
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Sunday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Sun</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="sunOpen" [class.is-invalid]="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)">
+                                            <div *ngIf="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="sunOpen.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                         <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" placeholder="Enter" class="form-control input ">
+                                            <input type="time" placeholder="Enter" class="form-control input " formControlName="sunClose" [class.is-invalid]="sunClose.invalid && (sunClose.dirty || sunClose.touched)">
+                                            <div *ngIf="sunClose.invalid && (sunClose.dirty || sunClose.touched)"
+                                                class="invalid-feedback">
+                                                <div *ngIf="sunClose.errors?.['required']">
+                                                    This field is required.
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -203,7 +299,8 @@
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-6 ">
-                                            <button class="btn btn-primary cancelbtn">Cancel</button>
+                                            <button class="btn btn-primary cancelbtn"
+                                                (click)="cancelChanges()">Cancel</button>
 
                                         </div>
                                         <div class="col-6">
@@ -244,7 +341,8 @@
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn">Cancel</button>
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="cancelChanges()">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
@@ -274,7 +372,8 @@
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn">Cancel</button>
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="cancelChanges()">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
@@ -305,7 +404,8 @@
                                                 <option>Category</option>
                                             </select>
                                             <div formArrayName="serviceList">
-                                                <div *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
+                                                <div
+                                                    *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
                                                     <div class="mb-3" [formGroupName]="serviceIndex">
                                                         <div class="row dayRow">
                                                             <div class="col-8 ">
@@ -343,27 +443,30 @@
                                     </div>
                                 </div>
                                 <!-- <button type="button" >Add Employee</button> -->
-                        </form>
-                        <div class="mb-3">
-                            <div class="row dayRow">
-                                <div class="col-6 ">
-                                    <button class="btn btn-primary cancelbtn" (click)="addService()">Add service</button>
+                            </form>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn" (click)="addService()">Add
+                                            service</button>
 
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
-                                        category</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
+                                            category</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="row dayRow">
-                                <div class="col-6 ">
-                                    <button class="btn btn-primary cancelbtn">Cancel</button>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="cancelChanges()">Cancel</button>
 
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-primary savebtn">Save</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" (click)="detailsSaved()">Save</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -372,4 +475,3 @@
             </div>
         </div>
     </div>
-</div>

@@ -38,12 +38,12 @@ label.labelUpload {
   align-items: center;
   margin-top: 20px;
 }
-.webView{
-    display: block !important;
-  }
-  .mobileView{
-    display: none !important;
-  }
+.webView {
+  display: block !important;
+}
+.mobileView {
+  display: none !important;
+}
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   .col-6.columnInp,
@@ -68,10 +68,10 @@ label.labelUpload {
   .dayRow {
     margin-bottom: 8px;
   }
-  .webView{
+  .webView {
     display: none !important;
   }
-  .mobileView{
+  .mobileView {
     display: block !important;
   }
   .addbtn {
@@ -81,6 +81,5 @@ label.labelUpload {
     margin-right: 6px !important;
   }
 }
-@media (max-width: 419px) and (min-width: 200px){
-
+@media (max-width: 419px) and (min-width: 200px) {
 }
