@@ -55,28 +55,28 @@ export class PositionsComponent implements OnInit {
   showStepsFun(showValue: any) {
     // go to schedule
     if(showValue == 'schedule'){
-      // if(this.jobTitle.length > 0){
-      //   this.showStep = showValue
-      // }else{
-      //   this.toastr.error('Please enter the job title', 'Error', {
-      //     timeOut: 3000
-      //   });
-      // }
-      this.showStep = showValue
+      if(this.jobTitle.length > 0){
+        this.showStep = showValue
+      }else{
+        this.toastr.error('Please enter the job title', 'Error', {
+          timeOut: 3000
+        });
+      }
+      // this.showStep = showValue
     }
     // go to permissions
     else if (showValue == 'permission') {
-      // if (this.openingTimeForm.valid) {
-      //   this.toastr.success('Your opening times saved successfully', '', {
-      //     timeOut: 3000,
-      //   });
-      //   this.showStep = showValue
-      // } else {
-      //   this.toastr.error('Please fill the schedule timings', 'Error', {
-      //     timeOut: 3000
-      //   });
-      // }
-      this.showStep = showValue
+      if (this.openingTimeForm.valid) {
+        this.toastr.success('Your opening times saved successfully', '', {
+          timeOut: 3000,
+        });
+        this.showStep = showValue
+      } else {
+        this.toastr.error('Please fill the schedule timings', 'Error', {
+          timeOut: 3000
+        });
+      }
+      // this.showStep = showValue
     }
     // go to employee type
     else if (showValue == 'employee type') {
@@ -188,7 +188,9 @@ export class PositionsComponent implements OnInit {
   // permissions form
   addNewPermission() {
     const add = this.permissionForm.get('permission') as FormArray;
-    add.push(this.fb.group({}))
+    add.push(this.fb.group({
+      permission:''
+    }))
   }
   get permission() {
     return this.permissionForm.controls['permission'] as FormArray

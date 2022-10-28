@@ -15,11 +15,10 @@
         
       </div>
       <div>
-        <!-- *ngIf="isOpenedLang" -->
         <a style="cursor: pointer;" class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.png" class="globeIcon" 
           (mouseover)="isOpenedLang = true" (mouseleave)="isOpenedLang = false"
           (click)="isOpenedLang=!isOpenedLang"/></a>
-          <ul class="openUL lang" >
+          <ul class="openUL lang" *ngIf="isOpenedLang">
             <li class="nav-item"><a class="nav-link openA langLi">
                 Language 1
               </a></li>

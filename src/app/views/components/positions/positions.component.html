@@ -327,10 +327,13 @@
                             <form [formGroup]="permissionForm">
                                 <ng-container formArrayName="permission">
                                     <div class="mb-3" *ngFor="let permi of permission.controls; let i=index;">
-                                        <p class="textStep">Permissions</p>
-                                        <select class="form-control select" [formControlName]="i">
-                                            <option>Select</option>
-                                        </select>
+                                        <!-- <div [formGroupName]="i"> -->
+                                            <p class="textStep">Permissions</p>
+                                            <select class="form-control select" [formControlName]="i">
+                                                <option value="">Select</option>
+                                            </select>
+                                        <!-- </div> -->
+                                        
                                     </div>
                                 </ng-container>
                             </form>
@@ -367,7 +370,7 @@
                             </div>
                             <p class="textStep">Employee type</p>
                             <select class="form-control select">
-                                <option>Select</option>
+                                <option value="">Select</option>
                             </select>
                             <div class="mb-3">
                                 <div class="row dayRow">
@@ -401,7 +404,7 @@
                                     <div *ngFor="let cate of categories().controls; let cateIndex=index">
                                         <div [formGroupName]="cateIndex">
                                             <select class="form-control select" formControlName="category">
-                                                <option>Category</option>
+                                                <option value="">Category</option>
                                             </select>
                                             <div formArrayName="serviceList">
                                                 <div
