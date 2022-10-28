@@ -74,10 +74,12 @@
 <!-- dialog box for offer new time in booking page -->
 <div *ngIf="data.fromPage == 'BookOfferTime'">
     <h2 class="textNewTime">New Time</h2>
-    <div class="timeIn">
-        <input type="time" class="form-control input " placeholder="From">
-        <input type="time" class="form-control input " placeholder="To">
-    </div>
+    <form [formGroup]="offerTimeForm" autocomplete="off">
+        <div class="timeIn">
+            <input type="time" formControlName="startTime" class="form-control input " placeholder="From">
+            <input type="time" formControlName="finishTime" class="form-control input " placeholder="To">
+        </div>
+    </form>
     <button class="btn btn-primary savebtn" (click)="sendNewOfferTime()">Send</button>
 </div>
 <!-- coming from company Notification page -->

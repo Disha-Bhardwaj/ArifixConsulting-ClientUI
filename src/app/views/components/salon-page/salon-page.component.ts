@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./salon-page.component.scss']
 })
 export class SalonPageComponent implements OnInit {
+
   constructor(public dialog: MatDialog, private fb: FormBuilder, private toastr: ToastrService,
     private cookies: CookieService, private route: Router) { }
 
@@ -20,6 +21,9 @@ export class SalonPageComponent implements OnInit {
   showEditSalonBtn = false
   showEditOpenTimeBtn = false
   showWizard = false
+  imageUrl: any;
+  fileToUpload: any;
+
   ngOnInit(): void {
     this.formInitialize();
     if (this.cookies.get('wizardStart') == 'true') {
@@ -30,6 +34,16 @@ export class SalonPageComponent implements OnInit {
   }
   nextWizard(){
     this.route.navigateByUrl('/positions')
+  }
+  uploadImg(file: any){
+    this.fileToUpload = file.target.files.item(0);
+
+    //Show image preview
+    let reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
   }
   formInitialize() {
     this.salonDetailForm = this.fb.group({
@@ -186,10 +200,6 @@ export class SalonPageComponent implements OnInit {
   get sunClose() {
     return this.openingTimeForm.get('sunClose')!;
   }
-
-
-
-
   openDialog() {
     // const dialogRef = this.dialog.open(DialogComponent);
     this.dialog.open(DialogComponent, {

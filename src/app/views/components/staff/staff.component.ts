@@ -21,17 +21,36 @@ export class StaffComponent implements OnInit {
   editDetails = false
   showWizard = false
   infoForm!: FormGroup;
+  detailsForm!: FormGroup;
 
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
     this.formInitialization();
+    this.disableForm()
   }
   formInitialization() {
     this.infoForm = this.fb.group({
       employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60)]],
     })
+    this.detailsForm = this.fb.group({
+      position: [''],
+      addToCalendar: [false],
+      breakFrom: [''],
+      breakTo: [''],
+      employeeDetail: [''],
+    })
+  }
+  disableForm(){
+    for (const control of Object.keys(this.detailsForm.controls)) {
+      this.detailsForm.controls[control].disable()
+    }
+  }
+  enableForm(){
+    for (const control of Object.keys(this.detailsForm.controls)) {
+      this.detailsForm.controls[control].enable()
+    }
   }
   // validation functions
   get employeeEmail() {
@@ -60,11 +79,21 @@ export class StaffComponent implements OnInit {
   }
   editDetailsFun(value: any) {
     this.editDetails = value
+    if(value){
+      this.enableForm()
+    }else{
+      this.disableForm()
+      this.detailsForm.reset()
+    }
+    
   }
   detailsSaved(){
     this.toastr.success('Details are saved successfully', '', {
       timeOut: 3000,
-    });
+    }); 
+    this.editDetails = false;
+    this.details = false
+    this.disableForm()
   }
   // open dialog box
   openDialog(value: any) {

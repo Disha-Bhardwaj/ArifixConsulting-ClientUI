@@ -12,7 +12,7 @@ export class AppComponent {
 
   @ViewChild('snav')
   snav!: MatSidenav
-
+  isOpenedLang = false
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;

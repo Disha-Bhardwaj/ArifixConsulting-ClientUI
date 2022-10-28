@@ -12,12 +12,15 @@ import { DatepickerOptions } from 'ng2-datepicker';
 export class DialogComponent implements OnInit {
 
   addAppointForm!: FormGroup;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService, private fb: FormBuilder,) { }
+  offerTimeForm!: FormGroup;
   options: DatepickerOptions = {};
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService, private fb: FormBuilder,) { }
+
 
   ngOnInit(): void {
     this.formInitialize();
-    this.options= {
+    this.options = {
       placeholder: 'dd/mm/yyyy',
       format: 'dd/MM/yyyy',
       position: 'bottom',
@@ -31,6 +34,10 @@ export class DialogComponent implements OnInit {
       startTime: ['', [Validators.required,]],
       finishTime: ['', [Validators.required,]],
       date: ['', [Validators.required,]],
+    })
+    this.offerTimeForm = this.fb.group({
+      startTime: ['', [Validators.required,]],
+      finishTime: ['', [Validators.required,]],
     })
   }
   // validation
@@ -48,9 +55,17 @@ export class DialogComponent implements OnInit {
   }
 
   sendNewOfferTime() {
-    this.toastr.success('Your offer time sent to the salon', '', {
-      timeOut: 3000,
-    });
+    console.log(this.offerTimeForm.value)
+    if (this.offerTimeForm.valid) {
+      this.toastr.success('Your offer time sent to the salon', '', {
+        timeOut: 3000,
+      });
+    } else {
+      this.toastr.error('Please enter from and to time', 'Error', {
+        timeOut: 3000,
+      });
+    }
+
   }
   saveAppointment() {
     console.log(this.addAppointForm.value)

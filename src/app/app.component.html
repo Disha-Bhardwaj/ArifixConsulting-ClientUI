@@ -14,7 +14,20 @@
         </div>
         
       </div>
-      <a class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.png" class="globeIcon" /></a>
+      <div>
+        <!-- *ngIf="isOpenedLang" -->
+        <a style="cursor: pointer;" class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.png" class="globeIcon" 
+          (mouseover)="isOpenedLang = true" (mouseleave)="isOpenedLang = false"
+          (click)="isOpenedLang=!isOpenedLang"/></a>
+          <ul class="openUL lang" >
+            <li class="nav-item"><a class="nav-link openA langLi">
+                Language 1
+              </a></li>
+            <li class="nav-item"><a class="nav-link openA langLi">
+                Language 2
+              </a></li>
+          </ul>
+      </div>
       
     </mat-toolbar-row>
   </mat-toolbar>

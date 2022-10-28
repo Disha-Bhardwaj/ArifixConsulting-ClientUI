@@ -86,12 +86,36 @@ span.spanImg {
 .mat-drawer-inner-container {
   background: #e4e4e4 !important;
 }
+ul.openUL {
+  position: absolute;
+  list-style: none;
+  background: #312f2f;
+  padding: 19px 8px;
+  width: max-content;
+  z-index: 9;
+  margin-left: -7%;
+}
+a.nav-link.openA {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  cursor: pointer;
+  color: #ffffff !important;
+}
 /* media query */
+@media (max-width: 1085px) and (min-width: 767px) {
+  ul.openUL{
+    margin-left: -10%
+  }
+}
 @media (max-width: 767px) and (min-width: 200px) {
   #menuIcon {
     display: block;
   }
-  .mat-toolbar-row{
+  .mat-toolbar-row {
     padding: 0px;
   }
   .iconsDiv {
@@ -100,5 +124,28 @@ span.spanImg {
   .topBox {
     padding: 22px 6px 10px 10px;
     width: 139px;
+  }
+  ul.openUL{
+    margin-left: -13%
+  }
+}
+@media (max-width: 635px) and (min-width: 465px){
+  ul.openUL{
+    margin-left: -18%
+  }
+}
+@media (max-width: 465px) and (min-width: 365px){
+  ul.openUL{
+    margin-left: -23%
+  }
+}
+@media (max-width: 365px) and (min-width: 323px){
+  ul.openUL{
+    margin-left: -29%
+  }
+}
+@media (max-width: 323px) and (min-width: 200px){
+  ul.openUL{
+    margin-left: -35%
   }
 }
