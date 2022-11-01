@@ -35,6 +35,10 @@ export class SalonPageComponent implements OnInit {
   nextWizard(){
     this.route.navigateByUrl('/positions')
   }
+  finishWizard() {
+    this.cookies.set('wizardStart', 'false')
+    this.showWizard = false
+  }
   uploadImg(file: any){
     this.fileToUpload = file.target.files.item(0);
 

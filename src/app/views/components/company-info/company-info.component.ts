@@ -36,6 +36,10 @@ export class CompanyInfoComponent implements OnInit {
   nextWizard(){
     this.route.navigateByUrl('/salon-page')
   }
+  finishWizard() {
+    this.cookies.set('wizardStart', 'false')
+    this.showWizard = false
+  }
   formInitialize() {
     this.infoForm = this.fb.group({
       address: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(300)]],
@@ -97,6 +101,7 @@ export class CompanyInfoComponent implements OnInit {
     for (const control of Object.keys(this.infoForm.controls)) {
       this.infoForm.controls[control].disable()
     }
+    this.infoForm.reset()
   }
 
 

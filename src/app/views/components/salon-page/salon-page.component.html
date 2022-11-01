@@ -12,7 +12,7 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Two</h2>
-                        <img src="assets/icons/closeGrey.png" class="closeIcon">
+                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard()">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
@@ -201,9 +201,11 @@
                     <div class="row">
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Currency</label>
-                            <input type="text" placeholder="Default" class="form-control input "
-                                formControlName="currency"
-                                [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                            <select class="form-control select" formControlName="currency"
+                            [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                        <option value="">Default</option>
+                        <option value="Default1">Default1</option>
+                    </select>
                             <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
                                 class="invalid-feedback">
                                 <div *ngIf="currency.errors?.['required']">

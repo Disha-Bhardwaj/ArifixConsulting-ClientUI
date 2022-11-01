@@ -163,6 +163,13 @@ export class PositionsComponent implements OnInit {
   nextWizard() {
     this.route.navigateByUrl('/staff')
   }
+  finishWizard() {
+    this.cookies.set('wizardStart', 'false')
+    this.showWizard = false
+  }
+  removeJobTitle(){
+    this.jobTitle = ''
+  }
   // services form
   categories(): FormArray {
     return this.servicesForm.get("categories") as FormArray

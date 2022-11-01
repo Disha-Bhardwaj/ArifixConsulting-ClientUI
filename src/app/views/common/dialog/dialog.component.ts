@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
@@ -15,7 +15,9 @@ export class DialogComponent implements OnInit {
   offerTimeForm!: FormGroup;
   options: DatepickerOptions = {};
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService, private fb: FormBuilder,) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService, 
+  private fb: FormBuilder,public dialogRef: MatDialogRef<DialogComponent>,
+  @Inject(MAT_DIALOG_DATA) public data1: any) { }
 
 
   ngOnInit(): void {
@@ -55,11 +57,11 @@ export class DialogComponent implements OnInit {
   }
 
   sendNewOfferTime() {
-    console.log(this.offerTimeForm.value)
     if (this.offerTimeForm.valid) {
       this.toastr.success('Your offer time sent to the salon', '', {
         timeOut: 3000,
       });
+      this.dialogRef.close();
     } else {
       this.toastr.error('Please enter from and to time', 'Error', {
         timeOut: 3000,

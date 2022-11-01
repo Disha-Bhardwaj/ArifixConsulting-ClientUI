@@ -32,7 +32,7 @@ export class StaffComponent implements OnInit {
   }
   formInitialization() {
     this.infoForm = this.fb.group({
-      employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60)]],
+      employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60), Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
     })
     this.detailsForm = this.fb.group({
       position: [''],
@@ -61,12 +61,15 @@ export class StaffComponent implements OnInit {
     this.showWizard = false
   }
   showStepsFunction(value: any) {
-    console.log(value)
-    if (value == 'Two') {
+    if(value == 'One'){
+      this.infoForm.reset();
+      this.showStep = value
+    }
+    else if (value == 'Two') {
       if (this.infoForm.valid) {
         this.showStep = value
       } else {
-        this.toastr.error('Please add employee email', 'Error', {
+        this.toastr.error('Please enter valid employee email', 'Error', {
           timeOut: 3000
         });
       }
@@ -85,7 +88,6 @@ export class StaffComponent implements OnInit {
       this.disableForm()
       this.detailsForm.reset()
     }
-    
   }
   detailsSaved(){
     this.toastr.success('Details are saved successfully', '', {
@@ -93,6 +95,7 @@ export class StaffComponent implements OnInit {
     }); 
     this.editDetails = false;
     this.details = false
+    this.infoForm.reset()
     this.disableForm()
   }
   // open dialog box

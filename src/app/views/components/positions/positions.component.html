@@ -5,13 +5,13 @@
             <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Pos1')">
         </div>
     </div>
-    <div class="row p-0 infoBox" *ngIf="showWizard">
+    <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;">
         <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Three</h2>
-                        <img src="assets/icons/closeGrey.png" class="closeIcon">
+                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard()">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
@@ -50,7 +50,7 @@
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
                             <img src="assets/icons/editWhite.png" class="editIcon">
-                            <img src="assets/icons/closeIcon.png" class="closeIcon">
+                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="removeJobTitle()">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">

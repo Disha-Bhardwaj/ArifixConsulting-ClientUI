@@ -72,7 +72,10 @@ p.texthead {
 }
 // cursor pointer
 .editIcon,
-.quesIcon,.leftArr,.rightArr {
+.quesIcon,
+.leftArr,
+.rightArr,
+.closeIcon {
   cursor: pointer;
 }
 // button designs
@@ -91,6 +94,12 @@ button.btn.btn-primary.cancelbtn,
   letter-spacing: -0.32px;
   color: #ffffff;
   font-family: "Open Sans";
+}
+button.btn.btn-primary.savebtn:hover {
+  background-color: #3b38e9;
+}
+button.btn.btn-primary.cancelbtn:hover {
+  background-color: #f4f3f3;
 }
 button.btn.btn-primary.cancelbtn,
 .labelUpload {
@@ -186,7 +195,13 @@ label.form-label.label.daysLabel {
 }
 .dayRow {
   display: flex;
-  align-items: center;
+  // align-items: center;
+  align-items: flex-start
+}
+// time field
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: '';
+  // display: none;
 }
 // dialog box
 .mat-dialog-container {
@@ -297,8 +312,9 @@ span.stepSpan {
 ul {
   list-style: decimal;
 }
-li,span.stepSpan  {
-  font-family: 'Maven Pro';
+li,
+span.stepSpan {
+  font-family: "Maven Pro";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -308,18 +324,15 @@ li,span.stepSpan  {
 }
 /* media query */
 @media (max-width: 345px) and (min-width: 200px) {
-  button.btn.btn-primary.savebtn{
+  button.btn.btn-primary.savebtn {
     padding: 0px;
     height: 35px;
     font-size: 16px;
   }
 }
-// time field
-input[type="time"]::-webkit-calendar-picker-indicator {
-  background: none;
-  display:none; 
-}
-.fc-h-event,.fc-v-event {
+
+.fc-h-event,
+.fc-v-event {
   display: block;
   border: 1px solid #5e5ce6 !important;
   border: 1px solid var(--fc-event-border-color, #5e5ce6) !important;

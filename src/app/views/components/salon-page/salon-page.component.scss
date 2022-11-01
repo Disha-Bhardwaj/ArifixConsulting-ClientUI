@@ -40,9 +40,25 @@ label.labelUpload {
 }
 .webView {
   display: block !important;
+  margin-top: 10px;
 }
 .mobileView {
   display: none !important;
+  margin-top: 10px;
+}
+select.form-control.select{
+  padding: 10px;
+  border: none;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 6px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #000000;
 }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
@@ -81,5 +97,4 @@ label.labelUpload {
     margin-right: 6px !important;
   }
 }
-@media (max-width: 419px) and (min-width: 200px) {
-}
+

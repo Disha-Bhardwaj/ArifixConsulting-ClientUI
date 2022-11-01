@@ -20,6 +20,7 @@ input.JobTit {
   align-items: center;
   letter-spacing: -0.41px;
   color: #000000;
+  padding-top: 20px;
   padding-bottom: 20px;
   width: 100%;
 }
@@ -29,6 +30,7 @@ input.JobTit {
   position: absolute;
   margin-bottom: 18px;
   margin-left: 365px;
+  margin-top: 20px;
 }
 .imgCol {
   display: flex;
@@ -36,7 +38,7 @@ input.JobTit {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12px;
+  margin-top: 0px;
 }
 .col-lg-12.col-md-12.col-sm-12.profileCol {
   display: flex;
@@ -157,9 +159,11 @@ input.form-control.input.ser {
 }
 .webView {
   display: block !important;
+  margin-top: 10px;
 }
 .mobileView {
   display: none !important;
+  margin-top: 10px;
 }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
