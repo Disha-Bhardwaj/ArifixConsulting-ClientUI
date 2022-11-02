@@ -32,7 +32,7 @@ input.form-control.input {
   padding: 10px;
   border: none;
   height: 50px;
-  background: #ffffff;
+  background: rgba(255,255,255,1);
   border-radius: 6px;
   font-family: "Open Sans";
   font-style: normal;
@@ -104,7 +104,7 @@ button.btn.btn-primary.cancelbtn:hover {
 button.btn.btn-primary.cancelbtn,
 .labelUpload {
   color: #312f2f;
-  background: #ffffff;
+  background: rgba(255,255,255,1);
   border: 1px solid #000000;
 }
 // container
@@ -200,7 +200,7 @@ label.form-label.label.daysLabel {
 }
 // time field
 input[type="time"]::-webkit-calendar-picker-indicator {
-  background: '';
+  // background: 'q';
   // display: none;
 }
 // dialog box

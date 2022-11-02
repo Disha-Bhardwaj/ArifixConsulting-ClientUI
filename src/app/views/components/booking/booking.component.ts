@@ -56,12 +56,12 @@ export class BookingComponent implements OnInit {
   }
   acceptReject(value: any) {
     if (value == 'accept') {
-      this.toastr.success('Your booking is accepted', '', {
+      this.toastr.success('Booking has been accepted', '', {
         timeOut: 3000,
       });
     }
     else {
-      this.toastr.error('Your booking is rejected', '', {
+      this.toastr.error('Booking has been rejected', '', {
         timeOut: 3000,
       });
 

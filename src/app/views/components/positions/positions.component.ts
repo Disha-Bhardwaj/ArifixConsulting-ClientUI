@@ -67,7 +67,7 @@ export class PositionsComponent implements OnInit {
     // go to permissions
     else if (showValue == 'permission') {
       if (this.openingTimeForm.valid) {
-        this.toastr.success('Your opening times saved successfully', '', {
+        this.toastr.success('Opening timings has been saved', '', {
           timeOut: 3000,
         });
         this.showStep = showValue

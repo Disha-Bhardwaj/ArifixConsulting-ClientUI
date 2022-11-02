@@ -58,10 +58,21 @@ export class DialogComponent implements OnInit {
 
   sendNewOfferTime() {
     if (this.offerTimeForm.valid) {
-      this.toastr.success('Your offer time sent to the salon', '', {
+      if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
+        this.toastr.success('Your offer time sent to the salon', '', {
         timeOut: 3000,
       });
       this.dialogRef.close();
+      }else{
+        this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+          timeOut: 3000,
+        });
+      }  console.log(this.offerTimeForm.value)
+    
+      // this.toastr.success('Your offer time sent to the salon', '', {
+      //   timeOut: 3000,
+      // });
+      // this.dialogRef.close();
     } else {
       this.toastr.error('Please enter from and to time', 'Error', {
         timeOut: 3000,
