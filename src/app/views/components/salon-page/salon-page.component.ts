@@ -32,14 +32,14 @@ export class SalonPageComponent implements OnInit {
     this.disableForm('salon')
     this.disableForm('opentime')
   }
-  nextWizard(){
+  nextWizard() {
     this.route.navigateByUrl('/positions')
   }
   finishWizard() {
     this.cookies.set('wizardStart', 'false')
     this.showWizard = false
   }
-  uploadImg(file: any){
+  uploadImg(file: any) {
     this.fileToUpload = file.target.files.item(0);
 
     //Show image preview
@@ -56,7 +56,7 @@ export class SalonPageComponent implements OnInit {
       country: ['', [Validators.required, Validators.maxLength(30), Validators.pattern('^[a-zA-Z]+$')]],
       zipCode: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('^[0-9]+$')]],
       currency: ['', [Validators.required]],
-      phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15), Validators.pattern('^[0-9]+$')]],
+      phoneNo: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]+$')]],
       salonName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     })
     this.openingTimeForm = this.fb.group({
@@ -84,7 +84,7 @@ export class SalonPageComponent implements OnInit {
       this.showEditSalonBtn = false
       this.disableForm('salon')
       this.salonDetailForm.reset({
-        currency:''
+        currency: ''
       })
     }
 
@@ -128,8 +128,10 @@ export class SalonPageComponent implements OnInit {
         timeOut: 3000,
       });
       this.salonDetailForm.reset({
-        currency:''
+        currency: ''
       })
+      this.showEditSalonBtn = false
+      this.disableForm('salon')
     } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
@@ -138,10 +140,24 @@ export class SalonPageComponent implements OnInit {
   }
   saveTimings() {
     if (this.openingTimeForm.valid) {
-      this.toastr.success('Timings saved successfully', '', {
-        timeOut: 3000,
-      });
-      this.openingTimeForm.reset()
+      if (this.openingTimeForm.value.monClose < this.openingTimeForm.value.monOpen
+         || this.openingTimeForm.value.tuesClose < this.openingTimeForm.value.tuesOpen
+         || this.openingTimeForm.value.wedClose < this.openingTimeForm.value.wedOpen
+         || this.openingTimeForm.value.thursClose < this.openingTimeForm.value.thursOpen
+         || this.openingTimeForm.value.friClose < this.openingTimeForm.value.friOpen
+         || this.openingTimeForm.value.satClose < this.openingTimeForm.value.satOpen
+         || this.openingTimeForm.value.sunClose < this.openingTimeForm.value.sunOpen) {
+          this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
+            timeOut: 3000
+          });
+      }else{
+        this.toastr.success('Timings saved successfully', '', {
+          timeOut: 3000,
+        });
+        this.openingTimeForm.reset()
+        this.showEditOpenTimeBtn = false
+        this.disableForm('opentime')
+      }
     } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000

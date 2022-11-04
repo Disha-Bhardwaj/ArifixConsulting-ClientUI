@@ -30,12 +30,15 @@ button.btn.btn-primary.sendbtn {
   margin-top: 4%;
   align-items: flex-start;
 }
-.imgCol {
+.imgCol, .imgCol2 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+}
+.imgCol2{
+  flex-direction: row-reverse;
 }
 img.quesIcon {
   width: 30px;

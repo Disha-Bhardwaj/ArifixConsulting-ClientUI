@@ -12,6 +12,7 @@ import { StaffComponent } from './views/components/staff/staff.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'wizard', component: DashboardComponent },
   { path: 'company-Info', component: CompanyInfoComponent },
   { path: 'positions', component: PositionsComponent },
   { path: 'salon-page', component: SalonPageComponent },

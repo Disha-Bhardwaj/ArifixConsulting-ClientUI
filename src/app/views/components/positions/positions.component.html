@@ -50,7 +50,7 @@
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
                             <img src="assets/icons/editWhite.png" class="editIcon">
-                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="cancelChanges()">
+                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="cancelChanges('closeAll')">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
@@ -300,7 +300,7 @@
                                     <div class="row dayRow">
                                         <div class="col-6 ">
                                             <button class="btn btn-primary cancelbtn"
-                                                (click)="cancelChanges()">Cancel</button>
+                                                (click)="cancelChanges('resetTime')">Cancel</button>
 
                                         </div>
                                         <div class="col-6">
@@ -347,7 +347,7 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges()">Cancel</button>
+                                            (click)="cancelChanges('resetPermission')">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
@@ -371,16 +371,19 @@
                                     (click)="openDialog('Pos5')">
                             </div>
                             <p class="textStep">Employee type</p>
-                            <select class="form-control select">
-                                <option value="">Select</option>
-                                <option value="Employee type 1">Employee type 1</option>
-                                <option value="Employee type 2">Employee type 2</option>
-                            </select>
+                            <form  [formGroup]="employeeTypeForm">
+                                <select class="form-control select" formControlName="employeeType">
+                                    <option value="">Select</option>
+                                    <option value="Employee type 1">Employee type 1</option>
+                                    <option value="Employee type 2">Employee type 2</option>
+                                </select>
+                            </form>
+                            
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges()">Cancel</button>
+                                            (click)="cancelChanges('resetEmployee')">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
@@ -470,7 +473,7 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges()">Cancel</button>
+                                            (click)="cancelChanges('resetService')">Cancel</button>
 
                                     </div>
                                     <div class="col-6">

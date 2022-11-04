@@ -18,6 +18,7 @@ export class PositionsComponent implements OnInit {
   permissionForm!: FormGroup;
   servicesForm!: FormGroup;
   openingTimeForm!: FormGroup;
+  employeeTypeForm!: FormGroup;
   categoryCount = 0
   showWizard = false
   jobTitle = ''
@@ -41,23 +42,40 @@ export class PositionsComponent implements OnInit {
   }
 
   // cancel changes
-  cancelChanges() {
-    this.addPosition = false
-    this.showStep = ''
-    this.jobTitle = ''
-    this.openingTimeForm.reset()
-    this.permissionForm.reset()
-    this.servicesForm.reset()
+  cancelChanges(value: any) {
+    if (value == 'closeAll') {
+      this.addPosition = false
+      this.showStep = ''
+      this.jobTitle = ''
+      this.openingTimeForm.reset()
+      this.permissionForm.reset()
+      this.servicesForm.reset()
+    }
+    else if (value == 'resetTime') {
+      this.openingTimeForm.reset()
+    }
+    else if (value == 'resetPermission') {
+      this.permissionForm.reset()
+    }
+    else if (value == 'resetEmployee') {
+      this.employeeTypeForm.reset({
+        employeeType: ''
+      })
+    }
+    else if (value == 'resetService') {
+      this.servicesForm.reset()
+    }
+
   }
   addPositionBTN() {
     this.addPosition = true
   }
   showStepsFun(showValue: any) {
     // go to schedule
-    if(showValue == 'schedule'){
-      if(this.jobTitle.length > 0){
+    if (showValue == 'schedule') {
+      if (this.jobTitle.length > 0) {
         this.showStep = showValue
-      }else{
+      } else {
         this.toastr.error('Please enter the job title', 'Error', {
           timeOut: 3000
         });
@@ -67,10 +85,23 @@ export class PositionsComponent implements OnInit {
     // go to permissions
     else if (showValue == 'permission') {
       if (this.openingTimeForm.valid) {
-        this.toastr.success('Opening timings has been saved', '', {
-          timeOut: 3000,
-        });
-        this.showStep = showValue
+        if (this.openingTimeForm.value.monClose < this.openingTimeForm.value.monOpen
+          || this.openingTimeForm.value.tuesClose < this.openingTimeForm.value.tuesOpen
+          || this.openingTimeForm.value.wedClose < this.openingTimeForm.value.wedOpen
+          || this.openingTimeForm.value.thursClose < this.openingTimeForm.value.thursOpen
+          || this.openingTimeForm.value.friClose < this.openingTimeForm.value.friOpen
+          || this.openingTimeForm.value.satClose < this.openingTimeForm.value.satOpen
+          || this.openingTimeForm.value.sunClose < this.openingTimeForm.value.sunOpen) {
+          this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
+            timeOut: 3000
+          });
+        } else {
+          this.toastr.success('Opening timings has been saved', '', {
+            timeOut: 3000,
+          });
+          this.showStep = showValue
+        }
+
       } else {
         this.toastr.error('Please fill the schedule timings', 'Error', {
           timeOut: 3000
@@ -91,6 +122,10 @@ export class PositionsComponent implements OnInit {
     // permission form
     this.permissionForm = this.fb.group({
       permission: this.fb.array([this.fb.control('')])
+    })
+    // employee type form
+    this.employeeTypeForm = this.fb.group({
+      employeeType: ['']
     })
     // services form
     this.servicesForm = this.fb.group({
@@ -196,7 +231,7 @@ export class PositionsComponent implements OnInit {
   addNewPermission() {
     const add = this.permissionForm.get('permission') as FormArray;
     add.push(this.fb.group({
-      permission:''
+      permission: ''
     }))
   }
   get permission() {
@@ -207,5 +242,11 @@ export class PositionsComponent implements OnInit {
     this.toastr.success('Details are saved successfully', '', {
       timeOut: 3000,
     });
+    this.addPosition = false
+    this.showStep = ''
+    this.jobTitle = ''
+    this.openingTimeForm.reset()
+    this.permissionForm.reset()
+    this.servicesForm.reset()
   }
 }

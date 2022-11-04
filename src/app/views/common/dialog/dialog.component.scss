@@ -50,6 +50,28 @@ input.form-control.input.formIn, button.btn.btn-primary.savebtn.saveApp, button.
   width: 100%;
   margin-top: 10px;
 }
+.boxInp {
+  display: inline-flex;
+  padding: 10px;
+  gap: 10px;
+  height: 50px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  color: #000000;
+  margin-right: 7px;
+  width: 160px;
+  align-items: center;
+}
+input.timeField {
+  width: 100%;
+  border: none;
+}
 // media query
 @media (max-width: 462px) and (min-width: 376px) {
   input.form-control.input {

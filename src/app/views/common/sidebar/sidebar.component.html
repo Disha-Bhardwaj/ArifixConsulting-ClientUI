@@ -65,9 +65,10 @@
                 [src]="companyInfo.isActive ? 'assets/icons/companyInfoHover.png' : 'assets/icons/companyInfo.png'"
                 class="icon">
         </div>
-        <div class="box" routerLink="/dashboard" (click)="removeWizard()">
+        <div class="box" routerLink="/wizard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
+        #wizardInfo="routerLinkActive" (click)="removeWizard()">
             <p class="text">Setup Wizard</p>
-            <img src="assets/icons/setupWizard.png"
+            <img [src]="wizardInfo.isActive ? 'assets/icons/setupWizardHover.png' : 'assets/icons/setupWizard.png'" 
                 class="icon">
         </div>
     </div>

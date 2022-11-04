@@ -79,7 +79,7 @@
                             <input type="text" placeholder="Enter Phone Number" class="form-control input "
                                 formControlName="phoneNo"
                                 [class.is-invalid]="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)"
-                                minlength="10" maxlength="15">
+                                minlength="10" maxlength="10">
                             <div *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)" class="invalid-feedback">
                                 <div *ngIf="phoneNo.errors?.['required']">
                                     This field is required.
