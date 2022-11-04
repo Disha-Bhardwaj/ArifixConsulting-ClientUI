@@ -76,8 +76,8 @@
     <h2 class="textNewTime">New Time</h2>
     <form [formGroup]="offerTimeForm" autocomplete="off">
         <div class="timeIn">
-            <input type="time" formControlName="startTime" class="form-control input " placeholder="From">
-            <input type="time" formControlName="finishTime" class="form-control input " placeholder="To">
+            <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="startTime" class="form-control input " placeholder="From">
+            <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="finishTime" class="form-control input " placeholder="To">
         </div>
     </form>
     <button class="btn btn-primary savebtn" (click)="sendNewOfferTime()">Send</button>

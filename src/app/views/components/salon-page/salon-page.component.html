@@ -253,7 +253,8 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input " formControlName="monOpen"
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="monOpen"
                                 [class.is-invalid]="monOpen.invalid && (monOpen.dirty || monOpen.touched)">
                             <div *ngIf="monOpen.invalid && (monOpen.dirty || monOpen.touched)" class="invalid-feedback">
                                 <div *ngIf="monOpen.errors?.['required']">
@@ -263,9 +264,11 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="monClose"
-                                [class.is-invalid]="monClose.invalid && (monClose.dirty || monClose.touched)">
+                                [class.is-invalid]="monClose.invalid && (monClose.dirty || monClose.touched)"
+                                >
                             <div *ngIf="monClose.invalid && (monClose.dirty || monClose.touched)"
                                 class="invalid-feedback">
                                 <div *ngIf="monClose.errors?.['required']">
@@ -284,7 +287,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="tuesOpen"
                                 [class.is-invalid]="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)">
                             <div *ngIf="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)"
@@ -296,7 +300,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="tuesClose"
                                 [class.is-invalid]="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)">
                             <div *ngIf="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)"
@@ -317,7 +322,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input " formControlName="wedOpen"
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="wedOpen"
                                 [class.is-invalid]="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)">
                             <div *ngIf="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)" class="invalid-feedback">
                                 <div *ngIf="wedOpen.errors?.['required']">
@@ -327,7 +333,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="wedClose"
                                 [class.is-invalid]="wedClose.invalid && (wedClose.dirty || wedClose.touched)">
                             <div *ngIf="wedClose.invalid && (wedClose.dirty || wedClose.touched)"
@@ -347,7 +354,8 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Thur</label>
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="thursOpen"
                                 [class.is-invalid]="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)">
                             <div *ngIf="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)"
@@ -359,7 +367,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="thursClose"
                                 [class.is-invalid]="thursClose.invalid && (thursClose.dirty || thursClose.touched)">
                             <div *ngIf="thursClose.invalid && (thursClose.dirty || thursClose.touched)"
@@ -379,7 +388,8 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input " formControlName="friOpen"
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="friOpen"
                                 [class.is-invalid]="friOpen.invalid && (friOpen.dirty || friOpen.touched)">
                             <div *ngIf="friOpen.invalid && (friOpen.dirty || friOpen.touched)" class="invalid-feedback">
                                 <div *ngIf="friOpen.errors?.['required']">
@@ -389,7 +399,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="friClose"
                                 [class.is-invalid]="friClose.invalid && (friClose.dirty || friClose.touched)">
                             <div *ngIf="friClose.invalid && (friClose.dirty || friClose.touched)"
@@ -409,7 +420,8 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input " formControlName="satOpen"
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="satOpen"
                                 [class.is-invalid]="satOpen.invalid && (satOpen.dirty || satOpen.touched)">
                             <div *ngIf="satOpen.invalid && (satOpen.dirty || satOpen.touched)" class="invalid-feedback">
                                 <div *ngIf="satOpen.errors?.['required']">
@@ -419,7 +431,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="satClose"
                                 [class.is-invalid]="satClose.invalid && (satClose.dirty || satClose.touched)">
                             <div *ngIf="satClose.invalid && (satClose.dirty || satClose.touched)"
@@ -439,7 +452,8 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input " formControlName="sunOpen"
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="sunOpen"
                                 [class.is-invalid]="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)">
                             <div *ngIf="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)" class="invalid-feedback">
                                 <div *ngIf="sunOpen.errors?.['required']">
@@ -449,7 +463,8 @@
 
                         </div>
                         <div class="col-4">
-                            <input type="time" placeholder="Enter" class="form-control input "
+                            <input  type="text"
+        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="sunClose"
                                 [class.is-invalid]="sunClose.invalid && (sunClose.dirty || sunClose.touched)">
                             <div *ngIf="sunClose.invalid && (sunClose.dirty || sunClose.touched)"

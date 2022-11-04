@@ -77,6 +77,11 @@ export class StaffComponent implements OnInit {
       this.showStep = value
     }
   }
+  close(){
+    this.showStep = '';
+    this.infoForm.reset();
+    this.detailsForm.reset();
+  }
   showDetails() {
     this.details = true
   }

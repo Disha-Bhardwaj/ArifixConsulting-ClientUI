@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-booking',
@@ -68,5 +70,23 @@ export class BookingComponent implements OnInit {
     }
 
   }
+  formControlItem: FormControl = new FormControl('');
+  // maxTime: DateTime = DateTime.local().set({
+  //   hour: 16,
+  // });
+  // minTime: DateTime = DateTime.local().set({
+  //   hour: 14,
+  // });
+  required: boolean = !1;
 
+  @ViewChild('timepicker') timepicker: any;
+
+  /**
+   * Lets the user click on the icon in the input.
+   */
+  openFromIcon(timepicker: { open: () => void }) {
+    if (!this.formControlItem.disabled) {
+      timepicker.open();
+    }
+  }
 }
