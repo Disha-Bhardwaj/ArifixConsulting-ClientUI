@@ -83,6 +83,9 @@ export class SalonPageComponent implements OnInit {
     } else {
       this.showEditSalonBtn = false
       this.disableForm('salon')
+      this.salonDetailForm.reset({
+        currency:''
+      })
     }
 
   }
@@ -94,6 +97,7 @@ export class SalonPageComponent implements OnInit {
     else {
       this.showEditOpenTimeBtn = false
       this.disableForm('opentime')
+      this.openingTimeForm.reset()
     }
   }
   enableForm(formValue: any) {
@@ -123,6 +127,9 @@ export class SalonPageComponent implements OnInit {
       this.toastr.success('Salon details saved successfully', '', {
         timeOut: 3000,
       });
+      this.salonDetailForm.reset({
+        currency:''
+      })
     } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
@@ -134,6 +141,7 @@ export class SalonPageComponent implements OnInit {
       this.toastr.success('Timings saved successfully', '', {
         timeOut: 3000,
       });
+      this.openingTimeForm.reset()
     } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000

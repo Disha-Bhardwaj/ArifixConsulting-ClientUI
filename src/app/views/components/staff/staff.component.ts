@@ -80,7 +80,12 @@ export class StaffComponent implements OnInit {
   close(){
     this.showStep = '';
     this.infoForm.reset();
-    this.detailsForm.reset();
+    this.detailsForm.reset({
+      position: '',
+      breakFrom: '',
+      breakTo: '',
+      employeeDetail: '',
+    });
   }
   showDetails() {
     this.details = true
@@ -91,7 +96,12 @@ export class StaffComponent implements OnInit {
       this.enableForm()
     }else{
       this.disableForm()
-      this.detailsForm.reset()
+      this.detailsForm.reset({
+        position: '',
+        breakFrom: '',
+        breakTo: '',
+        employeeDetail: '',
+      });
     }
   }
   detailsSaved(){
@@ -102,6 +112,12 @@ export class StaffComponent implements OnInit {
     this.details = false
     this.infoForm.reset()
     this.disableForm()
+    this.detailsForm.reset({
+      position: '',
+      breakFrom: '',
+      breakTo: '',
+      employeeDetail: '',
+    });
   }
   // open dialog box
   openDialog(value: any) {

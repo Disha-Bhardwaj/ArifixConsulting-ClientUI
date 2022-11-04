@@ -167,9 +167,9 @@ export class PositionsComponent implements OnInit {
     this.cookies.set('wizardStart', 'false')
     this.showWizard = false
   }
-  removeJobTitle(){
-    this.jobTitle = ''
-  }
+  // removeJobTitle(){
+  //   this.jobTitle = ''
+  // }
   // services form
   categories(): FormArray {
     return this.servicesForm.get("categories") as FormArray

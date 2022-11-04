@@ -47,7 +47,7 @@ export class CompanyInfoComponent implements OnInit {
       county: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(30), Validators.pattern('^[a-zA-Z]+$')]],
       country: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(30), Validators.pattern('^[a-zA-Z]+$')]],
       vatID: [{ value: '', disabled: true }, [Validators.required,Validators.minLength(5), Validators.maxLength(30)]],
-      email: [{ value: '', disabled: true }, [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60)]],
+      email: [{ value: '', disabled: true }, [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60), Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       regId: [{ value: '', disabled: true }, [Validators.required,Validators.minLength(5), Validators.maxLength(30)]],
       zipCode: [{ value: '', disabled: true }, [Validators.required, Validators.maxLength(15), Validators.pattern('^[0-9]+$')]]
     })
@@ -62,6 +62,7 @@ export class CompanyInfoComponent implements OnInit {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
       });
+      this.infoForm.reset()
     }
 
   }

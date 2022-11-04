@@ -5,7 +5,7 @@ button.btn.btn-primary.savebtn.addPosBtn {
 input.email {
   box-sizing: border-box;
   background: #e4e4e4;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255,255,255,1) !important;
   border-radius: 10px;
   font-family: "Montserrat";
   font-style: normal;
@@ -98,7 +98,7 @@ button.btn.btn-primary.savebtn {
   border: none;
 }
 .form-control:disabled, .form-control[readonly] {
-  background-color: #ffffff; 
+  background-color: rgba(255,255,255,1) !important;
   opacity: 1;
 }
 /* media query */

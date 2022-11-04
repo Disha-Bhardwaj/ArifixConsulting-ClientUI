@@ -15,9 +15,9 @@ export class DialogComponent implements OnInit {
   offerTimeForm!: FormGroup;
   options: DatepickerOptions = {};
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService, 
-  private fb: FormBuilder,public dialogRef: MatDialogRef<DialogComponent>,
-  @Inject(MAT_DIALOG_DATA) public data1: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService,
+    private fb: FormBuilder, public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data1: any) { }
 
 
   ngOnInit(): void {
@@ -58,21 +58,16 @@ export class DialogComponent implements OnInit {
 
   sendNewOfferTime() {
     if (this.offerTimeForm.valid) {
-      if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
+      if (this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime) {
         this.toastr.success('Your offer time sent to the salon', '', {
-        timeOut: 3000,
-      });
-      this.dialogRef.close();
-      }else{
+          timeOut: 3000,
+        });
+        this.dialogRef.close();
+      } else {
         this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
           timeOut: 3000,
         });
-      }  console.log(this.offerTimeForm.value)
-    
-      // this.toastr.success('Your offer time sent to the salon', '', {
-      //   timeOut: 3000,
-      // });
-      // this.dialogRef.close();
+      }
     } else {
       this.toastr.error('Please enter from and to time', 'Error', {
         timeOut: 3000,

@@ -50,7 +50,7 @@
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
                             <img src="assets/icons/editWhite.png" class="editIcon">
-                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="removeJobTitle()">
+                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="cancelChanges()">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
@@ -331,6 +331,8 @@
                                             <p class="textStep">Permissions</p>
                                             <select class="form-control select" [formControlName]="i">
                                                 <option value="">Select</option>
+                                                <option value="Permission 1">Permission 1</option>
+                                                <option value="Permission 2">Permission 2</option>
                                             </select>
                                         <!-- </div> -->
                                         
@@ -371,6 +373,8 @@
                             <p class="textStep">Employee type</p>
                             <select class="form-control select">
                                 <option value="">Select</option>
+                                <option value="Employee type 1">Employee type 1</option>
+                                <option value="Employee type 2">Employee type 2</option>
                             </select>
                             <div class="mb-3">
                                 <div class="row dayRow">
@@ -405,6 +409,8 @@
                                         <div [formGroupName]="cateIndex">
                                             <select class="form-control select" formControlName="category">
                                                 <option value="">Category</option>
+                                                <option value="Category 1">Category 1</option>
+                                                <option value="Category 2">Category 2</option>
                                             </select>
                                             <div formArrayName="serviceList">
                                                 <div
