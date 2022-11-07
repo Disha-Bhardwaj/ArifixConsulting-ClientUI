@@ -104,6 +104,10 @@ button.btn.btn-primary.savebtn {
   background-color: rgba(255,255,255,1) !important;
   opacity: 1;
 }
+.clicked{
+  transform: rotate(180deg)
+}
+
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {

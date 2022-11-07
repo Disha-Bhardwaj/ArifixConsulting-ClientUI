@@ -80,15 +80,17 @@
                         <h2 class="nameH">Name</h2>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;"
-                        (click)="showDetails()">
-                        <div class="form-control addtoCalDiv"> <span class="labelSpan">Details</span>
+                        (click)="showDetails()"  >
+                        <div class="form-control addtoCalDiv"> 
+                            <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.png" style="margin-bottom: 1px;"
+                                [ngClass]="{'clicked': details}"></span>
                         </div>
                     </div>
                 </div>
                 <div class="row imgRow" *ngIf="details">
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
                         <form [formGroup]="detailsForm" autocomplete="off" >
-                            <select class="form-control select" formControlName="position">
+                            <select class="form-control select selectDrop" formControlName="position">
                                 <option disabled selected hidden value="">Position</option>
                                 <option>Salon worker</option>
                                 <option>Head barber</option>
@@ -99,19 +101,17 @@
                                     <div class="slider round"></div>
                                 </label>
                             </div>
-                            <select class="form-control select" formControlName="breakFrom">
-                                <option disabled selected hidden value="">Break From</option>
-                                <option value="">10:00 PM</option>
-                                <option value="">12:00 PM</option>
-                            </select>
-                            <select class="form-control select" formControlName="breakTo">
-                                <option  disabled selected hidden value="">Break To</option>
-                                <option value="">01:00 PM</option>
-                                <option value="">02:00 PM</option>
-                            </select>
-                            <select class="form-control select" formControlName="employeeDetail">
-                                <option value="">Employee Details</option>
-                            </select>
+                            <!-- <ngx-datepicker [(ngModel)]="breakFromDate" [options]="BFoptions"></ngx-datepicker>
+                            <ngx-datepicker [(ngModel)]="breakToDate" [options]="BToptions"></ngx-datepicker> -->
+                            <div *ngIf="!editDetails" class="form-control addtoCalDiv" > <span class="labelSpan">Break From</span>
+                            </div>
+                            <div *ngIf="!editDetails" class="form-control addtoCalDiv" > <span class="labelSpan">Break To</span>
+                            </div>
+                              <ngx-datepicker *ngIf="editDetails" formControlName="breakFrom" [options]="BFoptions"></ngx-datepicker>
+                            <ngx-datepicker *ngIf="editDetails" formControlName="breakTo" [options]="BToptions"></ngx-datepicker>
+
+                            <div class="form-control addtoCalDiv"  mat-button (click)="openDialog('Staff3')"> <span class="labelSpan">Employee Details</span>
+                            </div>
                         </form>
                         <div class="editBtnsDiv" *ngIf="editDetails">
                             <button class="btn btn-primary cancelbtn" (click)="editDetailsFun(false)">Cancel</button>

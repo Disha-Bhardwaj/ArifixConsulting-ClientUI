@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatepickerOptions } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-staff',
@@ -22,13 +23,28 @@ export class StaffComponent implements OnInit {
   showWizard = false
   infoForm!: FormGroup;
   detailsForm!: FormGroup;
-
+  breakFromDate: any
+  BFoptions: DatepickerOptions = {};
+  breakToDate: any
+  BToptions: DatepickerOptions = {};
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
     this.formInitialization();
     this.disableForm()
+    this.BFoptions = {
+      placeholder: 'Break From',
+      format: 'dd/MM/yyyy',
+      position: 'bottom',
+      inputClass: 'PosDate',
+    };
+    this.BToptions = {
+      placeholder: 'Break To',
+      format: 'dd/MM/yyyy',
+      position: 'bottom',
+      inputClass: 'PosDate',
+    };
   }
   formInitialization() {
     this.infoForm = this.fb.group({
@@ -42,12 +58,12 @@ export class StaffComponent implements OnInit {
       employeeDetail: [''],
     })
   }
-  disableForm(){
+  disableForm() {
     for (const control of Object.keys(this.detailsForm.controls)) {
       this.detailsForm.controls[control].disable()
     }
   }
-  enableForm(){
+  enableForm() {
     for (const control of Object.keys(this.detailsForm.controls)) {
       this.detailsForm.controls[control].enable()
     }
@@ -74,10 +90,10 @@ export class StaffComponent implements OnInit {
         });
       }
     } else {
-      this.showStep = value
+    this.showStep = value
     }
   }
-  close(){
+  close() {
     this.showStep = '';
     this.infoForm.reset();
     this.detailsForm.reset({
@@ -86,15 +102,17 @@ export class StaffComponent implements OnInit {
       breakTo: '',
       employeeDetail: '',
     });
+    this.disableForm()
+    this.details = false
   }
   showDetails() {
     this.details = true
   }
   editDetailsFun(value: any) {
     this.editDetails = value
-    if(value){
+    if (value) {
       this.enableForm()
-    }else{
+    } else {
       this.disableForm()
       this.detailsForm.reset({
         position: '',
@@ -104,20 +122,27 @@ export class StaffComponent implements OnInit {
       });
     }
   }
-  detailsSaved(){
-    this.toastr.success('Details are saved successfully', '', {
-      timeOut: 3000,
-    }); 
-    this.editDetails = false;
-    this.details = false
-    this.infoForm.reset()
-    this.disableForm()
-    this.detailsForm.reset({
-      position: '',
-      breakFrom: '',
-      breakTo: '',
-      employeeDetail: '',
-    });
+  detailsSaved() {
+    if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
+      this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
+        timeOut: 3000,
+      });
+    } else {
+      this.toastr.success('Details are saved successfully', '', {
+        timeOut: 3000,
+      });
+      this.editDetails = false;
+      this.details = false
+      this.infoForm.reset()
+      this.disableForm()
+      this.detailsForm.reset({
+        position: '',
+        breakFrom: '',
+        breakTo: '',
+        employeeDetail: '',
+      });
+    }
+
   }
   // open dialog box
   openDialog(value: any) {

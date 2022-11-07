@@ -49,7 +49,7 @@
                         <h2 class="nameH">Not assigned to</h2>
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
-                            <img src="assets/icons/editWhite.png" class="editIcon">
+                            <img src="assets/icons/editWhite.png" class="editIcon" *ngIf="showStep == 'schedule'">
                             <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="cancelChanges('closeAll')">
                         </div>
                     </div>
