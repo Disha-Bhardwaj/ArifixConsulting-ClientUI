@@ -136,20 +136,20 @@ export class PositionsComponent implements OnInit {
     })
     // opening time form 
     this.openingTimeForm = this.fb.group({
-      monOpen: ['', [Validators.required]],
-      monClose: ['', [Validators.required]],
-      tuesOpen: ['', [Validators.required]],
-      tuesClose: ['', [Validators.required]],
-      wedOpen: ['', [Validators.required]],
-      wedClose: ['', [Validators.required]],
-      thursOpen: ['', [Validators.required]],
-      thursClose: ['', [Validators.required]],
-      friOpen: ['', [Validators.required]],
-      friClose: ['', [Validators.required]],
-      satOpen: ['', [Validators.required]],
-      satClose: ['', [Validators.required]],
-      sunOpen: ['', [Validators.required]],
-      sunClose: ['', [Validators.required]],
+      monOpen: [''],
+      monClose: [''],
+      tuesOpen: [''],
+      tuesClose: [''],
+      wedOpen: [''],
+      wedClose: [''],
+      thursOpen: [''],
+      thursClose: [''],
+      friOpen: [''],
+      friClose: [''],
+      satOpen: [''],
+      satClose: [''],
+      sunOpen: [''],
+      sunClose: [''],
     })
   }
   // validation for opening times

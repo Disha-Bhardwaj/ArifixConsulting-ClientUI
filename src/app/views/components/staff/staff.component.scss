@@ -5,7 +5,7 @@ button.btn.btn-primary.savebtn.addPosBtn {
 input.email {
   box-sizing: border-box;
   background: #e4e4e4;
-  border: 1px solid rgba(255,255,255,1) !important;
+  border: 1px solid rgba(255, 255, 255, 1) !important;
   border-radius: 10px;
   font-family: "Montserrat";
   font-style: normal;
@@ -15,7 +15,7 @@ input.email {
   letter-spacing: -0.25px;
   color: black;
   padding-left: 10px;
-  padding-right: 45%;
+  padding-right: 46%;
   height: 54px;
 }
 button.btn.btn-primary.sendbtn {
@@ -30,14 +30,15 @@ button.btn.btn-primary.sendbtn {
   margin-top: 4%;
   align-items: flex-start;
 }
-.imgCol, .imgCol2 {
+.imgCol,
+.imgCol2 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
 }
-.imgCol2{
+.imgCol2 {
   flex-direction: row-reverse;
 }
 img.quesIcon {
@@ -67,7 +68,7 @@ h2.nameH {
   letter-spacing: -0.25px;
   color: #000000;
 }
-select.form-control.select,
+// select.form-control.select,
 .addtoCalDiv {
   font-family: "Maven Pro";
   font-style: normal;
@@ -81,6 +82,21 @@ select.form-control.select,
   color: #000000;
   height: 50px;
   margin-bottom: 10px;
+}
+.selectDrop,select:disabled {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: min-content;
+  padding: 0px;
+  font-family: "Maven Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  border: none;
+  color: #000000 !important;
 }
 .addtoCalDiv {
   display: flex;
@@ -100,12 +116,13 @@ button.btn.btn-primary.savebtn {
   width: 48%;
   border: none;
 }
-.form-control:disabled, .form-control[readonly] {
-  background-color: rgba(255,255,255,1) !important;
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: rgba(255, 255, 255, 1) !important;
   opacity: 1;
 }
-.clicked{
-  transform: rotate(180deg)
+.clicked {
+  transform: rotate(180deg);
 }
 
 /* media query */

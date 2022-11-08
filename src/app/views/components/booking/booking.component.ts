@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl } from '@angular/forms';
-
+import { DatepickerOptions } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-booking',
@@ -16,6 +16,8 @@ export class BookingComponent implements OnInit {
   editthird = false
   editFirst = false
   show = 'all'
+  date: any
+  options: DatepickerOptions = {};
   // show = 'pending'
   constructor(public dialog: MatDialog, private toastr: ToastrService) { }
   openDialog() {
@@ -34,6 +36,12 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.options= {
+      placeholder: 'Date',
+      format: 'dd/MM/yyyy',
+      position: 'left',
+      inputClass: 'dateBookINP',
+    };
   }
   showbooking(value: any) {
     this.show = value

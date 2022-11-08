@@ -64,7 +64,7 @@ aside.sidebar {
   border-left: 2px solid #3066be;
   padding-top: 60px;
 }
-input.form-control.input {
+input.form-control.input,.SelectOpt {
   box-sizing: border-box;
   width: 165px;
   height: 40px;
@@ -154,7 +154,7 @@ aside.optionFilter {
   #filterMob {
     display: block;
   }
-  input.form-control.input {
+  input.form-control.input, .SelectOpt {
     width: 100%;
   }
 }

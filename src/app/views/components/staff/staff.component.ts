@@ -106,7 +106,7 @@ export class StaffComponent implements OnInit {
     this.details = false
   }
   showDetails() {
-    this.details = true
+    this.details = !this.details
   }
   editDetailsFun(value: any) {
     this.editDetails = value

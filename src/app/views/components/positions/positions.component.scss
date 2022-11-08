@@ -144,7 +144,11 @@ select.form-control.select{
   margin-bottom: 10px;
   background: rgba(255,255,255,1) !important;
 }
-
+select{
+  -moz-appearance: none; 
+	-webkit-appearance: none; 
+	appearance: none;
+}
 p.textStep {
   font-family: "Overpass";
   font-style: normal;
