@@ -361,7 +361,25 @@ span.stepSpan {
   letter-spacing: -0.25px;
   color: #312f2f;
 }
-
+// booking page date
+@media (max-width: 1089px) and (min-width: 1025px){
+  .dateBookINP{
+    width: 124px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 1025px) and (min-width: 979px){
+  .dateBookINP{
+    width: 124px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 979px) and (min-width: 937px){
+  .dateBookINP{
+    width: 124px;
+    font-size: 13px;
+  }
+}
 /* media query */
 @media (max-width: 345px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn {

@@ -50,12 +50,15 @@ button.btn.btn-primary.editOpt.cancelBtn {
 img.quesmark {
   width: 35px;
   height: 35px;
+  margin-right: 5%;
 }
 aside.sidebar {
   position: absolute;
   float: right !important;
-  left: 854px;
-  width: 231px;
+  // left: 854px;
+  // width: 231px;
+  left: 835px;
+  width: 250px;
   padding-left: 30px;
   padding-left: 32px;
   background: #e4e4e4;
@@ -64,7 +67,8 @@ aside.sidebar {
   border-left: 2px solid #3066be;
   padding-top: 60px;
 }
-input.form-control.input,.SelectOpt {
+input.form-control.input,
+.SelectOpt {
   box-sizing: border-box;
   width: 165px;
   height: 40px;
@@ -125,6 +129,86 @@ aside.optionFilter {
   margin-left: 31%;
 }
 // media query
+@media (max-width: 2077px) and (min-width: 1861px) {
+  aside.sidebar {
+    left: 86%;
+  }
+}
+@media (max-width: 1861px) and (min-width: 1669px) {
+  aside.sidebar {
+    left: 84%;
+  }
+}
+@media (max-width: 1669px) and (min-width: 1461px) {
+  aside.sidebar {
+    left: 82%;
+  }
+}
+@media (max-width: 1461px) and (min-width: 1349px) {
+  aside.sidebar {
+    left: 79%;
+  }
+}
+@media (max-width: 1307px) and (min-width: 1245px) {
+  aside.sidebar {
+    left: 796px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 1245px) and (min-width: 1193px) {
+  aside.sidebar {
+    left: 746px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 1193px) and (min-width: 1155px) {
+  aside.sidebar {
+    left: 705px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 1155px) and (min-width: 1123px){
+  aside.sidebar{
+    left: 673px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 1123px) and (min-width: 1089px){
+  aside.sidebar{
+    left: 649px;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 1089px) and (min-width: 1025px){
+  aside.sidebar{
+    left: 620px;
+    padding-left: 10px;
+  }
+  input.form-control.input,.SelectOpt{
+    width: 124px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 1025px) and (min-width: 979px){
+  aside.sidebar{
+    left: 574px;
+    padding-left: 10px;
+  }
+  input.form-control.input,.SelectOpt{
+    width: 124px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 979px) and (min-width: 937px){
+  aside.sidebar{
+    left: 535px;
+    padding-left: 10px;
+  }
+  input.form-control.input,.SelectOpt{
+    width: 124px;
+    font-size: 13px;
+  }
+}
 @media (max-width: 767px) and (min-width: 200px) {
   .notiBox {
     height: 96px;
@@ -154,19 +238,8 @@ aside.optionFilter {
   #filterMob {
     display: block;
   }
-  input.form-control.input, .SelectOpt {
+  input.form-control.input,
+  .SelectOpt {
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
