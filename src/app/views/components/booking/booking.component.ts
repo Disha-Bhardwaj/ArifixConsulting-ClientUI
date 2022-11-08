@@ -37,9 +37,9 @@ export class BookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.options= {
+      position: 'left',
       placeholder: 'Date',
       format: 'dd/MM/yyyy',
-      position: 'left',
       inputClass: 'dateBookINP',
     };
   }
