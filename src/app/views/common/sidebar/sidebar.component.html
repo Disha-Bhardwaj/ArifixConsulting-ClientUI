@@ -52,7 +52,7 @@
                 class="icon">
         </div>
         <hr style="border: 1px solid #312F2F;margin-left:-10px;margin-right:-10px;">
-        <div class="box"  (click)="removeWizard()">
+        <div class="box" (click)="openWebsite()">
             <p class="text">Website</p>
             <img src="assets/icons/website.png"
               
@@ -68,7 +68,7 @@
         <div class="box" routerLink="/wizard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
         #wizardInfo="routerLinkActive" (click)="removeWizard()">
             <p class="text">Setup Wizard</p>
-            <img [src]="wizardInfo.isActive ? 'assets/icons/setupWizardHover.png' : 'assets/icons/setupWizard.png'" 
+            <img style="width: 25px;height: 25px;" [src]="wizardInfo.isActive ? 'assets/icons/setupWizardHover.png' : 'assets/icons/setupWizard.png'" 
                 class="icon">
         </div>
     </div>

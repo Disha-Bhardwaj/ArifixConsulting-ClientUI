@@ -22,6 +22,7 @@ export class PositionsComponent implements OnInit {
   categoryCount = 0
   showWizard = false
   jobTitle = ''
+  disableTitle = false
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router) { }
@@ -70,9 +71,13 @@ export class PositionsComponent implements OnInit {
   addPositionBTN() {
     this.addPosition = true
   }
+  editTitle(){
+    this.disableTitle = false
+  }
   showStepsFun(showValue: any) {
     // go to schedule
     if (showValue == 'schedule') {
+      this.disableTitle = true
       if (this.jobTitle.length > 0) {
         this.showStep = showValue
       } else {

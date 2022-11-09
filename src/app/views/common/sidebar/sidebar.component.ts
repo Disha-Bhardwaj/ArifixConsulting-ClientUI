@@ -15,4 +15,7 @@ export class SidebarComponent implements OnInit {
   removeWizard(){
     this.cookies.set('wizardStart', 'false')
   }
+  openWebsite(){
+    window.open('https:/app-reservation-fe-web-frontend.dev.nursi.eu/home','_blank')
+  }
 }

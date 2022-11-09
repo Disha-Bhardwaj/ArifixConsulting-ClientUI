@@ -41,7 +41,7 @@
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <input class="JobTit" placeholder="Enter Job title" [(ngModel)]="jobTitle">
+                        <input class="JobTit" [disabled]="disableTitle" placeholder="Enter Job title" [(ngModel)]="jobTitle">
                         <img src="assets/icons/quesmark.png" class="quesIcon quesJob" mat-button
                             (click)="openDialog('Pos2')">
                     </div>
@@ -49,7 +49,7 @@
                         <h2 class="nameH">Not assigned to</h2>
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn" (click)="showStepsFun('schedule')">Next</button>
-                            <img src="assets/icons/editWhite.png" class="editIcon" *ngIf="showStep == 'schedule'">
+                            <img src="assets/icons/editWhite.png" class="editIcon" (click)="editTitle()" *ngIf="showStep == 'schedule'">
                             <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="cancelChanges('closeAll')">
                         </div>
                     </div>
