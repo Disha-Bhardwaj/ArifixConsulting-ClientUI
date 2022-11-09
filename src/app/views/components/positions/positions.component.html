@@ -324,18 +324,6 @@
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos4')">
                             </div>
-                            <!-- <form [formGroup]="permissionForm">
-                                <ng-container formArrayName="permissions">
-                                    <div class="mb-3" *ngFor="let permi of getpermission.controls; let i=index;">
-                                            <p class="textStep">Permissions</p>
-                                            <select class="form-control select" [formControlName]="i">
-                                                <option  disabled selected hidden value="">Select</option>
-                                                <option value="Permission 1">Permission 1</option>
-                                                <option value="Permission 2">Permission 2</option>
-                                            </select>
-                                    </div>
-                                </ng-container>
-                            </form> -->
                             <form [formGroup]="permissionForm">
                                 <div formArrayName="permissions" *ngFor="let permi of getpermission.controls; let i=index;"> 
                                     <ng-container [formGroupName]="i">
@@ -349,9 +337,7 @@
                                         </div>
                                     </ng-container>
                                 </div>
-                                
                             </form>
-                            
                             <div class="mb-3">
                                 <button class="btn btn-primary cancelbtn" (click)="addNewPermission()">Add
                                     Permission</button>
@@ -443,46 +429,21 @@
                                                             </div>
                                                             <div class="col-2">
                                                                 <input class="form-control input ser" type="text"
-                                                                    placeholder="Price" formControlName="price" maxlength="5"
-                                                                    >
-                                                                    <!-- [class.is-invalid]="price.invalid" -->
-                                                                    <!-- <div *ngIf="price.invalid" class="invalid-feedback">
-                                                                        
-                                                                        <div *ngIf="price.errors?.['maxlength'] || price.errors?.['pattern']">
-                                                                            Please add valid price
-                                                                        </div>
-                                                                    </div> -->
+                                                                    placeholder="Price" formControlName="price" maxlength="5">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <button type="button" >
-                                            Add Skill
-                                        </button> -->
-                                        <!-- <div class="mb-3">
-                                            <div class="row dayRow">
-                                                <div class="col-6 ">
-                                                    <button class="btn btn-primary cancelbtn" (click)="addService(cateIndex)">Add service</button>
-                
-                                                </div>
-                                                <div class="col-6">
-                                                    <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
-                                                        category</button>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
-                                <!-- <button type="button" >Add Employee</button> -->
                             </form>
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn" (click)="addService()">Add
                                             service</button>
-
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
@@ -495,7 +456,6 @@
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
                                             (click)="cancelChanges('resetService')">Cancel</button>
-
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary savebtn" (click)="detailsSaved()">Save</button>

@@ -117,7 +117,6 @@ export class PositionsComponent implements OnInit {
       this.showStep = showValue
     }
   }
-  
   formInitialize() {
     // permission form
     this.permissionForm = this.fb.group({
@@ -131,7 +130,13 @@ export class PositionsComponent implements OnInit {
     this.servicesForm = this.fb.group({
       categories: this.fb.array([this.fb.group({
         category: '',
-        serviceList: this.fb.array([])
+        serviceList: this.fb.array([
+          this.fb.group({
+            service: '',
+            time: '',
+            price: ['']
+          })
+        ])
       })]),
     })
     // opening time form 
@@ -154,33 +159,22 @@ export class PositionsComponent implements OnInit {
     })
   }
 
-  // removeJobTitle(){
-  //   this.jobTitle = ''
-  // }
   // services form
   categories(): FormArray {
     return this.servicesForm.get("categories") as FormArray
   }
   addCategory() {
-    // if(this.categoryCount == this.serviceCount){
     this.categoryCount++
-    console.log('categp', this.categoryCount)
     this.categories().push(this.fb.group({
       category: '',
       serviceList: this.fb.array([])
     }));
-    // }else{
-    //   this.toastr.error('Please add service', 'Error', {
-    //     timeOut: 3000,
-    //   });
-    // }
+    this.addService()
   }
   categoryServiceList(empIndex: number): FormArray {
     return this.categories().at(empIndex).get("serviceList") as FormArray
   }
   addService() {
-    // this.serviceCount++
-    console.log('sercieaadd', this.serviceCount)
     this.categoryServiceList(this.categoryCount).push(this.fb.group({
       service: '',
       time: '',
@@ -192,13 +186,13 @@ export class PositionsComponent implements OnInit {
   addNewPermission() {
     const add = this.permissionForm.get('permissions') as FormArray;
     add.push(this.fb.group({
-      permission: ['',[Validators.required]]
+      permission: ['', [Validators.required]]
     }))
   }
   get getpermission() {
     return this.permissionForm.controls['permissions'] as FormArray
   }
- 
+
   // wizard
   nextWizard() {
     this.route.navigateByUrl('/staff')
