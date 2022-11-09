@@ -8,11 +8,11 @@
             <div class="notiDivUpper">
                 <div class="boxInp">
                     <span style="display: flex;align-items: center;">From</span>
-                    <input  type="text" class="inputTime" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime"placeholder="23:00" (change)="timeValue()">
-                    
+                    <input  type="text" class="inputTime" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime"placeholder="23:00" (ngModelChange)="timeValue()">
+                     
                 </div>
                 <div class="boxInp">
-                    <span style="display: flex;align-items: center;">To</span><input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="inputTime"placeholder="06:00"(change)="timeValue()">
+                    <span style="display: flex;align-items: center;">To</span><input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="inputTime"placeholder="06:00"(ngModelChange)="timeValue()">
                 </div>
                 <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime" class="timeInput" placeholder="From" (change)="timeValue()">
                 <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="timeInput" placeholder="To"(change)="timeValue()">

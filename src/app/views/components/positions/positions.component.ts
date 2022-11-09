@@ -23,25 +23,18 @@ export class PositionsComponent implements OnInit {
   showWizard = false
   jobTitle = ''
   disableTitle = false
+  serviceCount = 0
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router) { }
-
-  openDialog(value: any) {
-    this.dialog.open(DialogComponent, {
-      data: {
-        fromPage: value,
-      },
-    });
-  }
 
   ngOnInit(): void {
     this.formInitialize()
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
+    this.categoryCount = 0
   }
-
   // cancel changes
   cancelChanges(value: any) {
     if (value == 'closeAll') {
@@ -71,15 +64,16 @@ export class PositionsComponent implements OnInit {
   addPositionBTN() {
     this.addPosition = true
   }
-  editTitle(){
+  editTitle() {
     this.disableTitle = false
   }
   showStepsFun(showValue: any) {
     // go to schedule
     if (showValue == 'schedule') {
-      this.disableTitle = true
+
       if (this.jobTitle.length > 0) {
         this.showStep = showValue
+        this.disableTitle = true
       } else {
         this.toastr.error('Please enter the job title', 'Error', {
           timeOut: 3000
@@ -123,10 +117,11 @@ export class PositionsComponent implements OnInit {
       this.showStep = showValue
     }
   }
+  
   formInitialize() {
     // permission form
     this.permissionForm = this.fb.group({
-      permission: this.fb.array([this.fb.control('')])
+      permissions: this.fb.array([this.fb.control('')])
     })
     // employee type form
     this.employeeTypeForm = this.fb.group({
@@ -140,6 +135,7 @@ export class PositionsComponent implements OnInit {
       })]),
     })
     // opening time form 
+
     this.openingTimeForm = this.fb.group({
       monOpen: [''],
       monClose: [''],
@@ -157,56 +153,7 @@ export class PositionsComponent implements OnInit {
       sunClose: [''],
     })
   }
-  // validation for opening times
-  get monOpen() {
-    return this.openingTimeForm.get('monOpen')!;
-  }
-  get monClose() {
-    return this.openingTimeForm.get('monClose')!;
-  }
-  get tuesOpen() {
-    return this.openingTimeForm.get('tuesOpen')!;
-  }
-  get tuesClose() {
-    return this.openingTimeForm.get('tuesClose')!;
-  }
-  get wedOpen() {
-    return this.openingTimeForm.get('wedOpen')!;
-  }
-  get wedClose() {
-    return this.openingTimeForm.get('wedClose')!;
-  }
-  get thursOpen() {
-    return this.openingTimeForm.get('thursOpen')!;
-  }
-  get thursClose() {
-    return this.openingTimeForm.get('thursClose')!;
-  }
-  get friOpen() {
-    return this.openingTimeForm.get('friOpen')!;
-  }
-  get friClose() {
-    return this.openingTimeForm.get('friClose')!;
-  }
-  get satOpen() {
-    return this.openingTimeForm.get('satOpen')!;
-  }
-  get satClose() {
-    return this.openingTimeForm.get('satClose')!;
-  }
-  get sunOpen() {
-    return this.openingTimeForm.get('sunOpen')!;
-  }
-  get sunClose() {
-    return this.openingTimeForm.get('sunClose')!;
-  }
-  nextWizard() {
-    this.route.navigateByUrl('/staff')
-  }
-  finishWizard() {
-    this.cookies.set('wizardStart', 'false')
-    this.showWizard = false
-  }
+
   // removeJobTitle(){
   //   this.jobTitle = ''
   // }
@@ -215,32 +162,58 @@ export class PositionsComponent implements OnInit {
     return this.servicesForm.get("categories") as FormArray
   }
   addCategory() {
+    // if(this.categoryCount == this.serviceCount){
     this.categoryCount++
+    console.log('categp', this.categoryCount)
     this.categories().push(this.fb.group({
       category: '',
       serviceList: this.fb.array([])
     }));
+    // }else{
+    //   this.toastr.error('Please add service', 'Error', {
+    //     timeOut: 3000,
+    //   });
+    // }
   }
   categoryServiceList(empIndex: number): FormArray {
     return this.categories().at(empIndex).get("serviceList") as FormArray
   }
   addService() {
+    // this.serviceCount++
+    console.log('sercieaadd', this.serviceCount)
     this.categoryServiceList(this.categoryCount).push(this.fb.group({
       service: '',
       time: '',
-      price: ''
+      price: ['']
     }));
   }
 
   // permissions form
   addNewPermission() {
-    const add = this.permissionForm.get('permission') as FormArray;
+    const add = this.permissionForm.get('permissions') as FormArray;
     add.push(this.fb.group({
-      permission: ''
+      permission: ['',[Validators.required]]
     }))
   }
-  get permission() {
-    return this.permissionForm.controls['permission'] as FormArray
+  get getpermission() {
+    return this.permissionForm.controls['permissions'] as FormArray
+  }
+ 
+  // wizard
+  nextWizard() {
+    this.route.navigateByUrl('/staff')
+  }
+  finishWizard() {
+    this.cookies.set('wizardStart', 'false')
+    this.showWizard = false
+  }
+  // open dialog
+  openDialog(value: any) {
+    this.dialog.open(DialogComponent, {
+      data: {
+        fromPage: value,
+      },
+    });
   }
   // save info
   detailsSaved() {
@@ -251,7 +224,7 @@ export class PositionsComponent implements OnInit {
     this.showStep = ''
     this.jobTitle = ''
     this.openingTimeForm.reset()
-    this.permissionForm.reset()
-    this.servicesForm.reset()
+    this.disableTitle = false;
+    this.ngOnInit()
   }
 }
