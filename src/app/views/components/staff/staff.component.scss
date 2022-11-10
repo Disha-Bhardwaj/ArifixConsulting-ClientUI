@@ -14,16 +14,33 @@ input.email {
   line-height: 40px;
   letter-spacing: -0.25px;
   color: black;
-  padding-left: 10px;
-  padding-right: 46%;
+  // padding-left: 10px;
+  // padding-right: 46%;
+  padding-right: 0%;
   height: 54px;
 }
+// button.btn.btn-primary.sendbtn {
+//   width: 81px;
+//   height: 44px;
+//   background: #3066be;
+//   border-radius: 10px;
+//   margin-top: 5px;
+// }
 button.btn.btn-primary.sendbtn {
   width: 81px;
-  height: 44px;
+  height: 52px;
   background: #3066be;
-  border-radius: 10px;
-  margin-top: 5px;
+  border-radius: 12px;
+  margin-top: 1px;
+  border: 5px solid #e4e4e4
+}
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: -9px !important;
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-image: none !important;
 }
 .col-lg-4.col-md-4.col-sm-12.topbtncol {
   display: flex;

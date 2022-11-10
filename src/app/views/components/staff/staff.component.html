@@ -40,8 +40,8 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol emailCol">
-            <form [formGroup]="infoForm" autocomplete="off">
-                <input class="email" placeholder="Enter employee email" formControlName="employeeEmail"
+           <form [formGroup]="infoForm" autocomplete="off">
+                <!-- <input class="email" placeholder="Enter employee email" formControlName="employeeEmail"
                     [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
                     minlength="6" maxlength="60">
                 <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
@@ -53,9 +53,28 @@
                         *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
                         Please enter valid email.
                     </div>
+                </div> -->
+                <div class="input-group mb-3">
+                    <input type="text" formControlName="employeeEmail" [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
+                    minlength="6" maxlength="60" class="form-control email" placeholder="Enter employee email"  aria-describedby="button-addon2">
+                    <button class="btn btn-primary sendbtn" type="button" id="button-addon2" (click)="showStepsFunction('Two')">Send</button>
+                  </div>
+                  <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
+                    class="invalid-feedback">
+                    <div *ngIf="employeeEmail.errors?.['required']">
+                        This field is required.
+                    </div>
+                    <div
+                        *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
+                        Please enter valid email.
+                    </div>
                 </div>
             </form>
-            <button class="btn btn-primary sendbtn" (click)="showStepsFunction('Two')">Send</button>
+            <!-- <button class="btn btn-primary sendbtn" (click)="showStepsFunction('Two')">Send</button> -->
+            <!-- <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter employee email"  aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="showStepsFunction('Two')">Send</button>
+              </div> -->
         </div>
     </div>
     <div class="row p-0 infoBox" *ngIf="showStep == 'Two'">
