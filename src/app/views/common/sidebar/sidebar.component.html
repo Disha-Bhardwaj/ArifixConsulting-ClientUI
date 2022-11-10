@@ -4,7 +4,7 @@
             <img src="assets/images/Profile.png">
         </div>
         <div class="box" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-            #dashboard="routerLinkActive" (click)="removeWizard()">
+            #dashboard="routerLinkActive" (click)="removeWizard()" >
             <p class="text">Dashboard</p>
             <img [src]="dashboard.isActive ? 'assets/icons/dashboardHover.png' : 'assets/icons/dashboard.png'"
                 class="icon">

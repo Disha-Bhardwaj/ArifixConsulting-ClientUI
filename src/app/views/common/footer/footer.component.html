@@ -6,35 +6,35 @@
             <div class="col-md-2 mb-md-0 mb-2">
                 <h4 class="footerHead">Our Company</h4>
                 <ul class="list-unstyled">
-                    <li class="liItem" routerLink="/about-us">About Us</li>
-                    <li class="liItem" routerLink="/contact-us">Contact Us</li>
+                    <li class="liItem" (click)="navigateTO('about-us')">About Us</li>
+                    <li class="liItem" (click)="navigateTO('contact-us')">Contact Us</li>
                 </ul>
             </div>
             <div class="col-md-2 mb-md-0 mb-2">
                 <h4 class="footerHead">For Customer</h4>
                 <ul class="list-unstyled">
-                    <li class="liItem" routerLink="/service">Service</li>
+                    <li class="liItem" (click)="navigateTO('service')">Service</li>
                 </ul>
             </div>
             <div class="col-md-2 mb-md-0 mb-2">
                 <h4 class="footerHead">For Business</h4>
                 <ul class="list-unstyled">
-                    <li class="liItem" routerLink="/features">Features</li>
+                    <li class="liItem" (click)="navigateTO('features')">Features</li>
                 </ul>
             </div>
             <div class="col-md-2 mb-md-0 mb-2">
                 <h4 class="footerHead">Legal</h4>
                 <ul class="list-unstyled">
-                    <li class="liItem">Booking Terms</li>
-                    <li class="liItem">Privacy Policy</li>
-                    <li class="liItem">Website Terms</li>
+                    <li class="liItem" (click)="navigateTO('my-bookings')">Booking Terms</li>
+                    <li class="liItem" (click)="navigateTO('privicy')">Privacy Policy</li>
+                    <li class="liItem" (click)="navigateTO('terms-and-conditions')">Website Terms</li>
                 </ul>
             </div>
             <div class="col-md-2 mb-md-0 mb-2" style="display: flex;
         flex-direction: column;
         align-items: center;">
                 <h4 class="footerHead">Our Free App</h4>
-                <button class="button-download downloadApp" routerLink="/download-app">Download</button>
+                <button class="button-download downloadApp" (click)="navigateTO('download-app')">Download</button>
             </div>
             <div class="col-md-1 mb-md-0 mb-1">
             </div>

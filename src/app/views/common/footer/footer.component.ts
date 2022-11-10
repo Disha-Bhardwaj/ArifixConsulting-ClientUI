@@ -11,5 +11,8 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  navigateTO(value:any){
+    window.open('https:/app-reservation-fe-web-frontend.dev.nursi.eu/'+value,'_blank')
+  }
 
 }
