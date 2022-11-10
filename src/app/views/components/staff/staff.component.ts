@@ -75,6 +75,10 @@ export class StaffComponent implements OnInit {
   finishWizard() {
     this.cookies.set('wizardStart', 'false')
     this.showWizard = false
+    this.toastr.success('You have successfully setup wizard', '', {
+          timeOut: 3000
+        });
+    this.route.navigateByUrl('/dashboard')
   }
   showStepsFunction(value: any) {
     if(value == 'One'){

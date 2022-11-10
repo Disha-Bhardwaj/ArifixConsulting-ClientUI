@@ -83,10 +83,11 @@ h2.nameH {
   height: 50px;
   margin-bottom: 10px;
 }
-.selectDrop,select:disabled {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+.selectDrop,
+select:disabled {
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
   width: min-content;
   padding: 0px;
   font-family: "Maven Pro";
@@ -124,7 +125,12 @@ button.btn.btn-primary.savebtn {
 .clicked {
   transform: rotate(180deg);
 }
-
+.breakArr {
+  width: 10px;
+  height: 7px;
+  margin-right: 21%;
+  margin-left: -9%;
+}
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {

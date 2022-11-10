@@ -80,38 +80,46 @@
                         <h2 class="nameH">Name</h2>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;"
-                        (click)="showDetails()"  >
-                        <div class="form-control addtoCalDiv"> 
-                            <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.png" style="margin-bottom: 1px;"
-                                [ngClass]="{'clicked': details}"></span>
+                        (click)="showDetails()">
+                        <div class="form-control addtoCalDiv">
+                            <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.png"
+                                    style="margin-bottom: 1px;width: 10px;height: 7px;"
+                                    [ngClass]="{'clicked': details}"></span>
                         </div>
                     </div>
                 </div>
                 <div class="row imgRow" *ngIf="details">
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
-                        <form [formGroup]="detailsForm" autocomplete="off" >
-                            <div class="form-control addtoCalDiv posSelect"> 
+                        <form [formGroup]="detailsForm" autocomplete="off">
+                            <div class="form-control addtoCalDiv posSelect">
                                 <select class="selectDrop" formControlName="position">
-                                <option disabled selected hidden value="">Position</option>
-                                <option>Salon worker</option>
-                                <option>Head barber</option>
-                            </select>
+                                    <option disabled selected hidden value="">Position</option>
+                                    <option>Salon worker</option>
+                                    <option>Head barber</option>
+                                </select>
                             </div>
-                            
-                            <div class="form-control addtoCalDiv"> <span class="labelSpan">Add to Calender</span>
-                                <label class="switch" for="checkbox">
-                                    <input type="checkbox" id="checkbox" formControlName="addToCalendar"/>
-                                    <div class="slider round"></div>
-                                </label>
+                            <div *ngIf="!editDetails" class="form-control addtoCalDiv">
+                                <span class="labelSpan" style="width: 100%;">Break From <img
+                                        src="assets/icons/dropdownIcon.png"
+                                        style="width: 10px;height: 7px;margin-left: 12%;"></span>
                             </div>
-                            <div *ngIf="!editDetails" class="form-control addtoCalDiv" > <span class="labelSpan">Break From</span>
+                            <div *ngIf="!editDetails" class="form-control addtoCalDiv">
+                                <span class="labelSpan" style="width: 100%;">Break To <img
+                                        src="assets/icons/dropdownIcon.png"
+                                        style="width: 10px;height: 7px;margin-left: 12%;"></span>
                             </div>
-                            <div *ngIf="!editDetails" class="form-control addtoCalDiv" > <span class="labelSpan">Break To</span>
+                            <div *ngIf="editDetails" class="form-control addtoCalDiv">
+                                <ngx-datepicker formControlName="breakFrom" [options]="BFoptions"></ngx-datepicker> <img
+                                    class="breakArr" src="assets/icons/dropdownIcon.png">
                             </div>
-                              <ngx-datepicker *ngIf="editDetails" formControlName="breakFrom" [options]="BFoptions"></ngx-datepicker>
-                            <ngx-datepicker *ngIf="editDetails" formControlName="breakTo" [options]="BToptions"></ngx-datepicker>
+                            <div *ngIf="editDetails" class="form-control addtoCalDiv">
+                                <ngx-datepicker formControlName="breakTo" [options]="BToptions"></ngx-datepicker> <img
+                                    class="breakArr" src="assets/icons/dropdownIcon.png">
+                            </div>
 
-                            <div class="form-control addtoCalDiv"  mat-button (click)="openDialog('Staff3')"> <span class="labelSpan">Employee Details</span>
+
+                            <div class="form-control addtoCalDiv" mat-button (click)="openDialog('Staff3')"> <span
+                                    class="labelSpan">Employee Details</span>
                             </div>
                         </form>
                         <div class="editBtnsDiv" *ngIf="editDetails">
