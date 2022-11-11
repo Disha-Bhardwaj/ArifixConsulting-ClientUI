@@ -1,9 +1,15 @@
 <div class="container">
     <div class="row" style="margin-top: 48px;">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div> -->
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
             <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
             <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div>
+        <!-- <div class="col-lg-4 col-md-4 col-sm-12 topbtncol buttnCol">
+            <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
+            <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
+        </div> -->
     </div>
     <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;">
         <div class="col-lg-5 col-md-5 col-sm-12">
@@ -11,7 +17,7 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Four</h2>
-                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard()">
+                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard('cross')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
@@ -26,9 +32,10 @@
                             <span class="stepSpan">1</span>
                             <span class="stepSpan">2</span>
                             <span class="stepSpan">3</span>
-                            <span class="stepSpan" style="background:#5E5CE6; color:#FFFFFF;">4</span>
+                            <span class="stepSpan"
+                                style="background: #5e5ce6 !important; color:#FFFFFF !important;">4</span>
                         </div>
-                        <button class="btn btn-primary savebtn" (click)="finishWizard()">Finish</button>
+                        <button class="btn btn-primary savebtn" (click)="finishWizard('finish')">Finish</button>
                     </div>
                 </div>
             </div>
@@ -40,35 +47,36 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol emailCol">
-           <form [formGroup]="infoForm" autocomplete="off">
-                <!-- <input class="email" placeholder="Enter employee email" formControlName="employeeEmail"
-                    [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                    minlength="6" maxlength="60">
-                <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                    class="invalid-feedback">
-                    <div *ngIf="employeeEmail.errors?.['required']">
-                        This field is required.
-                    </div>
-                    <div
-                        *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
-                        Please enter valid email.
-                    </div>
-                </div> -->
+            <form [formGroup]="infoForm" autocomplete="off">
                 <div class="input-group mb-3">
-                    <input type="text" formControlName="employeeEmail" [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                    minlength="6" maxlength="60" class="form-control email" placeholder="Enter employee email"  aria-describedby="button-addon2">
-                    <button class="btn btn-primary sendbtn" type="button" id="button-addon2" (click)="showStepsFunction('Two')">Send</button>
-                  </div>
-                  <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                    class="invalid-feedback">
-                    <div *ngIf="employeeEmail.errors?.['required']">
-                        This field is required.
-                    </div>
-                    <div
-                        *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
-                        Please enter valid email.
-                    </div>
+                    <input type="text" formControlName="employeeEmail"
+                        [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
+                        minlength="6" maxlength="60" class="form-control email" placeholder="Enter employee email"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-primary sendbtn" type="button" id="button-addon2"
+                        (click)="showStepsFunction('Two')">Send</button>
+                        <!-- <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
+                        class="invalid-feedback">
+                        <div *ngIf="employeeEmail.errors?.['required']">
+                            This field is required.
+                        </div>
+                        <div
+                            *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
+                            Please enter valid email.
+                        </div>
+                    </div> -->
+    
                 </div>
+                <!-- <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
+                        class="invalid-feedback">
+                        <div *ngIf="employeeEmail.errors?.['required']">
+                            This field is required.
+                        </div>
+                        <div
+                            *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
+                            Please enter valid email.
+                        </div>
+                    </div> -->
             </form>
             <!-- <button class="btn btn-primary sendbtn" (click)="showStepsFunction('Two')">Send</button> -->
             <!-- <div class="input-group mb-3">
@@ -111,25 +119,26 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
                         <form [formGroup]="detailsForm" autocomplete="off">
                             <div class="form-control addtoCalDiv posSelect">
-                                <select class="selectDrop" formControlName="position">
+                                <select #selectPos id="PosSelect" class="selectDrop" formControlName="position" (change)="adjustWidth(selectPos.value)">
                                     <option disabled selected hidden value="">Position</option>
-                                    <option>Salon worker</option>
-                                    <option>Head barber</option>
+                                    <option value="Salon worker">Salon worker</option>
+                                    <option value="Head barber">Head barber</option>
                                 </select>
                             </div>
                             <div *ngIf="!editDetails" class="form-control addtoCalDiv">
                                 <span class="labelSpan" style="width: 100%;">Break From <img
                                         src="assets/icons/dropdownIcon.png"
-                                        style="width: 10px;height: 7px;margin-left: 12%;"></span>
+                                        style="width: 10px;height: 7px;margin-left: 2%;"></span>
                             </div>
                             <div *ngIf="!editDetails" class="form-control addtoCalDiv">
                                 <span class="labelSpan" style="width: 100%;">Break To <img
                                         src="assets/icons/dropdownIcon.png"
-                                        style="width: 10px;height: 7px;margin-left: 12%;"></span>
+                                        style="width: 10px;height: 7px;margin-left: 7%;"></span>
                             </div>
-                            <div *ngIf="editDetails" class="form-control addtoCalDiv">
-                                <ngx-datepicker formControlName="breakFrom" [options]="BFoptions"></ngx-datepicker> <img
-                                    class="breakArr" src="assets/icons/dropdownIcon.png">
+                            <div *ngIf="editDetails" class="form-control addtoCalDiv" (click)="toggleCalender()">
+                                <ngx-datepicker #showBFCalendar formControlName="breakFrom" [options]="BFoptions">
+                                </ngx-datepicker> <img class="breakArr" src="assets/icons/dropdownIcon.png"
+                                    (click)="toggleCalender()">
                             </div>
                             <div *ngIf="editDetails" class="form-control addtoCalDiv">
                                 <ngx-datepicker formControlName="breakTo" [options]="BToptions"></ngx-datepicker> <img

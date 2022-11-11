@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
+declare var $: any;
 
 @Component({
   selector: 'app-staff',
@@ -17,6 +18,9 @@ export class StaffComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService,
     private cookies: CookieService, private route: Router) { }
 
+  @ViewChild('showBFCalendar', { static: false })
+  private showBFCalendar!: ElementRef
+
   showStep = ''
   details = false
   editDetails = false
@@ -27,6 +31,13 @@ export class StaffComponent implements OnInit {
   BFoptions: DatepickerOptions = {};
   breakToDate: any
   BToptions: DatepickerOptions = {};
+
+  toggleCalender() {
+    this.showBFCalendar.nativeElement.toggle()
+  }
+  adjustWidth(value:any){
+    $('#PosSelect').css('width', value.length*10 + 15+'px')
+  }
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
@@ -72,16 +83,18 @@ export class StaffComponent implements OnInit {
   get employeeEmail() {
     return this.infoForm.get('employeeEmail')!;
   }
-  finishWizard() {
+  finishWizard(value: any) {
     this.cookies.set('wizardStart', 'false')
     this.showWizard = false
-    this.toastr.success('You have successfully setup wizard', '', {
-          timeOut: 3000
-        });
-    this.route.navigateByUrl('/dashboard')
+    if (value == 'finish') {
+      this.toastr.success('You have successfully setup wizard', '', {
+        timeOut: 3000
+      });
+      this.route.navigateByUrl('/dashboard')
+    }
   }
   showStepsFunction(value: any) {
-    if(value == 'One'){
+    if (value == 'One') {
       this.infoForm.reset();
       this.showStep = value
     }
@@ -94,7 +107,7 @@ export class StaffComponent implements OnInit {
         });
       }
     } else {
-    this.showStep = value
+      this.showStep = value
     }
   }
   close() {

@@ -82,7 +82,7 @@ button.btn.btn-primary.nextBtn {
   flex-direction: row;
   align-items: center;
 }
-span.stepSpan {
+span.stepSpanP {
   font-family: "Maven Pro";
   font-style: normal;
   font-weight: 400;
@@ -114,9 +114,9 @@ span.stepSpan {
   line-height: 24px;
   color: #312f2f;
 }
-span.stepSpan.selected {
-  background-color: #5e5ce6;
-  color: rgba(255,255,255,1);
+span.stepSpanP.selected {
+  background-color: #5e5ce6 !important;
+  color: rgba(255,255,255,1) !important;
   margin-right: 10px;
 }
 .col-lg-12.col-md-12.col-sm-12.detailOptCol {

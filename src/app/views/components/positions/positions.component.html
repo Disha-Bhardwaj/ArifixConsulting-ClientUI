@@ -27,7 +27,7 @@
                         <div class="steps">
                             <span class="stepSpan">1</span>
                             <span class="stepSpan">2</span>
-                            <span class="stepSpan" style="background:#5E5CE6; color:#FFFFFF;">3</span>
+                            <span class="stepSpan" style="background:#5E5CE6 !important; color:#FFFFFF !important;">3</span>
                             <span class="stepSpan">4</span>
                         </div>
                         <button class="btn btn-primary savebtn" (click)="nextWizard()">Next</button>
@@ -59,10 +59,10 @@
                         <div *ngIf="showStep == 'schedule'">
                             <div class="stepDiv">
                                 <div class="steps">
-                                    <div class="selectStep"><span class="stepSpan selected">1</span> Schedule</div>
-                                    <span class="stepSpan">2</span>
-                                    <span class="stepSpan">3</span>
-                                    <span class="stepSpan">4</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">1</span> Schedule</div>
+                                    <span class="stepSpanP">2</span>
+                                    <span class="stepSpanP">3</span>
+                                    <span class="stepSpanP">4</span>
                                 </div>
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos3')">
@@ -316,10 +316,10 @@
                         <div *ngIf="showStep == 'permission'">
                             <div class="stepDiv">
                                 <div class="steps">
-                                    <span class="stepSpan">1</span>
-                                    <div class="selectStep"><span class="stepSpan selected">2</span> Permissions</div>
-                                    <span class="stepSpan">3</span>
-                                    <span class="stepSpan">4</span>
+                                    <span class="stepSpanP">1</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">2</span> Permissions</div>
+                                    <span class="stepSpanP">3</span>
+                                    <span class="stepSpanP">4</span>
                                 </div>
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos4')">
@@ -361,10 +361,10 @@
                         <div *ngIf="showStep == 'employee type'">
                             <div class="stepDiv">
                                 <div class="steps">
-                                    <span class="stepSpan">1</span>
-                                    <span class="stepSpan">2</span>
-                                    <div class="selectStep"><span class="stepSpan selected">3</span> Employee type</div>
-                                    <span class="stepSpan">4</span>
+                                    <span class="stepSpanP">1</span>
+                                    <span class="stepSpanP">2</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">3</span> Employee type</div>
+                                    <span class="stepSpanP">4</span>
                                 </div>
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos5')">
@@ -397,10 +397,10 @@
                         <div *ngIf="showStep == 'service'">
                             <div class="stepDiv">
                                 <div class="steps">
-                                    <span class="stepSpan">1</span>
-                                    <span class="stepSpan">2</span>
-                                    <span class="stepSpan">3</span>
-                                    <div class="selectStep"><span class="stepSpan selected">4</span> Services</div>
+                                    <span class="stepSpanP">1</span>
+                                    <span class="stepSpanP">2</span>
+                                    <span class="stepSpanP">3</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">4</span> Services</div>
                                 </div>
                                 <img src="assets/icons/quesmark.png" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos6')">

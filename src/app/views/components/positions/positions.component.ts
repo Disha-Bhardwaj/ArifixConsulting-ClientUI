@@ -41,6 +41,7 @@ export class PositionsComponent implements OnInit {
       this.addPosition = false
       this.showStep = ''
       this.jobTitle = ''
+      this.disableTitle = false
       this.openingTimeForm.reset()
       this.permissionForm.reset()
       this.servicesForm.reset()

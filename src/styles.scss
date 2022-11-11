@@ -337,8 +337,9 @@ span.stepSpan {
   height: 44px;
   border: none;
   border-radius: 3px;
-  width: 78%;
-  margin-left: 9%;
+  width: 51%;
+  margin-left: 32%;
+  padding: 0px;
 }
 // booking page date
 .dateBookINP{
@@ -360,6 +361,9 @@ span.stepSpan {
   text-align: center;
   letter-spacing: -0.25px;
   color: #312f2f;
+}
+.datepicker-default .calendar-container {
+  left: -127px !important;
 }
 // booking page date
 @media (max-width: 1089px) and (min-width: 1025px){
@@ -403,18 +407,17 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
   background: white;
 }
 ::placeholder{
-  color: #000000;
-   opacity: 1;
+  color: #000000 !important;
+   opacity: 1 !important;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #000000;
+  color: #000000 !important;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #000000;
+  color: #000000 !important;
 }
 ::-webkit-input-placeholder{
-  color: #000000;
-  opacity: 1;
+  color: #000000 !important;
+  opacity: 1 !important;
 }
-select::-ms-expand { display: block; }
