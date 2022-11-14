@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild,AfterViewInit, Renderer2, HostListener
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef,  OnDestroy, Output, EventEmitter} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -18,11 +20,15 @@ export class AppComponent {
   private _mobileQueryListener: () => void;
   
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2, private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 767px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+    if(this.router.url == '\bookings'){
+      $('.calendar-container').css('left', '-127px !important')
+    }
   }
+
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

@@ -128,6 +128,24 @@ aside.optionFilter {
   margin-top: 1%;
   margin-left: 31%;
 }
+.datepicker-default .calendar-container {
+  left: -127px !important;
+}
+::placeholder{
+  color: #000000 !important;
+   opacity: 1 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000000 !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000000 !important;
+}
+::-webkit-input-placeholder{
+  color: #000000 !important;
+  opacity: 1 !important;
+}
 // media query
 @media (max-width: 2077px) and (min-width: 1861px) {
   aside.sidebar {

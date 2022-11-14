@@ -392,6 +392,15 @@ span.stepSpan {
     font-size: 16px;
   }
 }
+@media (max-width: 500px) and (min-width: 200px) {
+  .colHeadTime{
+    font-size: 22px !important;
+  }
+  .mat-dialog-container{
+    overflow: scroll !important;
+    height: 500px !important;
+  }
+}
 // calendar
 .fc-h-event,
 .fc-v-event {
@@ -405,19 +414,4 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
 }
 .fc .fc-daygrid-day-frame {
   background: white;
-}
-::placeholder{
-  color: #000000 !important;
-   opacity: 1 !important;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #000000 !important;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: #000000 !important;
-}
-::-webkit-input-placeholder{
-  color: #000000 !important;
-  opacity: 1 !important;
 }

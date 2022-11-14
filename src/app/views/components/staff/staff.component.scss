@@ -158,6 +158,9 @@ button.btn.btn-primary.savebtn {
   margin-right: 25%;
   margin-left: -13%;
 }
+.datepicker-default .calendar-container {
+  left: 0px !important;
+}
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {

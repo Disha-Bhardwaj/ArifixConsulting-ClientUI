@@ -8,7 +8,7 @@
 
             <aside class="optionFilter" *ngIf="expanded">
                 <!-- <input class="form-control input " placeholder="Date"> -->
-                <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker>
+                <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker>
                 <input class="form-control input " placeholder="Time" type="text"
                 onfocus="(this.type='time')"  onblur="(this.type='text')">
                 <select class="form-control input SelectOpt" >

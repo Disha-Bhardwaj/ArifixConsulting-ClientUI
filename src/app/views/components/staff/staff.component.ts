@@ -47,13 +47,13 @@ export class StaffComponent implements OnInit {
     this.BFoptions = {
       placeholder: 'Break From',
       format: 'dd/MM/yyyy',
-      position: 'bottom',
+      position: 'right',
       inputClass: 'PosDate',
     };
     this.BToptions = {
       placeholder: 'Break To',
       format: 'dd/MM/yyyy',
-      position: 'bottom',
+      position: 'right',
       inputClass: 'PosDate',
     };
   }

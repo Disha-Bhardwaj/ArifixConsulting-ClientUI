@@ -4,6 +4,8 @@ import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
+import { Route, Router } from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-booking',
@@ -18,8 +20,11 @@ export class BookingComponent implements OnInit {
   show = 'all'
   date: any
   options: DatepickerOptions = {};
+  
   // show = 'pending'
-  constructor(public dialog: MatDialog, private toastr: ToastrService) { }
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router) {
+    $('.calendar-container').css('left', '-127px !important')
+   }
   openDialog() {
     this.dialog.open(DialogComponent, {
       data: {
@@ -37,11 +42,14 @@ export class BookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.options= {
-      position: 'left',
+      position: undefined,
       placeholder: 'Date',
       format: 'dd/MM/yyyy',
       inputClass: 'dateBookINP',
     };
+    // $('.datepicker-default .calendar-container ').css('left', '-127px')
+    // console.log(this.router.url)
+    // if(this.router.url)
   }
   showbooking(value: any) {
     this.show = value
