@@ -45,7 +45,9 @@ button.btn.btn-primary.savebtn {
   flex-direction: row;
   justify-content: center;
 }
-input.form-control.input.formIn, button.btn.btn-primary.savebtn.saveApp, button.btn.btn-primary.cancelbtn.cancelApp  {
+input.form-control.input.formIn,
+button.btn.btn-primary.savebtn.saveApp,
+button.btn.btn-primary.cancelbtn.cancelApp {
   width: 100%;
   margin-top: 10px;
 }
@@ -54,9 +56,9 @@ input.form-control.input.formIn, button.btn.btn-primary.savebtn.saveApp, button.
   padding: 10px;
   gap: 10px;
   height: 50px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 6px;
-  font-family: 'Maven Pro';
+  font-family: "Maven Pro";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -72,6 +74,20 @@ input.timeField {
   border: none;
 }
 // media query
+@media (max-width: 710px) and (min-width: 200px) {
+  .timeIn {
+    display: flex;
+    flex-direction: column;
+  }
+  .boxInp {
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 15px;
+  }
+  button.btn.btn-primary.savebtn {
+    width: 100%;
+  }
+}
 @media (max-width: 462px) and (min-width: 376px) {
   input.form-control.input {
     width: 125px;
@@ -80,13 +96,11 @@ input.timeField {
     width: 255px;
   }
 }
-@media (max-width: 376px) and (min-width: 200px) {
-  input.form-control.input {
-    width: 90px;
-  }
-  button.btn.btn-primary.savebtn {
-    width: 182px;
-  }
-}
-
-
+// @media (max-width: 376px) and (min-width: 200px) {
+//   input.form-control.input {
+//     width: 90px;
+//   }
+//   button.btn.btn-primary.savebtn {
+//     width: 105%;
+//   }
+// }
