@@ -4,11 +4,11 @@
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div> -->
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
             <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
-            <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
+            <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div>
         <!-- <div class="col-lg-4 col-md-4 col-sm-12 topbtncol buttnCol">
             <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
-            <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
+            <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div> -->
     </div>
     <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;margin-top: 15px;">
@@ -17,7 +17,7 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Four</h2>
-                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard('cross')">
+                        <img src="assets/icons/closeGrey.svg" class="closeIcon" (click)="finishWizard('cross')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
@@ -65,25 +65,25 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol" *ngIf="!details">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/editWhite.png" class="editIcon" (click)="editDetailsFun(true)">
-                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="close()">
+                            <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)">
+                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="close()">
                         </div>
-                        <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff2')">
+                        <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff2')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol2" *ngIf="details">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/editWhite.png" class="editIcon" (click)="editDetailsFun(true)">
-                            <img src="assets/icons/closeIcon.png" class="closeIcon" (click)="close()">
+                            <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)">
+                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="close()">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
-                        <img src="assets/icons/userIcon.png" class="userIcon">
+                        <img src="assets/icons/userIcon.svg" class="userIcon">
                         <h2 class="nameH">Name</h2>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;"
                         (click)="showDetails()">
                         <div class="form-control addtoCalDiv">
-                            <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.png"
+                            <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.svg"
                                     style="margin-bottom: 1px;width: 10px;height: 7px;"
                                     [ngClass]="{'clicked': details}"></span>
                         </div>
@@ -101,22 +101,22 @@
                             </div>
                             <div *ngIf="!editDetails" class="form-control addtoCalDiv">
                                 <span class="labelSpan" style="width: 100%;">Break From <img
-                                        src="assets/icons/dropdownIcon.png"
+                                        src="assets/icons/dropdownIcon.svg"
                                         style="width: 10px;height: 7px;margin-left: 2%;"></span>
                             </div>
                             <div *ngIf="!editDetails" class="form-control addtoCalDiv">
                                 <span class="labelSpan" style="width: 100%;">Break To <img
-                                        src="assets/icons/dropdownIcon.png"
+                                        src="assets/icons/dropdownIcon.svg"
                                         style="width: 10px;height: 7px;margin-left: 7%;"></span>
                             </div>
                             <div *ngIf="editDetails" class="form-control addtoCalDiv" (click)="toggleCalender()">
                                 <ngx-datepicker #showBFCalendar formControlName="breakFrom" [options]="BFoptions">
-                                </ngx-datepicker> <img class="breakArr" src="assets/icons/dropdownIcon.png"
+                                </ngx-datepicker> <img class="breakArr" src="assets/icons/dropdownIcon.svg"
                                     (click)="toggleCalender()">
                             </div>
                             <div *ngIf="editDetails" class="form-control addtoCalDiv">
                                 <ngx-datepicker formControlName="breakTo" [options]="BToptions"></ngx-datepicker> <img
-                                    class="breakArr" src="assets/icons/dropdownIcon.png">
+                                    class="breakArr" src="assets/icons/dropdownIcon.svg">
                             </div>
 
 

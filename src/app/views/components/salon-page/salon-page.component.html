@@ -3,7 +3,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: end;">
             <button class="btn btn-primary cancelbtn addbtn">Add salon</button>
             <button class="btn btn-primary cancelbtn addbtn">Delete salon</button>
-            <img src="assets/icons/quesmark.png" mat-button (click)="openDialog()" class="quesIcon">
+            <img src="assets/icons/quesmark.svg" mat-button (click)="openDialog()" class="quesIcon">
         </div>
     </div>
     <div class="row p-0 infoBox" *ngIf="showWizard">
@@ -12,7 +12,7 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
                         <h2 class="textH2">Step Two</h2>
-                        <img src="assets/icons/closeGrey.png" class="closeIcon" (click)="finishWizard()">
+                        <img src="assets/icons/closeGrey.svg" class="closeIcon" (click)="finishWizard()">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
@@ -35,12 +35,9 @@
         </div>
     </div>
     <div class="row" style="margin-top: 42px; background-color: #C4C4C4;">
-        <!-- <div class="col-lg-12 col-md-12 col-sm-12 camColm">
-            <img src="assets/icons/camera.png" class="camIcon">
-        </div> -->
         <div class="col-lg-12 col-md-12 col-sm-12 camColm">
             <label for="uploadData" class="browse newImgBrw">
-                <img *ngIf="!imageUrl" src="assets/icons/camera.png" class="camIcon">
+                <img *ngIf="!imageUrl" src="assets/icons/camera.svg" class="camIcon">
                 <img *ngIf="imageUrl" [src]="imageUrl" class="camImg2">
             </label>
             <input id="uploadData" type="file" style="display: none;" #Image (change)="uploadImg($event)"
@@ -53,7 +50,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Salon Details</p>
-                <img src="assets/icons/edit.png" class="editIcn" (click)="editSalonDetail('edit')">
+                <img src="assets/icons/edit.svg" class="editIcn" (click)="editSalonDetail('edit')">
             </div>
             <form [formGroup]="salonDetailForm" autocomplete="off">
                 <div class="mb-3">
@@ -227,7 +224,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 columnInp">
             <div class="formCol">
                 <p class="texthead">Opening Times</p>
-                <img src="assets/icons/edit.png" class="editIcn" (click)="editOpenTime('edit')">
+                <img src="assets/icons/edit.svg" class="editIcn" (click)="editOpenTime('edit')">
             </div>
             <form [formGroup]="openingTimeForm" autocomplete="off">
                 <div class="mb-3">
