@@ -1,3 +1,4 @@
+@import "./../../../../bookingCalendar.css";
 h2.heading {
   font-weight: 500;
   font-size: 32px;
@@ -131,18 +132,20 @@ aside.optionFilter {
 .datepicker-default .calendar-container {
   left: -127px !important;
 }
-::placeholder{
+::placeholder {
   color: #000000 !important;
-   opacity: 1 !important;
+  opacity: 1 !important;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #000000 !important;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #000000 !important;
 }
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
   color: #000000 !important;
   opacity: 1 !important;
 }
@@ -185,44 +188,47 @@ aside.optionFilter {
     padding-left: 15px;
   }
 }
-@media (max-width: 1155px) and (min-width: 1123px){
-  aside.sidebar{
+@media (max-width: 1155px) and (min-width: 1123px) {
+  aside.sidebar {
     left: 673px;
     padding-left: 15px;
   }
 }
-@media (max-width: 1123px) and (min-width: 1089px){
-  aside.sidebar{
+@media (max-width: 1123px) and (min-width: 1089px) {
+  aside.sidebar {
     left: 649px;
     padding-left: 10px;
   }
 }
-@media (max-width: 1089px) and (min-width: 1025px){
-  aside.sidebar{
+@media (max-width: 1089px) and (min-width: 1025px) {
+  aside.sidebar {
     left: 620px;
     padding-left: 10px;
   }
-  input.form-control.input,.SelectOpt{
+  input.form-control.input,
+  .SelectOpt {
     width: 124px;
     font-size: 13px;
   }
 }
-@media (max-width: 1025px) and (min-width: 979px){
-  aside.sidebar{
+@media (max-width: 1025px) and (min-width: 979px) {
+  aside.sidebar {
     left: 574px;
     padding-left: 10px;
   }
-  input.form-control.input,.SelectOpt{
+  input.form-control.input,
+  .SelectOpt {
     width: 124px;
     font-size: 13px;
   }
 }
-@media (max-width: 979px) and (min-width: 937px){
-  aside.sidebar{
+@media (max-width: 979px) and (min-width: 937px) {
+  aside.sidebar {
     left: 535px;
     padding-left: 10px;
   }
-  input.form-control.input,.SelectOpt{
+  input.form-control.input,
+  .SelectOpt {
     width: 124px;
     font-size: 13px;
   }
@@ -233,6 +239,9 @@ aside.optionFilter {
   }
   .sidebar {
     display: none;
+  }
+  img.quesIcon {
+    margin-right: 10px;
   }
   .row.m-4.firstRow {
     display: flex;

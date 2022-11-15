@@ -37,6 +37,9 @@ img.rightArr {
   button.btn.btn-primary.savebtn.addPosBtn {
     font-size: 18px;
   }
+  p.name {
+    margin-bottom: 0px;
+  }
 }
 @media (max-width: 531px) and (min-width: 200px) {
   .col-lg-12.col-md-12.col-sm-12.topbtncol {
@@ -48,13 +51,14 @@ img.rightArr {
     width: 307px;
     margin-bottom: 21px;
   }
+  
 }
 
 
 
 
 
-p.theadP {
+p.name {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;

@@ -365,6 +365,9 @@ span.stepSpan {
 .datepicker-default .calendar-container {
   left: -127px !important;
 }
+.toast-top-right {
+  top: 65px !important;
+}
 // booking page date
 @media (max-width: 1089px) and (min-width: 1025px){
   .dateBookINP{

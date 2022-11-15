@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { BookingComponent } from './views/components/booking/booking.component';
 import { FooterComponent } from './views/common/footer/footer.component';
 import { CalendarComponent } from './views/components/calendar/calendar.component';
-import { SidebarComponent } from './views/common/sidebar/sidebar.component';
 import { CompanyInfoComponent } from './views/components/company-info/company-info.component';
 import { DashboardComponent } from './views/components/dashboard/dashboard.component';
 import { NotificationsComponent } from './views/components/notifications/notifications.component';
@@ -33,7 +32,6 @@ import { DatepickerModule } from 'ng2-datepicker';
     AppComponent,
     FooterComponent,
     CalendarComponent,
-    SidebarComponent,
     CompanyInfoComponent,
     DashboardComponent,
     NotificationsComponent,

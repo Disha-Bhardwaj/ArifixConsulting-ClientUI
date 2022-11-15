@@ -11,7 +11,7 @@
             <img src="assets/icons/quesmark.png" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div> -->
     </div>
-    <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;">
+    <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;margin-top: 15px;">
         <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="staffBox">
                 <div class="row imgRow">
@@ -55,34 +55,8 @@
                         aria-describedby="button-addon2">
                     <button class="btn btn-primary sendbtn" type="button" id="button-addon2"
                         (click)="showStepsFunction('Two')">Send</button>
-                        <!-- <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                        class="invalid-feedback">
-                        <div *ngIf="employeeEmail.errors?.['required']">
-                            This field is required.
-                        </div>
-                        <div
-                            *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
-                            Please enter valid email.
-                        </div>
-                    </div> -->
-    
                 </div>
-                <!-- <div *ngIf="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
-                        class="invalid-feedback">
-                        <div *ngIf="employeeEmail.errors?.['required']">
-                            This field is required.
-                        </div>
-                        <div
-                            *ngIf="employeeEmail.errors?.['email'] || employeeEmail.errors?.['maxlength'] || employeeEmail.errors?.['minlength'] || employeeEmail.errors?.['pattern']">
-                            Please enter valid email.
-                        </div>
-                    </div> -->
             </form>
-            <!-- <button class="btn btn-primary sendbtn" (click)="showStepsFunction('Two')">Send</button> -->
-            <!-- <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter employee email"  aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="showStepsFunction('Two')">Send</button>
-              </div> -->
         </div>
     </div>
     <div class="row p-0 infoBox" *ngIf="showStep == 'Two'">

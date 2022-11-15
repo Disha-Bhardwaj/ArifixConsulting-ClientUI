@@ -36,7 +36,7 @@ export class StaffComponent implements OnInit {
     this.showBFCalendar.nativeElement.toggle()
   }
   adjustWidth(value:any){
-    $('#PosSelect').css('width', value.length*10 + 15+'px')
+    $('#PosSelect').css('width', value.length*10 + 20+'px')
   }
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
@@ -59,7 +59,7 @@ export class StaffComponent implements OnInit {
   }
   formInitialization() {
     this.infoForm = this.fb.group({
-      employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60), Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60), Validators.pattern('^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z.-]+\\.[a-z]{2,4}$')]],
     })
     this.detailsForm = this.fb.group({
       position: [''],

@@ -10,7 +10,8 @@ declare var $: any;
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.scss']
+  styleUrls: ['./booking.component.scss'],
+  
 })
 export class BookingComponent implements OnInit {
   expanded: boolean = false;
@@ -25,17 +26,25 @@ export class BookingComponent implements OnInit {
   constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router) {
     $('.calendar-container').css('left', '-127px !important')
    }
-  openDialog() {
+  // openDialog() {
+  //   this.dialog.open(DialogComponent, {
+  //     data: {
+  //       fromPage: 'booking',
+  //     },
+  //   });
+  // }
+  // openDialogOfferTime() {
+  //   this.dialog.open(DialogComponent, {
+  //     data: {
+  //       fromPage: 'BookOfferTime',
+  //     },
+  //   });
+  // }
+  openDialog(value: any) {
+    this.expanded = false
     this.dialog.open(DialogComponent, {
       data: {
-        fromPage: 'booking',
-      },
-    });
-  }
-  openDialogOfferTime() {
-    this.dialog.open(DialogComponent, {
-      data: {
-        fromPage: 'BookOfferTime',
+        fromPage: value,
       },
     });
   }
