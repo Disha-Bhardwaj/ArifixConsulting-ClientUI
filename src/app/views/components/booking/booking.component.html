@@ -7,11 +7,11 @@
         </div>
 
             <aside class="optionFilter" *ngIf="expanded">
-                <!-- <input class="form-control input " placeholder="Date"> -->
-                <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker>
+                <!-- <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker> -->
+                <input class="form-control input " placeholder="Date" type="text"
+        onfocus="(this.type='date')"  onblur="(this.type='text')" >
                 <input class="form-control input " placeholder="Time" type="text"
                 onfocus="(this.type='time')"  onblur="(this.type='text')" id="NotshowOnlyOnSafari">
-                 <input class="form-control input " placeholder="Time" type="time" id="showOnlyOnSafari">
                 <select class="form-control input SelectOpt" >
                     <option disabled selected hidden value="">Status</option>
                     <option value="Status 1">Status 1</option>
@@ -22,18 +22,16 @@
                     <option value="Employee 1">Employee 1</option>
                     <option value="Employee 2">Employee 2</option>
                 </select>
-                <!-- <input class="form-control input " placeholder="Status">
-                <input class="form-control input " placeholder="Employee"> -->
             </aside>
        
     </div>
     <aside class="sidebar">
         <p class="filtertext">Filters</p>
-        <!-- <input class="form-control input " placeholder="Date"> -->
-        <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker>
+        <!-- <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker> -->
+        <input class="form-control input " placeholder="Date" type="text"
+        onfocus="(this.type='date')"  onblur="(this.type='text')" >
         <input class="form-control input " placeholder="Time" type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')"  id="NotshowOnlyOnSafari">
-        <input class="form-control input " placeholder="Time" type="time" id="showOnlyOnSafari">
+        onfocus="(this.type='time')"  onblur="(this.type='text')" >
         <select class="form-control input SelectOpt" >
             <option disabled selected hidden value="">Status</option>
             <option value="Status 1">Status 1</option>
@@ -44,9 +42,6 @@
             <option value="Employee 1">Employee 1</option>
             <option value="Employee 2">Employee 2</option>
         </select>
-        <!-- <input class="form-control input " placeholder="Status">
-        <input class="form-control input " placeholder="Employee"> -->
-        
     </aside>
     <div class="row m-4 firstRow" style="margin-top: 45px !important;">
         

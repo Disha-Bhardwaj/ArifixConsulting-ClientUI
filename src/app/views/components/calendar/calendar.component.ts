@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { CalendarOptions, defineFullCalendarElement } from '@fullcalendar/web-component';
@@ -20,7 +20,8 @@ defineFullCalendarElement();
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CalendarComponent implements OnInit {
 

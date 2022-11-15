@@ -11,7 +11,13 @@ declare var $: any;
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss'],
-  
+  // styleUrls: ['./../../../../bookingCalendar.css'],
+  // ./../../../../bookingCalendar.css
+  styles: [
+    ` .datepicker-default .calendar-container {
+         left: -127px !important;
+       }`,
+  ],
 })
 export class BookingComponent implements OnInit {
   expanded: boolean = false;
@@ -59,6 +65,7 @@ export class BookingComponent implements OnInit {
     // $('.datepicker-default .calendar-container ').css('left', '-127px')
     // console.log(this.router.url)
     // if(this.router.url)
+    
   }
   showbooking(value: any) {
     this.show = value
