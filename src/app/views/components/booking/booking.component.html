@@ -10,7 +10,8 @@
                 <!-- <input class="form-control input " placeholder="Date"> -->
                 <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker>
                 <input class="form-control input " placeholder="Time" type="text"
-                onfocus="(this.type='time')"  onblur="(this.type='text')">
+                onfocus="(this.type='time')"  onblur="(this.type='text')" id="NotshowOnlyOnSafari">
+                 <input class="form-control input " placeholder="Time" type="type" id="showOnlyOnSafari">
                 <select class="form-control input SelectOpt" >
                     <option disabled selected hidden value="">Status</option>
                     <option value="Status 1">Status 1</option>
@@ -31,7 +32,8 @@
         <!-- <input class="form-control input " placeholder="Date"> -->
         <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker>
         <input class="form-control input " placeholder="Time" type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')">
+        onfocus="(this.type='time')"  onblur="(this.type='text')"  id="NotshowOnlyOnSafari">
+        <input class="form-control input " placeholder="Time" type="type" id="showOnlyOnSafari">
         <select class="form-control input SelectOpt" >
             <option disabled selected hidden value="">Status</option>
             <option value="Status 1">Status 1</option>
