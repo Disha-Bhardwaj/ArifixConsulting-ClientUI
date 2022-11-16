@@ -250,26 +250,19 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')" onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="monOpen"
-                                > -->
-
-                                <input [ngxTimepicker]="picker"  class="form-control input " placeholder="Time" formControlName="monOpen"
+                                <input [ngxTimepicker]="monOpen"  class="form-control input " placeholder="Time" formControlName="monOpen"
                                 placeholder="Closed">
-                                <ngx-material-timepicker #picker></ngx-material-timepicker>
+                                <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')" onblur="(this.type='text')" placeholder="Closed" class="form-control input "
                                 formControlName="monClose"
-                                >
-                            <!-- <div *ngIf="monClose.invalid && (monClose.dirty || monClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="monClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                > -->
+                                <input [ngxTimepicker]="monClose"  class="form-control input " placeholder="Time" formControlName="monClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #monClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -282,28 +275,23 @@
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="tuesOpen">
-                            <!-- <div *ngIf="tuesOpen.invalid && (tuesOpen.dirty || tuesOpen.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="tuesOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="tuesOpen"> -->
+                            
+                                <input [ngxTimepicker]="tuesOpen"  class="form-control input " placeholder="Time" formControlName="tuesOpen"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="tuesClose">
-                            <!-- <div *ngIf="tuesClose.invalid && (tuesClose.dirty || tuesClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="tuesClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
-
+                                formControlName="tuesClose"> -->
+                          
+                                <input [ngxTimepicker]="tuesClose"  class="form-control input " placeholder="Time" formControlName="tuesClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -315,26 +303,22 @@
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="wedOpen"
-                                >
-                            <!-- <div *ngIf="wedOpen.invalid && (wedOpen.dirty || wedOpen.touched)" class="invalid-feedback">
-                                <div *ngIf="wedOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
-
+                                > -->
+                          
+                                <input [ngxTimepicker]="wedOpen"  class="form-control input " placeholder="Time" formControlName="wedOpen"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="wedClose">
-                            <!-- <div *ngIf="wedClose.invalid && (wedClose.dirty || wedClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="wedClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="wedClose"> -->
+                          
+                                <input [ngxTimepicker]="wedClose"  class="form-control input " placeholder="Time" formControlName="wedClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #wedClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -346,28 +330,24 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Thur</label>
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="thursOpen">
-                            <!-- <div *ngIf="thursOpen.invalid && (thursOpen.dirty || thursOpen.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="thursOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="thursOpen"> -->
+
+
+                                <input [ngxTimepicker]="thursOpen"  class="form-control input " placeholder="Time" formControlName="thursOpen"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="thursClose">
-                            <!-- <div *ngIf="thursClose.invalid && (thursClose.dirty || thursClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="thursClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
-
+                                formControlName="thursClose"> -->
+                            
+                                <input [ngxTimepicker]="thursClose"  class="form-control input " placeholder="Time" formControlName="thursClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #thursClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -378,26 +358,23 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="friOpen"
-                             >
-                            <!-- <div *ngIf="friOpen.invalid && (friOpen.dirty || friOpen.touched)" class="invalid-feedback">
-                                <div *ngIf="friOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                             > -->
+                            
+                             <input [ngxTimepicker]="friOpen"  class="form-control input " placeholder="Time" formControlName="friOpen"
+                             placeholder="Closed">
+                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="friClose">
-                            <!-- <div *ngIf="friClose.invalid && (friClose.dirty || friClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="friClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="friClose"> -->
+                            
+                                <input [ngxTimepicker]="friClose"  class="form-control input " placeholder="Time" formControlName="friClose"
+                             placeholder="Closed">
+                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -409,27 +386,25 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="satOpen"
-                                >
-                            <!-- <div *ngIf="satOpen.invalid && (satOpen.dirty || satOpen.touched)" class="invalid-feedback">
-                                <div *ngIf="satOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                > -->
+                           
+                                <input [ngxTimepicker]="satOpen"  class="form-control input " placeholder="Time" formControlName="satOpen"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="satClose">
-                            <!-- <div *ngIf="satClose.invalid && (satClose.dirty || satClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="satClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="satClose"> -->
+                         
 
+                                
+                                <input [ngxTimepicker]="satClose"  class="form-control input " placeholder="Time" formControlName="satClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #satClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -440,26 +415,25 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="sunOpen"
-                                >
-                            <!-- <div *ngIf="sunOpen.invalid && (sunOpen.dirty || sunOpen.touched)" class="invalid-feedback">
-                                <div *ngIf="sunOpen.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                > -->
+                         
+                                <input [ngxTimepicker]="sunOpen"  class="form-control input " placeholder="Time" formControlName="sunOpen"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
+
 
                         </div>
                         <div class="col-4">
-                            <input  type="text"
+                            <!-- <input  type="text"
         onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="sunClose">
-                            <!-- <div *ngIf="sunClose.invalid && (sunClose.dirty || sunClose.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="sunClose.errors?.['required']">
-                                    This field is required.
-                                </div>
-                            </div> -->
+                                formControlName="sunClose"> -->
+                            
+                                <input [ngxTimepicker]="sunClose"  class="form-control input " placeholder="Time" formControlName="sunClose"
+                                placeholder="Closed">
+                                <ngx-material-timepicker #sunClose></ngx-material-timepicker>
+
 
                         </div>
                     </div>

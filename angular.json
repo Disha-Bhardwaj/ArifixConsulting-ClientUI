@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+             "allowedCommonJsDependencies": [
+        "lodash"
+     ]
           },
           "configurations": {
             "production": {
@@ -96,8 +99,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/bookingCalendar.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
