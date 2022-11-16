@@ -26,7 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './views/common/dialog/dialog.component';
 import { CookieService } from 'ngx-cookie-service';
 import { DatepickerModule } from 'ng2-datepicker';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+
 
 @NgModule({
   declarations: [

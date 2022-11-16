@@ -14,7 +14,7 @@ h4.footerHead {
   order: 0;
   flex-grow: 0;
 }
-li.liItem {
+li.liItem, a {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -27,6 +27,7 @@ li.liItem {
   order: 1;
   flex-grow: 0;
   cursor: pointer;
+  text-decoration: none;
 }
 .button-download {
   display: flex;

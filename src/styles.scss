@@ -401,7 +401,7 @@ span.stepSpan {
   }
   .mat-dialog-container{
     overflow: scroll !important;
-    height: 500px !important;
+    max-height: 415px !important;
   }
 }
 // calendar
