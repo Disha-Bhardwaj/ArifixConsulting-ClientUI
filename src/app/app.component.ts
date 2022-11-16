@@ -21,14 +21,16 @@ export class AppComponent {
 
   private _mobileQueryListener: () => void;
   
+  @ViewChild('menuBtn',  { read: ElementRef })
+  private menuBtn!: ElementRef
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2, private router: Router,private cookies: CookieService) {
     this.mobileQuery = media.matchMedia('(max-width: 767px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    if(this.router.url == '\bookings'){
-      $('.calendar-container').css('left', '-127px !important')
-    }
+    // if(this.router.url == '\bookings'){
+    //   $('.calendar-container').css('left', '-127px !important')
+    // }
     if(this.mobileQuery.matches){
       this.openSidebar = false
     }
@@ -43,10 +45,9 @@ export class AppComponent {
   }
 
   removeWizard(){
-    this.cookies.set('wizardStart', 'false');
-    console.log(this.mobileQuery.matches)
+    this.cookies.set('wizardStart', 'false')
     if(this.mobileQuery.matches){
-      this.openSidebar = false
+      this.menuBtn.nativeElement.click()
     }
   }
   openWebsite(){

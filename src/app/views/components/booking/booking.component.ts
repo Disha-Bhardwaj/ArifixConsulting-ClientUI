@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
@@ -11,13 +11,6 @@ declare var $: any;
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss'],
-  // styleUrls: ['./../../../../bookingCalendar.css'],
-  // ./../../../../bookingCalendar.css
-  styles: [
-    ` .datepicker-default .calendar-container {
-         left: -127px !important;
-       }`,
-  ],
 })
 export class BookingComponent implements OnInit {
   expanded: boolean = false;
@@ -30,22 +23,16 @@ export class BookingComponent implements OnInit {
   
   // show = 'pending'
   constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router) {
-    $('.calendar-container').css('left', '-127px !important')
+    // $('.calendar-container').css('left','-140px !important')
    }
-  // openDialog() {
-  //   this.dialog.open(DialogComponent, {
-  //     data: {
-  //       fromPage: 'booking',
-  //     },
-  //   });
-  // }
-  // openDialogOfferTime() {
-  //   this.dialog.open(DialogComponent, {
-  //     data: {
-  //       fromPage: 'BookOfferTime',
-  //     },
-  //   });
-  // }
+  //  @ViewChild('showBFCalendar',  { read: ElementRef })
+  // private showBFCalendar!: ElementRef
+  
+  //  toggleCalendar(){
+  //   console.log(this.showBFCalendar.nativeElement)
+  //   $('.calendar-container').css('left','-140px !important')
+  //  }
+   
   openDialog(value: any) {
     this.expanded = false
     this.dialog.open(DialogComponent, {

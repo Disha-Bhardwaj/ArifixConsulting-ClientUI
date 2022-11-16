@@ -1,15 +1,9 @@
 <div class="container">
     <div class="row" style="margin-top: 48px;">
-        <!-- <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div>
-        <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div> -->
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
             <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div>
-        <!-- <div class="col-lg-4 col-md-4 col-sm-12 topbtncol buttnCol">
-            <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">Add Staff</button>
-            <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff1')">
-        </div> -->
     </div>
     <div class="row p-0 infoBox" *ngIf="showWizard" style="margin-bottom: 25px;margin-top: 15px;">
         <div class="col-lg-5 col-md-5 col-sm-12">
@@ -43,7 +37,6 @@
     </div>
     <div class="row p-0 infoBox" *ngIf="showStep == 'One'" style="margin-top: 15px;">
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol">
-
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol"></div>
         <div class="col-lg-4 col-md-4 col-sm-12 topbtncol emailCol">
@@ -93,7 +86,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
                         <form [formGroup]="detailsForm" autocomplete="off">
                             <div class="form-control addtoCalDiv posSelect">
-                                <select #selectPos id="PosSelect" class="selectDrop" formControlName="position" (change)="adjustWidth(selectPos.value)">
+                                <select #selectPos id="PosSelect" class="selectDrop" formControlName="position"
+                                    (change)="adjustWidth(selectPos.value)">
                                     <option disabled selected hidden value="">Position</option>
                                     <option value="Salon worker">Salon worker</option>
                                     <option value="Head barber">Head barber</option>
@@ -110,8 +104,9 @@
                                         style="width: 10px;height: 7px;margin-left: 7%;"></span>
                             </div>
                             <div *ngIf="editDetails" class="form-control addtoCalDiv" (click)="toggleCalender()">
-                                <ngx-datepicker #showBFCalendar formControlName="breakFrom" [options]="BFoptions">
-                                </ngx-datepicker> <img class="breakArr" src="assets/icons/dropdownIcon.svg"
+                                <ngx-datepicker  #showBFCalendar formControlName="breakFrom" [options]="BFoptions">
+                                </ngx-datepicker> 
+                                <img class="breakArr" src="assets/icons/dropdownIcon.svg"
                                     (click)="toggleCalender()">
                             </div>
                             <div *ngIf="editDetails" class="form-control addtoCalDiv">

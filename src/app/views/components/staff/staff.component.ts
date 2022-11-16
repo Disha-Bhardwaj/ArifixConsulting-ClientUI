@@ -18,7 +18,7 @@ export class StaffComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService,
     private cookies: CookieService, private route: Router) { }
 
-  @ViewChild('showBFCalendar', { static: false })
+  @ViewChild('showBFCalendar',  { read: ElementRef })
   private showBFCalendar!: ElementRef
 
   showStep = ''
@@ -33,7 +33,13 @@ export class StaffComponent implements OnInit {
   BToptions: DatepickerOptions = {};
 
   toggleCalender() {
-    this.showBFCalendar.nativeElement.toggle()
+    console.log(this.showBFCalendar.nativeElement)
+  //   const datePick = this.showBFCalendar.nativeElement.focus();
+  //   $(".PosDate").focus();
+  //   $("input").focusin(() => {
+  //     $(this).select();
+  // });
+  $('.datepicker-container > calendar-container').css('left','0px !important')
   }
   adjustWidth(value:any){
     $('#PosSelect').css('width', value.length*10 + 20+'px')
@@ -94,21 +100,21 @@ export class StaffComponent implements OnInit {
     }
   }
   showStepsFunction(value: any) {
-    if (value == 'One') {
-      this.infoForm.reset();
+    // if (value == 'One') {
+    //   this.infoForm.reset();
+    //   this.showStep = value
+    // }
+    // else if (value == 'Two') {
+    //   if (this.infoForm.valid) {
+    //     this.showStep = value
+    //   } else {
+    //     this.toastr.error('Please enter valid employee email', 'Error', {
+    //       timeOut: 3000
+    //     });
+    //   }
+    // } else {
       this.showStep = value
-    }
-    else if (value == 'Two') {
-      if (this.infoForm.valid) {
-        this.showStep = value
-      } else {
-        this.toastr.error('Please enter valid employee email', 'Error', {
-          timeOut: 3000
-        });
-      }
-    } else {
-      this.showStep = value
-    }
+    // }
   }
   close() {
     this.showStep = '';

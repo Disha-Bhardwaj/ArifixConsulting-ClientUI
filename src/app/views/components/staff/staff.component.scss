@@ -161,6 +161,25 @@ button.btn.btn-primary.savebtn {
 .datepicker-default .calendar-container {
   left: 0px !important;
 }
+// ::placeholder {
+//   color: #000000 !important;
+//   opacity: 1 !important;
+// }
+// :-ms-input-placeholder {
+//   /* Internet Explorer 10-11 */
+//   color: #000000 !important;
+//   opacity: 1 !important;
+// }
+
+// ::-ms-input-placeholder {
+//   /* Microsoft Edge */
+//   color: #000000 !important;
+//   opacity: 1 !important;
+// }
+// ::-webkit-input-placeholder {
+//   color: #000000 !important;
+//   opacity: 1 !important;
+// }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {
