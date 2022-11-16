@@ -28,6 +28,7 @@ export class DialogComponent implements OnInit {
       position: 'bottom',
       inputClass: 'form-control input formIn',
     };
+    this.addAppointForm.reset();
   }
 
   formInitialize() {
@@ -76,14 +77,23 @@ export class DialogComponent implements OnInit {
 
   }
   saveAppointment() {
-    console.log(this.addAppointForm.value)
-    // if (this.addAppointForm.valid) {
-    //   this.toastr.success('Your appointment sent to the salon', '', {
-    //     timeOut: 3000,
-    //   });
-    // }
+    if (this.addAppointForm.valid) {
+      this.toastr.success('Your appointment sent to the salon', '', {
+        timeOut: 3000,
+      });
+      this.dialogRef.close();
+    }else{
+      this.toastr.error('Please fill all the fields', 'Error', {
+        timeOut: 3000,
+      });
+    }
+  }
+  cancelAppointment(){
+    this.dialogRef.close();
+    this.addAppointForm.reset()
   }
 }
+
 export interface DialogData {
   fromPage: 'salonPage' | 'calendar' | 'addAppointment' | 'companyInfo' | 'booking' | 'notification' | 'BookOfferTime' | 'Pos1' | 'Pos2' | 'Pos3' | 'Pos4' | 'Pos5' | 'Pos6' | 'Staff1' | 'Staff2' | 'Staff3';
 }

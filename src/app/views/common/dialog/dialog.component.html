@@ -78,11 +78,11 @@
         <div class="timeIn">
             <div class="boxInp">
                 <span>From</span>
-                <input autocomplete="off" type="datetime-local"  formControlName="startTime" class="timeField" >
+                <input autocomplete="off" type="datetime-local" formControlName="startTime" class="timeField">
             </div>
             <div class="boxInp">
                 <span>To</span>
-                <input autocomplete="off" type="datetime-local"  formControlName="finishTime" class="timeField" >
+                <input autocomplete="off" type="datetime-local" formControlName="finishTime" class="timeField">
             </div>
             <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="startTime" class="form-control input " placeholder="From">
             <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="finishTime" class="form-control input " placeholder="To"> -->
@@ -143,13 +143,14 @@
             <div class="row">
                 <div class="col-12 columnInp ">
                     <label class="form-label label" for="passwordInput">Name</label>
-                    <input type="text"  autocomplete="off" placeholder="Enter Name" class="form-control input formIn" formControlName="name"
-                    [class.is-invalid]="name.invalid && (name.dirty || name.touched)" maxlength="60" minlength="2">
+                    <input type="text" autocomplete="off" placeholder="Enter Name" class="form-control input formIn"
+                        formControlName="name" [class.is-invalid]="name.invalid && (name.dirty || name.touched)"
+                        maxlength="60" minlength="2">
                     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
                         <div *ngIf="name.errors?.['required']">
                             This field is required.
-                          </div>
-                          <div *ngIf="name.errors?.['maxlength'] || name.errors?.['minlength']">
+                        </div>
+                        <div *ngIf="name.errors?.['maxlength'] || name.errors?.['minlength']">
                             Please add valid name
                         </div>
                     </div>
@@ -160,23 +161,35 @@
             <div class="row">
                 <div class="col-6 columnInp ">
                     <label class="form-label label" for="passwordInput">Start Time</label>
-                    <input type="text" placeholder="Start Time" class="form-control input formIn" formControlName="startTime"
-                    [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)">
+                    <input [ngxTimepicker]="startTimeNGX" class="form-control input formIn" placeholder="Start Time"
+                        formControlName="startTime"
+                        [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)">
+                    <ngx-material-timepicker #startTimeNGX></ngx-material-timepicker>
+
+                    <!-- <input type="text" placeholder="Start Time" class="form-control input formIn" formControlName="startTime"
+                    [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)"> -->
                     <div *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)" class="invalid-feedback">
                         <div *ngIf="startTime.errors?.['required']">
                             This field is required.
-                          </div>
+                        </div>
                     </div>
 
                 </div>
                 <div class="col-6 columnInp">
                     <label class="form-label label" for="repeatPassword">Finish Time </label>
-                    <input type="text" placeholder="Finish Time" class="form-control input formIn" formControlName="finishTime"
-                    [class.is-invalid]="finishTime.invalid && (finishTime.dirty || finishTime.touched)"  minlength="2">
-                    <div *ngIf="finishTime.invalid && (finishTime.dirty || finishTime.touched)" class="invalid-feedback">
+                    <input [ngxTimepicker]="finishTimeNGX" class="form-control input formIn" placeholder="Finish Time"
+                        formControlName="finishTime"
+                        [class.is-invalid]="finishTime.invalid && (finishTime.dirty || finishTime.touched)"
+                        minlength="2">
+                    <ngx-material-timepicker #finishTimeNGX></ngx-material-timepicker>
+
+                    <!-- <input type="text" placeholder="Finish Time" class="form-control input formIn" formControlName="finishTime"
+                    [class.is-invalid]="finishTime.invalid && (finishTime.dirty || finishTime.touched)"  minlength="2"> -->
+                    <div *ngIf="finishTime.invalid && (finishTime.dirty || finishTime.touched)"
+                        class="invalid-feedback">
                         <div *ngIf="finishTime.errors?.['required']">
                             This field is required.
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,7 +199,7 @@
                 <div class="col-12 columnInp ">
                     <label class="form-label label" for="passwordInput">Date</label>
                     <ngx-datepicker formControlName="date" [options]="options"
-                    [class.is-invalid]="date.invalid && (date.dirty || date.touched)"></ngx-datepicker>
+                        [class.is-invalid]="date.invalid && (date.dirty || date.touched)"></ngx-datepicker>
                     <!-- <input type="text" placeholder="Enter Date" class="form-control input formIn" formControlName="date"
                     [class.is-invalid]="date.invalid && (date.dirty || date.touched)" maxlength="60" minlength="2">
                     <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
@@ -197,24 +210,25 @@
                     <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
                         <div *ngIf="date.errors?.['required']">
                             This field is required.
-                          </div>
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
-        <div class="mb-3" >
+        <div class="mb-3">
             <div class="row dayRow">
                 <div class="col-6 ">
-                    <button class="btn btn-primary savebtn saveApp" style="background-color: #5E5CE6;" (click)="saveAppointment()">Save</button>
+                    <button class="btn btn-primary savebtn saveApp" style="background-color: #5E5CE6;"
+                        (click)="saveAppointment()">Save</button>
                 </div>
                 <div class="col-6">
-                    <button class="btn btn-primary cancelbtn cancelApp" (click)="addAppointForm.reset()">Cancel</button>
+                    <button class="btn btn-primary cancelbtn cancelApp" (click)="cancelAppointment()">Cancel</button>
                 </div>
             </div>
         </div>
     </form>
-    
+
 </div>
 
 
@@ -314,7 +328,7 @@
     <h2 class="headingDialog">Setting up the employee</h2>
     <ul>
         <li>
-            Click the dropdown details 
+            Click the dropdown details
         </li>
         <li>Click dropdown, position, and pick one</li>
         <li>For the employee to take booking, click add to calendar</li>

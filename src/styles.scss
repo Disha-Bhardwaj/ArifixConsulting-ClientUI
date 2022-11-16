@@ -362,6 +362,9 @@ span.stepSpan {
   letter-spacing: -0.25px;
   color: #312f2f;
 }
+.timepicker-overlay{
+  z-index: 999999 !important;
+}
 // .datepicker-default .calendar-container {
 //   left: -127px !important;
 // }

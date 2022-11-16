@@ -396,8 +396,11 @@
                                                                     placeholder="Service" formControlName="service">
                                                             </div>
                                                             <div class="col-2">
-                                                                <input class="form-control input ser" onfocus="(this.type='time')"  onblur="(this.type='text')" 
+                                                                <!-- <input class="form-control input ser" onfocus="(this.type='time')"  onblur="(this.type='text')" 
+                                                                    formControlName="time"> -->
+                                                                    <input [ngxTimepicker]="finishTimeNGX" class="form-control input ser" placeholder="Time" 
                                                                     formControlName="time">
+                    <ngx-material-timepicker #finishTimeNGX></ngx-material-timepicker>
                                                             </div>
                                                             <div class="col-2">
                                                                 <input class="form-control input ser" type="text"
