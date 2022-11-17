@@ -73,6 +73,26 @@ input.timeField {
   width: 100%;
   border: none;
 }
+// placeholder
+::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+::-webkit-input-placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
 // media query
 @media (max-width: 710px) and (min-width: 200px) {
   .timeIn {
@@ -96,11 +116,8 @@ input.timeField {
     width: 255px;
   }
 }
-// @media (max-width: 376px) and (min-width: 200px) {
-//   input.form-control.input {
-//     width: 90px;
-//   }
-//   button.btn.btn-primary.savebtn {
-//     width: 105%;
-//   }
-// }
+@media (max-width: 400px) and (min-width: 200px) {
+  input.form-control.input.formIn {
+     font-size: 16px;
+   }
+ }

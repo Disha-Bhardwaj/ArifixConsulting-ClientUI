@@ -23,6 +23,56 @@ img.rightArr {
   padding: 10px;
   margin-right: 10px;
 }
+#webView {
+  display: block;
+}
+#mobView {
+  display: none;
+}
+p.name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.25px;
+  color: #000000;
+}
+thead {
+  text-align: center;
+}
+tr {
+  border-style: none !important;
+  border-width: 0;
+  border-color: #fff;
+  height: 176px;
+}
+td.time {
+  text-align: end;
+  width: 10%;
+}
+td.bookingbox {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0px;
+}
+.divBox {
+  background: #c4c6ce;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 25%);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+p.name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.25px;
+  color: #000000;
+}
 // media query
 @media (max-width: 1000px) and (min-width: 531px) {
   button.btn.btn-primary.savebtn.addPosBtn {
@@ -45,67 +95,47 @@ img.rightArr {
   .col-lg-12.col-md-12.col-sm-12.topbtncol {
     display: flex;
     flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20%;
   }
   button.btn.btn-primary.savebtn.addPosBtn {
     font-size: 18px;
     width: 307px;
     margin-bottom: 21px;
   }
-  
+  #webView {
+    display: none;
+  }
+  #mobView {
+    display: block;
+  }
 }
-
-
-
-
-
-p.name {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: -0.25px;
-  color: #000000;
+@media (max-width: 480px) and (min-width: 446px) {
+  .col-lg-12.col-md-12.col-sm-12.topbtncol {
+    margin-left: 15%;
+  }
 }
-thead{
-  text-align: center;
+@media (max-width: 446px) and (min-width: 418px) {
+  .col-lg-12.col-md-12.col-sm-12.topbtncol {
+    margin-left: 9%;
+  }
 }
-tr {
-  border-style: none !important; 
-  border-width: 0;
-  border-color: #fff;
-  height: 176px;
+@media (max-width: 418px) and (min-width: 398px) {
+  .col-lg-12.col-md-12.col-sm-12.topbtncol {
+    margin-left: 5%;
+  }
 }
-td.time {
-  text-align: end;
-  width: 10%;
+@media (max-width: 398px) and (min-width: 200px) {
+  .col-lg-12.col-md-12.col-sm-12.topbtncol {
+    margin-left: 11%;
+  }
+  button.btn.btn-primary.savebtn.addPosBtn {
+    font-size: 18px;
+    width: 235px;
+    margin-bottom: 21px;
+  }
+  img.rightArr {
+    margin-left: -65px;
+  }
 }
-td.bookingbox {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0px;
-}
-.divBox{
-  background: #C4C6CE;
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 25%);
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-p.name {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.25px;
-  color: #000000;
-}
-
-
-
-
-
-
-

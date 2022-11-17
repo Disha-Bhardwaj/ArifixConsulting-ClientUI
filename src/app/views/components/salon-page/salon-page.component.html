@@ -35,15 +35,19 @@
         </div>
     </div>
     <div class="row" style="margin-top: 42px; background-color: #C4C4C4;">
-        <div class="col-lg-12 col-md-12 col-sm-12 camColm">
+        <div class="col-lg-12 col-md-12 col-sm-12 camColm" *ngIf="!imageUrl">
             <label for="uploadData" class="browse newImgBrw">
-                <img *ngIf="!imageUrl" src="assets/icons/camera.svg" class="camIcon">
-                <img *ngIf="imageUrl" [src]="imageUrl" class="camImg2">
+                <img  src="assets/icons/camera.svg" class="camIcon">
             </label>
             <input id="uploadData" type="file" style="display: none;" #Image (change)="uploadImg($event)"
                 accept="image/png, image/gif, image/jpeg">
-            
-            
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 camColm camCol2" *ngIf="imageUrl">
+            <label for="uploadData" class="browse newImgBrw">
+                <img [src]="imageUrl" class="camImg2">
+            </label>
+            <input id="uploadData" type="file" style="display: none;" #Image (change)="uploadImg($event)"
+                accept="image/png, image/gif, image/jpeg">
         </div>
     </div>
     <div class="row p-0 infoBox">

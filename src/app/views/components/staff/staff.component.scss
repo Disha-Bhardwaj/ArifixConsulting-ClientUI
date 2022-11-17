@@ -161,25 +161,37 @@ button.btn.btn-primary.savebtn {
 .datepicker-default .calendar-container {
   left: 0px !important;
 }
-// ::placeholder {
-//   color: #000000 !important;
-//   opacity: 1 !important;
+.inputMat{
+  width: 36%;
+  margin-right: -10px;
+  border: none;
+  background: #fff;
+}
+// .inputMat.b{
+//   width: 29%;
 // }
-// :-ms-input-placeholder {
-//   /* Internet Explorer 10-11 */
-//   color: #000000 !important;
-//   opacity: 1 !important;
-// }
+::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000000 !important;
+  opacity: 1 !important;
+}
 
-// ::-ms-input-placeholder {
-//   /* Microsoft Edge */
-//   color: #000000 !important;
-//   opacity: 1 !important;
-// }
-// ::-webkit-input-placeholder {
-//   color: #000000 !important;
-//   opacity: 1 !important;
-// }
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+::-webkit-input-placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+  color: black;
+}
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {
@@ -187,5 +199,10 @@ button.btn.btn-primary.savebtn {
   }
   .col-lg-4.col-md-4.col-sm-12.topbtncol.emailCol {
     margin-bottom: 5%;
+  }
+}
+@media (max-width: 374px) and (min-width: 200px){
+  .inputMat{
+    width: 46%;
   }
 }

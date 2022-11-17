@@ -7,11 +7,12 @@
         </div>
 
             <aside class="optionFilter" *ngIf="expanded">
-                <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker>
-                <!-- <input class="form-control input date-pick" placeholder="Date" type="text"
-        onfocus="(this.type='date')"  onblur="(this.type='text')" > -->
-                <!-- <input class="form-control input " placeholder="Time" type="text"
-                onfocus="(this.type='time')"  onblur="(this.type='text')" id="NotshowOnlyOnSafari"> -->
+                <!-- <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker> -->
+     
+                <input matInput placeholder="Date" [matDatepicker]="datepickerFrom" 
+                (click)="datepickerFrom.open()" class="form-control input ">
+               <mat-datepicker #datepickerFrom></mat-datepicker>
+
                 <input [ngxTimepicker]="picker"  class="form-control input " placeholder="Time">
 <ngx-material-timepicker #picker></ngx-material-timepicker>
                 <select class="form-control input SelectOpt" >
@@ -29,9 +30,16 @@
     </div>
     <aside class="sidebar">
         <p class="filtertext">Filters</p>
-        <ngx-datepicker #showBFCalendar [(ngModel)]="date" [options]="options" ></ngx-datepicker>
-        <!-- <input class="form-control input date-pick" placeholder="Date" type="text"
-        onfocus="(this.type='date')"  onblur="(this.type='text')" > -->
+        <!-- <ngx-datepicker #showBFCalendar [(ngModel)]="date" [options]="options" ></ngx-datepicker> -->
+        
+
+        <input matInput placeholder="Date" [matDatepicker]="datepickerFrom" 
+                            (click)="datepickerFrom.open()" class="form-control input ">
+                           <mat-datepicker #datepickerFrom></mat-datepicker>
+        
+
+
+
         <input [ngxTimepicker]="picker" class="form-control input " placeholder="Time">
 <ngx-material-timepicker #picker></ngx-material-timepicker>
         <!-- <input class="form-control input " placeholder="Time" type="text"

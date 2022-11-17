@@ -342,7 +342,7 @@ span.stepSpan {
   padding: 0px;
 }
 // booking page date
-.dateBookINP{
+.dateBookINP {
   box-sizing: border-box;
   width: 165px;
   height: 40px;
@@ -362,27 +362,24 @@ span.stepSpan {
   letter-spacing: -0.25px;
   color: #312f2f;
 }
-.timepicker-overlay{
+.timepicker-overlay {
   z-index: 999999 !important;
 }
-// .datepicker-default .calendar-container {
-//   left: -127px !important;
-// }
 // booking page date
-@media (max-width: 1089px) and (min-width: 1025px){
-  .dateBookINP{
+@media (max-width: 1089px) and (min-width: 1025px) {
+  .dateBookINP {
     width: 124px;
     font-size: 13px;
   }
 }
-@media (max-width: 1025px) and (min-width: 979px){
-  .dateBookINP{
+@media (max-width: 1025px) and (min-width: 979px) {
+  .dateBookINP {
     width: 124px;
     font-size: 13px;
   }
 }
-@media (max-width: 979px) and (min-width: 937px){
-  .dateBookINP{
+@media (max-width: 979px) and (min-width: 937px) {
+  .dateBookINP {
     width: 124px;
     font-size: 13px;
   }
@@ -396,12 +393,12 @@ span.stepSpan {
   }
 }
 @media (max-width: 500px) and (min-width: 200px) {
-  .colHeadTime{
+  .colHeadTime {
     font-size: 22px !important;
   }
-  .mat-dialog-container{
+  .mat-dialog-container {
     overflow: scroll !important;
-    max-height: 415px !important;
+    max-height: 400px !important;
   }
 }
 // calendar
@@ -417,4 +414,27 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
 }
 .fc .fc-daygrid-day-frame {
   background: white;
+}
+// placeholder
+::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000000 !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #000000 !important;
+}
+::-webkit-input-placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+@media (max-width: 398px) and (min-width: 200px) {
+  input.dateIn {
+    width: 81% !important;
+  }
 }

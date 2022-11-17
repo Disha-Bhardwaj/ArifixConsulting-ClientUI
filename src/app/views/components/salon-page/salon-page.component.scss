@@ -13,9 +13,14 @@
   padding-top: 183px;
   padding-bottom: 183px;
 }
+.camCol2{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 img.camImg2 {
   width: 100%;
-  height: 100%;
+  height: 366px;
 }
 label.labelUpload {
   margin-top: 14%;
@@ -50,7 +55,7 @@ label.labelUpload {
   display: none !important;
   margin-top: 10px;
 }
-select.form-control.select{
+select.form-control.select {
   padding: 10px;
   border: none;
   height: 50px;
@@ -63,6 +68,24 @@ select.form-control.select{
   line-height: 21px;
   letter-spacing: -0.32px;
   color: #000000;
+}
+// placeholder
+::placeholder {
+  color: #75758b !important;
+  opacity: 1 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #75758b !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #75758b !important;
+}
+::-webkit-input-placeholder {
+  color: #75758b !important;
+  opacity: 1 !important;
 }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
@@ -103,10 +126,13 @@ select.form-control.select{
   .camColm {
     padding-top: 90px;
     padding-bottom: 90px;
+  }
+  .camCol2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  img.camImg2 {
+    width: 100%;
+    height: 180px;
+  }
 }
-img.camImg2 {
-  width: 100%;
-  height: 100%;
-}
-}
-

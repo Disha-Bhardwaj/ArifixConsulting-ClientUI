@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" style="margin-top: 48px;">
+  <div class="row" style="margin-top: 48px;" id="webView">
     <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
       <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">Add
         Appointment</button>
@@ -11,211 +11,27 @@
       <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('calendar')">
     </div>
   </div>
+  <div class="row btnBoxRow" style="margin-top: 48px;" id="mobView">
+      <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
+        <div class="topblock">
+          <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">Add
+            Appointment</button>
+            <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('calendar')">
+        </div>
+        <div class="btns">
+          <img src="assets/icons/leftArr.svg" class="leftArr" (click)="backDate()">
+          <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker>
+          <img src="assets/icons/rightArr.svg" class="rightArr" (click)="nextDate()">
+        </div>
+        
+      </div>
+  </div>
+
   <!-- <div class="calendarDiv">
         <full-calendar
         [options]='calendarOptions'
       ></full-calendar>
     </div> -->
-  <!-- <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="calendarDiv">
-        <table class="table">
-          <thead>
-            <th></th>
-            <th class="thHead">
-              <img src="assets/images/th1.svg">
-              <p class="theadP">Marlie Simpson</p>
-            </th>
-            <th class="thHead">
-              <img src="assets/images/th2.svg">
-              <p class="theadP">Ryan Weekes</p>
-            </th>
-            <th class="thHead">
-              <img src="assets/images/th3.svg">
-              <p class="theadP">Mary Nunes</p>
-            </th>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time">9:00 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">9:15 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">9:30 am</td>
-              <td class="bookingbox">
-             
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-              
-              </td>
-            </tr>
-            <tr>
-              <td class="time">9:45 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">10:00 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">10:15 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr> 
-            <tr>
-              <td class="time">10:30 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">10:45 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">11:00 am</td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                 
-                </div>
-              </td>
-              <td class="bookingbox">
-                <div>
-                  <p class="name">Michael Jones</p>
-                  <p class="name">9:00am-9:30am</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div> -->
-
 
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -265,7 +81,7 @@
                   </div>
                   <img src="assets/images/th1.svg">
                 </div>
-                
+
               </td>
             </tr>
             <tr>
@@ -296,7 +112,7 @@
                   </div>
                   <img src="assets/images/th1.svg">
                 </div>
-                
+
               </td>
             </tr>
             <tr>
@@ -357,7 +173,7 @@
                   </div>
                   <img src="assets/images/th1.svg">
                 </div>
-                
+
               </td>
             </tr>
           </tbody>

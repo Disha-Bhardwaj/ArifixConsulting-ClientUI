@@ -2,123 +2,115 @@
   <mat-toolbar class="example-toolbar">
     <mat-toolbar-row>
       <div class="iconsDiv">
-        <button id="menuIcon" #menuBtn mat-icon-button (click)="snav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <a class="navbar-brand mx-lg-4 mx-sm-4" routerLink="/home"><img src="assets/icons/home.svg" class="vector" /></a>
+        <a class="navbar-brand mx-lg-4 mx-sm-4" routerLink="/home"><img src="assets/icons/home.svg"
+            class="vector" /></a>
       </div>
-     
+
       <div class="boxGlobal">
         <div class="topBox">
           <p class="boxP">The Colorist <span class="spanImg"><img src="assets/icons/plus.svg"></span></p>
         </div>
-        
+
       </div>
-      <div>
-        <a style="cursor: pointer;" class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.svg" class="globeIcon" 
-          (mouseover)="isOpenedLang = true" (mouseleave)="isOpenedLang = false"
-          (click)="isOpenedLang=!isOpenedLang"/></a>
-          <ul class="openUL lang" *ngIf="isOpenedLang">
-            <li class="nav-item"><a class="nav-link openA langLi">
-                Language 1
-              </a></li>
-            <li class="nav-item"><a class="nav-link openA langLi">
-                Language 2
-              </a></li>
-          </ul>
+      <div class="iconsDiv">
+        <a style="cursor: pointer;" class="nav-item nav-link lang-noheader"><img src="assets/icons/globle.svg"
+            class="globeIcon" (mouseover)="isOpenedLang = true" (mouseleave)="isOpenedLang = false"
+            (click)="isOpenedLang=!isOpenedLang" /></a>
+        <ul class="openUL lang" *ngIf="isOpenedLang">
+          <li class="nav-item"><a class="nav-link openA langLi">
+              Language 1
+            </a></li>
+          <li class="nav-item"><a class="nav-link openA langLi">
+              Language 2
+            </a></li>
+        </ul>
+        <button id="menuIcon" #menuBtn mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
       </div>
-      
+
     </mat-toolbar-row>
   </mat-toolbar>
-  <mat-sidenav-container  class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0" >
-    <mat-sidenav  [opened]="openSidebar" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav [opened]="openSidebar" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches">
       <!-- fixedTopGap="56" -->
       <mat-nav-list>
         <!-- <app-sidebar></app-sidebar> -->
         <section>
           <div class="listItem">
-              <div class="userProfile">
-                  <img src="assets/images/Profile.svg">
-              </div>
-              <div class="box" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #dashboard="routerLinkActive" (click)="removeWizard()"  >
-                  <p class="text">Dashboard</p>
-                  <img [src]="dashboard.isActive ? 'assets/icons/dashboardHover.svg' : 'assets/icons/dashboard.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/salon-page" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #salonPage="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Salon</p>
-                  <img
-                      [src]="salonPage.isActive ? 'assets/icons/salonHover.svg' : 'assets/icons/salon.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/staff" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #staff="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Staff</p>
-                  <img 
-                      [src]="staff.isActive ? 'assets/icons/staffHover.svg' : 'assets/icons/staff.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/positions" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #positions="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Positions</p>
-                  <img 
-                      [src]="positions.isActive ? 'assets/icons/positionHover.svg' : 'assets/icons/position.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/calendar" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #calender="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Calendar</p>
-                  <img 
-                      [src]="calender.isActive ? 'assets/icons/calendarHover.svg' : 'assets/icons/calender.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/bookings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #bookings="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Bookings</p>
-                  <img 
-                      [src]="bookings.isActive ? 'assets/icons/bookingHover.svg' : 'assets/icons/booking.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/notifications" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #notifications="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Notifications</p>
-                  <img 
-                      [src]="notifications.isActive ? 'assets/icons/notificationHover.svg' : 'assets/icons/notification.svg'"
-                      class="icon">
-              </div>
-              <hr style="border: 1px solid #312F2F;margin-left:-10px;margin-right:-10px;">
-              <div class="box" (click)="openWebsite()" >
-                  <p class="text">Website</p>
-                  <img src="assets/icons/website.svg"
-                    
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/company-Info" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
-                  #companyInfo="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Company Info</p>
-                  <img type="image/svg+xml"
-                      [src]="companyInfo.isActive ? 'assets/icons/companyInfoHover.svg' : 'assets/icons/companyInfo.svg'"
-                      class="icon">
-              </div>
-              <div class="box" routerLink="/wizard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
-              #wizardInfo="routerLinkActive" (click)="removeWizard()" >
-                  <p class="text">Setup Wizard</p>
-                  <img style="width: 25px;height: 25px;" [src]="wizardInfo.isActive ? 'assets/icons/setupWizardHover.png' : 'assets/icons/setupWizard.svg'" 
-                      class="icon">
-              </div>
+            <div class="userProfile">
+              <img src="assets/images/Profile.svg">
+            </div>
+            <div class="box" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #dashboard="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Dashboard</p>
+              <img [src]="dashboard.isActive ? 'assets/icons/dashboardHover.svg' : 'assets/icons/dashboard.svg'"
+                class="icon">
+            </div>
+            <div class="box" routerLink="/salon-page" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #salonPage="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Salon</p>
+              <img [src]="salonPage.isActive ? 'assets/icons/salonHover.svg' : 'assets/icons/salon.svg'" class="icon">
+            </div>
+            <div class="box" routerLink="/staff" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #staff="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Staff</p>
+              <img [src]="staff.isActive ? 'assets/icons/staffHover.svg' : 'assets/icons/staff.svg'" class="icon">
+            </div>
+            <div class="box" routerLink="/positions" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #positions="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Positions</p>
+              <img [src]="positions.isActive ? 'assets/icons/positionHover.svg' : 'assets/icons/position.svg'"
+                class="icon">
+            </div>
+            <div class="box" routerLink="/calendar" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #calender="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Calendar</p>
+              <img [src]="calender.isActive ? 'assets/icons/calendarHover.svg' : 'assets/icons/calender.svg'"
+                class="icon">
+            </div>
+            <div class="box" routerLink="/bookings" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #bookings="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Bookings</p>
+              <img [src]="bookings.isActive ? 'assets/icons/bookingHover.svg' : 'assets/icons/booking.svg'"
+                class="icon">
+            </div>
+            <div class="box" routerLink="/notifications" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}" #notifications="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Notifications</p>
+              <img
+                [src]="notifications.isActive ? 'assets/icons/notificationHover.svg' : 'assets/icons/notification.svg'"
+                class="icon">
+            </div>
+            <hr style="border: 1px solid #312F2F;margin-left:-10px;margin-right:-10px;">
+            <div class="box" (click)="openWebsite()">
+              <p class="text">Website</p>
+              <img src="assets/icons/website.svg" class="icon">
+            </div>
+            <div class="box" routerLink="/company-Info" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact:true}" #companyInfo="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Company Info</p>
+              <img type="image/svg+xml"
+                [src]="companyInfo.isActive ? 'assets/icons/companyInfoHover.svg' : 'assets/icons/companyInfo.svg'"
+                class="icon">
+            </div>
+            <div class="box" routerLink="/wizard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+              #wizardInfo="routerLinkActive" (click)="removeWizard()">
+              <p class="text">Setup Wizard</p>
+              <img style="width: 25px;height: 25px;"
+                [src]="wizardInfo.isActive ? 'assets/icons/setupWizardHover.png' : 'assets/icons/setupWizard.svg'"
+                class="icon">
+            </div>
           </div>
-      </section>
+        </section>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-    
+
   </mat-sidenav-container>
   <app-footer></app-footer>
 </div>
-
-

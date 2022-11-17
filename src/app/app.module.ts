@@ -25,6 +25,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './views/common/dialog/dialog.component';
 import { CookieService } from 'ngx-cookie-service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 import { DatepickerModule } from 'ng2-datepicker';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
@@ -48,6 +50,8 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,

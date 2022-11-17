@@ -39,6 +39,8 @@ export class BookingComponent implements OnInit {
       data: {
         fromPage: value,
       },
+      autoFocus: false, 
+      restoreFocus: false
     });
   }
 

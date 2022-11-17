@@ -33,6 +33,8 @@ export class CalendarComponent implements OnInit {
       data: {
         fromPage: value,
       },
+      autoFocus: false, 
+      restoreFocus: false
     });
   }
 

@@ -50,7 +50,8 @@ export class PositionsComponent implements OnInit {
       this.openingTimeForm.reset()
     }
     else if (value == 'resetPermission') {
-      this.permissionForm.reset()
+      (this.permissionForm.controls['permissions'] as FormArray).clear();
+      this.addNewPermission()
     }
     else if (value == 'resetEmployee') {
       this.employeeTypeForm.reset({
@@ -59,6 +60,9 @@ export class PositionsComponent implements OnInit {
     }
     else if (value == 'resetService') {
       this.servicesForm.reset()
+      // (this.servicesForm.controls['categories'] as FormArray).clear();
+      // this.categoryCount= 0
+      // this.addCategory();
     }
 
   }

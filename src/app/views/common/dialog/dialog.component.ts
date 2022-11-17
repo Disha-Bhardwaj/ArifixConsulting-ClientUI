@@ -78,10 +78,16 @@ export class DialogComponent implements OnInit {
   }
   saveAppointment() {
     if (this.addAppointForm.valid) {
-      this.toastr.success('Your appointment sent to the salon', '', {
-        timeOut: 3000,
-      });
-      this.dialogRef.close();
+      if (this.addAppointForm.value.startTime < this.addAppointForm.value.finishTime) {
+        this.toastr.success('Your appointment sent to the salon', '', {
+          timeOut: 3000,
+        });
+        this.dialogRef.close();
+      } else {
+        this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+          timeOut: 3000,
+        });
+      }
     }else{
       this.toastr.error('Please fill all the fields', 'Error', {
         timeOut: 3000,
