@@ -51,7 +51,7 @@ span.serviceSpan {
   display: inline-flex;
   padding: 10px 10px;
   gap: 10px;
-  width: 160px;
+  width: 165px;
   height: 50px;
   border: 1px solid #000000;
   border-radius: 6px; 
@@ -62,6 +62,7 @@ span.serviceSpan {
   letter-spacing: -0.32px;
   color: #000000;
   margin-right: 10px;
+  padding-right: 3px;
 }
 input.inputTime {
   border: none;

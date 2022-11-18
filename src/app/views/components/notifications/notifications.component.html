@@ -4,18 +4,27 @@
     justify-content: center;">
         
         <div class="col-lg-12 col-md-12 col-sm-12 notificationCol" style="width: 694px;">
-            <div  class="notiDivUpper" style="width: 79%;">
+            <div  class="notiDivUpper" style="width: 77.5%;">
                 <h2 class="h2Text">Turn notifications off</h2>
 
             </div>
             <div class="notiDivUpper">
                 <div class="boxInp">
                     <span style="display: flex;align-items: center;">From</span>
-                    <input  type="text" class="inputTime" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime"placeholder="23:00" (ngModelChange)="timeValue()">
+                    <input [ngxTimepicker]="FromTime"  class="inputTime" (ngModelChange)="timeValue()"
+                     [(ngModel)]="startTime"placeholder="23:00">
+                    <ngx-material-timepicker #FromTime></ngx-material-timepicker>
+                    <!-- <input  type="text" class="inputTime" onfocus="(this.type='time')" 
+                     onblur="(this.type='text')" [(ngModel)]="startTime"placeholder="23:00" (ngModelChange)="timeValue()"> -->
                      
                 </div>
                 <div class="boxInp">
-                    <span style="display: flex;align-items: center;">To</span><input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="inputTime"placeholder="06:00"(ngModelChange)="timeValue()">
+                    <span style="display: flex;align-items: center;">To</span>
+                    <input [ngxTimepicker]="FromTime"  class="inputTime" (ngModelChange)="timeValue()" [(ngModel)]="finishTime"
+                    placeholder="06:00" (ngModelChange)="timeValue()">
+                    <ngx-material-timepicker #FromTime></ngx-material-timepicker>
+                    <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" 
+                    class="inputTime"placeholder="06:00"(ngModelChange)="timeValue()"> -->
                 </div>
                 <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime" class="timeInput" placeholder="From" (change)="timeValue()">
                 <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="timeInput" placeholder="To"(change)="timeValue()">
