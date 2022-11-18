@@ -435,6 +435,9 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
 }
 @media (max-width: 398px) and (min-width: 200px) {
   input.dateIn {
-    width: 81% !important;
+    width: 65% !important;
+  }
+  .datepicker-default .calendar-container {
+    left: -45px !important;
   }
 }

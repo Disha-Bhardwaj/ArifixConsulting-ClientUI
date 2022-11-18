@@ -3,6 +3,28 @@
   border-radius: 6px;
   margin-top: 58px;
 }
+img.editIcon {
+  width: 35px;
+  height: 35px;
+}
+// placeholder
+::placeholder {
+  color: #75758b !important;
+  opacity: 1 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #75758b !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #75758b !important;
+}
+::-webkit-input-placeholder {
+  color: #75758b !important;
+  opacity: 1 !important;
+}
 /* media query */
 @media (max-width: 595px) and (min-width: 200px) {
   .col-6.columnInp {

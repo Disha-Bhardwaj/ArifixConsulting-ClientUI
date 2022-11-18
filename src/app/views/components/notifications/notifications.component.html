@@ -14,21 +14,15 @@
                     <input [ngxTimepicker]="FromTime"  class="inputTime" (ngModelChange)="timeValue()"
                      [(ngModel)]="startTime"placeholder="23:00">
                     <ngx-material-timepicker #FromTime></ngx-material-timepicker>
-                    <!-- <input  type="text" class="inputTime" onfocus="(this.type='time')" 
-                     onblur="(this.type='text')" [(ngModel)]="startTime"placeholder="23:00" (ngModelChange)="timeValue()"> -->
-                     
+                   
                 </div>
                 <div class="boxInp">
                     <span style="display: flex;align-items: center;">To</span>
-                    <input [ngxTimepicker]="FromTime"  class="inputTime" (ngModelChange)="timeValue()" [(ngModel)]="finishTime"
+                    <input [ngxTimepicker]="toTime"  class="inputTime" (ngModelChange)="timeValue()" [(ngModel)]="finishTime"
                     placeholder="06:00" (ngModelChange)="timeValue()">
-                    <ngx-material-timepicker #FromTime></ngx-material-timepicker>
-                    <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" 
-                    class="inputTime"placeholder="06:00"(ngModelChange)="timeValue()"> -->
+                    <ngx-material-timepicker #toTime></ngx-material-timepicker>
                 </div>
-                <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="startTime" class="timeInput" placeholder="From" (change)="timeValue()">
-                <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" [(ngModel)]="finishTime" class="timeInput" placeholder="To"(change)="timeValue()">
-              -->
+                
                 <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog()"> 
             </div>
             

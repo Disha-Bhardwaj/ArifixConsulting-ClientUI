@@ -75,22 +75,20 @@ input.timeField {
 }
 // placeholder
 ::placeholder {
-  color: #000000 !important;
+  color: #75758b !important;
   opacity: 1 !important;
 }
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #000000 !important;
-  opacity: 1 !important;
+  color: #75758b !important;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #000000 !important;
-  opacity: 1 !important;
+  color: #75758b !important;
 }
 ::-webkit-input-placeholder {
-  color: #000000 !important;
+  color: #75758b !important;
   opacity: 1 !important;
 }
 // media query

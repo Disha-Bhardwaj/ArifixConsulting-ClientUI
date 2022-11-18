@@ -37,7 +37,7 @@
     <div class="row" style="margin-top: 42px; background-color: #C4C4C4;">
         <div class="col-lg-12 col-md-12 col-sm-12 camColm" *ngIf="!imageUrl">
             <label for="uploadData" class="browse newImgBrw">
-                <img  src="assets/icons/camera.svg" class="camIcon">
+                <img src="assets/icons/camera.svg" class="camIcon">
             </label>
             <input id="uploadData" type="file" style="display: none;" #Image (change)="uploadImg($event)"
                 accept="image/png, image/gif, image/jpeg">
@@ -203,10 +203,10 @@
                         <div class="col-6 columnInp ">
                             <label class="form-label label" for="passwordInput">Currency</label>
                             <select class="form-control select" formControlName="currency"
-                            [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
-                        <option value="">Default</option>
-                        <option value="Default1">Default1</option>
-                    </select>
+                                [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                                <option value="">Default</option>
+                                <option value="Default1">Default1</option>
+                            </select>
                             <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
                                 class="invalid-feedback">
                                 <div *ngIf="currency.errors?.['required']">
@@ -254,19 +254,15 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
                         </div>
                         <div class="col-4">
-                                <input [ngxTimepicker]="monOpen"  class="form-control input " placeholder="Time" formControlName="monOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #monOpen></ngx-material-timepicker>
+                            <input [ngxTimepicker]="monOpen" class="form-control input " placeholder="Time"
+                                formControlName="monOpen" placeholder="Closed">
+                            <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')" onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="monClose"
-                                > -->
-                                <input [ngxTimepicker]="monClose"  class="form-control input " placeholder="Time" formControlName="monClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #monClose></ngx-material-timepicker>
+                            <input [ngxTimepicker]="monClose" class="form-control input " placeholder="Time"
+                                formControlName="monClose" placeholder="Closed">
+                            <ngx-material-timepicker #monClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -279,23 +275,17 @@
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="tuesOpen"> -->
-                            
-                                <input [ngxTimepicker]="tuesOpen"  class="form-control input " placeholder="Time" formControlName="tuesOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
+
+                            <input [ngxTimepicker]="tuesOpen" class="form-control input " placeholder="Time"
+                                formControlName="tuesOpen" placeholder="Closed">
+                            <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="tuesClose"> -->
-                          
-                                <input [ngxTimepicker]="tuesClose"  class="form-control input " placeholder="Time" formControlName="tuesClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
+
+                            <input [ngxTimepicker]="tuesClose" class="form-control input " placeholder="Time"
+                                formControlName="tuesClose" placeholder="Closed">
+                            <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -307,22 +297,16 @@
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="wedOpen"
-                                > -->
-                          
-                                <input [ngxTimepicker]="wedOpen"  class="form-control input " placeholder="Time" formControlName="wedOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
+
+                            <input [ngxTimepicker]="wedOpen" class="form-control input " placeholder="Time"
+                                formControlName="wedOpen" placeholder="Closed">
+                            <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="wedClose"> -->
-                          
-                                <input [ngxTimepicker]="wedClose"  class="form-control input " placeholder="Time" formControlName="wedClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #wedClose></ngx-material-timepicker>
+
+                            <input [ngxTimepicker]="wedClose" class="form-control input " placeholder="Time"
+                                formControlName="wedClose" placeholder="Closed">
+                            <ngx-material-timepicker #wedClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -334,24 +318,16 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Thur</label>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="thursOpen"> -->
 
-
-                                <input [ngxTimepicker]="thursOpen"  class="form-control input " placeholder="Time" formControlName="thursOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
+                            <input [ngxTimepicker]="thursOpen" class="form-control input " placeholder="Time"
+                                formControlName="thursOpen" placeholder="Closed">
+                            <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="thursClose"> -->
-                            
-                                <input [ngxTimepicker]="thursClose"  class="form-control input " placeholder="Time" formControlName="thursClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #thursClose></ngx-material-timepicker>
+                            <input [ngxTimepicker]="thursClose" class="form-control input " placeholder="Time"
+                                formControlName="thursClose" placeholder="Closed">
+                            <ngx-material-timepicker #thursClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -362,23 +338,15 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="friOpen"
-                             > -->
-                            
-                             <input [ngxTimepicker]="friOpen"  class="form-control input " placeholder="Time" formControlName="friOpen"
-                             placeholder="Closed">
-                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
+                            <input [ngxTimepicker]="friOpen" class="form-control input " placeholder="Time"
+                                formControlName="friOpen" placeholder="Closed">
+                            <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="friClose"> -->
-                            
-                                <input [ngxTimepicker]="friClose"  class="form-control input " placeholder="Time" formControlName="friClose"
-                             placeholder="Closed">
-                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
+                            <input [ngxTimepicker]="friClose" class="form-control input " placeholder="Time"
+                                formControlName="friClose" placeholder="Closed">
+                            <ngx-material-timepicker #friClose></ngx-material-timepicker>
 
                         </div>
                     </div>
@@ -390,25 +358,16 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="satOpen"
-                                > -->
-                           
-                                <input [ngxTimepicker]="satOpen"  class="form-control input " placeholder="Time" formControlName="satOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #satOpen></ngx-material-timepicker>
+                            <input [ngxTimepicker]="satOpen" class="form-control input " placeholder="Time"
+                                formControlName="satOpen" placeholder="Closed">
+                            <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="satClose"> -->
-                         
 
-                                
-                                <input [ngxTimepicker]="satClose"  class="form-control input " placeholder="Time" formControlName="satClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #satClose></ngx-material-timepicker>
+                            <input [ngxTimepicker]="satClose" class="form-control input " placeholder="Time"
+                                formControlName="satClose" placeholder="Closed">
+                            <ngx-material-timepicker #satClose></ngx-material-timepicker>
                         </div>
                     </div>
                 </div>
@@ -419,24 +378,16 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input " formControlName="sunOpen"
-                                > -->
-                         
-                                <input [ngxTimepicker]="sunOpen"  class="form-control input " placeholder="Time" formControlName="sunOpen"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
+                            <input [ngxTimepicker]="sunOpen" class="form-control input " placeholder="Time"
+                                formControlName="sunOpen" placeholder="Closed">
+                            <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
 
 
                         </div>
                         <div class="col-4">
-                            <!-- <input  type="text"
-        onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed" class="form-control input "
-                                formControlName="sunClose"> -->
-                            
-                                <input [ngxTimepicker]="sunClose"  class="form-control input " placeholder="Time" formControlName="sunClose"
-                                placeholder="Closed">
-                                <ngx-material-timepicker #sunClose></ngx-material-timepicker>
+                            <input [ngxTimepicker]="sunClose" class="form-control input " placeholder="Time"
+                                formControlName="sunClose" placeholder="Closed">
+                            <ngx-material-timepicker #sunClose></ngx-material-timepicker>
 
 
                         </div>

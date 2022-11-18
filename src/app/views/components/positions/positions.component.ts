@@ -60,9 +60,6 @@ export class PositionsComponent implements OnInit {
     }
     else if (value == 'resetService') {
       this.servicesForm.reset()
-      // (this.servicesForm.controls['categories'] as FormArray).clear();
-      // this.categoryCount= 0
-      // this.addCategory();
     }
 
   }

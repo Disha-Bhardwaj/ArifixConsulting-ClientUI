@@ -78,3 +78,8 @@ li,span.stepSpan  {
     font-size: 16px;
   }
 }
+@media (max-width: 500px) and (min-width: 200px) {
+  .infoBox {
+    margin-top: 75px;
+  }
+}

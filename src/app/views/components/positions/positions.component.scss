@@ -41,6 +41,7 @@ input.JobTit {
   align-items: center;
   justify-content: space-between;
   margin-top: 0px;
+  padding-right: 7px;
 }
 .col-lg-12.col-md-12.col-sm-12.profileCol {
   display: flex;
@@ -256,6 +257,10 @@ input.form-control.input.ser {
     height: 50px;
     font-size: 16px;
     letter-spacing: -1px;
+  }
+  input.form-control.input {
+    font-size: 18px;
+    padding: 7px;
   }
 }
 
