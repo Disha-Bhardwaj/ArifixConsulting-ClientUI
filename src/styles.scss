@@ -401,6 +401,12 @@ span.stepSpan {
     max-height: 400px !important;
   }
 }
+@media (max-width: 400px) and (min-width: 200px) {
+  .mat-dialog-container {
+    overflow: scroll !important;
+    max-height: 350px !important;
+  }
+}
 // calendar
 .fc-h-event,
 .fc-v-event {

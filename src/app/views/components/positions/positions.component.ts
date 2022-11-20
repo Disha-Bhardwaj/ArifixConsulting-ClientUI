@@ -25,6 +25,7 @@ export class PositionsComponent implements OnInit {
   jobTitle = ''
   disableTitle = false
   serviceCount = 0
+  savedBtnDis = false
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router) { }
@@ -70,7 +71,6 @@ export class PositionsComponent implements OnInit {
     else if (value == 'resetService') {
       this.servicesForm.reset()
     }
-
   }
   addPositionBTN() {
     this.addPosition = true
@@ -169,7 +169,19 @@ export class PositionsComponent implements OnInit {
       sunClose: [''],
     })
   }
-
+  validatePriceField(value:any){
+    var reg = new RegExp('^[0-9]*$');
+    let match = reg.test(value)
+    if(!match){
+      this.toastr.error('Only numbers are allowed in Price field', '', {
+        timeOut: 3000,
+      });
+      this.savedBtnDis = true
+    }
+    else{
+      this.savedBtnDis = false
+    }
+  }
   // services form
   categories(): FormArray {
     return this.servicesForm.get("categories") as FormArray

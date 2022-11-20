@@ -100,14 +100,14 @@
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>
-                                <mat-datepicker  #datepickerFrom></mat-datepicker>
+                                <mat-datepicker touchUi="true"  #datepickerFrom></mat-datepicker>
                             </div>
                             <div class="form-control addtoCalDiv">
                                 <input readonly matInput placeholder="Break To"  [matDatepicker]="datepickerTo" formControlName="breakTo"  matDatepickerToggleIcon class="inputMat b">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>
-                                <mat-datepicker  #datepickerTo></mat-datepicker>
+                                <mat-datepicker touchUi="true"  #datepickerTo></mat-datepicker>
                             </div>
 
                             <div class="form-control addtoCalDiv" mat-button (click)="openDialog('Staff3')"> <span

@@ -427,8 +427,10 @@
                                                             <div class="col-2">
                                                                 <input class="form-control input ser" type="text"
                                                                     placeholder="Price" formControlName="price"
-                                                                    maxlength="5"
-                                                                    style="padding-right: 3px; padding-left: 3px;">
+                                                                    maxlength="5" #inputPrice
+                                                                    style="padding-right: 3px; padding-left: 3px;"
+                                                                    (keyup)="validatePriceField(inputPrice.value)">
+                                                                    <!-- (change)="validatePriceField(inputPrice.value)" -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -457,7 +459,7 @@
                                             (click)="cancelChanges('resetService')">Cancel</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"  (click)="detailsSaved()">Save</button>
+                                        <button class="btn btn-primary savebtn" [disabled]="savedBtnDis" (click)="scroll(containerTop)"  (click)="detailsSaved()">Save</button>
                                     </div>
                                 </div>
                             </div>
