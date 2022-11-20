@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-positions',
@@ -34,6 +35,14 @@ export class PositionsComponent implements OnInit {
       this.showWizard = true
     }
     this.categoryCount = 0
+  }
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+    // let elw = document.getElementById('MainNavBar');
+    // elw!.scrollIntoView();
+  }
+  adjustWidth(value:any, steps: any){
+    $('#PosSelect').css('width', value.length*10 + 20+'px')
   }
   // cancel changes
   cancelChanges(value: any) {

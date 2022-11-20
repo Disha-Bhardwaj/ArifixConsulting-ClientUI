@@ -146,6 +146,8 @@ select.form-control.select {
   height: 50px;
   margin-bottom: 10px;
   background-color: rgba(255, 255, 255, 1) !important;
+  width: min-content;
+  border: none;
 }
 select {
   -moz-appearance: none;
@@ -194,6 +196,14 @@ input.form-control.input.ser {
 ::-webkit-input-placeholder {
   color: #75758b !important;
   opacity: 1 !important;
+}
+.addtoCalDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #fff;
+  height: 50px;
+  margin-bottom: 17px;
 }
 /* media query */
 @media (max-width: 1657px) and (min-width: 1425px) {

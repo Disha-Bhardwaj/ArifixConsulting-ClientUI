@@ -58,14 +58,16 @@
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol" *ngIf="!details">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)">
+                            <!-- <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)"> -->
+                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editDetailsFun(true)" style="width: 30px; height: 30px;">
                             <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="close()">
                         </div>
                         <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff2')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol2" *ngIf="details">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)">
+                            <!-- <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editDetailsFun(true)"> -->
+                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editDetailsFun(true)" style="width: 30px; height: 30px;">
                             <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="close()">
                         </div>
                     </div>
@@ -76,12 +78,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;"
                         (click)="showDetails()">
                         <div class="form-control addtoCalDiv">
-                            <!-- <span class="labelSpan">Details <img src="assets/icons/dropdownIcon.svg"
-                                    style="margin-bottom: 1px;width: 10px;height: 7px;"
-                                    [ngClass]="{'clicked': details}"></span> -->
                                     <span class="labelSpan">Details</span>
                                     <mat-icon [ngClass]="{'clicked': details}">keyboard_arrow_down</mat-icon>
-                                    <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
                         </div>
                     </div>
                 </div>
@@ -96,40 +94,20 @@
                                     <option value="Head barber">Head barber</option>
                                 </select>
                             </div>
-                            <!-- <div *ngIf="!editDetails" class="form-control addtoCalDiv">
-                                <span class="labelSpan" style="width: 100%;">Break From <img
-                                        src="assets/icons/dropdownIcon.svg"
-                                        style="width: 10px;height: 7px;margin-left: 2%;"></span>
-                            </div>
-                            <div *ngIf="!editDetails" class="form-control addtoCalDiv">
-                                <span class="labelSpan" style="width: 100%;">Break To <img
-                                        src="assets/icons/dropdownIcon.svg"
-                                        style="width: 10px;height: 7px;margin-left: 7%;"></span>
-                            </div> -->
-                            <!-- <div *ngIf="editDetails" class="form-control addtoCalDiv" (click)="toggleCalender()">
-                                <ngx-datepicker  #showBFCalendar formControlName="breakFrom" [options]="BFoptions">
-                                </ngx-datepicker> 
-                                <img class="breakArr" src="assets/icons/dropdownIcon.svg"
-                                    (click)="toggleCalender()">
-                            </div>
-                            <div *ngIf="editDetails" class="form-control addtoCalDiv">
-                                <ngx-datepicker formControlName="breakTo" [options]="BToptions"></ngx-datepicker> <img
-                                    class="breakArr" src="assets/icons/dropdownIcon.svg">
-                            </div> -->
 
                             <div class="form-control addtoCalDiv">
-                                <input matInput placeholder="Break From" [matDatepicker]="datepickerFrom" formControlName="breakFrom"  matDatepickerToggleIcon class="inputMat">
+                                <input readonly matInput placeholder="Break From" [matDatepicker]="datepickerFrom" formControlName="breakFrom"  matDatepickerToggleIcon class="inputMat">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>
-                                <mat-datepicker #datepickerFrom></mat-datepicker>
+                                <mat-datepicker  #datepickerFrom></mat-datepicker>
                             </div>
                             <div class="form-control addtoCalDiv">
-                                <input matInput placeholder="Break To"  [matDatepicker]="datepickerTo" formControlName="breakTo"  matDatepickerToggleIcon class="inputMat b">
+                                <input readonly matInput placeholder="Break To"  [matDatepicker]="datepickerTo" formControlName="breakTo"  matDatepickerToggleIcon class="inputMat b">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>
-                                <mat-datepicker #datepickerTo></mat-datepicker>
+                                <mat-datepicker  #datepickerTo></mat-datepicker>
                             </div>
 
                             <div class="form-control addtoCalDiv" mat-button (click)="openDialog('Staff3')"> <span

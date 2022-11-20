@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" #containerTop>
     <div class="row" style="margin-top: 48px;">
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
             <button class="btn btn-primary savebtn addPosBtn" (click)="addPositionBTN()">Add Position</button>
@@ -52,8 +52,10 @@
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn aboveNxt"
                                 (click)="showStepsFun('schedule')">Next</button>
-                            <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editTitle()"
-                                *ngIf="showStep == 'schedule'">
+                            <!-- <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editTitle()"
+                                *ngIf="showStep == 'schedule'"> -->
+                                <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
+                                *ngIf="showStep == 'schedule'" style="width: 30px; height: 30px;">
                             <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="cancelChanges('closeAll')">
                         </div>
                     </div>
@@ -280,7 +282,7 @@
 
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn btn-primary savebtn"
+                                            <button class="btn btn-primary savebtn"  (click)="scroll(containerTop)" 
                                                 (click)="showStepsFun('permission')">Next</button>
                                         </div>
                                     </div>
@@ -301,19 +303,24 @@
                                     (click)="openDialog('Pos4')">
                             </div>
                             <form [formGroup]="permissionForm">
-                                <div formArrayName="permissions"
+                                
+                                    <div formArrayName="permissions"
                                     *ngFor="let permi of getpermission.controls; let i=index;">
                                     <ng-container [formGroupName]="i">
                                         <div class="mb-3">
                                             <p class="textStep">Permissions</p>
-                                            <select class="form-control select">
-                                                <option disabled selected hidden value="">Select</option>
-                                                <option value="Permission 1">Permission 1</option>
-                                                <option value="Permission 2">Permission 2</option>
-                                            </select>
+                                            <div class="addtoCalDiv">
+                                                <select class="form-control select">
+                                                    <option disabled selected hidden value="">Select</option>
+                                                    <option value="Permission 1">Permission 1</option>
+                                                    <option value="Permission 2">Permission 2</option>
+                                                </select>
+                                            </div>
+                                            
                                         </div>
                                     </ng-container>
                                 </div>
+                                
                             </form>
                             <div class="mb-3">
                                 <button class="btn btn-primary cancelbtn" (click)="addNewPermission()">Add
@@ -327,7 +334,7 @@
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn"
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)" 
                                             (click)="showStepsFun('employee type')">Next</button>
                                     </div>
                                 </div>
@@ -349,11 +356,14 @@
                             </div>
                             <p class="textStep">Employee type</p>
                             <form [formGroup]="employeeTypeForm">
-                                <select class="form-control select" formControlName="employeeType">
-                                    <option value="">Select</option>
-                                    <option value="Employee type 1">Self Employed</option>
-                                    <option value="Employee type 2">Employed</option>
-                                </select>
+                                <div class="addtoCalDiv">
+                                    <select class="form-control select" formControlName="employeeType">
+                                        <option value="">Select</option>
+                                        <option value="Employee type 1">Self Employed</option>
+                                        <option value="Employee type 2">Employed</option>
+                                    </select>
+                                </div>
+                                
                             </form>
 
                             <div class="mb-3">
@@ -364,7 +374,7 @@
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn"
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)" 
                                             (click)="showStepsFun('service')">Next</button>
                                     </div>
                                 </div>
@@ -387,11 +397,14 @@
                                 <div formArrayName="categories">
                                     <div *ngFor="let cate of categories().controls; let cateIndex=index">
                                         <div [formGroupName]="cateIndex">
-                                            <select class="form-control select" formControlName="category">
-                                                <option disabled selected hidden value="">Category</option>
-                                                <option value="Category 1">Category 1</option>
-                                                <option value="Category 2">Category 2</option>
-                                            </select>
+                                            <div class="addtoCalDiv">
+                                                <select class="form-control select" formControlName="category">
+                                                    <option disabled selected hidden value="">Category</option>
+                                                    <option value="Category 1">Category 1</option>
+                                                    <option value="Category 2">Category 2</option>
+                                                </select>
+                                            </div>
+                                            
                                             <div formArrayName="serviceList">
                                                 <div
                                                     *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
@@ -444,7 +457,7 @@
                                             (click)="cancelChanges('resetService')">Cancel</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="detailsSaved()">Save</button>
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"  (click)="detailsSaved()">Save</button>
                                     </div>
                                 </div>
                             </div>
