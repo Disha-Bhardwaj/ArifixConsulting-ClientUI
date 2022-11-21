@@ -94,6 +94,12 @@
                                     <option value="Head barber">Head barber</option>
                                 </select>
                             </div>
+                            <div class="form-control addtoCalDiv"> <span class="labelSpan">Add to Calender</span>
+                                <label class="switch" for="checkbox">
+                                    <input type="checkbox" id="checkbox" formControlName="addToCalendar"/>
+                                    <div class="slider round"></div>
+                                </label>
+                            </div>
 
                             <div class="form-control addtoCalDiv">
                                 <input (click)="datepickerFrom.open()" matInput placeholder="Break From" [matDatepicker]="datepickerFrom" formControlName="breakFrom"  matDatepickerToggleIcon class="inputMat">

@@ -121,11 +121,25 @@ export class PositionsComponent implements OnInit {
     }
     // go to employee type
     else if (showValue == 'employee type') {
-      this.showStep = showValue
+      console.log(this.permissionForm.value)
+      if(this.permissionForm.valid){
+        this.showStep = showValue
+      }else{
+        this.toastr.error('Please fill the permissions', 'Error', {
+          timeOut: 3000
+        });
+      }
     }
     // go to services
     else if (showValue == 'service') {
-      this.showStep = showValue
+      if(this.employeeTypeForm.valid){
+        this.showStep = showValue
+      }else{
+        this.toastr.error('Please select the employee type', 'Error', {
+          timeOut: 3000
+        });
+      }
+      
     }
   }
   formInitialize() {
@@ -135,7 +149,7 @@ export class PositionsComponent implements OnInit {
     })
     // employee type form
     this.employeeTypeForm = this.fb.group({
-      employeeType: ['']
+      employeeType: ['', Validators.required]
     })
     // services form
     this.servicesForm = this.fb.group({
@@ -209,7 +223,7 @@ export class PositionsComponent implements OnInit {
   addNewPermission() {
     const add = this.permissionForm.get('permissions') as FormArray;
     add.push(this.fb.group({
-      permission: ['', [Validators.required]]
+      permission: ['']
     }))
   }
   get getpermission() {
