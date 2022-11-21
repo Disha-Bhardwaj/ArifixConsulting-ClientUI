@@ -91,6 +91,11 @@ input.timeField {
   color: #75758b !important;
   opacity: 1 !important;
 }
+input.timeField{
+  width: max-content;
+    border: none;
+    position: inherit;
+}
 // media query
 @media (max-width: 710px) and (min-width: 200px) {
   .timeIn {
