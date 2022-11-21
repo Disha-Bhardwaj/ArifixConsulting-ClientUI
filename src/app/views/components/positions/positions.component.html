@@ -302,8 +302,7 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos4')">
                             </div>
-                            <form [formGroup]="permissionForm">
-                                
+                            <!-- <form [formGroup]="permissionForm">
                                     <div formArrayName="permissions"
                                     *ngFor="let permi of getpermission.controls; let i=index;">
                                     <ng-container [formGroupName]="i">
@@ -320,11 +319,27 @@
                                         </div>
                                     </ng-container>
                                 </div>
-                                
+                            </form> -->
+                            <form [formGroup]="newPermissionForm">
+                                <div formArrayName="permissionList">
+                                    <div *ngFor="let cate of permissionList().controls; let cateIndex=index">
+                                        <div [formGroupName]="cateIndex">
+                                            <div class="addtoCalDiv">
+                                                <select class="form-control select" formControlName="permission">
+                                                    <option disabled selected hidden value="">Permission</option>
+                                                    <option value="Permission 1">Permission 1</option>
+                                                    <option value="Permission 2">Permission 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                             <div class="mb-3">
-                                <button class="btn btn-primary cancelbtn" (click)="addNewPermission()">Add
-                                    Permission</button>
+                                <!-- <button class="btn btn-primary cancelbtn" (click)="addNewPermission()">Add
+                                    Permission</button> -->
+                                    <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
+                                        Permission</button>
                             </div>
                             <div class="mb-3">
                                 <div class="row dayRow">

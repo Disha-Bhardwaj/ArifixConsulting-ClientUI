@@ -16,7 +16,7 @@ export class PositionsComponent implements OnInit {
 
   addPosition = false
   showStep = ''
-  permissionForm!: FormGroup;
+  newPermissionForm!: FormGroup;
   servicesForm!: FormGroup;
   openingTimeForm!: FormGroup;
   employeeTypeForm!: FormGroup;
@@ -42,8 +42,8 @@ export class PositionsComponent implements OnInit {
     // let elw = document.getElementById('MainNavBar');
     // elw!.scrollIntoView();
   }
-  adjustWidth(value:any, steps: any){
-    $('#PosSelect').css('width', value.length*10 + 20+'px')
+  adjustWidth(value: any, steps: any) {
+    $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
   }
   // cancel changes
   cancelChanges(value: any) {
@@ -53,15 +53,15 @@ export class PositionsComponent implements OnInit {
       this.jobTitle = ''
       this.disableTitle = false
       this.openingTimeForm.reset()
-      this.permissionForm.reset()
+      this.newPermissionForm.reset()
       this.servicesForm.reset()
     }
     else if (value == 'resetTime') {
       this.openingTimeForm.reset()
     }
     else if (value == 'resetPermission') {
-      (this.permissionForm.controls['permissions'] as FormArray).clear();
-      this.addNewPermission()
+      (this.newPermissionForm.controls['permissionList'] as FormArray).clear();
+      this.addPermission()
     }
     else if (value == 'resetEmployee') {
       this.employeeTypeForm.reset({
@@ -69,7 +69,19 @@ export class PositionsComponent implements OnInit {
       })
     }
     else if (value == 'resetService') {
-      this.servicesForm.reset()
+      this.servicesForm.reset();
+      (this.servicesForm.controls['categories'] as FormArray).clear();
+       this.categoryCount = 0
+       this.categories().push(this.fb.group({
+        category: ['', Validators.required],
+        serviceList: this.fb.array([
+          this.fb.group({
+            service: ['', Validators.required],
+            time: ['', Validators.required],
+            price: ['', Validators.required]
+          })
+        ])
+      }));
     }
   }
   addPositionBTN() {
@@ -121,10 +133,9 @@ export class PositionsComponent implements OnInit {
     }
     // go to employee type
     else if (showValue == 'employee type') {
-      console.log(this.permissionForm.value)
-      if(this.permissionForm.valid){
+      if (this.newPermissionForm.valid) {
         this.showStep = showValue
-      }else{
+      } else {
         this.toastr.error('Please fill the permissions', 'Error', {
           timeOut: 3000
         });
@@ -132,41 +143,19 @@ export class PositionsComponent implements OnInit {
     }
     // go to services
     else if (showValue == 'service') {
-      if(this.employeeTypeForm.valid){
+      if (this.employeeTypeForm.valid) {
         this.showStep = showValue
-      }else{
+      } else {
         this.toastr.error('Please select the employee type', 'Error', {
           timeOut: 3000
         });
       }
-      
+
     }
   }
   formInitialize() {
-    // permission form
-    this.permissionForm = this.fb.group({
-      permissions: this.fb.array([this.fb.control('')])
-    })
-    // employee type form
-    this.employeeTypeForm = this.fb.group({
-      employeeType: ['', Validators.required]
-    })
-    // services form
-    this.servicesForm = this.fb.group({
-      categories: this.fb.array([this.fb.group({
-        category: '',
-        serviceList: this.fb.array([
-          this.fb.group({
-            service: '',
-            time: '',
-            price: ['']
-          })
-        ])
-      })]),
-    })
-    // opening time form 
-
-    this.openingTimeForm = this.fb.group({
+     // opening time form 
+     this.openingTimeForm = this.fb.group({
       monOpen: [''],
       monClose: [''],
       tuesOpen: [''],
@@ -182,20 +171,54 @@ export class PositionsComponent implements OnInit {
       sunOpen: [''],
       sunClose: [''],
     })
+    // employee type form
+    this.employeeTypeForm = this.fb.group({
+      employeeType: ['', Validators.required]
+    })
+    // new permission form
+    this.newPermissionForm = this.fb.group({
+      permissionList: this.fb.array([this.fb.group({
+        permission: ['', Validators.required]
+      })]),
+    })
+    // services form
+    this.servicesForm = this.fb.group({
+      categories: this.fb.array([this.fb.group({
+        category: ['', Validators.required],
+        serviceList: this.fb.array([
+          this.fb.group({
+            service: ['', Validators.required],
+            time: ['', Validators.required],
+            price: ['', Validators.required]
+          })
+        ])
+      })]),
+    })
   }
-  validatePriceField(value:any){
+  validatePriceField(value: any) {
     var reg = new RegExp('^[0-9]*$');
     let match = reg.test(value)
-    if(!match){
+    if (!match) {
       this.toastr.error('Only numbers are allowed in Price field', '', {
         timeOut: 3000,
       });
       this.savedBtnDis = true
     }
-    else{
+    else {
       this.savedBtnDis = false
     }
   }
+
+  // services form
+  permissionList(): FormArray {
+    return this.newPermissionForm.get("permissionList") as FormArray
+  }
+  addPermission() {
+    this.permissionList().push(this.fb.group({
+      permission: ['', Validators.required],
+    }));
+  }
+
   // services form
   categories(): FormArray {
     return this.servicesForm.get("categories") as FormArray
@@ -203,7 +226,7 @@ export class PositionsComponent implements OnInit {
   addCategory() {
     this.categoryCount++
     this.categories().push(this.fb.group({
-      category: '',
+      category: ['', Validators.required],
       serviceList: this.fb.array([])
     }));
     this.addService()
@@ -213,21 +236,10 @@ export class PositionsComponent implements OnInit {
   }
   addService() {
     this.categoryServiceList(this.categoryCount).push(this.fb.group({
-      service: '',
-      time: '',
-      price: ['']
+      service: ['',Validators.required],
+      time: ['',Validators.required],
+      price: ['',Validators.required]
     }));
-  }
-
-  // permissions form
-  addNewPermission() {
-    const add = this.permissionForm.get('permissions') as FormArray;
-    add.push(this.fb.group({
-      permission: ['']
-    }))
-  }
-  get getpermission() {
-    return this.permissionForm.controls['permissions'] as FormArray
   }
 
   // wizard
@@ -248,14 +260,20 @@ export class PositionsComponent implements OnInit {
   }
   // save info
   detailsSaved() {
-    this.toastr.success('Details are saved successfully', '', {
-      timeOut: 3000,
-    });
-    this.addPosition = false
+    if (this.servicesForm.valid) {
+      this.toastr.success('Details are saved successfully', '', {
+        timeOut: 3000,
+      });
+      this.addPosition = false
     this.showStep = ''
     this.jobTitle = ''
     this.openingTimeForm.reset()
     this.disableTitle = false;
     this.ngOnInit()
+    } else {
+      this.toastr.error('Please enter all the details', 'Error', {
+        timeOut: 3000,
+      });
+    }
   }
 }
