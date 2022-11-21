@@ -66,7 +66,8 @@ button.btn.btn-primary.cancelbtn.cancelApp {
   letter-spacing: -0.41px;
   color: #000000;
   margin-right: 7px;
-  width: 260px;
+  // width: 260px;
+  width: 300px;
   align-items: center;
 }
 input.timeField {
@@ -92,7 +93,7 @@ input.timeField {
   opacity: 1 !important;
 }
 input.timeField{
-  width: max-content;
+  // width: max-content;
     border: none;
     position: inherit;
 }
@@ -118,10 +119,16 @@ input.timeField{
   button.btn.btn-primary.savebtn {
     width: 255px;
   }
+  .boxInp{
+    gap: 7px;
+   }
 }
 @media (max-width: 400px) and (min-width: 200px) {
   input.form-control.input.formIn {
      font-size: 16px;
      height: 40px;
+   }
+   .boxInp{
+    gap: 6px;
    }
  }

@@ -96,14 +96,14 @@
                             </div>
 
                             <div class="form-control addtoCalDiv">
-                                <input readonly matInput placeholder="Break From" [matDatepicker]="datepickerFrom" formControlName="breakFrom"  matDatepickerToggleIcon class="inputMat">
+                                <input (click)="datepickerFrom.open()" matInput placeholder="Break From" [matDatepicker]="datepickerFrom" formControlName="breakFrom"  matDatepickerToggleIcon class="inputMat">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>
                                 <mat-datepicker touchUi="true"  #datepickerFrom></mat-datepicker>
                             </div>
                             <div class="form-control addtoCalDiv">
-                                <input readonly matInput placeholder="Break To"  [matDatepicker]="datepickerTo" formControlName="breakTo"  matDatepickerToggleIcon class="inputMat b">
+                                <input (click)="datepickerTo.open()" matInput placeholder="Break To"  [matDatepicker]="datepickerTo" formControlName="breakTo"  matDatepickerToggleIcon class="inputMat b">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                                 </mat-datepicker-toggle>

@@ -78,14 +78,27 @@
         <div class="timeIn">
             <div class="boxInp">
                 <span>From</span>
-                <input autocomplete="off" type="datetime-local" formControlName="startTime" class="timeField">
+                <!-- <input autocomplete="off" type="datetime-local" formControlName="startTime" class="timeField"> -->
+                <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerStart" formControlName="startDate"
+                    (click)="datepickerStart.open()" class="timeField">
+                <mat-datepicker #datepickerStart></mat-datepicker>
+
+                <input [ngxTimepicker]="startPicker" class="timeField" placeholder="hh:mm" formControlName="startTime">
+                <ngx-material-timepicker #startPicker></ngx-material-timepicker>
             </div>
             <div class="boxInp">
                 <span>To</span>
-                <input autocomplete="off" type="datetime-local" formControlName="finishTime" class="timeField">
+                <!-- <input autocomplete="off" type="datetime-local" formControlName="finishTime" class="timeField"> -->
+                <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerfinish" formControlName="finishDate"
+                    (click)="datepickerfinish.open()" class="timeField">
+                <mat-datepicker #datepickerfinish></mat-datepicker>
+
+                <input [ngxTimepicker]="finishPicker" class="timeField" placeholder="hh:mm"
+                    formControlName="finishTime">
+                <ngx-material-timepicker #finishPicker></ngx-material-timepicker>
             </div>
-            <!-- <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="startTime" class="form-control input " placeholder="From">
-            <input  type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" formControlName="finishTime" class="form-control input " placeholder="To"> -->
+
+
         </div>
     </form>
     <button class="btn btn-primary savebtn" (click)="sendNewOfferTime()">Send</button>
@@ -161,7 +174,7 @@
             <div class="row">
                 <div class="col-6 columnInp ">
                     <label class="form-label label" for="passwordInput">Start Time</label>
-                    <input [ngxTimepicker]="startTimeNGX"  class="form-control input formIn" placeholder="Start Time"
+                    <input [ngxTimepicker]="startTimeNGX" class="form-control input formIn" placeholder="Start Time"
                         formControlName="startTime"
                         [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)">
                     <ngx-material-timepicker #startTimeNGX></ngx-material-timepicker>
@@ -198,24 +211,16 @@
             <div class="row">
                 <div class="col-12 columnInp ">
                     <label class="form-label label" for="passwordInput">Date</label>
-                    <!-- <ngx-datepicker formControlName="date" [options]="options"
-                        [class.is-invalid]="date.invalid && (date.dirty || date.touched)"></ngx-datepicker>
-                   
+                    <input matInput placeholder="dd/mm/yyyy" [matDatepicker]="datepickerFrom" formControlName="date"
+                        (click)="datepickerFrom.open()" class="form-control input formIn"
+                        [class.is-invalid]="date.invalid && (date.dirty || date.touched)">
+                    <mat-datepicker #datepickerFrom></mat-datepicker>
+
                     <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
                         <div *ngIf="date.errors?.['required']">
                             This field is required.
                         </div>
-                    </div> -->
-                            <input matInput placeholder="dd/mm/yyyy" [matDatepicker]="datepickerFrom" formControlName="date" 
-                            (click)="datepickerFrom.open()" class="form-control input formIn"
-                            [class.is-invalid]="date.invalid && (date.dirty || date.touched)">
-                           <mat-datepicker #datepickerFrom></mat-datepicker>
-                        
-                        <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
-                            <div *ngIf="date.errors?.['required']">
-                                This field is required.
-                            </div>
-                        </div>
+                    </div>
 
                 </div>
             </div>

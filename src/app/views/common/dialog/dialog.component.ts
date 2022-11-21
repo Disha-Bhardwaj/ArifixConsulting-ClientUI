@@ -40,7 +40,9 @@ export class DialogComponent implements OnInit {
     })
     this.offerTimeForm = this.fb.group({
       startTime: ['', [Validators.required,]],
+      startDate: ['', [Validators.required,]],
       finishTime: ['', [Validators.required,]],
+      finishDate: ['', [Validators.required,]],
     })
   }
   // validation
@@ -59,18 +61,25 @@ export class DialogComponent implements OnInit {
 
   sendNewOfferTime() {
     if (this.offerTimeForm.valid) {
-      if (this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime) {
-        this.toastr.success('Your offer time sent to the salon', '', {
-          timeOut: 3000,
-        });
-        this.dialogRef.close();
+      if (this.offerTimeForm.value.startDate < this.offerTimeForm.value.finishDate || this.offerTimeForm.value.startDate == this.offerTimeForm.value.finishDate) {
+        if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
+          this.toastr.success('Your offer time sent to the salon', '', {
+            timeOut: 3000,
+          });
+          this.dialogRef.close();
+        }
+        else{
+          this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+            timeOut: 3000,
+          });
+        }
       } else {
-        this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+        this.toastr.error('Finishing date should be greater than Starting date', 'Error', {
           timeOut: 3000,
         });
       }
     } else {
-      this.toastr.error('Please enter from and to time', 'Error', {
+      this.toastr.error('Please enter from date and time and to date and time', 'Error', {
         timeOut: 3000,
       });
     }
