@@ -49,27 +49,6 @@ export class CalendarComponent implements OnInit {
 
   // calendarVisible = true;
   calendarOptions: CalendarOptions = {
-    // plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
-    // headerToolbar: {
-    //   left: 'prev,next today',
-    //   center: 'title',
-    //   right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    // },
-    // initialView: 'dayGridMonth',
-    // initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
-    // weekends: true,
-    // editable: true,
-    // selectable: true,
-    // selectMirror: true,
-    // dayMaxEvents: true,
-    // select: this.handleDateSelect.bind(this),
-    // eventClick: this.handleEventClick.bind(this),
-    // eventsSet: this.handleEvents.bind(this)
-    /* you can update a remote database when these fire:
-    eventAdd:
-    eventChange:
-    eventRemove:
-    */
     plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
     headerToolbar: {
       left: '',
@@ -123,15 +102,11 @@ export class CalendarComponent implements OnInit {
     }
   }
   backDate(){
-    // if(this.previousDate.toISOString().split('T')[0] === this.date.toISOString().split('T')[0]){
-    //   this.toastr.error('Please select valid date', 'Error', {
-    //     timeOut: 3000,
-    //   });
-    // }else{
       this.date = new Date(this.date.setDate((this.date.getDate() - 1)));
-    // }
+ 
   }
   nextDate(){
+    console.log('hello')
     this.date = new Date(this.date.setDate((this.date.getDate() + 1)));
   }
 

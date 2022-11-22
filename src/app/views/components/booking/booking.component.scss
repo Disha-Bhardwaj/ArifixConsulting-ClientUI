@@ -55,10 +55,9 @@ img.quesmark {
 aside.sidebar {
   position: absolute;
   float: right !important;
-  // left: 854px;
-  // width: 231px;
   left: 835px;
-  width: 250px;
+  // width: 250px;
+  width: 228px;
   padding-left: 30px;
   padding-left: 32px;
   background: #e4e4e4;
@@ -164,6 +163,7 @@ aside.optionFilter {
 @media (max-width: 1461px) and (min-width: 1349px) {
   aside.sidebar {
     left: 79%;
+    // width: 228px;
   }
 }
 @media (max-width: 1307px) and (min-width: 1245px) {

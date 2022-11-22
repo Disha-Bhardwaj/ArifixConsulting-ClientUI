@@ -18,9 +18,6 @@ export class StaffComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService,
     private cookies: CookieService, private route: Router) { }
 
-  @ViewChild('showBFCalendar',  { read: ElementRef })
-  private showBFCalendar!: ElementRef
-
   showStep = ''
   details = false
   editDetails = false
@@ -31,18 +28,10 @@ export class StaffComponent implements OnInit {
   BFoptions: DatepickerOptions = {};
   breakToDate: any
   BToptions: DatepickerOptions = {};
+  emailValue = ''
 
-  toggleCalender() {
-    console.log(this.showBFCalendar.nativeElement)
-  //   const datePick = this.showBFCalendar.nativeElement.focus();
-  //   $(".PosDate").focus();
-  //   $("input").focusin(() => {
-  //     $(this).select();
-  // });
-  $('.datepicker-container > calendar-container').css('left','0px !important')
-  }
-  adjustWidth(value:any){
-    $('#PosSelect').css('width', value.length*10 + 20+'px')
+  adjustWidth(value: any) {
+    $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
   }
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
@@ -99,24 +88,45 @@ export class StaffComponent implements OnInit {
       this.route.navigateByUrl('/dashboard')
     }
   }
+  // showStepsFunction(value: any) {
+  //   if (value == 'One') {
+  //     this.infoForm.reset();
+  //     this.showStep = value
+  //   }
+  //   else if (value == 'Two') {
+  //     if (this.infoForm.valid) {
+  //       this.showStep = value
+  //     } else {
+  //       this.toastr.error('Please enter valid employee email', 'Error', {
+  //         timeOut: 3000
+  //       });
+  //     }
+  //   } else {
+  //     this.showStep = value
+  //   }
+  // }
+  changeEmailValue(value: any) {
+    this.emailValue = value
+  }
   showStepsFunction(value: any) {
     if (value == 'One') {
-      this.infoForm.reset();
       this.showStep = value
     }
     else if (value == 'Two') {
       if (this.infoForm.valid) {
-        this.showStep = value
-      //   this.editDetails = false;
-      // this.details = false
-      // // this.infoForm.reset()
-      // this.disableForm()
-      // this.detailsForm.reset({
-      //   position: '',
-      //   breakFrom: '',
-      //   breakTo: '',
-      //   employeeDetail: '',
-      // });
+        this.showStep = value;
+        // if (this.infoForm.value.employeeEmail != this.emailValue) {
+        //   this.editDetails = false;
+        //   this.details = false
+        //   this.infoForm.reset()
+        //   this.disableForm()
+        //   this.detailsForm.reset({
+        //     position: '',
+        //     breakFrom: '',
+        //     breakTo: '',
+        //     employeeDetail: '',
+        //   });
+        // }
       } else {
         this.toastr.error('Please enter valid employee email', 'Error', {
           timeOut: 3000
@@ -126,6 +136,7 @@ export class StaffComponent implements OnInit {
       this.showStep = value
     }
   }
+
   close() {
     this.showStep = '';
     this.infoForm.reset();
@@ -155,6 +166,36 @@ export class StaffComponent implements OnInit {
       });
     }
   }
+
+  openSelectDropdown() {
+    console.log('hehhr')
+    //   const element1 = document.getElementById("PosSelect")!;
+    // const event = new MouseEvent("mousedown");
+    // element1.dispatchEvent(event);
+    $("#PosSelect").trigger('open');
+    // document.getElementById('PosSelect')!.click()
+  }
+  // detailsSaved() {
+  //   if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
+  //     this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
+  //       timeOut: 3000,
+  //     });
+  //   } else {
+  //     this.toastr.success('Details are saved successfully', '', {
+  //       timeOut: 3000,
+  //     });
+  //     this.editDetails = false;
+  //     this.details = false
+  //     this.infoForm.reset()
+  //     this.disableForm()
+  //     this.detailsForm.reset({
+  //       position: '',
+  //       breakFrom: '',
+  //       breakTo: '',
+  //       employeeDetail: '',
+  //     });
+  //   }
+  // }
   detailsSaved() {
     if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
       this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
@@ -164,18 +205,10 @@ export class StaffComponent implements OnInit {
       this.toastr.success('Details are saved successfully', '', {
         timeOut: 3000,
       });
-      this.editDetails = false;
-      this.details = false
-      this.infoForm.reset()
+      this.editDetails = false
       this.disableForm()
-      this.detailsForm.reset({
-        position: '',
-        breakFrom: '',
-        breakTo: '',
-        employeeDetail: '',
-      });
+      // this.details = false
     }
-
   }
   // open dialog box
   openDialog(value: any) {

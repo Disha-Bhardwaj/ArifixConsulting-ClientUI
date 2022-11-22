@@ -32,11 +32,13 @@ button.btn.btn-primary.sendbtn {
   border-top-left-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
 }
-.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
-    border-top-right-radius: 12px !important;
-    border-bottom-right-radius: 12px !important;
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
 }
-.form-control.is-invalid:focus,.form-control:focus{
+.form-control.is-invalid:focus,
+.form-control:focus {
   box-shadow: none !important;
   z-index: 0 !important;
 }
@@ -125,7 +127,6 @@ select:disabled {
 //   // width: auto;
 // }
 
-
 .addtoCalDiv {
   display: flex;
   flex-direction: row;
@@ -161,7 +162,7 @@ button.btn.btn-primary.savebtn {
 .datepicker-default .calendar-container {
   left: 0px !important;
 }
-.inputMat{
+.inputMat {
   width: 36%;
   margin-right: -10px;
   border: none;
@@ -191,7 +192,18 @@ button.btn.btn-primary.savebtn {
 }
 mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
   color: black;
+  cursor: pointer;
 }
+mat-icon.mat-icon.notranslate.positionDropIcon.material-icons.mat-ligature-font.mat-icon-no-color {
+  position: absolute;
+  margin-left: 8%;
+}
+// #PosSelect {
+//   -webkit-appearance: none !important;
+//   -moz-appearance: none !important;
+//   appearance: none !important;
+//   // width: 79px;
+// }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {
@@ -201,8 +213,8 @@ mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color
     margin-bottom: 5%;
   }
 }
-@media (max-width: 374px) and (min-width: 200px){
-  .inputMat{
+@media (max-width: 374px) and (min-width: 200px) {
+  .inputMat {
     width: 46%;
   }
 }
