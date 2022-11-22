@@ -266,10 +266,10 @@ export class PositionsComponent implements OnInit {
       });
       this.addPosition = false
     this.showStep = ''
-    this.jobTitle = ''
-    this.openingTimeForm.reset()
-    this.disableTitle = false;
-    this.ngOnInit()
+    // this.jobTitle = ''
+    // this.openingTimeForm.reset()
+    // this.disableTitle = false;
+    // this.ngOnInit()
     } else {
       this.toastr.error('Please enter all the details', 'Error', {
         timeOut: 3000,
