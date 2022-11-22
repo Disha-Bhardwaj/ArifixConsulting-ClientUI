@@ -218,3 +218,19 @@ mat-icon.mat-icon.notranslate.positionDropIcon.material-icons.mat-ligature-font.
     width: 46%;
   }
 }
+#PosSelect {
+    -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+  -webkit-appearance: none;
+  // background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+  // background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  // background-repeat: no-repeat;
+  // background-position-x: 98%;
+  // background-position-y: 50%;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right !important;
+  appearance: none !important;
+  background-size: 12px 11px !important;
+  background-position: 99% 50% !important;
+}
