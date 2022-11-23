@@ -109,32 +109,32 @@ export class StaffComponent implements OnInit {
     this.emailValue = value
   }
   showStepsFunction(value: any) {
-    // if (value == 'One') {
-    //   this.showStep = value
-    // }
-    // else if (value == 'Two') {
-    //   if (this.infoForm.valid) {
-    //     this.showStep = value;
-    //     // if (this.infoForm.value.employeeEmail != this.emailValue) {
-    //     //   this.editDetails = false;
-    //     //   this.details = false
-    //     //   this.infoForm.reset()
-    //     //   this.disableForm()
-    //     //   this.detailsForm.reset({
-    //     //     position: '',
-    //     //     breakFrom: '',
-    //     //     breakTo: '',
-    //     //     employeeDetail: '',
-    //     //   });
-    //     // }
-    //   } else {
-    //     this.toastr.error('Please enter valid employee email', 'Error', {
-    //       timeOut: 3000
-    //     });
-    //   }
-    // } else {
+    if (value == 'One') {
       this.showStep = value
-    // }
+    }
+    else if (value == 'Two') {
+      if (this.infoForm.valid) {
+        this.showStep = value;
+        // if (this.infoForm.value.employeeEmail != this.emailValue) {
+        //   this.editDetails = false;
+        //   this.details = false
+        //   this.infoForm.reset()
+        //   this.disableForm()
+        //   this.detailsForm.reset({
+        //     position: '',
+        //     breakFrom: '',
+        //     breakTo: '',
+        //     employeeDetail: '',
+        //   });
+        // }
+      } else {
+        this.toastr.error('Please enter valid employee email', 'Error', {
+          timeOut: 3000
+        });
+      }
+    } else {
+      this.showStep = value
+    }
   }
 
   close() {
