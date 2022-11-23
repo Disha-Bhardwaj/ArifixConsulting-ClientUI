@@ -62,10 +62,10 @@ button.btn.btn-primary.sendbtn {
 .imgCol2 {
   flex-direction: row-reverse;
 }
-img.quesIcon {
-  width: 30px;
-  height: 30px;
-}
+// img.quesIcon {
+//   width: 30px;
+//   height: 30px;
+// }
 img.editIcon {
   margin-right: 15px;
 }
@@ -120,7 +120,7 @@ select:disabled {
   border: none;
   color: #000000 !important;
   background-color: rgba(255, 255, 255, 1) !important;
-  width: 100px;
+  width: 119px;
 }
 // select:focus,select:valid {
 //   min-width: 90px;
@@ -167,10 +167,8 @@ button.btn.btn-primary.savebtn {
   margin-right: -10px;
   border: none;
   background: #fff;
+  color: #000000 !important;
 }
-// .inputMat.b{
-//   width: 29%;
-// }
 ::placeholder {
   color: #000000 !important;
   opacity: 1 !important;

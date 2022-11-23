@@ -127,9 +127,9 @@ export class SalonPageComponent implements OnInit {
       this.toastr.success('Salon details saved successfully', '', {
         timeOut: 3000,
       });
-      this.salonDetailForm.reset({
-        currency: ''
-      })
+      // this.salonDetailForm.reset({
+      //   currency: ''
+      // })
       this.showEditSalonBtn = false
       this.disableForm('salon')
     } else {
@@ -154,7 +154,7 @@ export class SalonPageComponent implements OnInit {
         this.toastr.success('Timings saved successfully', '', {
           timeOut: 3000,
         });
-        this.openingTimeForm.reset()
+        // this.openingTimeForm.reset()
         this.showEditOpenTimeBtn = false
         this.disableForm('opentime')
       }

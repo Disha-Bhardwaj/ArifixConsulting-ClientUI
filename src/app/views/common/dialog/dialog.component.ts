@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatepickerOptions } from 'ng2-datepicker';
+// import { DatepickerOptions } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-dialog',
@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
 
   addAppointForm!: FormGroup;
   offerTimeForm!: FormGroup;
-  options: DatepickerOptions = {};
+  // options: DatepickerOptions = {};
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService,
     private fb: FormBuilder, public dialogRef: MatDialogRef<DialogComponent>,
@@ -22,12 +22,12 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.formInitialize();
-    this.options = {
-      placeholder: 'dd/mm/yyyy',
-      format: 'dd/MM/yyyy',
-      position: 'bottom',
-      inputClass: 'form-control input formIn',
-    };
+    // this.options = {
+    //   placeholder: 'dd/mm/yyyy',
+    //   format: 'dd/MM/yyyy',
+    //   position: 'bottom',
+    //   inputClass: 'form-control input formIn',
+    // };
     this.addAppointForm.reset();
   }
 
@@ -61,7 +61,7 @@ export class DialogComponent implements OnInit {
 
   sendNewOfferTime() {
     if (this.offerTimeForm.valid) {
-      if (this.offerTimeForm.value.startDate < this.offerTimeForm.value.finishDate || this.offerTimeForm.value.startDate == this.offerTimeForm.value.finishDate) {
+      if ((this.offerTimeForm.value.startDate < this.offerTimeForm.value.finishDate )|| (+this.offerTimeForm.value.startDate === +this.offerTimeForm.value.finishDate)) {
         if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
           this.toastr.success('Your offer time sent to the salon', '', {
             timeOut: 3000,

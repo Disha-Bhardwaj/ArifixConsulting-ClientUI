@@ -167,14 +167,6 @@ export class StaffComponent implements OnInit {
     }
   }
 
-  openSelectDropdown() {
-    console.log('hehhr')
-    //   const element1 = document.getElementById("PosSelect")!;
-    // const event = new MouseEvent("mousedown");
-    // element1.dispatchEvent(event);
-    $("#PosSelect").trigger('open');
-    // document.getElementById('PosSelect')!.click()
-  }
   // detailsSaved() {
   //   if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
   //     this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {

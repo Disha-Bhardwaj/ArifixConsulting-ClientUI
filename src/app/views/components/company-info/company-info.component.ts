@@ -57,12 +57,16 @@ export class CompanyInfoComponent implements OnInit {
       this.toastr.success('Your company information saved successfully', '', {
         timeOut: 3000,
       });
-      this.infoForm.reset()
+      // this.infoForm.reset()
+      this.showEdit = false
+    for (const control of Object.keys(this.infoForm.controls)) {
+      this.infoForm.controls[control].disable()
+    }
     } else {
       this.toastr.error('Please fill all the details', 'Error', {
         timeOut: 3000
       });
-      this.infoForm.reset()
+      // this.infoForm.reset()
     }
 
   }
