@@ -117,9 +117,12 @@
                                 <mat-datepicker touchUi="true"  #datepickerTo></mat-datepicker>
                             </div>
 
-                            <div class="form-control addtoCalDiv" mat-button (click)="openDialog('Staff3')"> <span
+                            <div class="form-control addtoCalDiv" *ngIf="!editDetails"> <span
                                     class="labelSpan">Employee Details</span>
                             </div>
+                            <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="editDetails"  mat-button (click)="openDialog('Staff3')"> <span
+                                class="labelSpan">Employee Details</span>
+                        </div>
                         </form>
                         <div class="editBtnsDiv" *ngIf="editDetails">
                             <button class="btn btn-primary cancelbtn" (click)="editDetailsFun(false)">Cancel</button>
