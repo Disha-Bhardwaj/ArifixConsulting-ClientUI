@@ -82,7 +82,7 @@
                 <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerStart" formControlName="startDate"
                     (click)="datepickerStart.open()" class="timeField">
                 <mat-datepicker #datepickerStart></mat-datepicker>
-
+                <!-- touchUi="true"  -->
                 <input [ngxTimepicker]="startPicker" class="timeField" placeholder="hh:mm" formControlName="startTime">
                 <ngx-material-timepicker #startPicker></ngx-material-timepicker>
             </div>
@@ -90,7 +90,7 @@
                 <span>To</span>
                 <!-- <input autocomplete="off" type="datetime-local" formControlName="finishTime" class="timeField"> -->
                 <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerfinish" formControlName="finishDate"
-                    (click)="datepickerfinish.open()" class="timeField">
+                    (click)="datepickerfinish.open()" class="timeField" >
                 <mat-datepicker #datepickerfinish></mat-datepicker>
 
                 <input [ngxTimepicker]="finishPicker" class="timeField" placeholder="hh:mm"
@@ -175,8 +175,9 @@
                 <div class="col-6 columnInp ">
                     <label class="form-label label" for="passwordInput">Start Time</label>
                     <input [ngxTimepicker]="startTimeNGX" class="form-control input formIn" placeholder="Start Time"
-                        formControlName="startTime"
-                        [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)">
+                        formControlName="startTime" 
+                        [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)"
+                        preventOverlayClick="false">
                     <ngx-material-timepicker #startTimeNGX></ngx-material-timepicker>
 
                     <!-- <input type="text" placeholder="Start Time" class="form-control input formIn" formControlName="startTime"

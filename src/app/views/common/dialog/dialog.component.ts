@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -30,6 +30,15 @@ export class DialogComponent implements OnInit {
     // };
     this.addAppointForm.reset();
   }
+  @ViewChild('startTimeNGX') startTimeNGX: any;
+  // closeTimeField(value:any){
+  //   if(value  == 'addAppStart'){
+      
+  //   }
+  // }
+  showAddAppStart = false
+ 
+  
 
   formInitialize() {
     this.addAppointForm = this.fb.group({
