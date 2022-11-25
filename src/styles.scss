@@ -448,3 +448,10 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
     left: -45px !important;
   }
 }
+.timepicker-overlay {
+  z-index: 10000000 !important;
+}
+
+.timepicker-backdrop-overlay {
+  z-index: 10000000 !important;
+}
