@@ -47,13 +47,14 @@ label.labelUpload {
   align-items: center;
   margin-top: 20px;
 }
+.daysLabel{
+  margin-top: 10px;
+}
 .webView {
   display: block !important;
-  margin-top: 10px;
 }
 .mobileView {
   display: none !important;
-  margin-top: 10px;
 }
 select.form-control.select {
   padding: 10px;

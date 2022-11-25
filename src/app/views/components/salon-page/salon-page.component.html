@@ -131,94 +131,188 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col-6 columnInp ">
-                            <label class="form-label label" for="passwordInput">Country</label>
-                            <input type="text" placeholder="Enter Country" class="form-control input "
-                                formControlName="country"
-                                [class.is-invalid]="country.invalid && (country.dirty || country.touched)"
-                                maxlength="30">
-                            <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
-                                <div *ngIf="country.errors?.['required']">
-                                    This field is required.
+                <div class="webView">
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Country</label>
+                                <input type="text" placeholder="Enter Country" class="form-control input "
+                                    formControlName="country"
+                                    [class.is-invalid]="country.invalid && (country.dirty || country.touched)"
+                                    maxlength="30">
+                                <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                                    <div *ngIf="country.errors?.['required']">
+                                        This field is required.
+                                    </div>
+                                    <div *ngIf="country.errors?.['maxlength']">
+                                        Please add maximum 30 charaters
+                                    </div>
+                                    <div *ngIf="country.errors?.['pattern']">
+                                        Please add valid country
+                                    </div>
                                 </div>
-                                <div *ngIf="country.errors?.['maxlength']">
-                                    Please add maximum 30 charaters
-                                </div>
-                                <div *ngIf="country.errors?.['pattern']">
-                                    Please add valid country
-                                </div>
+    
                             </div>
-
+                            <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Banner</label>
+                                <input type="file" id="myfile" name="myfile" style="display:none;">
+    
+                            </div>
+                            <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Banner</label>
+                                <input type="file" id="myfile" disabled name="myfile" style="display:none;">
+    
+                            </div>
                         </div>
-                        <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
-                            <label for="myfile" class="labelUpload">Upload Banner</label>
-                            <input type="file" id="myfile" name="myfile" style="display:none;">
-
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Zipcode</label>
+                                <input type="text" placeholder="Enter Zipcode" class="form-control input "
+                                    formControlName="zipCode"
+                                    [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
+                                    maxlength="15">
+                                <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="invalid-feedback">
+                                    <div *ngIf="zipCode.errors?.['required']">
+                                        This field is required.
+                                    </div>
+                                    <div *ngIf="zipCode.errors?.['maxlength']">
+                                        Please add maximum 15 charaters
+                                    </div>
+                                    <div *ngIf="zipCode.errors?.['pattern']">
+                                        Please add valid zip code
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Logo</label>
+                                <input type="file" id="myfile" name="myfile" style="display:none;">
+    
+                            </div>
+                            <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Logo</label>
+                                <input type="file" id="myfile" disabled name="myfile" style="display:none;">
+    
+                            </div>
                         </div>
-                        <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
-                            <label for="myfile" class="labelUpload">Upload Banner</label>
-                            <input type="file" id="myfile" disabled name="myfile" style="display:none;">
-
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Currency</label>
+                                <select class="form-control select" formControlName="currency"
+                                    [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                                    <option value="">Default</option>
+                                    <option value="Default1">Default1</option>
+                                </select>
+                                <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
+                                    class="invalid-feedback">
+                                    <div *ngIf="currency.errors?.['required']">
+                                        This field is required.
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class="col-6 columnInp btnCol" *ngIf="showEditSalonBtn">
+                                <button class="btn btn-primary cancelbtn btns"
+                                    (click)="editSalonDetail('cancel')">Cancel</button>
+                                <button class="btn btn-primary savebtn btns" (click)="saveSalonDetails()">Save</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col-6 columnInp ">
-                            <label class="form-label label" for="passwordInput">Zipcode</label>
-                            <input type="text" placeholder="Enter Zipcode" class="form-control input "
-                                formControlName="zipCode"
-                                [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
-                                maxlength="15">
-                            <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="invalid-feedback">
-                                <div *ngIf="zipCode.errors?.['required']">
-                                    This field is required.
+                <div class="mobileView">
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Country</label>
+                                <input type="text" placeholder="Enter Country" class="form-control input "
+                                    formControlName="country"
+                                    [class.is-invalid]="country.invalid && (country.dirty || country.touched)"
+                                    maxlength="30">
+                                <div *ngIf="country.invalid && (country.dirty || country.touched)" class="invalid-feedback">
+                                    <div *ngIf="country.errors?.['required']">
+                                        This field is required.
+                                    </div>
+                                    <div *ngIf="country.errors?.['maxlength']">
+                                        Please add maximum 30 charaters
+                                    </div>
+                                    <div *ngIf="country.errors?.['pattern']">
+                                        Please add valid country
+                                    </div>
                                 </div>
-                                <div *ngIf="zipCode.errors?.['maxlength']">
-                                    Please add maximum 15 charaters
-                                </div>
-                                <div *ngIf="zipCode.errors?.['pattern']">
-                                    Please add valid zip code
+    
+                            </div>
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Zipcode</label>
+                                <input type="text" placeholder="Enter Zipcode" class="form-control input "
+                                    formControlName="zipCode"
+                                    [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
+                                    maxlength="15">
+                                <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" class="invalid-feedback">
+                                    <div *ngIf="zipCode.errors?.['required']">
+                                        This field is required.
+                                    </div>
+                                    <div *ngIf="zipCode.errors?.['maxlength']">
+                                        Please add maximum 15 charaters
+                                    </div>
+                                    <div *ngIf="zipCode.errors?.['pattern']">
+                                        Please add valid zip code
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
-                            <label for="myfile" class="labelUpload">Upload Logo</label>
-                            <input type="file" id="myfile" name="myfile" style="display:none;">
-
-                        </div>
-                        <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
-                            <label for="myfile" class="labelUpload">Upload Logo</label>
-                            <input type="file" id="myfile" disabled name="myfile" style="display:none;">
-
+                           
                         </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col-6 columnInp ">
-                            <label class="form-label label" for="passwordInput">Currency</label>
-                            <select class="form-control select" formControlName="currency"
-                                [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
-                                <option value="">Default</option>
-                                <option value="Default1">Default1</option>
-                            </select>
-                            <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
-                                class="invalid-feedback">
-                                <div *ngIf="currency.errors?.['required']">
-                                    This field is required.
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp ">
+                                <label class="form-label label" for="passwordInput">Currency</label>
+                                <select class="form-control select" formControlName="currency"
+                                    [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
+                                    <option value="">Default</option>
+                                    <option value="Default1">Default1</option>
+                                </select>
+                                <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
+                                    class="invalid-feedback">
+                                    <div *ngIf="currency.errors?.['required']">
+                                        This field is required.
+                                    </div>
                                 </div>
+    
                             </div>
-
+                            <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Banner</label>
+                                <input type="file" id="myfile" name="myfile" style="display:none;">
+    
+                            </div>
+                            <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Banner</label>
+                                <input type="file" id="myfile" disabled name="myfile" style="display:none;">
+    
+                            </div>
+                            
                         </div>
-                        <div class="col-6 columnInp btnCol" *ngIf="showEditSalonBtn">
-                            <button class="btn btn-primary cancelbtn btns"
-                                (click)="editSalonDetail('cancel')">Cancel</button>
-                            <button class="btn btn-primary savebtn btns" (click)="saveSalonDetails()">Save</button>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6 columnInp" *ngIf="showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Logo</label>
+                                <input type="file" id="myfile" name="myfile" style="display:none;">
+    
+                            </div>
+                            <div class="col-6 columnInp" *ngIf="!showEditSalonBtn">
+                                <label for="myfile" class="labelUpload">Upload Logo</label>
+                                <input type="file" id="myfile" disabled name="myfile" style="display:none;">
+    
+                            </div>
+                            <div class="col-6 columnInp btnCol" *ngIf="showEditSalonBtn">
+                                <button class="btn btn-primary cancelbtn btns"
+                                    (click)="editSalonDetail('cancel')">Cancel</button>
+                                <button class="btn btn-primary savebtn btns" (click)="saveSalonDetails()">Save</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -381,15 +475,11 @@
                             <input [ngxTimepicker]="sunOpen" class="form-control input " placeholder="Time"
                                 formControlName="sunOpen" placeholder="Closed">
                             <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
-
-
                         </div>
                         <div class="col-4">
                             <input [ngxTimepicker]="sunClose" class="form-control input " placeholder="Time"
                                 formControlName="sunClose" placeholder="Closed">
                             <ngx-material-timepicker #sunClose></ngx-material-timepicker>
-
-
                         </div>
                     </div>
                 </div>
