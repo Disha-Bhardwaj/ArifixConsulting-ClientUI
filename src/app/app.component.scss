@@ -175,6 +175,13 @@ p.text {
     width: 30px;
     height: 30px;
   }
+  .mat-drawer{
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .mat-drawer-inner-container{
+    height: min-content !important;
+  }
 }
 @media (max-width: 635px) and (min-width: 465px) {
   ul.openUL {

@@ -26,6 +26,7 @@ export class PositionsComponent implements OnInit {
   disableTitle = false
   serviceCount = 0
   savedBtnDis = false
+  arrayListItem: any = []
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router) { }
@@ -86,6 +87,7 @@ export class PositionsComponent implements OnInit {
   }
   addPositionBTN() {
     this.addPosition = true
+    this.arrayListItem.push('1')
   }
   editTitle() {
     this.disableTitle = false

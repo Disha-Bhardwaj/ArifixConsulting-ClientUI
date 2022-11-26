@@ -442,7 +442,7 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
 @media (max-width: 398px) and (min-width: 200px) {
   input.dateIn {
     // width: 65% !important;
-        width: 60% !important;
+    width: 60% !important;
   }
   .datepicker-default .calendar-container {
     left: -45px !important;
@@ -454,4 +454,13 @@ td.fc-timegrid-slot.fc-timegrid-slot-lane {
 
 .timepicker-backdrop-overlay {
   z-index: 10000000 !important;
+}
+@media (max-width: 767px) and (min-width: 200px) {
+  .mat-drawer{
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .mat-drawer-inner-container{
+    height: min-content !important;
+  }
 }

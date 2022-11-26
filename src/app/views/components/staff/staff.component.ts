@@ -7,7 +7,14 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
 declare var $: any;
-
+class Structure {
+  editDetails?: boolean;
+  showDetails?: boolean;
+  position?: string;
+  addToCalendar?: boolean;
+  breakDateFrom?: Date;
+  breakDateTo?: Date;
+}
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
@@ -19,16 +26,9 @@ export class StaffComponent implements OnInit {
     private cookies: CookieService, private route: Router) { }
 
   showStep = ''
-  details = false
-  editDetails = false
   showWizard = false
   infoForm!: FormGroup;
-  detailsForm!: FormGroup;
-  breakFromDate: any
-  BFoptions: DatepickerOptions = {};
-  breakToDate: any
-  BToptions: DatepickerOptions = {};
-  emailValue = ''
+  arrayItemList: Structure[] = [];
 
   adjustWidth(value: any) {
     $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
@@ -38,46 +38,20 @@ export class StaffComponent implements OnInit {
       this.showWizard = true
     }
     this.formInitialization();
-    this.disableForm()
-    this.BFoptions = {
-      placeholder: 'Break From',
-      format: 'dd/MM/yyyy',
-      position: 'right',
-      inputClass: 'PosDate',
-    };
-    this.BToptions = {
-      placeholder: 'Break To',
-      format: 'dd/MM/yyyy',
-      position: 'right',
-      inputClass: 'PosDate',
-    };
   }
+
   formInitialization() {
     this.infoForm = this.fb.group({
       employeeEmail: ['', [Validators.required, Validators.email, Validators.minLength(6), Validators.maxLength(60), Validators.pattern('^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z.-]+\\.[a-z]{2,4}$')]],
     })
-    this.detailsForm = this.fb.group({
-      position: [''],
-      addToCalendar: [false],
-      breakFrom: [''],
-      breakTo: [''],
-      employeeDetail: [''],
-    })
   }
-  disableForm() {
-    for (const control of Object.keys(this.detailsForm.controls)) {
-      this.detailsForm.controls[control].disable()
-    }
-  }
-  enableForm() {
-    for (const control of Object.keys(this.detailsForm.controls)) {
-      this.detailsForm.controls[control].enable()
-    }
-  }
+
   // validation functions
   get employeeEmail() {
     return this.infoForm.get('employeeEmail')!;
   }
+
+  // finish wizard
   finishWizard(value: any) {
     this.cookies.set('wizardStart', 'false')
     this.showWizard = false
@@ -88,46 +62,24 @@ export class StaffComponent implements OnInit {
       this.route.navigateByUrl('/dashboard')
     }
   }
-  // showStepsFunction(value: any) {
-  //   if (value == 'One') {
-  //     this.infoForm.reset();
-  //     this.showStep = value
-  //   }
-  //   else if (value == 'Two') {
-  //     if (this.infoForm.valid) {
-  //       this.showStep = value
-  //     } else {
-  //       this.toastr.error('Please enter valid employee email', 'Error', {
-  //         timeOut: 3000
-  //       });
-  //     }
-  //   } else {
-  //     this.showStep = value
-  //   }
-  // }
-  changeEmailValue(value: any) {
-    this.emailValue = value
-  }
+  // show steps 
   showStepsFunction(value: any) {
     if (value == 'One') {
       this.showStep = value
     }
     else if (value == 'Two') {
       if (this.infoForm.valid) {
+        this.arrayItemList.push({
+          editDetails: false,
+          showDetails: false,
+          position: '',
+          addToCalendar: false,
+          // breakDateFrom: ,
+          // breakDateTo: ,
+        })
         this.showStep = value;
-        // if (this.infoForm.value.employeeEmail != this.emailValue) {
-        //   this.editDetails = false;
-        //   this.details = false
-        //   this.infoForm.reset()
-        //   this.disableForm()
-        //   this.detailsForm.reset({
-        //     position: '',
-        //     breakFrom: '',
-        //     breakTo: '',
-        //     employeeDetail: '',
-        //   });
-        // }
-      } else {
+      }
+      else {
         this.toastr.error('Please enter valid employee email', 'Error', {
           timeOut: 3000
         });
@@ -136,60 +88,9 @@ export class StaffComponent implements OnInit {
       this.showStep = value
     }
   }
-
-  close() {
-    this.showStep = '';
-    this.infoForm.reset();
-    this.detailsForm.reset({
-      position: '',
-      breakFrom: '',
-      breakTo: '',
-      employeeDetail: '',
-    });
-    this.disableForm()
-    this.details = false
-  }
-  showDetails() {
-    this.details = !this.details
-  }
-  editDetailsFun(value: any) {
-    this.editDetails = value
-    if (value) {
-      this.enableForm()
-    } else {
-      this.disableForm()
-      this.detailsForm.reset({
-        position: '',
-        breakFrom: '',
-        breakTo: '',
-        employeeDetail: '',
-      });
-    }
-  }
-
-  // detailsSaved() {
-  //   if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
-  //     this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
-  //       timeOut: 3000,
-  //     });
-  //   } else {
-  //     this.toastr.success('Details are saved successfully', '', {
-  //       timeOut: 3000,
-  //     });
-  //     this.editDetails = false;
-  //     this.details = false
-  //     this.infoForm.reset()
-  //     this.disableForm()
-  //     this.detailsForm.reset({
-  //       position: '',
-  //       breakFrom: '',
-  //       breakTo: '',
-  //       employeeDetail: '',
-  //     });
-  //   }
-  // }
-  detailsSaved() {
-    if (this.detailsForm.value.breakFrom > this.detailsForm.value.breakTo) {
+  // saved details
+  saved(dataItem: any, index: any) {
+    if (dataItem.breakDateFrom > dataItem.breakDateTo) {
       this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
         timeOut: 3000,
       });
@@ -197,10 +98,29 @@ export class StaffComponent implements OnInit {
       this.toastr.success('Details are saved successfully', '', {
         timeOut: 3000,
       });
-      this.editDetails = false
-      this.disableForm()
-      // this.details = false
+      this.arrayItemList.splice(index, 1)
     }
+  }
+  // cancel changes
+  cancelChanges(dataItem: any, index: any) {
+    dataItem.editDetails = false;
+    dataItem.showDetails = true;
+    dataItem.position = '';
+    dataItem.addToCalendar = false;
+    dataItem.breakDateFrom = null;
+    dataItem.breakDateTo = null;
+  }
+  // dropdown style change
+  changeDropdown(value: any, index: any) {
+    if (value.showDetails) {
+      $('#matIcon' + index).css('transform', 'rotate(180deg)')
+    } else {
+      $('#matIcon' + index).css('transform', 'rotate(360deg)')
+    }
+  }
+  // close changes
+  closeChanges(index: any) {
+    this.arrayItemList.splice(index, 1)
   }
   // open dialog box
   openDialog(value: any) {
@@ -210,5 +130,4 @@ export class StaffComponent implements OnInit {
       },
     });
   }
-
 }

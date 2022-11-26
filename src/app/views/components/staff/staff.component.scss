@@ -149,10 +149,14 @@ button.btn.btn-primary.savebtn {
 .form-control[readonly] {
   background-color: rgba(255, 255, 255, 1) !important;
   opacity: 1;
+  color: #000000 !important;
 }
-.clicked {
-  transform: rotate(180deg);
+input:read-only {
+  color: #000000 !important;
 }
+// .clicked {
+//   transform: rotate(180deg);
+// }
 .breakArr {
   width: 10px;
   height: 7px;

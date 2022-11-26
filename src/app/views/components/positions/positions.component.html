@@ -52,15 +52,12 @@
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn aboveNxt"
                                 (click)="showStepsFun('schedule')">Next</button>
-                            <!-- <img src="assets/icons/editWhite.svg" class="editIcon" (click)="editTitle()"
-                                *ngIf="showStep == 'schedule'"> -->
-                                <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
+                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
                                 *ngIf="showStep == 'schedule'" style="width: 30px; height: 30px;">
                             <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="cancelChanges('closeAll')">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
-
                         <!-- opening time schedule step 1-->
                         <div *ngIf="showStep == 'schedule'">
                             <div class="stepDiv">
@@ -282,7 +279,7 @@
 
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn btn-primary savebtn"  (click)="scroll(containerTop)" 
+                                            <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
                                                 (click)="showStepsFun('permission')">Next</button>
                                         </div>
                                     </div>
@@ -302,24 +299,6 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos4')">
                             </div>
-                            <!-- <form [formGroup]="permissionForm">
-                                    <div formArrayName="permissions"
-                                    *ngFor="let permi of getpermission.controls; let i=index;">
-                                    <ng-container [formGroupName]="i">
-                                        <div class="mb-3">
-                                            <p class="textStep">Permissions</p>
-                                            <div class="addtoCalDiv">
-                                                <select class="form-control select">
-                                                    <option disabled selected hidden value="">Select</option>
-                                                    <option value="Permission 1">Permission 1</option>
-                                                    <option value="Permission 2">Permission 2</option>
-                                                </select>
-                                            </div>
-                                            
-                                        </div>
-                                    </ng-container>
-                                </div>
-                            </form> -->
                             <form [formGroup]="newPermissionForm">
                                 <div formArrayName="permissionList">
                                     <div *ngFor="let cate of permissionList().controls; let cateIndex=index">
@@ -336,10 +315,8 @@
                                 </div>
                             </form>
                             <div class="mb-3">
-                                <!-- <button class="btn btn-primary cancelbtn" (click)="addNewPermission()">Add
-                                    Permission</button> -->
-                                    <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
-                                        Permission</button>
+                                <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
+                                    Permission</button>
                             </div>
                             <div class="mb-3">
                                 <div class="row dayRow">
@@ -349,7 +326,7 @@
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)" 
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
                                             (click)="showStepsFun('employee type')">Next</button>
                                     </div>
                                 </div>
@@ -378,7 +355,7 @@
                                         <option value="Employee type 2">Employed</option>
                                     </select>
                                 </div>
-                                
+
                             </form>
 
                             <div class="mb-3">
@@ -389,7 +366,7 @@
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)" 
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
                                             (click)="showStepsFun('service')">Next</button>
                                     </div>
                                 </div>
@@ -419,7 +396,7 @@
                                                     <option value="Category 2">Category 2</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div formArrayName="serviceList">
                                                 <div
                                                     *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
@@ -445,7 +422,7 @@
                                                                     maxlength="5" #inputPrice
                                                                     style="padding-right: 3px; padding-left: 3px;"
                                                                     (keyup)="validatePriceField(inputPrice.value)">
-                                                                    <!-- (change)="validatePriceField(inputPrice.value)" -->
+                                                                <!-- (change)="validatePriceField(inputPrice.value)" -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -474,7 +451,8 @@
                                             (click)="cancelChanges('resetService')">Cancel</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" [disabled]="savedBtnDis" (click)="scroll(containerTop)"  (click)="detailsSaved()">Save</button>
+                                        <button class="btn btn-primary savebtn" [disabled]="savedBtnDis"
+                                            (click)="scroll(containerTop)" (click)="detailsSaved()">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -484,3 +462,440 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+<!-- ----------------------testing---------------------------- -->
+
+
+    <div class="row p-0 infoBox" *ngFor="let list of arrayListItem" style="margin-top: 25px;">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="staffBox">
+                <div class="row imgRow">
+                    <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
+                        <input class="JobTit" [disabled]="disableTitle" placeholder="Enter Job title"
+                            [(ngModel)]="jobTitle">
+                        <img src="assets/icons/quesmark.svg" class="quesIcon quesJob" mat-button
+                            (click)="openDialog('Pos2')">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
+                        <h2 class="nameH">Not assigned to</h2>
+                        <div class="editCloseDiv">
+                            <button class="btn btn-primary nextBtn aboveNxt"
+                                (click)="showStepsFun('schedule')">Next</button>
+                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
+                                *ngIf="showStep == 'schedule'" style="width: 30px; height: 30px;">
+                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="cancelChanges('closeAll')">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
+                        <!-- opening time schedule step 1-->
+                        <div *ngIf="showStep == 'schedule'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <div class="selectStep"><span class="stepSpanP selected">1</span> Schedule</div>
+                                    <span class="stepSpanP">2</span>
+                                    <span class="stepSpanP">3</span>
+                                    <span class="stepSpanP">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
+                                    (click)="openDialog('Pos3')">
+                            </div>
+                            <form [formGroup]="openingTimeForm" autocomplete="off">
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-4 ">
+                                            <h3 class="colHeadTime">Day</h3>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <h3 class="colHeadTime">Opening</h3>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <h3 class="colHeadTime">Closing</h3>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Monday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Mon</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monOpen" > -->
+
+                                            <input [ngxTimepicker]="monOpen" class="form-control input "
+                                                formControlName="monOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #monOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monClose" > -->
+
+                                            <input [ngxTimepicker]="monClose" class="form-control input "
+                                                formControlName="monClose" placeholder="Closed">
+                                            <ngx-material-timepicker #monClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Tuesday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Tue</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesOpen" > -->
+
+                                            <input [ngxTimepicker]="tuesOpen" class="form-control input "
+                                                formControlName="tuesOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesClose"> -->
+
+                                            <input [ngxTimepicker]="tuesClose" class="form-control input "
+                                                formControlName="tuesClose" placeholder="Closed">
+                                            <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Wednesday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Wed</label>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedOpen"> -->
+
+                                            <input [ngxTimepicker]="wedOpen" class="form-control input "
+                                                formControlName="wedOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedClose"> -->
+
+                                            <input [ngxTimepicker]="wedClose" class="form-control input "
+                                                formControlName="wedClose" placeholder="Closed">
+                                            <ngx-material-timepicker #wedClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Thursday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Thur</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursOpen" > -->
+
+                                            <input [ngxTimepicker]="thursOpen" class="form-control input "
+                                                formControlName="thursOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursClose"> -->
+
+                                            <input [ngxTimepicker]="thursClose" class="form-control input "
+                                                formControlName="thursClose" placeholder="Closed">
+                                            <ngx-material-timepicker #thursClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Friday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Fri</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friOpen" > -->
+
+                                            <input [ngxTimepicker]="friOpen" class="form-control input "
+                                                formControlName="friOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #friOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friClose"> -->
+
+                                            <input [ngxTimepicker]="friClose" class="form-control input "
+                                                formControlName="friClose" placeholder="Closed">
+                                            <ngx-material-timepicker #friClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Saturday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Sat</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satOpen" > -->
+
+                                            <input [ngxTimepicker]="satOpen" class="form-control input "
+                                                formControlName="satOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #satOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satClose" > -->
+
+                                            <input [ngxTimepicker]="satClose" class="form-control input "
+                                                formControlName="satClose" placeholder="Closed">
+                                            <ngx-material-timepicker #satClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-4 ">
+                                            <label class="form-label label daysLabel webView"
+                                                for="passwordInput">Sunday</label>
+                                            <label class="form-label label daysLabel mobileView"
+                                                for="passwordInput">Sun</label>
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunOpen" > -->
+
+                                            <input [ngxTimepicker]="sunOpen" class="form-control input "
+                                                formControlName="sunOpen" placeholder="Closed">
+                                            <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunClose" > -->
+
+                                            <input [ngxTimepicker]="sunClose" class="form-control input "
+                                                formControlName="sunClose" placeholder="Closed">
+                                            <ngx-material-timepicker #sunClose></ngx-material-timepicker>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="row dayRow">
+                                        <div class="col-6 ">
+                                            <button class="btn btn-primary cancelbtn"
+                                                (click)="cancelChanges('resetTime')">Cancel</button>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
+                                                (click)="showStepsFun('permission')">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- permissions step 2-->
+                        <div *ngIf="showStep == 'permission'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpanP">1</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">2</span> Permissions</div>
+                                    <span class="stepSpanP">3</span>
+                                    <span class="stepSpanP">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
+                                    (click)="openDialog('Pos4')">
+                            </div>
+                            <form [formGroup]="newPermissionForm">
+                                <div formArrayName="permissionList">
+                                    <div *ngFor="let cate of permissionList().controls; let cateIndex=index">
+                                        <div [formGroupName]="cateIndex">
+                                            <div class="addtoCalDiv">
+                                                <select class="form-control select" formControlName="permission">
+                                                    <option disabled selected hidden value="">Permission</option>
+                                                    <option value="Permission 1">Permission 1</option>
+                                                    <option value="Permission 2">Permission 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="mb-3">
+                                <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
+                                    Permission</button>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn" type="button"
+                                            (click)="cancelChanges('resetPermission')">Cancel</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
+                                            (click)="showStepsFun('employee type')">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employee type step 3-->
+                        <div *ngIf="showStep == 'employee type'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpanP">1</span>
+                                    <span class="stepSpanP">2</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">3</span> Employee type
+                                    </div>
+                                    <span class="stepSpanP">4</span>
+                                </div>
+                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
+                                    (click)="openDialog('Pos5')">
+                            </div>
+                            <p class="textStep">Employee type</p>
+                            <form [formGroup]="employeeTypeForm">
+                                <div class="addtoCalDiv">
+                                    <select class="form-control select" formControlName="employeeType">
+                                        <option disabled selected hidden value="">Select</option>
+                                        <option value="Employee type 1">Self Employed</option>
+                                        <option value="Employee type 2">Employed</option>
+                                    </select>
+                                </div>
+
+                            </form>
+
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="cancelChanges('resetEmployee')">Cancel</button>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
+                                            (click)="showStepsFun('service')">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services step 4 -->
+                        <div *ngIf="showStep == 'service'">
+                            <div class="stepDiv">
+                                <div class="steps">
+                                    <span class="stepSpanP">1</span>
+                                    <span class="stepSpanP">2</span>
+                                    <span class="stepSpanP">3</span>
+                                    <div class="selectStep"><span class="stepSpanP selected">4</span> Services</div>
+                                </div>
+                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
+                                    (click)="openDialog('Pos6')">
+                            </div>
+                            <form [formGroup]="servicesForm">
+                                <div formArrayName="categories">
+                                    <div *ngFor="let cate of categories().controls; let cateIndex=index">
+                                        <div [formGroupName]="cateIndex">
+                                            <div class="addtoCalDiv">
+                                                <select class="form-control select" formControlName="category">
+                                                    <option disabled selected hidden value="">Category</option>
+                                                    <option value="Category 1">Category 1</option>
+                                                    <option value="Category 2">Category 2</option>
+                                                </select>
+                                            </div>
+
+                                            <div formArrayName="serviceList">
+                                                <div
+                                                    *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
+                                                    <div class="mb-3" [formGroupName]="serviceIndex">
+                                                        <div class="row dayRow">
+                                                            <div class="col-8 ">
+                                                                <input class="form-control input ser"
+                                                                    placeholder="Service" formControlName="service">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <!-- <input class="form-control input ser" onfocus="(this.type='time')"  onblur="(this.type='text')" 
+                                                                    formControlName="time"> -->
+                                                                <input [ngxTimepicker]="finishTimeNGX"
+                                                                    class="form-control input ser" placeholder="Time"
+                                                                    formControlName="time"
+                                                                    style="padding-right: 3px; padding-left: 3px;">
+                                                                <ngx-material-timepicker #finishTimeNGX>
+                                                                </ngx-material-timepicker>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input class="form-control input ser" type="text"
+                                                                    placeholder="Price" formControlName="price"
+                                                                    maxlength="5" #inputPrice
+                                                                    style="padding-right: 3px; padding-left: 3px;"
+                                                                    (keyup)="validatePriceField(inputPrice.value)">
+                                                                <!-- (change)="validatePriceField(inputPrice.value)" -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn" (click)="addService()">Add
+                                            service</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
+                                            category</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row dayRow">
+                                    <div class="col-6 ">
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="cancelChanges('resetService')">Cancel</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary savebtn" [disabled]="savedBtnDis"
+                                            (click)="scroll(containerTop)" (click)="detailsSaved()">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
