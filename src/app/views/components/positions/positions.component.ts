@@ -6,6 +6,29 @@ import { FormControl, FormBuilder, FormGroup, FormArray, Validators } from '@ang
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 declare var $: any;
+class Structure {
+  jobTitle?: string;
+  editTitle?: boolean;
+  showStep?: string;
+  showEditBtn?: boolean;
+  monOpen?: Date;
+  monClose?: Date;
+  tuesOpen?: Date;
+  tuesClose?: Date;
+  wedOpen?: Date;
+  wedClose?: Date;
+  thursOpen?: Date;
+  thursClose?: Date;
+  friOpen?: Date;
+  friClose?: Date;
+  satOpen?: Date;
+  satClose?: Date;
+  sunOpen?: Date;
+  sunClose?: Date;
+  employeeType?: string;
+  permissions?: Array<any>;
+  serviceList?: Array<any>;
+}
 
 @Component({
   selector: 'app-positions',
@@ -23,20 +46,17 @@ export class PositionsComponent implements OnInit {
   categoryCount = 0
   showWizard = false
   jobTitle = ''
-  disableTitle = false
   serviceCount = 0
   savedBtnDis = false
-  arrayListItem: any = []
+  arrayItemList: Structure[] = [];
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router) { }
 
   ngOnInit(): void {
-    this.formInitialize()
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
-    this.categoryCount = 0
   }
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -46,157 +66,7 @@ export class PositionsComponent implements OnInit {
   adjustWidth(value: any, steps: any) {
     $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
   }
-  // cancel changes
-  cancelChanges(value: any) {
-    if (value == 'closeAll') {
-      this.addPosition = false
-      this.showStep = ''
-      this.jobTitle = ''
-      this.disableTitle = false
-      this.openingTimeForm.reset()
-      this.newPermissionForm.reset()
-      this.servicesForm.reset()
-    }
-    else if (value == 'resetTime') {
-      this.openingTimeForm.reset()
-    }
-    else if (value == 'resetPermission') {
-      (this.newPermissionForm.controls['permissionList'] as FormArray).clear();
-      this.addPermission()
-    }
-    else if (value == 'resetEmployee') {
-      this.employeeTypeForm.reset({
-        employeeType: ''
-      })
-    }
-    else if (value == 'resetService') {
-      this.servicesForm.reset();
-      (this.servicesForm.controls['categories'] as FormArray).clear();
-       this.categoryCount = 0
-       this.categories().push(this.fb.group({
-        category: ['', Validators.required],
-        serviceList: this.fb.array([
-          this.fb.group({
-            service: ['', Validators.required],
-            time: ['', Validators.required],
-            price: ['', Validators.required]
-          })
-        ])
-      }));
-    }
-  }
-  addPositionBTN() {
-    this.addPosition = true
-    this.arrayListItem.push('1')
-  }
-  editTitle() {
-    this.disableTitle = false
-  }
-  showStepsFun(showValue: any) {
-    // go to schedule
-    if (showValue == 'schedule') {
-
-      if (this.jobTitle.length > 0) {
-        this.showStep = showValue
-        this.disableTitle = true
-      } else {
-        this.toastr.error('Please enter the job title', 'Error', {
-          timeOut: 3000
-        });
-      }
-      // this.showStep = showValue
-    }
-    // go to permissions
-    else if (showValue == 'permission') {
-      if (this.openingTimeForm.valid) {
-        if (this.openingTimeForm.value.monClose < this.openingTimeForm.value.monOpen
-          || this.openingTimeForm.value.tuesClose < this.openingTimeForm.value.tuesOpen
-          || this.openingTimeForm.value.wedClose < this.openingTimeForm.value.wedOpen
-          || this.openingTimeForm.value.thursClose < this.openingTimeForm.value.thursOpen
-          || this.openingTimeForm.value.friClose < this.openingTimeForm.value.friOpen
-          || this.openingTimeForm.value.satClose < this.openingTimeForm.value.satOpen
-          || this.openingTimeForm.value.sunClose < this.openingTimeForm.value.sunOpen) {
-          this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
-            timeOut: 3000
-          });
-        } else {
-          this.toastr.success('Opening timings has been saved', '', {
-            timeOut: 3000,
-          });
-          this.showStep = showValue
-        }
-
-      } else {
-        this.toastr.error('Please fill the schedule timings', 'Error', {
-          timeOut: 3000
-        });
-      }
-      // this.showStep = showValue
-    }
-    // go to employee type
-    else if (showValue == 'employee type') {
-      if (this.newPermissionForm.valid) {
-        this.showStep = showValue
-      } else {
-        this.toastr.error('Please fill the permissions', 'Error', {
-          timeOut: 3000
-        });
-      }
-    }
-    // go to services
-    else if (showValue == 'service') {
-      if (this.employeeTypeForm.valid) {
-        this.showStep = showValue
-      } else {
-        this.toastr.error('Please select the employee type', 'Error', {
-          timeOut: 3000
-        });
-      }
-
-    }
-  }
-  formInitialize() {
-     // opening time form 
-     this.openingTimeForm = this.fb.group({
-      monOpen: [''],
-      monClose: [''],
-      tuesOpen: [''],
-      tuesClose: [''],
-      wedOpen: [''],
-      wedClose: [''],
-      thursOpen: [''],
-      thursClose: [''],
-      friOpen: [''],
-      friClose: [''],
-      satOpen: [''],
-      satClose: [''],
-      sunOpen: [''],
-      sunClose: [''],
-    })
-    // employee type form
-    this.employeeTypeForm = this.fb.group({
-      employeeType: ['', Validators.required]
-    })
-    // new permission form
-    this.newPermissionForm = this.fb.group({
-      permissionList: this.fb.array([this.fb.group({
-        permission: ['', Validators.required]
-      })]),
-    })
-    // services form
-    this.servicesForm = this.fb.group({
-      categories: this.fb.array([this.fb.group({
-        category: ['', Validators.required],
-        serviceList: this.fb.array([
-          this.fb.group({
-            service: ['', Validators.required],
-            time: ['', Validators.required],
-            price: ['', Validators.required]
-          })
-        ])
-      })]),
-    })
-  }
+ 
   validatePriceField(value: any) {
     var reg = new RegExp('^[0-9]*$');
     let match = reg.test(value)
@@ -211,38 +81,7 @@ export class PositionsComponent implements OnInit {
     }
   }
 
-  // services form
-  permissionList(): FormArray {
-    return this.newPermissionForm.get("permissionList") as FormArray
-  }
-  addPermission() {
-    this.permissionList().push(this.fb.group({
-      permission: ['', Validators.required],
-    }));
-  }
-
-  // services form
-  categories(): FormArray {
-    return this.servicesForm.get("categories") as FormArray
-  }
-  addCategory() {
-    this.categoryCount++
-    this.categories().push(this.fb.group({
-      category: ['', Validators.required],
-      serviceList: this.fb.array([])
-    }));
-    this.addService()
-  }
-  categoryServiceList(empIndex: number): FormArray {
-    return this.categories().at(empIndex).get("serviceList") as FormArray
-  }
-  addService() {
-    this.categoryServiceList(this.categoryCount).push(this.fb.group({
-      service: ['',Validators.required],
-      time: ['',Validators.required],
-      price: ['',Validators.required]
-    }));
-  }
+ 
 
   // wizard
   nextWizard() {
@@ -260,22 +99,194 @@ export class PositionsComponent implements OnInit {
       },
     });
   }
-  // save info
-  detailsSaved() {
-    if (this.servicesForm.valid) {
-      this.toastr.success('Details are saved successfully', '', {
-        timeOut: 3000,
+
+
+  // testing
+
+  // add new position
+  addNewPosition() {
+    this.arrayItemList.push({
+      jobTitle: '',
+      editTitle: true,
+      showStep: '',
+      showEditBtn: false,
+      employeeType: '',
+      permissions: [{ perKey: '' }],
+      serviceList: [
+        {
+          category: '',
+          serList: [
+            {
+              service: '',
+              time: null,
+              price: ''
+            }
+          ]
+        }
+      ]
+    })
+  }
+  // remove position
+  removePosition(index: any) {
+    this.arrayItemList.splice(index, 1)
+  }
+  // click on next button
+  clickOnNextBTN(item: any, index: any, goTO: any) {
+    if (goTO == 'goToSchedule') {
+      if (item.jobTitle.length > 0) {
+        item.editTitle = false;
+        item.showStep = 'scheduleStep';
+        item.showEditBtn = true
+      } else {
+        this.toastr.error('Please enter the Job title', 'Error', {
+          timeOut: 3000,
+        });
+      }
+    }
+    //schedule check
+    else if(goTO == 'goToPermission'){
+      if (item.monClose < item.monOpen
+        || item.tuesClose < item.tuesOpen
+        || item.wedClose < item.wedOpen
+        || item.thursClose < item.thursOpen
+        || item.friClose < item.friOpen
+        || item.satClose < item.satOpen
+        || item.sunClose < item.sunOpen) {
+        this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
+          timeOut: 3000
+        });
+      } else {
+        this.toastr.success('Opening timings has been saved', '', {
+          timeOut: 3000,
+        });
+        item.showStep = 'permissionStep'
+      }
+    }
+    // permission check
+    else if (goTO == 'goToEmployeeType') {
+      let valid = false
+      item.permissions.forEach((element: any) => {
+        if (element.perKey == '') {
+          valid = false
+        } else {
+          valid = true
+        }
       });
-      this.addPosition = false
-    this.showStep = ''
-    // this.jobTitle = ''
-    // this.openingTimeForm.reset()
-    // this.disableTitle = false;
-    // this.ngOnInit()
-    } else {
-      this.toastr.error('Please enter all the details', 'Error', {
-        timeOut: 3000,
+      if (valid) {
+        item.showStep = 'employeeTypeStep'
+      } else {
+        this.toastr.error('Please select the permissions', 'Error', {
+          timeOut: 3000,
+        });
+      }
+    }
+    // employee type check
+    else if (goTO == 'goToService') {
+      if (item.employeeType != '') {
+        item.showStep = 'serviceStep'
+      } else {
+        this.toastr.error('Please select the employee type', 'Error', {
+          timeOut: 3000,
+        });
+      }
+
+    }
+    // service type check
+    else if (goTO == 'goToEnd') {
+      let valid = false
+      item.serviceList.forEach((element: any) => {
+        console.log(element)
+        if (element.category == '') {
+          valid = false
+          return
+        }
+        else {
+          element.serList.forEach((ele: any) => {
+            if (ele.service == '' || ele.time == null || ele.price == '') {
+              valid = false
+              return
+            } else {
+              valid = true
+            }
+          })
+        }
       });
+      if (valid) {
+        this.toastr.success('Details are saved successfully', '', {
+          timeOut: 3000,
+        });
+        this.arrayItemList.splice(index, 1)
+      } else {
+        this.toastr.error('Please fill all the values', 'Error', {
+          timeOut: 3000,
+        });
+      }
+    }
+  }
+  addPermissionValue(item: any, index: any) {
+    item.permissions.push({
+      perKey: ''
+    })
+  }
+  addCategoryValue(item: any, index: any, addValue: any) {
+    if (addValue == 'Category') {
+      item.serviceList.push(
+        {
+          category: '',
+          serList: [
+            {
+              service: '',
+              time: null,
+              price: ''
+            }
+          ]
+        }
+      )
+    }
+    else if (addValue == 'Service') {
+      let addTo = item.serviceList.length
+      item.serviceList[addTo - 1].serList.push({
+        service: '',
+        time: null,
+        price: ''
+      })
+
+    }
+  }
+  cancelStep(item: any, index: any, goTO: any) {
+    if (goTO == 'schedule') {
+      item.monOpen=null;
+      item.monClose=null;
+        item.tuesOpen=null;
+        item.tuesClose=null;
+        item.wedOpen=null;
+        item.wedClose=null;
+        item.thursOpen=null;
+        item.thursClose=null;
+        item.friOpen=null;
+        item.friClose=null;
+        item.satOpen=null;
+        item.satClose=null;
+        item.sunOpen=null;
+        item.sunClose=null;
+    }
+    else if (goTO == 'permission') {
+      item.permissions = [{ perKey: '' }]
+    }
+    else if (goTO == 'employeeType') {
+      item.employeeType = ''
+    }
+    else {
+      item.serviceList = [{
+        category: '',
+        serList: [
+          {
+            service: '',
+            time: null,
+            price: ''
+          }
+        ]
+      }]
     }
   }
 }

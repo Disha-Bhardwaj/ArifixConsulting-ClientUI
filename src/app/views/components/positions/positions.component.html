@@ -1,7 +1,7 @@
 <div class="container" #containerTop>
     <div class="row" style="margin-top: 48px;">
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
-            <button class="btn btn-primary savebtn addPosBtn" (click)="addPositionBTN()">Add Position</button>
+            <button class="btn btn-primary savebtn addPosBtn" (click)="addNewPosition()">Add Position</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Pos1')">
         </div>
     </div>
@@ -37,13 +37,14 @@
             </div>
         </div>
     </div>
-    <div class="row p-0 infoBox" *ngIf="addPosition">
+
+    <div class="row p-0 infoBox" *ngFor="let items of arrayItemList; let i = index;" style="margin-top: 25px;">
         <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <input class="JobTit" [disabled]="disableTitle" placeholder="Enter Job title"
-                            [(ngModel)]="jobTitle">
+                        <input class="JobTit" [disabled]="!items.editTitle" placeholder="Enter Job title"
+                            [(ngModel)]="items.jobTitle">
                         <img src="assets/icons/quesmark.svg" class="quesIcon quesJob" mat-button
                             (click)="openDialog('Pos2')">
                     </div>
@@ -51,15 +52,15 @@
                         <h2 class="nameH">Not assigned to</h2>
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn aboveNxt"
-                                (click)="showStepsFun('schedule')">Next</button>
-                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
-                                *ngIf="showStep == 'schedule'" style="width: 30px; height: 30px;">
-                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="cancelChanges('closeAll')">
+                                (click)="clickOnNextBTN(items, i, 'goToSchedule')">Next</button>
+                            <img src="assets/icons/edit.svg" class="editIcon" *ngIf="items.showEditBtn"
+                                (click)="items.editTitle = true" style="width: 30px; height: 30px;">
+                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="removePosition(i)">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
                         <!-- opening time schedule step 1-->
-                        <div *ngIf="showStep == 'schedule'">
+                        <div *ngIf="items.showStep == 'scheduleStep'">
                             <div class="stepDiv">
                                 <div class="steps">
                                     <div class="selectStep"><span class="stepSpanP selected">1</span> Schedule</div>
@@ -70,7 +71,7 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos3')">
                             </div>
-                            <form [formGroup]="openingTimeForm" autocomplete="off">
+                            <!-- <form [formGroup]="openingTimeForm" autocomplete="off">
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-4 ">
@@ -96,16 +97,12 @@
                                                 for="passwordInput">Mon</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monOpen" > -->
-
                                             <input [ngxTimepicker]="monOpen" class="form-control input "
                                                 formControlName="monOpen" placeholder="Closed">
                                             <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monClose" > -->
-
                                             <input [ngxTimepicker]="monClose" class="form-control input "
                                                 formControlName="monClose" placeholder="Closed">
                                             <ngx-material-timepicker #monClose></ngx-material-timepicker>
@@ -123,20 +120,15 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesOpen" > -->
-
                                             <input [ngxTimepicker]="tuesOpen" class="form-control input "
                                                 formControlName="tuesOpen" placeholder="Closed">
                                             <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesClose"> -->
-
                                             <input [ngxTimepicker]="tuesClose" class="form-control input "
                                                 formControlName="tuesClose" placeholder="Closed">
                                             <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
-
                                         </div>
                                     </div>
                                 </div>
@@ -150,16 +142,12 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedOpen"> -->
-
                                             <input [ngxTimepicker]="wedOpen" class="form-control input "
                                                 formControlName="wedOpen" placeholder="Closed">
                                             <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedClose"> -->
-
                                             <input [ngxTimepicker]="wedClose" class="form-control input "
                                                 formControlName="wedClose" placeholder="Closed">
                                             <ngx-material-timepicker #wedClose></ngx-material-timepicker>
@@ -176,16 +164,12 @@
                                                 for="passwordInput">Thur</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursOpen" > -->
-
                                             <input [ngxTimepicker]="thursOpen" class="form-control input "
                                                 formControlName="thursOpen" placeholder="Closed">
                                             <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursClose"> -->
-
                                             <input [ngxTimepicker]="thursClose" class="form-control input "
                                                 formControlName="thursClose" placeholder="Closed">
                                             <ngx-material-timepicker #thursClose></ngx-material-timepicker>
@@ -202,16 +186,12 @@
                                                 for="passwordInput">Fri</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friOpen" > -->
-
                                             <input [ngxTimepicker]="friOpen" class="form-control input "
                                                 formControlName="friOpen" placeholder="Closed">
                                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friClose"> -->
-
                                             <input [ngxTimepicker]="friClose" class="form-control input "
                                                 formControlName="friClose" placeholder="Closed">
                                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
@@ -228,16 +208,12 @@
                                                 for="passwordInput">Sat</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satOpen" > -->
-
                                             <input [ngxTimepicker]="satOpen" class="form-control input "
                                                 formControlName="satOpen" placeholder="Closed">
                                             <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satClose" > -->
-
                                             <input [ngxTimepicker]="satClose" class="form-control input "
                                                 formControlName="satClose" placeholder="Closed">
                                             <ngx-material-timepicker #satClose></ngx-material-timepicker>
@@ -254,16 +230,12 @@
                                                 for="passwordInput">Sun</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunOpen" > -->
-
                                             <input [ngxTimepicker]="sunOpen" class="form-control input "
                                                 formControlName="sunOpen" placeholder="Closed">
                                             <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunClose" > -->
-
                                             <input [ngxTimepicker]="sunClose" class="form-control input "
                                                 formControlName="sunClose" placeholder="Closed">
                                             <ngx-material-timepicker #sunClose></ngx-material-timepicker>
@@ -276,237 +248,16 @@
                                         <div class="col-6 ">
                                             <button class="btn btn-primary cancelbtn"
                                                 (click)="cancelChanges('resetTime')">Cancel</button>
-
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                                (click)="showStepsFun('permission')">Next</button>
+                                            <button class="btn btn-primary savebtn"
+                                                (click)="items.showStep = 'permissionStep'">Next</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-
-                        <!-- permissions step 2-->
-                        <div *ngIf="showStep == 'permission'">
-                            <div class="stepDiv">
-                                <div class="steps">
-                                    <span class="stepSpanP">1</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">2</span> Permissions</div>
-                                    <span class="stepSpanP">3</span>
-                                    <span class="stepSpanP">4</span>
-                                </div>
-                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
-                                    (click)="openDialog('Pos4')">
-                            </div>
-                            <form [formGroup]="newPermissionForm">
-                                <div formArrayName="permissionList">
-                                    <div *ngFor="let cate of permissionList().controls; let cateIndex=index">
-                                        <div [formGroupName]="cateIndex">
-                                            <div class="addtoCalDiv">
-                                                <select class="form-control select" formControlName="permission">
-                                                    <option disabled selected hidden value="">Permission</option>
-                                                    <option value="Permission 1">Permission 1</option>
-                                                    <option value="Permission 2">Permission 2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="mb-3">
-                                <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
-                                    Permission</button>
-                            </div>
-                            <div class="mb-3">
-                                <div class="row dayRow">
-                                    <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn" type="button"
-                                            (click)="cancelChanges('resetPermission')">Cancel</button>
-
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                            (click)="showStepsFun('employee type')">Next</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Employee type step 3-->
-                        <div *ngIf="showStep == 'employee type'">
-                            <div class="stepDiv">
-                                <div class="steps">
-                                    <span class="stepSpanP">1</span>
-                                    <span class="stepSpanP">2</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">3</span> Employee type
-                                    </div>
-                                    <span class="stepSpanP">4</span>
-                                </div>
-                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
-                                    (click)="openDialog('Pos5')">
-                            </div>
-                            <p class="textStep">Employee type</p>
-                            <form [formGroup]="employeeTypeForm">
-                                <div class="addtoCalDiv">
-                                    <select class="form-control select" formControlName="employeeType">
-                                        <option disabled selected hidden value="">Select</option>
-                                        <option value="Employee type 1">Self Employed</option>
-                                        <option value="Employee type 2">Employed</option>
-                                    </select>
-                                </div>
-
-                            </form>
-
-                            <div class="mb-3">
-                                <div class="row dayRow">
-                                    <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges('resetEmployee')">Cancel</button>
-
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                            (click)="showStepsFun('service')">Next</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Services step 4 -->
-                        <div *ngIf="showStep == 'service'">
-                            <div class="stepDiv">
-                                <div class="steps">
-                                    <span class="stepSpanP">1</span>
-                                    <span class="stepSpanP">2</span>
-                                    <span class="stepSpanP">3</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">4</span> Services</div>
-                                </div>
-                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
-                                    (click)="openDialog('Pos6')">
-                            </div>
-                            <form [formGroup]="servicesForm">
-                                <div formArrayName="categories">
-                                    <div *ngFor="let cate of categories().controls; let cateIndex=index">
-                                        <div [formGroupName]="cateIndex">
-                                            <div class="addtoCalDiv">
-                                                <select class="form-control select" formControlName="category">
-                                                    <option disabled selected hidden value="">Category</option>
-                                                    <option value="Category 1">Category 1</option>
-                                                    <option value="Category 2">Category 2</option>
-                                                </select>
-                                            </div>
-
-                                            <div formArrayName="serviceList">
-                                                <div
-                                                    *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
-                                                    <div class="mb-3" [formGroupName]="serviceIndex">
-                                                        <div class="row dayRow">
-                                                            <div class="col-8 ">
-                                                                <input class="form-control input ser"
-                                                                    placeholder="Service" formControlName="service">
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <!-- <input class="form-control input ser" onfocus="(this.type='time')"  onblur="(this.type='text')" 
-                                                                    formControlName="time"> -->
-                                                                <input [ngxTimepicker]="finishTimeNGX"
-                                                                    class="form-control input ser" placeholder="Time"
-                                                                    formControlName="time"
-                                                                    style="padding-right: 3px; padding-left: 3px;">
-                                                                <ngx-material-timepicker #finishTimeNGX>
-                                                                </ngx-material-timepicker>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <input class="form-control input ser" type="text"
-                                                                    placeholder="Price" formControlName="price"
-                                                                    maxlength="5" #inputPrice
-                                                                    style="padding-right: 3px; padding-left: 3px;"
-                                                                    (keyup)="validatePriceField(inputPrice.value)">
-                                                                <!-- (change)="validatePriceField(inputPrice.value)" -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="mb-3">
-                                <div class="row dayRow">
-                                    <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn" (click)="addService()">Add
-                                            service</button>
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
-                                            category</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="row dayRow">
-                                    <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges('resetService')">Cancel</button>
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="btn btn-primary savebtn" [disabled]="savedBtnDis"
-                                            (click)="scroll(containerTop)" (click)="detailsSaved()">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-<!-- ----------------------testing---------------------------- -->
-
-
-    <div class="row p-0 infoBox" *ngFor="let list of arrayListItem" style="margin-top: 25px;">
-        <div class="col-lg-5 col-md-5 col-sm-12">
-            <div class="staffBox">
-                <div class="row imgRow">
-                    <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <input class="JobTit" [disabled]="disableTitle" placeholder="Enter Job title"
-                            [(ngModel)]="jobTitle">
-                        <img src="assets/icons/quesmark.svg" class="quesIcon quesJob" mat-button
-                            (click)="openDialog('Pos2')">
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
-                        <h2 class="nameH">Not assigned to</h2>
-                        <div class="editCloseDiv">
-                            <button class="btn btn-primary nextBtn aboveNxt"
-                                (click)="showStepsFun('schedule')">Next</button>
-                            <img src="assets/icons/edit.svg" class="editIcon" (click)="editTitle()"
-                                *ngIf="showStep == 'schedule'" style="width: 30px; height: 30px;">
-                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="cancelChanges('closeAll')">
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
-                        <!-- opening time schedule step 1-->
-                        <div *ngIf="showStep == 'schedule'">
-                            <div class="stepDiv">
-                                <div class="steps">
-                                    <div class="selectStep"><span class="stepSpanP selected">1</span> Schedule</div>
-                                    <span class="stepSpanP">2</span>
-                                    <span class="stepSpanP">3</span>
-                                    <span class="stepSpanP">4</span>
-                                </div>
-                                <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
-                                    (click)="openDialog('Pos3')">
-                            </div>
-                            <form [formGroup]="openingTimeForm" autocomplete="off">
+                            </form> -->
+                        
+                           
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-4 ">
@@ -523,6 +274,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="mb-3">
                                     <div class="row dayRow">
                                         <div class="col-4 ">
@@ -532,18 +284,14 @@
                                                 for="passwordInput">Mon</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monOpen" > -->
-
                                             <input [ngxTimepicker]="monOpen" class="form-control input "
-                                                formControlName="monOpen" placeholder="Closed">
+                                                [(ngModel)]="items.monOpen" placeholder="Closed">
                                             <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="monClose" > -->
-
                                             <input [ngxTimepicker]="monClose" class="form-control input "
-                                                formControlName="monClose" placeholder="Closed">
+                                                [(ngModel)]="items.monClose" placeholder="Closed">
                                             <ngx-material-timepicker #monClose></ngx-material-timepicker>
 
                                         </div>
@@ -559,20 +307,15 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesOpen" > -->
-
                                             <input [ngxTimepicker]="tuesOpen" class="form-control input "
-                                                formControlName="tuesOpen" placeholder="Closed">
+                                                [(ngModel)]="items.tuesOpen" placeholder="Closed">
                                             <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="tuesClose"> -->
-
                                             <input [ngxTimepicker]="tuesClose" class="form-control input "
-                                                formControlName="tuesClose" placeholder="Closed">
+                                                [(ngModel)]="items.tuesClose" placeholder="Closed">
                                             <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
-
                                         </div>
                                     </div>
                                 </div>
@@ -586,18 +329,14 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedOpen"> -->
-
                                             <input [ngxTimepicker]="wedOpen" class="form-control input "
-                                                formControlName="wedOpen" placeholder="Closed">
+                                                [(ngModel)]="items.wedOpen" placeholder="Closed">
                                             <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="wedClose"> -->
-
                                             <input [ngxTimepicker]="wedClose" class="form-control input "
-                                                formControlName="wedClose" placeholder="Closed">
+                                                [(ngModel)]="items.wedClose" placeholder="Closed">
                                             <ngx-material-timepicker #wedClose></ngx-material-timepicker>
 
                                         </div>
@@ -612,18 +351,14 @@
                                                 for="passwordInput">Thur</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursOpen" > -->
-
                                             <input [ngxTimepicker]="thursOpen" class="form-control input "
-                                                formControlName="thursOpen" placeholder="Closed">
+                                                [(ngModel)]="items.thursOpen" placeholder="Closed">
                                             <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="thursClose"> -->
-
                                             <input [ngxTimepicker]="thursClose" class="form-control input "
-                                                formControlName="thursClose" placeholder="Closed">
+                                                [(ngModel)]="items.thursClose" placeholder="Closed">
                                             <ngx-material-timepicker #thursClose></ngx-material-timepicker>
 
                                         </div>
@@ -638,18 +373,14 @@
                                                 for="passwordInput">Fri</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friOpen" > -->
-
                                             <input [ngxTimepicker]="friOpen" class="form-control input "
-                                                formControlName="friOpen" placeholder="Closed">
+                                                [(ngModel)]="items.friOpen" placeholder="Closed">
                                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="friClose"> -->
-
                                             <input [ngxTimepicker]="friClose" class="form-control input "
-                                                formControlName="friClose" placeholder="Closed">
+                                                [(ngModel)]="items.friClose" placeholder="Closed">
                                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
 
                                         </div>
@@ -664,18 +395,14 @@
                                                 for="passwordInput">Sat</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satOpen" > -->
-
                                             <input [ngxTimepicker]="satOpen" class="form-control input "
-                                                formControlName="satOpen" placeholder="Closed">
+                                                [(ngModel)]="items.satOpen" placeholder="Closed">
                                             <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="satClose" > -->
-
                                             <input [ngxTimepicker]="satClose" class="form-control input "
-                                                formControlName="satClose" placeholder="Closed">
+                                                [(ngModel)]="items.satClose" placeholder="Closed">
                                             <ngx-material-timepicker #satClose></ngx-material-timepicker>
 
                                         </div>
@@ -690,18 +417,14 @@
                                                 for="passwordInput">Sun</label>
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunOpen" > -->
-
                                             <input [ngxTimepicker]="sunOpen" class="form-control input "
-                                                formControlName="sunOpen" placeholder="Closed">
+                                                [(ngModel)]="items.sunOpen" placeholder="Closed">
                                             <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <!-- <input type="text" onfocus="(this.type='time')"  onblur="(this.type='text')" placeholder="Closed"  class="form-control input " formControlName="sunClose" > -->
-
                                             <input [ngxTimepicker]="sunClose" class="form-control input "
-                                                formControlName="sunClose" placeholder="Closed">
+                                                [(ngModel)]="items.sunClose" placeholder="Closed">
                                             <ngx-material-timepicker #sunClose></ngx-material-timepicker>
 
                                         </div>
@@ -711,20 +434,18 @@
                                     <div class="row dayRow">
                                         <div class="col-6 ">
                                             <button class="btn btn-primary cancelbtn"
-                                                (click)="cancelChanges('resetTime')">Cancel</button>
-
+                                                (click)="cancelStep(items, i ,'schedule')">Cancel</button>
                                         </div>
                                         <div class="col-6">
-                                            <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                                (click)="showStepsFun('permission')">Next</button>
+                                            <button class="btn btn-primary savebtn"
+                                            (click)="clickOnNextBTN(items, i, 'goToPermission')">Next</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </div>
 
                         <!-- permissions step 2-->
-                        <div *ngIf="showStep == 'permission'">
+                        <div *ngIf="items.showStep == 'permissionStep'">
                             <div class="stepDiv">
                                 <div class="steps">
                                     <span class="stepSpanP">1</span>
@@ -735,42 +456,36 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos4')">
                             </div>
-                            <form [formGroup]="newPermissionForm">
-                                <div formArrayName="permissionList">
-                                    <div *ngFor="let cate of permissionList().controls; let cateIndex=index">
-                                        <div [formGroupName]="cateIndex">
-                                            <div class="addtoCalDiv">
-                                                <select class="form-control select" formControlName="permission">
-                                                    <option disabled selected hidden value="">Permission</option>
-                                                    <option value="Permission 1">Permission 1</option>
-                                                    <option value="Permission 2">Permission 2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div *ngFor="let perItem of items.permissions; let permiIndex=index">
+                                <div class="addtoCalDiv">
+                                    <select class="form-control select" [(ngModel)]="perItem.perKey">
+                                        <option disabled selected hidden value="">Permission</option>
+                                        <option value="Permission 1">Permission 1</option>
+                                        <option value="Permission 2">Permission 2</option>
+                                    </select>
                                 </div>
-                            </form>
+                            </div>
                             <div class="mb-3">
-                                <button class="btn btn-primary cancelbtn" (click)="addPermission()">Add
+                                <button class="btn btn-primary cancelbtn" (click)="addPermissionValue(items,i)">Add
                                     Permission</button>
                             </div>
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn" type="button"
-                                            (click)="cancelChanges('resetPermission')">Cancel</button>
+                                            (click)="cancelStep(items,i,'permission')">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                            (click)="showStepsFun('employee type')">Next</button>
+                                        <button class="btn btn-primary savebtn"
+                                            (click)="clickOnNextBTN(items, i, 'goToEmployeeType')">Next</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Employee type step 3-->
-                        <div *ngIf="showStep == 'employee type'">
+                        <div *ngIf="items.showStep == 'employeeTypeStep'">
                             <div class="stepDiv">
                                 <div class="steps">
                                     <span class="stepSpanP">1</span>
@@ -783,34 +498,31 @@
                                     (click)="openDialog('Pos5')">
                             </div>
                             <p class="textStep">Employee type</p>
-                            <form [formGroup]="employeeTypeForm">
-                                <div class="addtoCalDiv">
-                                    <select class="form-control select" formControlName="employeeType">
-                                        <option disabled selected hidden value="">Select</option>
-                                        <option value="Employee type 1">Self Employed</option>
-                                        <option value="Employee type 2">Employed</option>
-                                    </select>
-                                </div>
-
-                            </form>
+                            <div class="addtoCalDiv">
+                                <select class="form-control select" [(ngModel)]="items.employeeType">
+                                    <option disabled selected hidden value="">Select</option>
+                                    <option value="Employee type 1">Self Employed</option>
+                                    <option value="Employee type 2">Employed</option>
+                                </select>
+                            </div>
 
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges('resetEmployee')">Cancel</button>
+                                            (click)="cancelStep(items, i, 'employeeType')">Cancel</button>
 
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary savebtn" (click)="scroll(containerTop)"
-                                            (click)="showStepsFun('service')">Next</button>
+                                        <button class="btn btn-primary savebtn"
+                                            (click)="clickOnNextBTN(items, i, 'goToService')">Next</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Services step 4 -->
-                        <div *ngIf="showStep == 'service'">
+                        <div *ngIf="items.showStep == 'serviceStep'">
                             <div class="stepDiv">
                                 <div class="steps">
                                     <span class="stepSpanP">1</span>
@@ -821,61 +533,55 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos6')">
                             </div>
-                            <form [formGroup]="servicesForm">
-                                <div formArrayName="categories">
-                                    <div *ngFor="let cate of categories().controls; let cateIndex=index">
-                                        <div [formGroupName]="cateIndex">
-                                            <div class="addtoCalDiv">
-                                                <select class="form-control select" formControlName="category">
-                                                    <option disabled selected hidden value="">Category</option>
-                                                    <option value="Category 1">Category 1</option>
-                                                    <option value="Category 2">Category 2</option>
-                                                </select>
-                                            </div>
+                            <div *ngFor="let serItem of items.serviceList; let listIndex=index">
+                                <div>
+                                    <div class="addtoCalDiv">
+                                        <select class="form-control select" [(ngModel)]="serItem.category">
+                                            <option disabled selected hidden value="">Category</option>
+                                            <option value="Category 1">Category 1</option>
+                                            <option value="Category 2">Category 2</option>
+                                        </select>
+                                    </div>
 
-                                            <div formArrayName="serviceList">
-                                                <div
-                                                    *ngFor="let service of categoryServiceList(cateIndex).controls; let serviceIndex=index">
-                                                    <div class="mb-3" [formGroupName]="serviceIndex">
-                                                        <div class="row dayRow">
-                                                            <div class="col-8 ">
-                                                                <input class="form-control input ser"
-                                                                    placeholder="Service" formControlName="service">
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <!-- <input class="form-control input ser" onfocus="(this.type='time')"  onblur="(this.type='text')" 
-                                                                    formControlName="time"> -->
-                                                                <input [ngxTimepicker]="finishTimeNGX"
-                                                                    class="form-control input ser" placeholder="Time"
-                                                                    formControlName="time"
-                                                                    style="padding-right: 3px; padding-left: 3px;">
-                                                                <ngx-material-timepicker #finishTimeNGX>
-                                                                </ngx-material-timepicker>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <input class="form-control input ser" type="text"
-                                                                    placeholder="Price" formControlName="price"
-                                                                    maxlength="5" #inputPrice
-                                                                    style="padding-right: 3px; padding-left: 3px;"
-                                                                    (keyup)="validatePriceField(inputPrice.value)">
-                                                                <!-- (change)="validatePriceField(inputPrice.value)" -->
-                                                            </div>
-                                                        </div>
+                                    <div>
+                                        <div *ngFor="let servi of serItem.serList; let serviceIndex=index">
+                                            <div class="mb-3">
+                                                <div class="row dayRow">
+                                                    <div class="col-8 ">
+                                                        <input class="form-control input ser" placeholder="Service"
+                                                            [(ngModel)]="servi.service">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input [ngxTimepicker]="finishTimeNGX"
+                                                            class="form-control input ser" placeholder="Time"
+                                                            [(ngModel)]="servi.time"
+                                                            style="padding-right: 3px; padding-left: 3px;">
+                                                        <ngx-material-timepicker #finishTimeNGX>
+                                                        </ngx-material-timepicker>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input class="form-control input ser" type="text"
+                                                            placeholder="Price" [(ngModel)]="servi.price" maxlength="5"
+                                                            #inputPrice style="padding-right: 3px; padding-left: 3px;"
+                                                            (keyup)="validatePriceField(inputPrice.value)">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
-                                        <button class="btn btn-primary cancelbtn" (click)="addService()">Add
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="addCategoryValue(items, i,'Service')">Add
                                             service</button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-primary cancelbtn" (click)="addCategory()">Add
+                                        <button class="btn btn-primary cancelbtn"
+                                            (click)="addCategoryValue(items, i,'Category')">Add
                                             category</button>
                                     </div>
                                 </div>
@@ -884,11 +590,11 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelChanges('resetService')">Cancel</button>
+                                            (click)="cancelStep(items,i,'service')">Cancel</button>
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary savebtn" [disabled]="savedBtnDis"
-                                            (click)="scroll(containerTop)" (click)="detailsSaved()">Save</button>
+                                            (click)="clickOnNextBTN(items, i, 'goToEnd')">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -899,3 +605,4 @@
         </div>
     </div>
 </div>
+<!-- (click)="scroll(containerTop)" -->
