@@ -8,7 +8,7 @@
         <aside class="optionFilter" *ngIf="expanded">
             <!-- <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker> -->
 
-            <input matInput placeholder="Date" [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
+            <input matInput placeholder="Date" readonly [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
                 class="form-control input ">
             <mat-datepicker #datepickerFrom></mat-datepicker>
 
@@ -29,7 +29,7 @@
     </div>
     <aside class="sidebar">
         <p class="filtertext">Filters</p>
-        <input matInput placeholder="Date" [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
+        <input matInput placeholder="Date" readonly [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
             class="form-control input ">
         <mat-datepicker #datepickerFrom></mat-datepicker>
         <input [ngxTimepicker]="picker" readonly class="form-control input " placeholder="Time">

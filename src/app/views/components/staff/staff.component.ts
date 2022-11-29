@@ -39,6 +39,7 @@ export class StaffComponent implements OnInit {
     }
     this.formInitialization();
     $('#PosSelect').css('background-color','#ffffff !important')
+    $('.inputMat').css('color','#000000 !important;')
   }
 
   formInitialization() {
@@ -100,6 +101,7 @@ export class StaffComponent implements OnInit {
       this.toastr.success('Details are saved successfully', '', {
         timeOut: 3000,
       });
+      dataItem.editDetails = false;
       // this.arrayItemList.splice(index, 1)
     }
   }

@@ -103,7 +103,7 @@
                             </div>
 
                             <div class="form-control addtoCalDiv">
-                                <input [disabled]="!items.editDetails"  (click)="datepickerFrom.open()" readonly placeholder="Break From" [matDatepicker]="datepickerFrom" 
+                                <input [disabled]="!items.editDetails" readonly  (click)="datepickerFrom.open()" readonly placeholder="Break From" [matDatepicker]="datepickerFrom" 
                                 matDatepickerToggleIcon class="inputMat" [(ngModel)]="items.breakDateFrom">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -111,7 +111,7 @@
                                 <mat-datepicker  #datepickerFrom></mat-datepicker>
                             </div>
                             <div class="form-control addtoCalDiv">
-                                <input [disabled]="!items.editDetails" (click)="datepickerTo.open()" readonly placeholder="Break To"  [matDatepicker]="datepickerTo"
+                                <input [disabled]="!items.editDetails" readonly (click)="datepickerTo.open()" readonly placeholder="Break To"  [matDatepicker]="datepickerTo"
                                   matDatepickerToggleIcon class="inputMat" [(ngModel)]="items.breakDateTo">
                                 <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
                                   <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>

@@ -79,7 +79,7 @@
             <div class="boxInp">
                 <span>From</span>
                 <!-- <input autocomplete="off" type="datetime-local" formControlName="startTime" class="timeField"> -->
-                <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerStart" formControlName="startDate"
+                <input matInput placeholder="mm/dd/yyyy" readonly [matDatepicker]="datepickerStart" formControlName="startDate"
                     (click)="datepickerStart.open()" class="timeField">
                 <mat-datepicker #datepickerStart></mat-datepicker>
                 <!-- touchUi="true"  -->
@@ -89,7 +89,7 @@
             <div class="boxInp">
                 <span>To</span>
                 <!-- <input autocomplete="off" type="datetime-local" formControlName="finishTime" class="timeField"> -->
-                <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="datepickerfinish" formControlName="finishDate"
+                <input matInput placeholder="mm/dd/yyyy" readonly [matDatepicker]="datepickerfinish" formControlName="finishDate"
                     (click)="datepickerfinish.open()" class="timeField" >
                 <mat-datepicker #datepickerfinish></mat-datepicker>
 
@@ -212,7 +212,7 @@
             <div class="row">
                 <div class="col-12 columnInp ">
                     <label class="form-label label" for="passwordInput">Date</label>
-                    <input matInput placeholder="dd/mm/yyyy" [matDatepicker]="datepickerFrom" formControlName="date"
+                    <input matInput placeholder="dd/mm/yyyy" readonly [matDatepicker]="datepickerFrom" formControlName="date"
                         (click)="datepickerFrom.open()" class="form-control input formIn"
                         [class.is-invalid]="date.invalid && (date.dirty || date.touched)">
                     <mat-datepicker #datepickerFrom></mat-datepicker>

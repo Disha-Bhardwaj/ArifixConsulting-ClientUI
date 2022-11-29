@@ -365,6 +365,9 @@ span.stepSpan {
 .timepicker-overlay {
   z-index: 999999 !important;
 }
+select{
+  background-color: #ffffff !important;
+}
 // booking page date
 @media (max-width: 1089px) and (min-width: 1025px) {
   .dateBookINP {

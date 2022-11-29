@@ -216,6 +216,39 @@ export class PositionsComponent implements OnInit {
           timeOut: 3000,
         });
         // this.arrayItemList.splice(index, 1)
+       item.jobTitle= '';
+       item.editTitle= true;
+       item.monOpen=null;
+      item.monClose=null;
+        item.tuesOpen=null;
+        item.tuesClose=null;
+        item.wedOpen=null;
+        item.wedClose=null;
+        item.thursOpen=null;
+        item.thursClose=null;
+        item.friOpen=null;
+        item.friClose=null;
+        item.satOpen=null;
+        item.satClose=null;
+        item.sunOpen=null;
+        item.sunClose=null;
+       item.showStep= '';
+       item.showEditBtn= false;
+       item.employeeType= '';
+       item.permissions= [{ perKey: '' }];
+       item.serviceList= [
+            {
+              category: '',
+              serList: [
+                {
+                  service: '',
+                  time: null,
+                  price: ''
+                }
+              ]
+            }
+          ];
+
       } else {
         this.toastr.error('Please fill all the values', 'Error', {
           timeOut: 3000,
