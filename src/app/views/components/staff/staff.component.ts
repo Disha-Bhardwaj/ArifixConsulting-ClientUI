@@ -38,8 +38,8 @@ export class StaffComponent implements OnInit {
       this.showWizard = true
     }
     this.formInitialization();
-    $('#PosSelect').css('background-color','#ffffff !important')
-    $('.inputMat').css('color','#000000 !important;')
+    $('#PosSelect').css('background-color', '#ffffff !important')
+    $('.inputMat').css('color', '#000000 !important;')
   }
 
   formInitialization() {
@@ -93,16 +93,23 @@ export class StaffComponent implements OnInit {
   }
   // saved details
   saved(dataItem: any, index: any) {
-    if (dataItem.breakDateFrom > dataItem.breakDateTo) {
-      this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
+    if (dataItem.position == '' || dataItem.breakDateFrom == null || dataItem.breakDateTo == null) {
+      this.toastr.error('Please enter all the fields', 'Error', {
         timeOut: 3000,
       });
-    } else {
-      this.toastr.success('Details are saved successfully', '', {
-        timeOut: 3000,
-      });
-      dataItem.editDetails = false;
-      // this.arrayItemList.splice(index, 1)
+    }
+    else{
+      if (dataItem.breakDateFrom > dataItem.breakDateTo) {
+        this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
+          timeOut: 3000,
+        });
+      } else {
+        this.toastr.success('Details are saved successfully', '', {
+          timeOut: 3000,
+        });
+        dataItem.editDetails = false;
+        // this.arrayItemList.splice(index, 1)
+      }
     }
   }
   // cancel changes

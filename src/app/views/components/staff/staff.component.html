@@ -85,7 +85,6 @@
                 </div>
                 <div class="row imgRow collapse"  id="detailServices{{i}}">
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
-                        <!-- <form [formGroup]="detailsForm" autocomplete="off"> -->
                             <div class="form-control addtoCalDiv posSelect">
                                 <select #selectPos id="PosSelect" class="selectDrop" [(ngModel)]="items.position"
                                     (change)="adjustWidth(selectPos.value)" [disabled]="!items.editDetails" >
@@ -125,12 +124,9 @@
                             <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="items.editDetails"  mat-button (click)="openDialog('Staff3')"> <span
                                 class="labelSpan">Employee Details</span>
                         </div>
-                        <!-- </form> -->
                         <div class="editBtnsDiv" *ngIf="items.editDetails">
-                            <!-- <button class="btn btn-primary cancelbtn" (click)="editDetailsFun(false)">Cancel</button> -->
                             <button class="btn btn-primary cancelbtn" (click)="cancelChanges(items, i)">Cancel</button>
                             <button class="btn btn-primary savebtn" (click)="saved(items, i)">Save</button>
-                            <!-- <button class="btn btn-primary savebtn" (click)="detailsSaved()">Save</button> -->
                         </div>
                     </div>
                 </div>

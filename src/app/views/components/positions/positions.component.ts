@@ -216,7 +216,7 @@ export class PositionsComponent implements OnInit {
           timeOut: 3000,
         });
         // this.arrayItemList.splice(index, 1)
-       item.jobTitle= '';
+      //  item.jobTitle= '';
        item.editTitle= true;
        item.monOpen=null;
       item.monClose=null;
