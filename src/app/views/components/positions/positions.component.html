@@ -71,193 +71,6 @@
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos3')">
                             </div>
-                            <!-- <form [formGroup]="openingTimeForm" autocomplete="off">
-                                <div class="mb-3">
-                                    <div class="row">
-                                        <div class="col-4 ">
-                                            <h3 class="colHeadTime">Day</h3>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <h3 class="colHeadTime">Opening</h3>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <h3 class="colHeadTime">Closing</h3>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Monday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Mon</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="monOpen" class="form-control input "
-                                                formControlName="monOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #monOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="monClose" class="form-control input "
-                                                formControlName="monClose" placeholder="Closed">
-                                            <ngx-material-timepicker #monClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Tuesday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Tue</label>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="tuesOpen" class="form-control input "
-                                                formControlName="tuesOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="tuesClose" class="form-control input "
-                                                formControlName="tuesClose" placeholder="Closed">
-                                            <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Wednesday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Wed</label>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="wedOpen" class="form-control input "
-                                                formControlName="wedOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="wedClose" class="form-control input "
-                                                formControlName="wedClose" placeholder="Closed">
-                                            <ngx-material-timepicker #wedClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Thursday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Thur</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="thursOpen" class="form-control input "
-                                                formControlName="thursOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="thursClose" class="form-control input "
-                                                formControlName="thursClose" placeholder="Closed">
-                                            <ngx-material-timepicker #thursClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Friday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Fri</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="friOpen" class="form-control input "
-                                                formControlName="friOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #friOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="friClose" class="form-control input "
-                                                formControlName="friClose" placeholder="Closed">
-                                            <ngx-material-timepicker #friClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Saturday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Sat</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="satOpen" class="form-control input "
-                                                formControlName="satOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #satOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="satClose" class="form-control input "
-                                                formControlName="satClose" placeholder="Closed">
-                                            <ngx-material-timepicker #satClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-4 ">
-                                            <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Sunday</label>
-                                            <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Sun</label>
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="sunOpen" class="form-control input "
-                                                formControlName="sunOpen" placeholder="Closed">
-                                            <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
-
-                                        </div>
-                                        <div class="col-4">
-                                            <input [ngxTimepicker]="sunClose" class="form-control input "
-                                                formControlName="sunClose" placeholder="Closed">
-                                            <ngx-material-timepicker #sunClose></ngx-material-timepicker>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row dayRow">
-                                        <div class="col-6 ">
-                                            <button class="btn btn-primary cancelbtn"
-                                                (click)="cancelChanges('resetTime')">Cancel</button>
-                                        </div>
-                                        <div class="col-6">
-                                            <button class="btn btn-primary savebtn"
-                                                (click)="items.showStep = 'permissionStep'">Next</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form> -->
-                        
-                           
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-4 ">
@@ -284,13 +97,13 @@
                                                 for="passwordInput">Mon</label>
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="monOpen" class="form-control input "
+                                            <input [ngxTimepicker]="monOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.monOpen" placeholder="Closed">
                                             <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="monClose" class="form-control input "
+                                            <input [ngxTimepicker]="monClose" readonly class="form-control input "
                                                 [(ngModel)]="items.monClose" placeholder="Closed">
                                             <ngx-material-timepicker #monClose></ngx-material-timepicker>
 
@@ -307,13 +120,13 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="tuesOpen" class="form-control input "
+                                            <input [ngxTimepicker]="tuesOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.tuesOpen" placeholder="Closed">
                                             <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="tuesClose" class="form-control input "
+                                            <input [ngxTimepicker]="tuesClose" readonly class="form-control input "
                                                 [(ngModel)]="items.tuesClose" placeholder="Closed">
                                             <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
                                         </div>
@@ -329,13 +142,13 @@
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="wedOpen" class="form-control input "
+                                            <input [ngxTimepicker]="wedOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.wedOpen" placeholder="Closed">
                                             <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="wedClose" class="form-control input "
+                                            <input [ngxTimepicker]="wedClose" readonly class="form-control input "
                                                 [(ngModel)]="items.wedClose" placeholder="Closed">
                                             <ngx-material-timepicker #wedClose></ngx-material-timepicker>
 
@@ -351,13 +164,13 @@
                                                 for="passwordInput">Thur</label>
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="thursOpen" class="form-control input "
+                                            <input [ngxTimepicker]="thursOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.thursOpen" placeholder="Closed">
                                             <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="thursClose" class="form-control input "
+                                            <input [ngxTimepicker]="thursClose" readonly class="form-control input "
                                                 [(ngModel)]="items.thursClose" placeholder="Closed">
                                             <ngx-material-timepicker #thursClose></ngx-material-timepicker>
 
@@ -373,13 +186,13 @@
                                                 for="passwordInput">Fri</label>
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="friOpen" class="form-control input "
+                                            <input [ngxTimepicker]="friOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.friOpen" placeholder="Closed">
                                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="friClose" class="form-control input "
+                                            <input [ngxTimepicker]="friClose" readonly class="form-control input "
                                                 [(ngModel)]="items.friClose" placeholder="Closed">
                                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
 
@@ -395,13 +208,13 @@
                                                 for="passwordInput">Sat</label>
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="satOpen" class="form-control input "
+                                            <input [ngxTimepicker]="satOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.satOpen" placeholder="Closed">
                                             <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="satClose" class="form-control input "
+                                            <input [ngxTimepicker]="satClose" readonly  class="form-control input "
                                                 [(ngModel)]="items.satClose" placeholder="Closed">
                                             <ngx-material-timepicker #satClose></ngx-material-timepicker>
 
@@ -417,13 +230,13 @@
                                                 for="passwordInput">Sun</label>
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="sunOpen" class="form-control input "
+                                            <input [ngxTimepicker]="sunOpen" readonly class="form-control input "
                                                 [(ngModel)]="items.sunOpen" placeholder="Closed">
                                             <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
 
                                         </div>
                                         <div class="col-4">
-                                            <input [ngxTimepicker]="sunClose" class="form-control input "
+                                            <input [ngxTimepicker]="sunClose" readonly class="form-control input "
                                                 [(ngModel)]="items.sunClose" placeholder="Closed">
                                             <ngx-material-timepicker #sunClose></ngx-material-timepicker>
 
@@ -549,10 +362,10 @@
                                                 <div class="row dayRow">
                                                     <div class="col-8 ">
                                                         <input class="form-control input ser" placeholder="Service"
-                                                            [(ngModel)]="servi.service">
+                                                            [(ngModel)]="servi.service" type="text" maxlength="60">
                                                     </div>
                                                     <div class="col-2">
-                                                        <input [ngxTimepicker]="finishTimeNGX"
+                                                        <input [ngxTimepicker]="finishTimeNGX" readonly
                                                             class="form-control input ser" placeholder="Time"
                                                             [(ngModel)]="servi.time"
                                                             style="padding-right: 3px; padding-left: 3px;">

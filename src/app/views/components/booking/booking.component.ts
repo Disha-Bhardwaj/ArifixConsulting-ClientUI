@@ -21,17 +21,11 @@ export class BookingComponent implements OnInit {
   date: any
   options: DatepickerOptions = {};
   
-  // show = 'pending'
+
   constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router) {
-    // $('.calendar-container').css('left','-140px !important')
-   }
-  //  @ViewChild('showBFCalendar',  { read: ElementRef })
-  // private showBFCalendar!: ElementRef
   
-  //  toggleCalendar(){
-  //   console.log(this.showBFCalendar.nativeElement)
-  //   $('.calendar-container').css('left','-140px !important')
-  //  }
+   }
+  
    
   openDialog(value: any) {
     this.expanded = false
@@ -51,10 +45,8 @@ export class BookingComponent implements OnInit {
       format: 'dd/MM/yyyy',
       inputClass: 'dateBookINP',
     };
-    // $('.datepicker-default .calendar-container ').css('left', '-127px')
-    // console.log(this.router.url)
-    // if(this.router.url)
     
+    $('.SelectOpt').css('background-color','#ffffff !important')
   }
   showbooking(value: any) {
     this.show = value

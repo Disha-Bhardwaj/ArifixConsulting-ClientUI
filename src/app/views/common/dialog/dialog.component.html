@@ -83,7 +83,7 @@
                     (click)="datepickerStart.open()" class="timeField">
                 <mat-datepicker #datepickerStart></mat-datepicker>
                 <!-- touchUi="true"  -->
-                <input [ngxTimepicker]="startPicker" class="timeField" placeholder="hh:mm" formControlName="startTime">
+                <input [ngxTimepicker]="startPicker" class="timeField" readonly placeholder="hh:mm" formControlName="startTime">
                 <ngx-material-timepicker #startPicker></ngx-material-timepicker>
             </div>
             <div class="boxInp">
@@ -93,7 +93,7 @@
                     (click)="datepickerfinish.open()" class="timeField" >
                 <mat-datepicker #datepickerfinish></mat-datepicker>
 
-                <input [ngxTimepicker]="finishPicker" class="timeField" placeholder="hh:mm"
+                <input [ngxTimepicker]="finishPicker" readonly class="timeField" placeholder="hh:mm"
                     formControlName="finishTime">
                 <ngx-material-timepicker #finishPicker></ngx-material-timepicker>
             </div>
@@ -174,7 +174,7 @@
             <div class="row">
                 <div class="col-6 columnInp ">
                     <label class="form-label label" for="passwordInput">Start Time</label>
-                    <input [ngxTimepicker]="startTimeNGX" class="form-control input formIn" placeholder="Start Time"
+                    <input [ngxTimepicker]="startTimeNGX" readonly class="form-control input formIn" placeholder="Start Time"
                         formControlName="startTime" 
                         [class.is-invalid]="startTime.invalid && (startTime.dirty || startTime.touched)"
                         preventOverlayClick="false">
@@ -191,7 +191,7 @@
                 </div>
                 <div class="col-6 columnInp">
                     <label class="form-label label" for="repeatPassword">Finish Time </label>
-                    <input [ngxTimepicker]="finishTimeNGX" class="form-control input formIn" placeholder="Finish Time"
+                    <input [ngxTimepicker]="finishTimeNGX" readonly class="form-control input formIn" placeholder="Finish Time"
                         formControlName="finishTime"
                         [class.is-invalid]="finishTime.invalid && (finishTime.dirty || finishTime.touched)"
                         minlength="2">

@@ -12,7 +12,7 @@
                 class="form-control input ">
             <mat-datepicker #datepickerFrom></mat-datepicker>
 
-            <input [ngxTimepicker]="picker" class="form-control input " placeholder="Time">
+            <input [ngxTimepicker]="picker" readonly class="form-control input " placeholder="Time">
             <ngx-material-timepicker #picker></ngx-material-timepicker>
             <select class="form-control input SelectOpt">
                 <option disabled selected hidden value="">Status</option>
@@ -32,7 +32,7 @@
         <input matInput placeholder="Date" [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
             class="form-control input ">
         <mat-datepicker #datepickerFrom></mat-datepicker>
-        <input [ngxTimepicker]="picker" class="form-control input " placeholder="Time">
+        <input [ngxTimepicker]="picker" readonly class="form-control input " placeholder="Time">
         <ngx-material-timepicker #picker></ngx-material-timepicker>
         <select class="form-control input SelectOpt">
             <option disabled selected hidden value="">Status</option>

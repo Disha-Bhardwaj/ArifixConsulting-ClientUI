@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
-
+declare var $: any;
 @Component({
   selector: 'app-salon-page',
   templateUrl: './salon-page.component.html',
@@ -31,6 +31,7 @@ export class SalonPageComponent implements OnInit {
     }
     this.disableForm('salon')
     this.disableForm('opentime')
+    $('#selectDrop').css('background-color','#ffffff !important')
   }
   nextWizard() {
     this.route.navigateByUrl('/positions')

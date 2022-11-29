@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding: 25px;">
     <div class="row" style="margin-top: 42px;">
         <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: end;">
             <button class="btn btn-primary cancelbtn addbtn">Add salon</button>
@@ -202,7 +202,7 @@
                         <div class="row">
                             <div class="col-6 columnInp ">
                                 <label class="form-label label" for="passwordInput">Currency</label>
-                                <select class="form-control select" formControlName="currency"
+                                <select class="form-control select" formControlName="currency" id="selectDrop"
                                     [class.is-invalid]="currency.invalid && (currency.dirty || currency.touched)">
                                     <option value="">Default</option>
                                     <option value="Default1">Default1</option>
@@ -348,13 +348,13 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Mon</label>
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="monOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="monOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="monOpen" placeholder="Closed">
                             <ngx-material-timepicker #monOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="monClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="monClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="monClose" placeholder="Closed">
                             <ngx-material-timepicker #monClose></ngx-material-timepicker>
 
@@ -370,14 +370,14 @@
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="tuesOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="tuesOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="tuesOpen" placeholder="Closed">
                             <ngx-material-timepicker #tuesOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="tuesClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="tuesClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="tuesClose" placeholder="Closed">
                             <ngx-material-timepicker #tuesClose></ngx-material-timepicker>
                         </div>
@@ -392,13 +392,13 @@
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="wedOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="wedOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="wedOpen" placeholder="Closed">
                             <ngx-material-timepicker #wedOpen></ngx-material-timepicker>
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="wedClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="wedClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="wedClose" placeholder="Closed">
                             <ngx-material-timepicker #wedClose></ngx-material-timepicker>
 
@@ -413,13 +413,13 @@
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="thursOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="thursOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="thursOpen" placeholder="Closed">
                             <ngx-material-timepicker #thursOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="thursClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="thursClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="thursClose" placeholder="Closed">
                             <ngx-material-timepicker #thursClose></ngx-material-timepicker>
                         </div>
@@ -432,13 +432,13 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Fri</label>
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="friOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="friOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="friOpen" placeholder="Closed">
                             <ngx-material-timepicker #friOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="friClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="friClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="friClose" placeholder="Closed">
                             <ngx-material-timepicker #friClose></ngx-material-timepicker>
 
@@ -452,14 +452,14 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sat</label>
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="satOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="satOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="satOpen" placeholder="Closed">
                             <ngx-material-timepicker #satOpen></ngx-material-timepicker>
 
                         </div>
                         <div class="col-4">
 
-                            <input [ngxTimepicker]="satClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="satClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="satClose" placeholder="Closed">
                             <ngx-material-timepicker #satClose></ngx-material-timepicker>
                         </div>
@@ -472,12 +472,12 @@
                             <label class="form-label label daysLabel mobileView" for="passwordInput">Sun</label>
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="sunOpen" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="sunOpen" readonly class="form-control input " placeholder="Time"
                                 formControlName="sunOpen" placeholder="Closed">
                             <ngx-material-timepicker #sunOpen></ngx-material-timepicker>
                         </div>
                         <div class="col-4">
-                            <input [ngxTimepicker]="sunClose" class="form-control input " placeholder="Time"
+                            <input [ngxTimepicker]="sunClose" readonly class="form-control input " placeholder="Time"
                                 formControlName="sunClose" placeholder="Closed">
                             <ngx-material-timepicker #sunClose></ngx-material-timepicker>
                         </div>

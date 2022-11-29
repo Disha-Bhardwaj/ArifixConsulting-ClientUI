@@ -57,6 +57,7 @@ export class PositionsComponent implements OnInit {
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
+    $('.select').css('background-color','#ffffff !important')
   }
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -195,7 +196,6 @@ export class PositionsComponent implements OnInit {
     else if (goTO == 'goToEnd') {
       let valid = false
       item.serviceList.forEach((element: any) => {
-        console.log(element)
         if (element.category == '') {
           valid = false
           return
@@ -215,7 +215,7 @@ export class PositionsComponent implements OnInit {
         this.toastr.success('Details are saved successfully', '', {
           timeOut: 3000,
         });
-        this.arrayItemList.splice(index, 1)
+        // this.arrayItemList.splice(index, 1)
       } else {
         this.toastr.error('Please fill all the values', 'Error', {
           timeOut: 3000,

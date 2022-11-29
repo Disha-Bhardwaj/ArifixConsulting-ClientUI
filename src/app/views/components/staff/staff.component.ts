@@ -38,6 +38,7 @@ export class StaffComponent implements OnInit {
       this.showWizard = true
     }
     this.formInitialization();
+    $('#PosSelect').css('background-color','#ffffff !important')
   }
 
   formInitialization() {
@@ -77,6 +78,7 @@ export class StaffComponent implements OnInit {
           // breakDateFrom: ,
           // breakDateTo: ,
         })
+        this.infoForm.reset();
         this.showStep = value;
       }
       else {
@@ -98,7 +100,7 @@ export class StaffComponent implements OnInit {
       this.toastr.success('Details are saved successfully', '', {
         timeOut: 3000,
       });
-      this.arrayItemList.splice(index, 1)
+      // this.arrayItemList.splice(index, 1)
     }
   }
   // cancel changes
