@@ -70,23 +70,21 @@ export class StaffComponent implements OnInit {
       this.showStep = value
     }
     else if (value == 'Two') {
-      if (this.infoForm.valid) {
+      // if (this.infoForm.valid) {
         this.arrayItemList.push({
           editDetails: false,
           showDetails: false,
           position: '',
           addToCalendar: false,
-          // breakDateFrom: ,
-          // breakDateTo: ,
         })
-        this.infoForm.reset();
+      //   this.infoForm.reset();
         this.showStep = value;
-      }
-      else {
-        this.toastr.error('Please enter valid employee email', 'Error', {
-          timeOut: 3000
-        });
-      }
+      // }
+      // else {
+      //   this.toastr.error('Please enter valid employee email', 'Error', {
+      //     timeOut: 3000
+      //   });
+      // }
     } else {
       this.showStep = value
     }

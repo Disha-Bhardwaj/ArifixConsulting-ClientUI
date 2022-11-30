@@ -53,21 +53,22 @@
         </div>
     </div>
 
-    <div class="row p-0 infoBox"  *ngFor="let items of arrayItemList; let i = index;" style="margin-top: 15px;">
-        <div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="row p-0 infoBox"  >
+        <div class="col-lg-4 col-md-4 col-sm-12 containerBox" *ngFor="let items of arrayItemList; let i = index;" style="margin-top: 15px;">
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol" *ngIf="!items.showDetails">
                         <div class="editCloseDiv">
                             <img src="assets/icons/edit.svg" class="editIcon" style="width: 30px; height: 30px;">
-                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="closeChanges(i)">
+                            <!-- <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="closeChanges(i)"> -->
                         </div>
                         <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff2')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol2" *ngIf="items.showDetails">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/edit.svg" class="editIcon" (click)="items.editDetails = !items.editDetails" style="width: 30px; height: 30px;">
-                            <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="closeChanges(i)">
+                            <img src="assets/icons/edit.svg" class="editIcon" (click)="items.editDetails = !items.editDetails" style="width: 30px; height: 30px;margin-top: 18%;
+                            margin-bottom: 18%;">
+                            <!-- <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="closeChanges(i)"> -->
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
@@ -131,9 +132,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-4 col-sm-12 topbtncol"></div>
+            <!-- <div class="col-lg-12 col-md-4 col-sm-12 topbtncol"></div>
             <div class="col-lg-4 col-md-4 col-sm-12 topbtncol">
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

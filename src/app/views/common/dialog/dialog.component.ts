@@ -72,7 +72,7 @@ export class DialogComponent implements OnInit {
     if (this.offerTimeForm.valid) {
       if ((this.offerTimeForm.value.startDate < this.offerTimeForm.value.finishDate )|| (+this.offerTimeForm.value.startDate === +this.offerTimeForm.value.finishDate)) {
         if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
-          this.toastr.success('Your offer time sent to the salon', '', {
+          this.toastr.success('Offer time sent to the User', '', {
             timeOut: 3000,
           });
           this.dialogRef.close();
@@ -97,7 +97,7 @@ export class DialogComponent implements OnInit {
   saveAppointment() {
     if (this.addAppointForm.valid) {
       if (this.addAppointForm.value.startTime < this.addAppointForm.value.finishTime) {
-        this.toastr.success('Your appointment sent to the salon', '', {
+        this.toastr.success('Appointment is saved', '', {
           timeOut: 3000,
         });
         this.dialogRef.close();
