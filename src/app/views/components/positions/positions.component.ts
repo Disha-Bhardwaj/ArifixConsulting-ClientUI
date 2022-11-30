@@ -57,7 +57,7 @@ export class PositionsComponent implements OnInit {
     if (this.cookies.get('wizardStart') == 'true') {
       this.showWizard = true
     }
-    $('.select').css('background-color','#ffffff !important')
+    $('.select').css('background-color', '#ffffff !important')
   }
   scroll(el: HTMLElement) {
     el.scrollIntoView();
@@ -67,7 +67,7 @@ export class PositionsComponent implements OnInit {
   adjustWidth(value: any, steps: any) {
     $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
   }
- 
+
   validatePriceField(value: any) {
     var reg = new RegExp('^[0-9]*$');
     let match = reg.test(value)
@@ -82,7 +82,7 @@ export class PositionsComponent implements OnInit {
     }
   }
 
- 
+
 
   // wizard
   nextWizard() {
@@ -119,7 +119,8 @@ export class PositionsComponent implements OnInit {
           serList: [
             {
               service: '',
-              time: null,
+              // time: null,
+              time:'',
               price: ''
             }
           ]
@@ -145,7 +146,7 @@ export class PositionsComponent implements OnInit {
       }
     }
     //schedule check
-    else if(goTO == 'goToPermission'){
+    else if (goTO == 'goToPermission') {
       if (item.monClose < item.monOpen
         || item.tuesClose < item.tuesOpen
         || item.wedClose < item.wedOpen
@@ -156,7 +157,18 @@ export class PositionsComponent implements OnInit {
         this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
           timeOut: 3000
         });
-      } else {
+      } else if (item.monClose == null || item.monOpen == null
+        || item.tuesClose == null || item.tuesOpen == null
+        || item.wedClose == null || item.wedOpen == null
+        || item.thursClose == null || item.thursOpen == null
+        || item.friClose == null || item.friOpen == null
+        || item.satClose == null || item.satOpen == null
+        || item.sunClose == null || item.sunOpen == null) {
+        this.toastr.error('Please fill all the schedule time details', 'Error', {
+          timeOut: 3000
+        });
+      }
+      else {
         this.toastr.success('Opening timings has been saved', '', {
           timeOut: 3000,
         });
@@ -202,7 +214,7 @@ export class PositionsComponent implements OnInit {
         }
         else {
           element.serList.forEach((ele: any) => {
-            if (ele.service == '' || ele.time == null || ele.price == '') {
+            if (ele.service == '' || ele.time == '' || ele.price == '') {
               valid = false
               return
             } else {
@@ -215,39 +227,38 @@ export class PositionsComponent implements OnInit {
         this.toastr.success('Details are saved successfully', '', {
           timeOut: 3000,
         });
-        // this.arrayItemList.splice(index, 1)
-      //  item.jobTitle= '';
-       item.editTitle= true;
-       item.monOpen=null;
-      item.monClose=null;
-        item.tuesOpen=null;
-        item.tuesClose=null;
-        item.wedOpen=null;
-        item.wedClose=null;
-        item.thursOpen=null;
-        item.thursClose=null;
-        item.friOpen=null;
-        item.friClose=null;
-        item.satOpen=null;
-        item.satClose=null;
-        item.sunOpen=null;
-        item.sunClose=null;
-       item.showStep= '';
-       item.showEditBtn= false;
-       item.employeeType= '';
-       item.permissions= [{ perKey: '' }];
-       item.serviceList= [
-            {
-              category: '',
-              serList: [
-                {
-                  service: '',
-                  time: null,
-                  price: ''
-                }
-              ]
-            }
-          ];
+        item.editTitle = true;
+        item.monOpen = null;
+        item.monClose = null;
+        item.tuesOpen = null;
+        item.tuesClose = null;
+        item.wedOpen = null;
+        item.wedClose = null;
+        item.thursOpen = null;
+        item.thursClose = null;
+        item.friOpen = null;
+        item.friClose = null;
+        item.satOpen = null;
+        item.satClose = null;
+        item.sunOpen = null;
+        item.sunClose = null;
+        item.showStep = '';
+        item.showEditBtn = false;
+        item.employeeType = '';
+        item.permissions = [{ perKey: '' }];
+        item.serviceList = [
+          {
+            category: '',
+            serList: [
+              {
+                service: '',
+                // time: null,
+                time: '',
+                price: ''
+              }
+            ]
+          }
+        ];
 
       } else {
         this.toastr.error('Please fill all the values', 'Error', {
@@ -288,20 +299,20 @@ export class PositionsComponent implements OnInit {
   }
   cancelStep(item: any, index: any, goTO: any) {
     if (goTO == 'schedule') {
-      item.monOpen=null;
-      item.monClose=null;
-        item.tuesOpen=null;
-        item.tuesClose=null;
-        item.wedOpen=null;
-        item.wedClose=null;
-        item.thursOpen=null;
-        item.thursClose=null;
-        item.friOpen=null;
-        item.friClose=null;
-        item.satOpen=null;
-        item.satClose=null;
-        item.sunOpen=null;
-        item.sunClose=null;
+      item.monOpen = null;
+      item.monClose = null;
+      item.tuesOpen = null;
+      item.tuesClose = null;
+      item.wedOpen = null;
+      item.wedClose = null;
+      item.thursOpen = null;
+      item.thursClose = null;
+      item.friOpen = null;
+      item.friClose = null;
+      item.satOpen = null;
+      item.satClose = null;
+      item.sunOpen = null;
+      item.sunClose = null;
     }
     else if (goTO == 'permission') {
       item.permissions = [{ perKey: '' }]

@@ -365,12 +365,16 @@
                                                             [(ngModel)]="servi.service" type="text" maxlength="60">
                                                     </div>
                                                     <div class="col-2">
-                                                        <input [ngxTimepicker]="finishTimeNGX" readonly
+                                                        <!-- <input [ngxTimepicker]="finishTimeNGX" readonly
                                                             class="form-control input ser" placeholder="Time"
                                                             [(ngModel)]="servi.time"
                                                             style="padding-right: 3px; padding-left: 3px;">
                                                         <ngx-material-timepicker #finishTimeNGX>
-                                                        </ngx-material-timepicker>
+                                                        </ngx-material-timepicker> -->
+                                                        <input
+                                                            class="form-control input ser" placeholder="Time"
+                                                            [(ngModel)]="servi.time"
+                                                            style="padding-right: 3px; padding-left: 3px;">
                                                     </div>
                                                     <div class="col-2">
                                                         <input class="form-control input ser" type="text"
