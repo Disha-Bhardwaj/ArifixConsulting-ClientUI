@@ -1,7 +1,7 @@
 <div class="container" #containerTop>
     <div class="row" style="margin-top: 48px;">
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
-            <button class="btn btn-primary savebtn addPosBtn" (click)="addNewPosition()">Add Position</button>
+            <button class="btn btn-primary savebtn addPosBtn" (click)="addNewPosition()">{{'buttonsText.AddPosition' | translate }}</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Pos1')">
         </div>
     </div>
@@ -10,17 +10,17 @@
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <h2 class="textH2">Step Three</h2>
+                        <h2 class="textH2">{{'PositionPage.WizardHead' | translate }}</h2>
                         <img src="assets/icons/closeGrey.svg" class="closeIcon" (click)="finishWizard()">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                         <ul>
-                            <li>Click on Positions</li>
-                            <li>Click add Positions</li>
-                            <li>Enter email</li>
-                            <li>Click on pencil</li>
-                            <li>Fill out the forms</li>
-                            <li>If you get stuck, click on the question mark for help at anytime</li>
+                            <li>{{'PositionPage.WizardPara1' | translate }}</li>
+                            <li>{{'PositionPage.WizardPara2' | translate }}</li>
+                            <li>{{'PositionPage.WizardPara3' | translate }}</li>
+                            <li>{{'PositionPage.WizardPara4' | translate }}</li>
+                            <li>{{'PositionPage.WizardPara5' | translate }}</li>
+                            <li>{{'PositionPage.WizardPara6' | translate }}</li>
                         </ul>
                     </div>
                     <div class="stepDiv">
@@ -31,7 +31,7 @@
                                 style="background:#5E5CE6 !important; color:#FFFFFF !important;">3</span>
                             <span class="stepSpan">4</span>
                         </div>
-                        <button class="btn btn-primary savebtn" (click)="nextWizard()">Next</button>
+                        <button class="btn btn-primary savebtn" (click)="nextWizard()">{{'buttonsText.Next' | translate }}</button>
                     </div>
                 </div>
             </div>
@@ -49,13 +49,12 @@
                             (click)="openDialog('Pos2')">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
-                        <h2 class="nameH">Not assigned to</h2>
+                        <h2 class="nameH"> {{'PositionPage.NotAssignedTo' | translate }}</h2>
                         <div class="editCloseDiv">
                             <button class="btn btn-primary nextBtn aboveNxt"
-                                (click)="clickOnNextBTN(items, i, 'goToSchedule')">Next</button>
+                                (click)="clickOnNextBTN(items, i, 'goToSchedule')"> {{'buttonsText.Next' | translate }}</button>
                             <img src="assets/icons/edit.svg" class="editIcon" *ngIf="items.showEditBtn"
                                 (click)="items.editTitle = true" style="width: 30px; height: 30px;">
-                            <!-- <img src="assets/icons/closeIcon.svg" class="closeIcon" (click)="removePosition(i)"> -->
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol">
@@ -63,7 +62,7 @@
                         <div *ngIf="items.showStep == 'scheduleStep'">
                             <div class="stepDiv">
                                 <div class="steps">
-                                    <div class="selectStep"><span class="stepSpanP selected">1</span> Schedule</div>
+                                    <div class="selectStep"><span class="stepSpanP selected">1</span>{{'PositionPage.Schedule' | translate }} </div>
                                     <span class="stepSpanP">2</span>
                                     <span class="stepSpanP">3</span>
                                     <span class="stepSpanP">4</span>
@@ -74,15 +73,15 @@
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-4 ">
-                                            <h3 class="colHeadTime">Day</h3>
+                                            <h3 class="colHeadTime">{{'timeInputForm.Day' | translate }}</h3>
 
                                         </div>
                                         <div class="col-4">
-                                            <h3 class="colHeadTime">Opening</h3>
+                                            <h3 class="colHeadTime">{{'timeInputForm.Opening' | translate }}</h3>
 
                                         </div>
                                         <div class="col-4">
-                                            <h3 class="colHeadTime">Closing</h3>
+                                            <h3 class="colHeadTime">{{'timeInputForm.Closing' | translate }}</h3>
 
                                         </div>
                                     </div>
@@ -92,9 +91,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Monday</label>
+                                                for="passwordInput">{{'timeInputForm.Monday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Mon</label>
+                                                for="passwordInput">{{'timeInputForm.Mon' | translate }}</label>
                                         </div>
                                         <div class="col-4">
                                             <input [ngxTimepicker]="monOpen" readonly class="form-control input "
@@ -114,9 +113,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Tuesday</label>
+                                                for="passwordInput">{{'timeInputForm.Tuesday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Tue</label>
+                                                for="passwordInput">{{'timeInputForm.Tue' | translate }}</label>
 
                                         </div>
                                         <div class="col-4">
@@ -136,9 +135,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Wednesday</label>
+                                                for="passwordInput">{{'timeInputForm.Wednesday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Wed</label>
+                                                for="passwordInput">{{'timeInputForm.Wed' | translate }}</label>
 
                                         </div>
                                         <div class="col-4">
@@ -159,9 +158,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Thursday</label>
+                                                for="passwordInput">{{'timeInputForm.Thursday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Thur</label>
+                                                for="passwordInput">{{'timeInputForm.Thur' | translate }}</label>
                                         </div>
                                         <div class="col-4">
                                             <input [ngxTimepicker]="thursOpen" readonly class="form-control input "
@@ -181,9 +180,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Friday</label>
+                                                for="passwordInput">{{'timeInputForm.Friday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Fri</label>
+                                                for="passwordInput">{{'timeInputForm.Fri' | translate }}</label>
                                         </div>
                                         <div class="col-4">
                                             <input [ngxTimepicker]="friOpen" readonly class="form-control input "
@@ -203,9 +202,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Saturday</label>
+                                                for="passwordInput">{{'timeInputForm.Saturday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Sat</label>
+                                                for="passwordInput">{{'timeInputForm.Sat' | translate }}</label>
                                         </div>
                                         <div class="col-4">
                                             <input [ngxTimepicker]="satOpen" readonly class="form-control input "
@@ -225,9 +224,9 @@
                                     <div class="row dayRow">
                                         <div class="col-4 ">
                                             <label class="form-label label daysLabel webView"
-                                                for="passwordInput">Sunday</label>
+                                                for="passwordInput">{{'timeInputForm.Sunday' | translate }}</label>
                                             <label class="form-label label daysLabel mobileView"
-                                                for="passwordInput">Sun</label>
+                                                for="passwordInput">{{'timeInputForm.Sun' | translate }}</label>
                                         </div>
                                         <div class="col-4">
                                             <input [ngxTimepicker]="sunOpen" readonly class="form-control input "
@@ -247,11 +246,11 @@
                                     <div class="row dayRow">
                                         <div class="col-6 ">
                                             <button class="btn btn-primary cancelbtn"
-                                                (click)="cancelStep(items, i ,'schedule')">Cancel</button>
+                                                (click)="cancelStep(items, i ,'schedule')">{{'buttonsText.AddPosition' | translate }}Cancel</button>
                                         </div>
                                         <div class="col-6">
                                             <button class="btn btn-primary savebtn"
-                                            (click)="clickOnNextBTN(items, i, 'goToPermission')">Next</button>
+                                            (click)="clickOnNextBTN(items, i, 'goToPermission')">{{'buttonsText.AddPosition' | translate }}Next</button>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +261,7 @@
                             <div class="stepDiv">
                                 <div class="steps">
                                     <span class="stepSpanP">1</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">2</span> Permissions</div>
+                                    <div class="selectStep"><span class="stepSpanP selected">2</span> {{'PositionPage.Permissions' | translate }} </div>
                                     <span class="stepSpanP">3</span>
                                     <span class="stepSpanP">4</span>
                                 </div>
@@ -279,19 +278,19 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <button class="btn btn-primary cancelbtn" (click)="addPermissionValue(items,i)">Add
-                                    Permission</button>
+                                <button class="btn btn-primary cancelbtn" (click)="addPermissionValue(items,i)">
+                                    {{'buttonsText.AddPermission' | translate }}</button>
                             </div>
                             <div class="mb-3">
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn" type="button"
-                                            (click)="cancelStep(items,i,'permission')">Cancel</button>
+                                            (click)="cancelStep(items,i,'permission')">{{'buttonsText.Cancel' | translate }}</button>
 
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary savebtn"
-                                            (click)="clickOnNextBTN(items, i, 'goToEmployeeType')">Next</button>
+                                            (click)="clickOnNextBTN(items, i, 'goToEmployeeType')">{{'buttonsText.Next' | translate }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -303,14 +302,14 @@
                                 <div class="steps">
                                     <span class="stepSpanP">1</span>
                                     <span class="stepSpanP">2</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">3</span> Employee type
+                                    <div class="selectStep"><span class="stepSpanP selected">3</span> {{'PositionPage.EmployeeType' | translate }}
                                     </div>
                                     <span class="stepSpanP">4</span>
                                 </div>
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos5')">
                             </div>
-                            <p class="textStep">Employee type</p>
+                            <p class="textStep"> {{'PositionPage.EmployeeType' | translate }} </p>
                             <div class="addtoCalDiv">
                                 <select class="form-control select" [(ngModel)]="items.employeeType">
                                     <option disabled selected hidden value="">Select</option>
@@ -323,12 +322,12 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelStep(items, i, 'employeeType')">Cancel</button>
+                                            (click)="cancelStep(items, i, 'employeeType')">{{'buttonsText.Cancel' | translate }}</button>
 
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary savebtn"
-                                            (click)="clickOnNextBTN(items, i, 'goToService')">Next</button>
+                                            (click)="clickOnNextBTN(items, i, 'goToService')">{{'buttonsText.Next' | translate }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +340,7 @@
                                     <span class="stepSpanP">1</span>
                                     <span class="stepSpanP">2</span>
                                     <span class="stepSpanP">3</span>
-                                    <div class="selectStep"><span class="stepSpanP selected">4</span> Services</div>
+                                    <div class="selectStep"><span class="stepSpanP selected">4</span> {{'PositionPage.Services' | translate }} </div>
                                 </div>
                                 <img src="assets/icons/quesmark.svg" class="quesIcon quesMarkStep" mat-button
                                     (click)="openDialog('Pos6')">
@@ -365,12 +364,6 @@
                                                             [(ngModel)]="servi.service" type="text" maxlength="60">
                                                     </div>
                                                     <div class="col-2">
-                                                        <!-- <input [ngxTimepicker]="finishTimeNGX" readonly
-                                                            class="form-control input ser" placeholder="Time"
-                                                            [(ngModel)]="servi.time"
-                                                            style="padding-right: 3px; padding-left: 3px;">
-                                                        <ngx-material-timepicker #finishTimeNGX>
-                                                        </ngx-material-timepicker> -->
                                                         <input
                                                             class="form-control input ser" placeholder="Time"
                                                             [(ngModel)]="servi.time"
@@ -393,13 +386,11 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="addCategoryValue(items, i,'Service')">Add
-                                            service</button>
+                                            (click)="addCategoryValue(items, i,'Service')">{{'buttonsText.AddService' | translate }}</button>
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="addCategoryValue(items, i,'Category')">Add
-                                            category</button>
+                                            (click)="addCategoryValue(items, i,'Category')">{{'buttonsText.AddCategory' | translate }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -407,11 +398,11 @@
                                 <div class="row dayRow">
                                     <div class="col-6 ">
                                         <button class="btn btn-primary cancelbtn"
-                                            (click)="cancelStep(items,i,'service')">Cancel</button>
+                                            (click)="cancelStep(items,i,'service')">{{'buttonsText.Cancel' | translate }}</button>
                                     </div>
                                     <div class="col-6">
                                         <button class="btn btn-primary savebtn" [disabled]="savedBtnDis"
-                                            (click)="clickOnNextBTN(items, i, 'goToEnd')">Save</button>
+                                            (click)="clickOnNextBTN(items, i, 'goToEnd')">{{'buttonsText.Save' | translate }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -422,4 +413,3 @@
         </div>
     </div>
 </div>
-<!-- (click)="scroll(containerTop)" -->

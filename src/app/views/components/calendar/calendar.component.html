@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row" style="margin-top: 48px;" id="webView">
     <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
-      <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">Add
-        Appointment</button>
+      <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">
+        {{'buttonsText.AddAppointment' | translate }}</button>
       <div class="btns">
         <img src="assets/icons/leftArr.svg" class="leftArr" (click)="backDate()">
         <ngx-datepicker [(ngModel)]="date" [options]="options"></ngx-datepicker>
@@ -14,8 +14,7 @@
   <div class="row btnBoxRow" style="margin-top: 48px;" id="mobView">
       <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
         <div class="topblock">
-          <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">Add
-            Appointment</button>
+          <button class="btn btn-primary savebtn addPosBtn" mat-button (click)="openDialog('addAppointment')">{{'buttonsText.AddAppointment' | translate }}</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('calendar')">
         </div>
         <div class="btns">

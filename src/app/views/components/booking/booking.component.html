@@ -1,13 +1,11 @@
 <div class="container">
     <div class="row" style="margin-top: 48px;" id="filterMob">
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
-            <button class="btn btn-primary savebtn filtersBtn" (click)="expanded = !expanded">Filters</button>
+            <button class="btn btn-primary savebtn filtersBtn" (click)="expanded = !expanded">{{'buttonsText.Filters' | translate }}</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('booking')">
         </div>
 
         <aside class="optionFilter" *ngIf="expanded">
-            <!-- <ngx-datepicker [(ngModel)]="date" [options]="options" position="bottom-left"></ngx-datepicker> -->
-
             <input matInput placeholder="Date" readonly [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
                 class="form-control input ">
             <mat-datepicker #datepickerFrom></mat-datepicker>
@@ -28,7 +26,7 @@
 
     </div>
     <aside class="sidebar">
-        <p class="filtertext">Filters</p>
+        <p class="filtertext">{{'buttonsText.Filters' | translate }}</p>
         <input matInput placeholder="Date" readonly [matDatepicker]="datepickerFrom" (click)="datepickerFrom.open()"
             class="form-control input ">
         <mat-datepicker #datepickerFrom></mat-datepicker>
@@ -49,7 +47,7 @@
 
         <div class="col-lg-10 col-md-10 col-sm-12">
             <div class="bookHead">
-                <h2 class="heading">Pending Bookings</h2>
+                <h2 class="heading">{{'BookingPage.PendingBookings' | translate }}</h2>
                 <img src="assets/icons/quesmark.svg" id="quesWeb" class="quesIcon quesmark" mat-button
                     (click)="openDialog('booking')">
             </div>
@@ -57,157 +55,155 @@
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
 
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
                 </p>
-                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialog('BookOfferTime')">Offer new
-                    time</button>
+                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialog('BookOfferTime')">
+                    {{'buttonsText.OfferNewTime' | translate }}</button>
                 <div class="afterClickEdit">
-                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">Reject</button>
-                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">Accept</button>
+                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">{{'buttonsText.Reject' | translate }}</button>
+                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">{{'buttonsText.Accept' | translate }}</button>
                 </div>
 
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
-                </p>
-                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialog('BookOfferTime')">Offer new
-                    time</button>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span></p>
+                <button class="btn btn-primary cancelbtn btnOff" (click)="openDialog('BookOfferTime')">{{'buttonsText.OfferNewTime' | translate }}</button>
                 <div class="afterClickEdit">
-                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">Reject</button>
-                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">Accept</button>
+                    <button class="btn btn-primary cancelbtn" (click)="acceptReject('reject')">{{'buttonsText.Reject' | translate }}</button>
+                    <button class="btn btn-primary savebtn" (click)="acceptReject('accept')">{{'buttonsText.Accept' | translate }}</button>
                 </div>
 
             </div>
         </div>
     </div>
     <div class="row m-4 firstRow" style="margin-top: 45px !important;">
-        <h2 class="heading">Confirmed Bookings</h2>
+        <h2 class="heading">{{'BookingPage.ConfirmedBookings' | translate }}Confirmed Bookings</h2>
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
                 </p>
 
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
-                </p>
-
-            </div>
-        </div>
-    </div>
-    <div class="row m-4 firstRow" style="margin-top: 45px !important;">
-        <h2 class="heading">Completed Bookings</h2>
-        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
-            <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
-                        Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
-                        above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
-                        Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
-                        12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
-                </p>
-
-            </div>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
-            <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
-                        Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
-                        above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
-                        Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
-                        12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
                 </p>
 
             </div>
         </div>
     </div>
     <div class="row m-4 firstRow" style="margin-top: 45px !important;">
-        <h2 class="heading">Cancelled Bookings</h2>
+        <h2 class="heading">{{'BookingPage.CompletedBookings' | translate }}</h2>
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
                 </p>
 
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
             <div class="card">
-                <p class="detailText">Service 1</p>
-                <p class="detailText">Service: <span class="textSpan">The Wolf
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
                         Cut</span></p>
-                <p class="detailText">Salon: <span class="textSpan">A cut
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
                         above</span></p>
-                <p class="detailText">With: <span class="textSpan">Elizabeth
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
                         Smith</span></p>
-                <p class="detailText">Time: <span class="textSpan">11:00am -
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
                         12:00pm</span></p>
-                <p class="detailText">Date: <span class="textSpan">21/2/2022</span></p>
-                <p class="detailText">Price: <span class="textSpan">£20</span>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row m-4 firstRow" style="margin-top: 45px !important;">
+        <h2 class="heading">{{'BookingPage.CancelledBookings' | translate }}</h2>
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
+                </p>
+
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 boxCol">
+            <div class="card">
+                <p class="detailText">{{'BookingPage.ServiceHead' | translate }}</p>
+                <p class="detailText">{{'BookingPage.Service' | translate }}: <span class="textSpan">The Wolf
+                        Cut</span></p>
+                <p class="detailText">{{'BookingPage.Salon' | translate }}: <span class="textSpan">A cut
+                        above</span></p>
+                <p class="detailText">{{'BookingPage.With' | translate }}: <span class="textSpan">Elizabeth
+                        Smith</span></p>
+                <p class="detailText">{{'BookingPage.Time' | translate }}: <span class="textSpan">11:00am -
+                        12:00pm</span></p>
+                <p class="detailText">{{'BookingPage.Date' | translate }}: <span class="textSpan">21/2/2022</span></p>
+                <p class="detailText">{{'BookingPage.Price' | translate }}: <span class="textSpan">£20</span>
                 </p>
 
             </div>

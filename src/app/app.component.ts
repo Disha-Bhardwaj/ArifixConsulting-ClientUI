@@ -4,6 +4,7 @@ import {ChangeDetectorRef,  OnDestroy, Output, EventEmitter} from '@angular/core
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService } from '@ngx-translate/core';
 declare var $: any;
 
 @Component({
@@ -24,7 +25,8 @@ export class AppComponent {
   @ViewChild('menuBtn',  { read: ElementRef })
   private menuBtn!: ElementRef
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2, private router: Router,private cookies: CookieService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private renderer: Renderer2, private router: Router,private cookies: CookieService,
+    public translate: TranslateService) {
     this.mobileQuery = media.matchMedia('(max-width: 767px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -34,6 +36,8 @@ export class AppComponent {
     if(this.mobileQuery.matches){
       this.openSidebar = false
     }
+    translate.addLangs(['en', 'ro']);
+    translate.setDefaultLang('en');
   }
 
 
@@ -51,7 +55,10 @@ export class AppComponent {
     }
   }
   openWebsite(){
-    window.open('https:/app-reservation-fe-web-frontend.dev.nursi.eu/home','_blank')
+    window.open('https://app-reservation-fe-web-frontend.dev.nursi.eu/home','_blank')
+  }
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
   
 

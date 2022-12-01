@@ -9,13 +9,13 @@
             <div class="staffBox">
                 <div class="row imgRow" >
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol">
-                        <h2 class="textH2">Step One</h2>
+                        <h2 class="textH2">{{'CompanyInfoPage.WizardHead' | translate}}</h2>
                         <img src="assets/icons/closeGrey.svg" class="closeIcon" (click)="finishWizard()">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 profileCol">
                        <ul>
-                        <li>Go to company registration and fill out the form</li>
-                        <li>If you get stuck, click on the question mark for help</li>
+                        <li>{{'CompanyInfoPage.WizardPara1' | translate}}</li>
+                        <li>{{'CompanyInfoPage.WizardPara2' | translate}}</li>
                        </ul>
                     </div>
                     <div class="stepDiv">
@@ -34,14 +34,14 @@
     <div class="row p-0 infoBox">
         <div
             style="display: flex;flex-direction: row;align-content: stretch;justify-content: space-between; align-items: center;margin-top: 10px;">
-            <p class="texthead">Company Information</p>
+            <p class="texthead">{{'CompanyInfoPage.HeadingText' | translate}}</p>
             <img src="assets/icons/edit.svg" class="editIcon" (click)="editInfo()">
         </div>
         <form [formGroup]="infoForm" autocomplete="off">
             <div class="mb-3">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="passwordInput">Business Address</label>
+                        <label class="form-label label" for="passwordInput">{{'FormDetails.BusinessAddress' | translate }}</label>
                         <input type="text" formControlName="address" placeholder="Enter Business Address"
                             class="form-control input "
                             [class.is-invalid]="address.invalid && (address.dirty || address.touched)" maxlength="300">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="repeatPassword">Vat ID</label>
+                        <label class="form-label label" for="repeatPassword">{{'FormDetails.VatID' | translate }}</label>
                         <input type="text" formControlName="vatID" placeholder="Enter Vat ID"
                             class="form-control input "
                             [class.is-invalid]="vatID.invalid && (vatID.dirty || vatID.touched)" minlength="5" maxlength="30">
@@ -73,7 +73,7 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="passwordInput">City</label>
+                        <label class="form-label label" for="passwordInput">{{'FormDetails.City' | translate }}</label>
                         <input type="text" formControlName="city" placeholder="Enter city" class="form-control input "
                             [class.is-invalid]="city.invalid && (city.dirty || city.touched)" maxlength="30">
                         <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="repeatPassword">Business Email </label>
+                        <label class="form-label label" for="repeatPassword">{{'FormDetails.BusinessEmail' | translate }} </label>
                         <input type="text" formControlName="email" placeholder="Enter Business Email"
                             class="form-control input "
                             [class.is-invalid]="email.invalid && (email.dirty || email.touched)" minlength="6"
@@ -109,7 +109,7 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="passwordInput">County</label>
+                        <label class="form-label label" for="passwordInput">{{'FormDetails.County' | translate }}</label>
                         <input type="text" formControlName="county" placeholder="Enter County"
                             class="form-control input "
                             [class.is-invalid]="county.invalid && (county.dirty || county.touched)" maxlength="30">
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="repeatPassword">Registration number</label>
+                        <label class="form-label label" for="repeatPassword">{{'FormDetails.RegistrationNumber' | translate }}</label>
                         <input type="text" formControlName="regId" placeholder="Enter Registration number"
                             class="form-control input "
                             [class.is-invalid]="regId.invalid && (regId.dirty || regId.touched)"  minlength="5" maxlength="30">
@@ -142,7 +142,7 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="passwordInput">Country</label>
+                        <label class="form-label label" for="passwordInput">{{'FormDetails.Country' | translate }}</label>
                         <input type="text" formControlName="country" placeholder="Enter Country"
                             class="form-control input "
                             [class.is-invalid]="country.invalid && (country.dirty || country.touched)" maxlength="30">
@@ -157,15 +157,13 @@
                         </div>
                     </div>
                     <div class="col-6 columnInp emptyCol">
-                        <!-- <label for="myfile" class="labelUpload">Upload Document</label>
-                        <input type="file" id="myfile" name="myfile" style="display:none;"> -->
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <label class="form-label label" for="passwordInput">Zipcode</label>
+                        <label class="form-label label" for="passwordInput">{{'FormDetails.Zipcode' | translate }}</label>
                         <input type="text" formControlName="zipCode" placeholder="Enter Zipcode"
                             class="form-control input "
                             [class.is-invalid]="zipCode.invalid && (zipCode.dirty || zipCode.touched)" maxlength="15">
@@ -179,11 +177,11 @@
                         </div>
                     </div>
                     <div class="col-6 columnInp" *ngIf="showEdit">
-                        <label for="myfile" class="labelUpload">Upload Document</label>
+                        <label for="myfile" class="labelUpload">{{'buttonsText.UploadDocument' | translate }}</label>
                         <input type="file" id="myfile" name="myfile" style="display:none;">
                     </div>
                     <div class="col-6 columnInp" *ngIf="!showEdit">
-                        <label for="myfile" class="labelUpload">Upload Document</label>
+                        <label for="myfile" class="labelUpload">{{'buttonsText.UploadDocument' | translate }}</label>
                         <input type="file" disabled id="myfile" name="myfile" style="display:none;">
                     </div>
                 </div>
@@ -191,10 +189,10 @@
             <div class="mb-3" *ngIf="showEdit">
                 <div class="row">
                     <div class="col-6 columnInp">
-                        <button class="btn btn-primary savebtn" (click)="saveInfo()">Save</button>
+                        <button class="btn btn-primary savebtn" (click)="saveInfo()">{{'buttonsText.Save' | translate }}</button>
                     </div>
                     <div class="col-6 columnInp">
-                        <button class="btn btn-primary cancelbtn" (click)="cancel()">Cancel</button>
+                        <button class="btn btn-primary cancelbtn" (click)="cancel()">{{'buttonsText.Cancel' | translate }}</button>
                     </div>
                 </div>
             </div>
