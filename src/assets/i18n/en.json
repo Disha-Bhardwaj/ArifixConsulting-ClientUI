@@ -54,7 +54,8 @@
         "AddPermission": "Add Permission",
         "Finish": "Finish",
         "Send": "Send",
-        "Filters": "Filters"
+        "Filters": "Filters",
+        "Delete": "Delete"
     },
     "footer": {
         "OurCompany": "Our Company",
@@ -87,10 +88,12 @@
         "WorkPhoneNumber": "Work Phone Number",
         "SalonName": "Salon name",
         "Currency": "Currency",
-        "Date":"Date",
-        "Name":"Name",
-        "StartTime":"Start Time",
-        "FinishTime":"Finish Time"
+        "Date": "Date",
+        "Name": "Name",
+        "StartTime": "Start Time",
+        "FinishTime": "Finish Time",
+        "Service":"Service",
+        "EmployeeName":"Employee Name"
     },
     "CompanyInfoPage": {
         "WizardHead": "Step One",
@@ -128,7 +131,8 @@
         "Name": "Name",
         "Details": "Details",
         "AddToCalender": "Add to Calender",
-        "EmployeeDetails": "Employee Details"
+        "EmployeeDetails": "Employee Details",
+        "DeleteEmployee": "Delete Employee"
     },
     "BookingPage": {
         "PendingBookings": "Pending Bookings",
@@ -148,103 +152,105 @@
         "Time": "Time",
         "TurnNotificationsOff": "Turn notifications off"
     },
-    "DialogContent":{
-        "SalonPage":{
-            "Head1":"Add a salon",
-            "H1P1":"Click add salon button",
-            "H1P2":"To add extra salons click add salon.",
-            "Head2":"Click on the pencil to edit the second form",
-            "H2P1":"Fill out the form by entering your salon details",
-            "H2P2":"Upload your salon banner",
-            "H2P3":"Upload your salon logo",
-            "H2P4":"Click save",
-            "Head3":"Click on the pencil to edit the second form",
-            "H3P1":"Click on each day and enter the time your salon opens and closes",
-            "H3P2":"Click save"
+    "DialogContent": {
+        "SalonPage": {
+            "Head1": "Add a salon",
+            "H1P1": "Click add salon button",
+            "H1P2": "To add extra salons click add salon.",
+            "Head2": "Click on the pencil to edit the second form",
+            "H2P1": "Fill out the form by entering your salon details",
+            "H2P2": "Upload your salon banner",
+            "H2P3": "Upload your salon logo",
+            "H2P4": "Click save",
+            "Head3": "Click on the pencil to edit the second form",
+            "H3P1": "Click on each day and enter the time your salon opens and closes",
+            "H3P2": "Click save"
         },
-        "CompanyInfoPage":{
-            "Head1":"Click on the pencil to edit the first form.",
-            "H1P1":"Fill out the form by entering your company information",
-            "H1P2":"Upload your salon document",
-            "H1P3":"Click save"
+        "CompanyInfoPage": {
+            "Head1": "Click on the pencil to edit the first form.",
+            "H1P1": "Fill out the form by entering your company information",
+            "H1P2": "Upload your salon document",
+            "H1P3": "Click save"
         },
-        "BookingPage":{
-            "Head1":"To accept a book",
-            "H1P1":"Click accecpt",
-            "Head2":"To Reject a booking",
-            "H2P1":"Click reject",
-            "Head3":"To offer new time",
-            "H3P1":"Select a time from",
-            "H3P2":"Click save",
-            "H3P3":"Select a time to",
-            "H3P4":"Click send",
-            "From":"From",
-            "To":"To",
-            "NewTime":"New Time"
+        "BookingPage": {
+            "Head1": "To accept a book",
+            "H1P1": "Click accecpt",
+            "Head2": "To Reject a booking",
+            "H2P1": "Click reject",
+            "Head3": "To offer new time",
+            "H3P1": "Select a time from",
+            "H3P2": "Click save",
+            "H3P3": "Select a time to",
+            "H3P4": "Click send",
+            "From": "From",
+            "To": "To",
+            "NewTime": "New Time"
         },
-        "NotificationPage":{
-            "Head1":"Turn notifications off",
-            "H1P1":"Click from",
-            "H1P2":"Select time",
-            "H1P3":"Click to",
-            "H1P4":"Select time"
+        "NotificationPage": {
+            "Head1": "Turn notifications off",
+            "H1P1": "Click from",
+            "H1P2": "Select time",
+            "H1P3": "Click to",
+            "H1P4": "Select time"
         },
-        "CalendarPage":{
-            "Head1":"Adding appointments for walkins",
-            "H1P1":"Click add appointment",
-            "H1P2":"Enter the customer's name",
-            "H1P3":"Enter start time",
-            "H1P4":"Enter finish time",
-            "H1P5":"Enter date",
-            "Head2":"Changing calendar date",
-            "H2P1":"Click change date",
-            "H2P2":"Pick a date",
-            "H2P3":"Click save",
-            "PText":"Customers booking with the salon app will be auto-entered into the calendar"
+        "CalendarPage": {
+            "Head1": "Adding appointments for walkins",
+            "H1P1": "Click add appointment",
+            "H1P2": "Enter the customer's name",
+            "H1P3": "Enter start time",
+            "H1P4": "Enter finish time",
+            "H1P5": "Enter date",
+            "Head2": "Changing calendar date",
+            "H2P1": "Click change date",
+            "H2P2": "Pick a date",
+            "H2P3": "Click save",
+            "PText": "Customers booking with the salon app will be auto-entered into the calendar"
         },
-        "StaffPage":{
-            "Head1":"Adding staff",
-            "H1P1":"Click add staff",
-            "H1P2":"Enter your employee email",
-            "H1P3":"Click send",
-            "Head2":"Setting up the employee",
-            "H2P1":"Click the dropdown details",
-            "H2P2":"Click dropdown, position, and pick one",
-            "H2P3":"For the employee to take booking, click add to calendar",
-            "H2P4":"Break from and to are optional for employees who go on holiday",
-            "H2P5":"Employee details will be auto-setup when your employee joins",
-            "Head3":"List of filled out detials from the user profile page"
+        "StaffPage": {
+            "Head1": "Adding staff",
+            "H1P1": "Click add staff",
+            "H1P2": "Enter your employee email",
+            "H1P3": "Click send",
+            "Head2": "Setting up the employee",
+            "H2P1": "Click the dropdown details",
+            "H2P2": "Click dropdown, position, and pick one",
+            "H2P3": "For the employee to take booking, click add to calendar",
+            "H2P4": "Break from and to are optional for employees who go on holiday",
+            "H2P5": "Employee details will be auto-setup when your employee joins",
+            "Head3": "List of filled out detials from the user profile page",
+            "Head4": "Delete Employee",
+            "H4P1": "Are you sure you would like to delete this employee?"
         },
-        "PositionPage":{
-            "Head1":"Add Position.",
-            "H1P1":"Click add position",
-            "Head2":"Name",
-            "H2P1":"Enter job title",
-            "H2P2":"Click next",
-            "Head3":"Setting up the Time",
-            "H3P1":"Enter the time the position works within the salon.",
-            "H3P2":"Click next",
-            "Head4":"Setting up the permissions",
-            "H4P1":"Click the dropdown menu, and pick a permission the job can access within the software.",
-            "H4P2":"Click add permission to add more permissions",
-            "H4P3":"Repeat previous steps",
-            "H4P4":"When finished, click next",
-            "Head5":"Setting up the employee type",
-            "H5P1":"Click the dropdown",
-            "H5P2":"Pick employed or self-employed",
-            "H5P3":"Click next",
-            "Head6":"Setting up the services",
-            "H6P1":"Click the dropdown category and pick one",
-            "H6P2":"Enter a service name",
-            "H6P3":"Enter the time that service takes",
-            "H6P4":"Enter price",
-            "Head7":"To add more service",
-            "H7P1":"Click add service",
-            "H7P2":"Repeat step 2 to 4 as before",
-            "Head8":"Adding a new category",
-            "H8P1":"Click add category",
-            "H8P2":"Repeat service steps 1 to 4",
-            "Head9":"When finished, click save"
+        "PositionPage": {
+            "Head1": "Add Position.",
+            "H1P1": "Click add position",
+            "Head2": "Name",
+            "H2P1": "Enter job title",
+            "H2P2": "Click next",
+            "Head3": "Setting up the Time",
+            "H3P1": "Enter the time the position works within the salon.",
+            "H3P2": "Click next",
+            "Head4": "Setting up the permissions",
+            "H4P1": "Click the dropdown menu, and pick a permission the job can access within the software.",
+            "H4P2": "Click add permission to add more permissions",
+            "H4P3": "Repeat previous steps",
+            "H4P4": "When finished, click next",
+            "Head5": "Setting up the employee type",
+            "H5P1": "Click the dropdown",
+            "H5P2": "Pick employed or self-employed",
+            "H5P3": "Click next",
+            "Head6": "Setting up the services",
+            "H6P1": "Click the dropdown category and pick one",
+            "H6P2": "Enter a service name",
+            "H6P3": "Enter the time that service takes",
+            "H6P4": "Enter price",
+            "Head7": "To add more service",
+            "H7P1": "Click add service",
+            "H7P2": "Repeat step 2 to 4 as before",
+            "Head8": "Adding a new category",
+            "H8P1": "Click add category",
+            "H8P2": "Repeat service steps 1 to 4",
+            "Head9": "When finished, click save"
         }
     }
 }

@@ -92,10 +92,41 @@ input.timeField {
   color: #75758b !important;
   opacity: 1 !important;
 }
-input.timeField{
+input.timeField {
   // width: max-content;
-    border: none;
-    position: inherit;
+  border: none;
+  position: inherit;
+}
+.deleteText {
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 21px !important;
+  color: #000000 !important;
+}
+.deleteTextP {
+  font-family: "Maven Pro" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  color: #000000 !important;
+}
+button.btn.btn-primary.savebtn.cancelApp {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+}
+.deleteSection {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+img.closeIcon {
+  margin-top: -15px;
 }
 // media query
 @media (max-width: 710px) and (min-width: 200px) {
@@ -119,20 +150,20 @@ input.timeField{
   button.btn.btn-primary.savebtn {
     width: 255px;
   }
-  .boxInp{
+  .boxInp {
     gap: 7px;
-   }
+  }
 }
 @media (max-width: 400px) and (min-width: 200px) {
   input.form-control.input.formIn {
-     font-size: 16px;
-     height: 40px;
-   }
-   .boxInp{
+    font-size: 16px;
+    height: 40px;
+  }
+  .boxInp {
     padding-right: 0px;
     gap: 0px;
-   }
-   input.timeField{
+  }
+  input.timeField {
     margin-left: 3%;
+  }
 }
- }

@@ -53,7 +53,9 @@
         "AddCategory": "Adăuga Categorie",
         "AddPermission": "Adăuga Permisiune",
         "Finish": "finaliz",
-        "Send": "Trimite"
+        "Send": "Trimite",
+        "Filters": "Filtre",
+        "Delete": "Șterge"
     },
     "footer": {
         "OurCompany": "Compania noastră",
@@ -66,7 +68,7 @@
         "Service": "Serviciu",
         "Features": "Caracteristici",
         "BookingTerms": "Condiții de rezervare",
-        "PrivacyPolicy": "Politica de Confidențialitate",
+        "PrivacyPolicy": "Politica Confidențialitate",
         "WebsiteTerms": "Termenii site-ului"
     },
     "DashboardPage": {
@@ -89,7 +91,9 @@
         "Date": "Data",
         "Name": "Nume",
         "StartTime": "Timpul de începere",
-        "FinishTime": "Timp de sosire"
+        "FinishTime": "Timp de sosire",
+        "Service":"Serviciu",
+        "EmployeeName":"numele angajatului"
     },
     "CompanyInfoPage": {
         "WizardHead": "Primul pas",
@@ -127,7 +131,8 @@
         "Name": "Nume",
         "Details": "Detalii",
         "AddToCalender": "Adăugați la Calendar",
-        "EmployeeDetails": "Detalii despre angajat"
+        "EmployeeDetails": "Detalii despre angajat",
+        "DeleteEmployee": "Șterge angajat"
     },
     "BookingPage": {
         "PendingBookings": "Rezervări în așteptare",
@@ -147,103 +152,105 @@
         "Time": "Timp",
         "TurnNotificationsOff": "Dezactivați notificările"
     },
-    "DialogContent":{
-        "SalonPage":{
-            "Head1":"Adăugați un salon",
-            "H1P1":"Faceți clic pe butonul adăugați salon",
-            "H1P2":"Pentru a adăuga saloane suplimentare, faceți clic pe adăugați salon.",
-            "Head2":"Faceți clic pe creion pentru a edita al doilea formular",
-            "H2P1":"Completează formularul introducând detaliile salonului tău",
-            "H2P2":"Încarcă bannerul salonului tău",
-            "H2P3":"Încarcă logo-ul salonului tău",
-            "H2P4":"Faceți clic pe salvare",
-            "Head3":"Faceți clic pe creion pentru a edita al doilea formular",
-            "H3P1":"Faceți clic pe fiecare zi și introduceți ora la care se deschide și se închide salonul dvs",
-            "H3P2":"Faceți clic pe salvare"
+    "DialogContent": {
+        "SalonPage": {
+            "Head1": "Adăugați un salon",
+            "H1P1": "Faceți clic pe butonul adăugați salon",
+            "H1P2": "Pentru a adăuga saloane suplimentare, faceți clic pe adăugați salon.",
+            "Head2": "Faceți clic pe creion pentru a edita al doilea formular",
+            "H2P1": "Completează formularul introducând detaliile salonului tău",
+            "H2P2": "Încarcă bannerul salonului tău",
+            "H2P3": "Încarcă logo-ul salonului tău",
+            "H2P4": "Faceți clic pe salvare",
+            "Head3": "Faceți clic pe creion pentru a edita al doilea formular",
+            "H3P1": "Faceți clic pe fiecare zi și introduceți ora la care se deschide și se închide salonul dvs",
+            "H3P2": "Faceți clic pe salvare"
         },
-        "CompanyInfoPage":{
-            "Head1":"Faceți clic pe creion pentru a edita primul formular.",
-            "H1P1":"Completați formularul introducând informațiile companiei dvs",
-            "H1P2":"Încărcați documentul de salon",
-            "H1P3":"Faceți clic pe salvare"
+        "CompanyInfoPage": {
+            "Head1": "Faceți clic pe creion pentru a edita primul formular.",
+            "H1P1": "Completați formularul introducând informațiile companiei dvs",
+            "H1P2": "Încărcați documentul de salon",
+            "H1P3": "Faceți clic pe salvare"
         },
-        "BookingPage":{
-            "Head1":"A accepta o carte",
-            "H1P1":"Faceți clic pe accept",
-            "Head2":"Pentru a respinge o rezervare",
-            "H2P1":"Faceți clic pe respingere",
-            "Head3":"Pentru a oferi timp nou",
-            "H3P1":" Selectați o oră de la",
-            "H3P2":"Faceți clic pe salvare",
-            "H3P3":"Selectați o oră pentru",
-            "H3P4":"Faceți clic pe trimite",
-            "From":"Din",
-            "To":"La",
-            "NewTime":"Timp nou"
+        "BookingPage": {
+            "Head1": "A accepta o carte",
+            "H1P1": "Faceți clic pe accept",
+            "Head2": "Pentru a respinge o rezervare",
+            "H2P1": "Faceți clic pe respingere",
+            "Head3": "Pentru a oferi timp nou",
+            "H3P1": " Selectați o oră de la",
+            "H3P2": "Faceți clic pe salvare",
+            "H3P3": "Selectați o oră pentru",
+            "H3P4": "Faceți clic pe trimite",
+            "From": "Din",
+            "To": "La",
+            "NewTime": "Timp nou"
         },
-        "NotificationPage":{
-            "Head1":"Dezactivați notificările",
-            "H1P1":"Faceți clic de la",
-            "H1P2":"Selectați ora",
-            "H1P3":"Apasa pe",
-            "H1P4":"Selectați ora"
+        "NotificationPage": {
+            "Head1": "Dezactivați notificările",
+            "H1P1": "Faceți clic de la",
+            "H1P2": "Selectați ora",
+            "H1P3": "Apasa pe",
+            "H1P4": "Selectați ora"
         },
-        "CalendarPage":{
-            "Head1":"Adăugarea de întâlniri pentru walkin",
-            "H1P1":"Faceți clic pe adăugați o întâlnire",
-            "H1P2":"Introduceți numele clientului",
-            "H1P3":"Introduceți ora de începere",
-            "H1P4":"Introduceți ora de terminare",
-            "H1P5":"Introduceți data",
-            "Head2":"Schimbarea datei calendaristice",
-            "H2P1":"Faceți clic pe Modificați data",
-            "H2P2":"Alege o dată",
-            "H2P3":"Faceți clic pe salvare",
-            "PText":"Clienții care rezervă cu aplicația salon vor fi introduși automat în calendar"
+        "CalendarPage": {
+            "Head1": "Adăugarea de întâlniri pentru walkin",
+            "H1P1": "Faceți clic pe adăugați o întâlnire",
+            "H1P2": "Introduceți numele clientului",
+            "H1P3": "Introduceți ora de începere",
+            "H1P4": "Introduceți ora de terminare",
+            "H1P5": "Introduceți data",
+            "Head2": "Schimbarea datei calendaristice",
+            "H2P1": "Faceți clic pe Modificați data",
+            "H2P2": "Alege o dată",
+            "H2P3": "Faceți clic pe salvare",
+            "PText": "Clienții care rezervă cu aplicația salon vor fi introduși automat în calendar"
         },
-        "StaffPage":{
-            "Head1":"Adăugarea personalului",
-            "H1P1":"Faceți clic pe adăugați personal",
-            "H1P2":"Introduceți adresa de e-mail a angajatului dvs",
-            "H1P3":"Faceți clic pe trimite",
-            "Head2":"Stabilirea angajatului",
-            "H2P1":"Faceți clic pe detaliile meniului derulant",
-            "H2P2":"Faceți clic pe meniul drop-down, poziționați și alegeți unul",
-            "H2P3":"Pentru ca angajatul să accepte rezervarea, faceți clic pe adăugați în calendar",
-            "H2P4":"Pauza de la și până la este opțională pentru angajații care pleacă în vacanță",
-            "H2P5":"Detaliile angajatului vor fi configurate automat atunci când angajatul dvs. se alătură",
-            "Head3":"Lista detaliilor completate din pagina de profil de utilizator"
+        "StaffPage": {
+            "Head1": "Adăugarea personalului",
+            "H1P1": "Faceți clic pe adăugați personal",
+            "H1P2": "Introduceți adresa de e-mail a angajatului dvs",
+            "H1P3": "Faceți clic pe trimite",
+            "Head2": "Stabilirea angajatului",
+            "H2P1": "Faceți clic pe detaliile meniului derulant",
+            "H2P2": "Faceți clic pe meniul drop-down, poziționați și alegeți unul",
+            "H2P3": "Pentru ca angajatul să accepte rezervarea, faceți clic pe adăugați în calendar",
+            "H2P4": "Pauza de la și până la este opțională pentru angajații care pleacă în vacanță",
+            "H2P5": "Detaliile angajatului vor fi configurate automat atunci când angajatul dvs. se alătură",
+            "Head3": "Lista detaliilor completate din pagina de profil de utilizator",
+            "Head4": "Șterge angajat",
+            "H4P1": "Sigur doriți să ștergeți acest angajat?"
         },
-        "PositionPage":{
-            "Head1":"Adăugați o poziție.",
-            "H1P1":"Faceți clic pe adăugați poziție",
-            "Head2":"Nume",
-            "H2P1":"Introduceți titlul postului",
-            "H2P2":"Faceți clic pe următorul",
-            "Head3":"Configurarea timpului",
-            "H3P1":"Introduceți ora în care funcția funcționează în cadrul salonului.",
-            "H3P2":"Faceți clic pe următorul",
-            "Head4":"Configurarea permisiunilor",
-            "H4P1":"Faceți clic pe meniul derulant și alegeți o permisiune pe care o poate accesa jobul în cadrul software-ului.",
-            "H4P2":"Faceți clic pe adăugați permisiunea pentru a adăuga mai multe permisiuni",
-            "H4P3":"Repetați pașii anteriori",
-            "H4P4":"Când este terminat, Faceți clic pe următorul",
-            "Head5":"Stabilirea tipului de angajat",
-            "H5P1":"Faceți clic pe meniul drop-down",
-            "H5P2":"Alegeți angajați sau lucrători pe cont propriu",
-            "H5P3":"Faceți clic pe următorul",
-            "Head6":"Configurarea serviciilor",
-            "H6P1":"Faceți clic pe categoria drop-down și alegeți una",
-            "H6P2":"Introduceți un nume de serviciu",
-            "H6P3":"Introduceți timpul necesar serviciului",
-            "H6P4":"Introduceți prețul",
-            "Head7":"Pentru a adăuga mai mult serviciu",
-            "H7P1":"Faceți clic pe adăugați serviciu",
-            "H7P2":"Repetați pasul 2 până la 4 ca mai înainte",
-            "Head8":"Adăugarea unei noi categorii",
-            "H8P1":"Faceți clic pe adăugați categorie",
-            "H8P2":"Repetați pașii de service de la 1 la 4",
-            "Head9":"Când este terminat, Faceți clic pe salvare"
+        "PositionPage": {
+            "Head1": "Adăugați o poziție.",
+            "H1P1": "Faceți clic pe adăugați poziție",
+            "Head2": "Nume",
+            "H2P1": "Introduceți titlul postului",
+            "H2P2": "Faceți clic pe următorul",
+            "Head3": "Configurarea timpului",
+            "H3P1": "Introduceți ora în care funcția funcționează în cadrul salonului.",
+            "H3P2": "Faceți clic pe următorul",
+            "Head4": "Configurarea permisiunilor",
+            "H4P1": "Faceți clic pe meniul derulant și alegeți o permisiune pe care o poate accesa jobul în cadrul software-ului.",
+            "H4P2": "Faceți clic pe adăugați permisiunea pentru a adăuga mai multe permisiuni",
+            "H4P3": "Repetați pașii anteriori",
+            "H4P4": "Când este terminat, Faceți clic pe următorul",
+            "Head5": "Stabilirea tipului de angajat",
+            "H5P1": "Faceți clic pe meniul drop-down",
+            "H5P2": "Alegeți angajați sau lucrători pe cont propriu",
+            "H5P3": "Faceți clic pe următorul",
+            "Head6": "Configurarea serviciilor",
+            "H6P1": "Faceți clic pe categoria drop-down și alegeți una",
+            "H6P2": "Introduceți un nume de serviciu",
+            "H6P3": "Introduceți timpul necesar serviciului",
+            "H6P4": "Introduceți prețul",
+            "Head7": "Pentru a adăuga mai mult serviciu",
+            "H7P1": "Faceți clic pe adăugați serviciu",
+            "H7P2": "Repetați pasul 2 până la 4 ca mai înainte",
+            "Head8": "Adăugarea unei noi categorii",
+            "H8P1": "Faceți clic pe adăugați categorie",
+            "H8P2": "Repetați pașii de service de la 1 la 4",
+            "Head9": "Când este terminat, Faceți clic pe salvare"
         }
     }
 }

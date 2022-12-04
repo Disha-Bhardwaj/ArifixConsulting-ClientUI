@@ -169,6 +169,39 @@
         </div>
         <div class="mb-3">
             <div class="row">
+                <div class="col-12 columnInp ">
+                    <label class="form-label label" for="passwordInput">{{'FormDetails.Name' | translate }}</label>
+                    <input type="text" autocomplete="off" placeholder="Enter Service" class="form-control input formIn"
+                        formControlName="serviceName" [class.is-invalid]="serviceName.invalid && (serviceName.dirty || serviceName.touched)"
+                        maxlength="60" minlength="2">
+                    <div *ngIf="serviceName.invalid && (serviceName.dirty || serviceName.touched)" class="invalid-feedback">
+                        <div *ngIf="serviceName.errors?.['required']">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-12 columnInp ">
+                    <label class="form-label label" for="passwordInput">{{'FormDetails.Name' | translate }}</label>
+                    <input type="text" autocomplete="off" placeholder="Enter Employee Name" class="form-control input formIn"
+                        formControlName="employeeName" [class.is-invalid]="employeeName.invalid && (employeeName.dirty || employeeName.touched)"
+                        maxlength="60" minlength="2">
+                    <div *ngIf="employeeName.invalid && (employeeName.dirty || employeeName.touched)" class="invalid-feedback">
+                        <div *ngIf="employeeName.errors?.['required']">
+                            This field is required.
+                        </div>
+                        <div *ngIf="employeeName.errors?.['maxlength'] || employeeName.errors?.['minlength']">
+                            Please add valid employee Name
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="row">
                 <div class="col-6 columnInp ">
                     <label class="form-label label" for="passwordInput">{{'FormDetails.StartTime' | translate }}</label>
                     <input [ngxTimepicker]="startTimeNGX" readonly class="form-control input formIn" placeholder="Start Time"
@@ -311,6 +344,33 @@
     </ul>
     <h2 class="headingDialog">{{'DialogContent.PositionPage.Head9' | translate }}</h2>
 </div>
+<!-- coming from Position page step 6 to delete -->    
+<div *ngIf="data.fromPage == 'Pos7'">
+    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head6' | translate }}</h2>
+    <ul>
+        <li>
+            {{'DialogContent.PositionPage.H1P1' | translate }}
+        </li>
+        <li>{{'DialogContent.PositionPage.H1P2' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H1P3' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H1P4' | translate }}</li>
+    </ul>
+    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head7' | translate }}</h2>
+    <ul>
+        <li>
+            {{'DialogContent.PositionPage.H7P1' | translate }}
+        </li>
+        <li>{{'DialogContent.PositionPage.H7P2' | translate }}</li>
+    </ul>
+    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head8' | translate }}</h2>
+    <ul>
+        <li>
+            {{'DialogContent.PositionPage.H8P1' | translate }}
+        </li>
+        <li>{{'DialogContent.PositionPage.H8P2' | translate }}</li>
+    </ul>
+    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head9' | translate }}</h2>
+</div>
 <!-- coming from Staff page step 1 -->
 <div *ngIf="data.fromPage == 'Staff1'">
     <h2 class="headingDialog">{{'DialogContent.StaffPage.Head1' | translate }}</h2>
@@ -338,4 +398,23 @@
 <!-- coming from Staff page step 2 -->
 <div *ngIf="data.fromPage == 'Staff3'">
     <h2 class="headingDialog">{{'DialogContent.StaffPage.Head3' | translate }}</h2>
+</div>
+<!-- coming from Staff page step 3  to delete -->
+<div *ngIf="data.fromPage == 'Staff4'">
+    <div class="deleteSection">
+        <h2 class="headingDialog deleteText">{{'DialogContent.StaffPage.Head4' | translate }}</h2>
+        <img src="assets/icons/CrossSvg.svg" class="closeIcon" (click)="deleteItem()">
+    </div>
+    <h2 class="headingDialog deleteTextP">{{'DialogContent.StaffPage.H4P1' | translate }}</h2>
+    <div class="mb-3">
+        <div class="row dayRow">
+            <div class="col-6">
+                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem()">{{'buttonsText.Cancel' | translate }}</button>
+            </div>
+            <div class="col-6 ">
+                <button class="btn btn-primary savebtn cancelApp" style="background-color: #FF3B30; border:none;"
+                    (click)="deleteItem()">{{'buttonsText.Delete' | translate }}</button>
+            </div>
+        </div>
+    </div>
 </div>

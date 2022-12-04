@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row" style="margin-top: 48px;">
         <div class="col-lg-12 col-md-12 col-sm-12 topbtncol">
-            <button class="btn btn-primary savebtn addPosBtn" (click)="showStepsFunction('One')">{{'buttonsText.AddStaff' | translate }}</button>
+            <button class="btn btn-primary savebtn addPosBtn"
+                (click)="showStepsFunction('One')">{{'buttonsText.AddStaff' | translate }}</button>
             <img src="assets/icons/quesmark.svg" class="quesIcon" mat-button (click)="openDialog('Staff1')">
         </div>
     </div>
@@ -29,7 +30,8 @@
                             <span class="stepSpan"
                                 style="background: #5e5ce6 !important; color:#FFFFFF !important;">4</span>
                         </div>
-                        <button class="btn btn-primary savebtn" (click)="finishWizard('finish')">{{'buttonsText.Finish' | translate }}</button>
+                        <button class="btn btn-primary savebtn" (click)="finishWizard('finish')">{{'buttonsText.Finish'
+                            | translate }}</button>
                     </div>
                 </div>
             </div>
@@ -45,7 +47,7 @@
                     <input type="text" formControlName="employeeEmail" #eValue
                         [class.is-invalid]="employeeEmail.invalid && (employeeEmail.dirty || employeeEmail.touched)"
                         minlength="6" maxlength="60" class="form-control email" placeholder="Enter employee email"
-                        aria-describedby="button-addon2" >
+                        aria-describedby="button-addon2">
                     <button class="btn btn-primary sendbtn" type="button" id="button-addon2"
                         (click)="showStepsFunction('Two')">{{'buttonsText.Send' | translate }}</button>
                 </div>
@@ -53,8 +55,9 @@
         </div>
     </div>
 
-    <div class="row p-0 infoBox"  >
-        <div class="col-lg-4 col-md-4 col-sm-12 containerBox" *ngFor="let items of arrayItemList; let i = index;" style="margin-top: 15px;">
+    <div class="row p-0 infoBox">
+        <div class="col-lg-4 col-md-4 col-sm-12 containerBox" *ngFor="let items of arrayItemList; let i = index;"
+            style="margin-top: 15px;">
             <div class="staffBox">
                 <div class="row imgRow">
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol" *ngIf="!items.showDetails">
@@ -65,7 +68,8 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 imgCol2" *ngIf="items.showDetails">
                         <div class="editCloseDiv">
-                            <img src="assets/icons/edit.svg" class="editIcon" (click)="items.editDetails = !items.editDetails" style="width: 30px; height: 30px;margin-top: 18%;
+                            <img src="assets/icons/edit.svg" class="editIcon"
+                                (click)="items.editDetails = !items.editDetails" style="width: 30px; height: 30px;margin-top: 18%;
                             margin-bottom: 18%;">
                         </div>
                     </div>
@@ -73,59 +77,75 @@
                         <img src="assets/icons/userIcon.svg" class="userIcon">
                         <h2 class="nameH">{{'StaffPage.Name' | translate }}</h2>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;" 
-                          type="button" data-bs-toggle="collapse" (click)="changeDropdown(items,i)"
-                        [attr.data-bs-target]="'#detailServices'+i" aria-expanded="false" aria-controls="'detailServices'+i">
-                        <div class="form-control addtoCalDiv" (click)="items.showDetails = !items.showDetails" >
-                                    <span class="labelSpan">{{'StaffPage.Details' | translate }}</span>
-                                    <mat-icon  id="matIcon{{i}}" >keyboard_arrow_down</mat-icon>
+                    <div class="col-lg-12 col-md-12 col-sm-12 detailOptCol" style="cursor: pointer;" type="button"
+                        data-bs-toggle="collapse" (click)="changeDropdown(items,i)"
+                        [attr.data-bs-target]="'#detailServices'+i" aria-expanded="false"
+                        aria-controls="'detailServices'+i">
+                        <div class="form-control addtoCalDiv" (click)="items.showDetails = !items.showDetails">
+                            <span class="labelSpan">{{'StaffPage.Details' | translate }}</span>
+                            <mat-icon id="matIcon{{i}}">keyboard_arrow_down</mat-icon>
                         </div>
                     </div>
                 </div>
-                <div class="row imgRow collapse"  id="detailServices{{i}}">
+                <div class="row imgRow collapse" id="detailServices{{i}}">
                     <div class="col-lg-12 col-md-12 col-sm-12 editdetailCol">
-                            <div class="form-control addtoCalDiv posSelect">
-                                <select #selectPos id="PosSelect" class="selectDrop" [(ngModel)]="items.position"
-                                    (change)="adjustWidth(selectPos.value)" [disabled]="!items.editDetails" >
-                                    <option disabled selected hidden value="">Position</option>
-                                    <option value="Salon worker">Salon worker</option>
-                                    <option value="Head barber">Head barber</option>
-                                </select>
-                                
-                            </div>
-                            <div class="form-control addtoCalDiv"> <span class="labelSpan">{{'StaffPage.AddToCalender' | translate }}</span>
-                                <label class="switch" for="checkbox">
-                                    <input type="checkbox" id="checkbox" [(ngModel)]="items.addToCalendar" [disabled]="!items.editDetails" />
-                                    <div class="slider round"></div>
-                                </label>
-                            </div>
+                        <div class="form-control addtoCalDiv posSelect">
+                            <select #selectPos id="PosSelect" class="selectDrop" [(ngModel)]="items.position"
+                                (change)="adjustWidth(selectPos.value)" [disabled]="!items.editDetails">
+                                <option disabled selected hidden value="">Position</option>
+                                <option value="Salon worker">Salon worker</option>
+                                <option value="Head barber">Head barber</option>
+                            </select>
 
-                            <div class="form-control addtoCalDiv">
-                                <input [disabled]="!items.editDetails" readonly  (click)="datepickerFrom.open()" readonly placeholder="Break From" [matDatepicker]="datepickerFrom" 
-                                matDatepickerToggleIcon class="inputMat" [(ngModel)]="items.breakDateFrom">
-                                <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
-                                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                                </mat-datepicker-toggle>
-                                <mat-datepicker  #datepickerFrom></mat-datepicker>
-                            </div>
-                            <div class="form-control addtoCalDiv">
-                                <input [disabled]="!items.editDetails" readonly (click)="datepickerTo.open()" readonly placeholder="Break To"  [matDatepicker]="datepickerTo"
-                                  matDatepickerToggleIcon class="inputMat" [(ngModel)]="items.breakDateTo">
-                                <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
-                                  <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                                </mat-datepicker-toggle>
-                                <mat-datepicker  #datepickerTo></mat-datepicker>
-                            </div>
+                        </div>
+                        <div class="form-control addtoCalDiv"> <span class="labelSpan">{{'StaffPage.AddToCalender' |
+                                translate }}</span>
+                            <label class="switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" [(ngModel)]="items.addToCalendar"
+                                    [disabled]="!items.editDetails" />
+                                <div class="slider round"></div>
+                            </label>
+                        </div>
 
-                            <div class="form-control addtoCalDiv" *ngIf="!items.editDetails"> <span
-                                    class="labelSpan">{{'StaffPage.EmployeeDetails' | translate }}</span>
-                            </div>
-                            <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="items.editDetails"  mat-button (click)="openDialog('Staff3')"> <span
+                        <div class="form-control addtoCalDiv">
+                            <input [disabled]="!items.editDetails" readonly (click)="datepickerFrom.open()" readonly
+                                placeholder="Break From" [matDatepicker]="datepickerFrom" matDatepickerToggleIcon
+                                class="inputMat" [(ngModel)]="items.breakDateFrom">
+                            <mat-datepicker-toggle matIconSuffix [for]="datepickerFrom">
+                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #datepickerFrom></mat-datepicker>
+                        </div>
+                        <div class="form-control addtoCalDiv">
+                            <input [disabled]="!items.editDetails" readonly (click)="datepickerTo.open()" readonly
+                                placeholder="Break To" [matDatepicker]="datepickerTo" matDatepickerToggleIcon
+                                class="inputMat" [(ngModel)]="items.breakDateTo">
+                            <mat-datepicker-toggle matIconSuffix [for]="datepickerTo">
+                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #datepickerTo></mat-datepicker>
+                        </div>
+
+                        <div class="form-control addtoCalDiv" *ngIf="!items.editDetails"> <span
                                 class="labelSpan">{{'StaffPage.EmployeeDetails' | translate }}</span>
                         </div>
+                        <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="items.editDetails"
+                            mat-button (click)="openDialog('Staff3')"> <span
+                                class="labelSpan">{{'StaffPage.EmployeeDetails' | translate }}</span>
+                        </div>
+                        <div class="form-control addtoCalDiv" *ngIf="!items.editDetails"> <span
+                            class="labelSpan">{{'StaffPage.DeleteEmployee' | translate }}</span>
+                    </div>
+                    <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="items.editDetails"
+                        mat-button (click)="openDialog('Staff4')"> <span
+                            class="labelSpan">{{'StaffPage.DeleteEmployee' | translate }}</span>
+                    </div>
+
                         <div class="editBtnsDiv" *ngIf="items.editDetails">
-                            <button class="btn btn-primary cancelbtn" (click)="cancelChanges(items, i)">{{'buttonsText.Cancel' | translate }}</button>
-                            <button class="btn btn-primary savebtn" (click)="saved(items, i)">{{'buttonsText.Save' | translate }}</button>
+                            <button class="btn btn-primary cancelbtn"
+                                (click)="cancelChanges(items, i)">{{'buttonsText.Cancel' | translate }}</button>
+                            <button class="btn btn-primary savebtn" (click)="saved(items, i)">{{'buttonsText.Save' |
+                                translate }}</button>
                         </div>
                     </div>
                 </div>

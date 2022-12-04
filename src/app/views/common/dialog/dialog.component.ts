@@ -43,6 +43,8 @@ export class DialogComponent implements OnInit {
   formInitialize() {
     this.addAppointForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
+      serviceName: ['', [Validators.required]],
+      employeeName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
       startTime: ['', [Validators.required,]],
       finishTime: ['', [Validators.required,]],
       date: ['', [Validators.required,]],
@@ -57,6 +59,12 @@ export class DialogComponent implements OnInit {
   // validation
   get name() {
     return this.addAppointForm.get('name')!;
+  }
+  get serviceName() {
+    return this.addAppointForm.get('serviceName')!;
+  }
+  get employeeName() {
+    return this.addAppointForm.get('employeeName')!;
   }
   get startTime() {
     return this.addAppointForm.get('startTime')!;
@@ -116,8 +124,11 @@ export class DialogComponent implements OnInit {
     this.dialogRef.close();
     this.addAppointForm.reset()
   }
+  deleteItem(){
+    this.dialogRef.close();
+  }
 }
 
 export interface DialogData {
-  fromPage: 'salonPage' | 'calendar' | 'addAppointment' | 'companyInfo' | 'booking' | 'notification' | 'BookOfferTime' | 'Pos1' | 'Pos2' | 'Pos3' | 'Pos4' | 'Pos5' | 'Pos6' | 'Staff1' | 'Staff2' | 'Staff3';
+  fromPage: 'salonPage' | 'calendar' | 'addAppointment' | 'companyInfo' | 'booking' | 'notification' | 'BookOfferTime' | 'Pos1' | 'Pos2' | 'Pos3' | 'Pos4' | 'Pos5' | 'Pos6' | 'Pos7' | 'Staff1' | 'Staff2' | 'Staff3' | 'Staff4';
 }
