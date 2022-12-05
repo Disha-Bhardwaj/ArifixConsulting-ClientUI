@@ -219,7 +219,9 @@
             "H2P5": "Employee details will be auto-setup when your employee joins",
             "Head3": "List of filled out detials from the user profile page",
             "Head4": "Delete Employee",
-            "H4P1": "Are you sure you would like to delete this employee?"
+            "H4P1": "Are you sure you would like to delete this employee?",
+            "Head5": "Delete Position",
+            "H5P1": "Are you sure you would like to delete this position?"
         },
         "PositionPage": {
             "Head1": "Add Position.",
@@ -279,6 +281,7 @@
         "ScheduleSaved":"Opening timings has been saved",
         "JobTitle":"Please enter the Job title",
         "BookAccept":"Booking has been accepted",
-        "BookReject":"Booking has been rejected"
+        "BookReject":"Booking has been rejected",
+        "Delete":"Successfully deleted"
     }
 }

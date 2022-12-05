@@ -131,6 +131,9 @@ export class PositionsComponent implements OnInit {
   }
   // remove position
   removePosition(index: any) {
+    this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+      timeOut: 3000,
+    });
     this.arrayItemList.splice(index, 1)
   }
   // click on next button

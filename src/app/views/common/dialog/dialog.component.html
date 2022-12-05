@@ -346,30 +346,22 @@
 </div>
 <!-- coming from Position page step 6 to delete -->    
 <div *ngIf="data.fromPage == 'Pos7'">
-    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head6' | translate }}</h2>
-    <ul>
-        <li>
-            {{'DialogContent.PositionPage.H1P1' | translate }}
-        </li>
-        <li>{{'DialogContent.PositionPage.H1P2' | translate }}</li>
-        <li>{{'DialogContent.PositionPage.H1P3' | translate }}</li>
-        <li>{{'DialogContent.PositionPage.H1P4' | translate }}</li>
-    </ul>
-    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head7' | translate }}</h2>
-    <ul>
-        <li>
-            {{'DialogContent.PositionPage.H7P1' | translate }}
-        </li>
-        <li>{{'DialogContent.PositionPage.H7P2' | translate }}</li>
-    </ul>
-    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head8' | translate }}</h2>
-    <ul>
-        <li>
-            {{'DialogContent.PositionPage.H8P1' | translate }}
-        </li>
-        <li>{{'DialogContent.PositionPage.H8P2' | translate }}</li>
-    </ul>
-    <h2 class="headingDialog">{{'DialogContent.PositionPage.Head9' | translate }}</h2>
+    <div class="deleteSection">
+        <h2 class="headingDialog deleteText">{{'DialogContent.StaffPage.Head5' | translate }}</h2>
+        <img src="assets/icons/CrossSvg.svg" class="closeIcon" (click)="deleteItem('cancel')">
+    </div>
+    <h2 class="headingDialog deleteTextP">{{'DialogContent.StaffPage.H5P1' | translate }}</h2>
+    <div class="mb-3">
+        <div class="row dayRow">
+            <div class="col-6">
+                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem('cancel')">{{'buttonsText.Cancel' | translate }}</button>
+            </div>
+            <div class="col-6 ">
+                <button class="btn btn-primary savebtn cancelApp" style="background-color: #FF3B30; border:none;"
+                    (click)="deleteItem('delete')">{{'buttonsText.Delete' | translate }}</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- coming from Staff page step 1 -->
 <div *ngIf="data.fromPage == 'Staff1'">
@@ -403,17 +395,17 @@
 <div *ngIf="data.fromPage == 'Staff4'">
     <div class="deleteSection">
         <h2 class="headingDialog deleteText">{{'DialogContent.StaffPage.Head4' | translate }}</h2>
-        <img src="assets/icons/CrossSvg.svg" class="closeIcon" (click)="deleteItem()">
+        <img src="assets/icons/CrossSvg.svg" class="closeIcon" (click)="deleteItem('cancel')">
     </div>
     <h2 class="headingDialog deleteTextP">{{'DialogContent.StaffPage.H4P1' | translate }}</h2>
     <div class="mb-3">
         <div class="row dayRow">
             <div class="col-6">
-                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem()">{{'buttonsText.Cancel' | translate }}</button>
+                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem('cancel')">{{'buttonsText.Cancel' | translate }}</button>
             </div>
             <div class="col-6 ">
                 <button class="btn btn-primary savebtn cancelApp" style="background-color: #FF3B30; border:none;"
-                    (click)="deleteItem()">{{'buttonsText.Delete' | translate }}</button>
+                    (click)="deleteItem('delete')">{{'buttonsText.Delete' | translate }}</button>
             </div>
         </div>
     </div>

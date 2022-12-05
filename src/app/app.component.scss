@@ -148,6 +148,9 @@ p.text {
 .active .text {
   color: #ffffff;
 }
+.liNav{
+  margin-bottom: 10px;
+}
 /* media query */
 @media (max-width: 1085px) and (min-width: 767px) {
   ul.openUL {

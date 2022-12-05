@@ -219,7 +219,9 @@
             "H2P5": "Detaliile angajatului vor fi configurate automat atunci când angajatul dvs. se alătură",
             "Head3": "Lista detaliilor completate din pagina de profil de utilizator",
             "Head4": "Șterge angajat",
-            "H4P1": "Sigur doriți să ștergeți acest angajat?"
+            "H4P1": "Sigur doriți să ștergeți acest angajat?",
+            "Head5": "Șterge poziție",
+            "H5P1": "Sunteți sigur că doriți să ștergeți această poziție?"
         },
         "PositionPage": {
             "Head1": "Adăugați o poziție.",
@@ -279,6 +281,7 @@
         "ScheduleSaved":"Timpul de deschidere a fost salvat",
         "JobTitle":"Vă rugăm să introduceți titlul postului",
         "BookAccept":"Rezervarea a fost acceptată",
-        "BookReject":"Rezervarea a fost respinsă"
+        "BookReject":"Rezervarea a fost respinsă",
+        "Delete":"S-a șters cu succes"
     }
 }

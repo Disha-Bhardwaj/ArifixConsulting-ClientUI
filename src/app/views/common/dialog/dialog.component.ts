@@ -109,7 +109,12 @@ export class DialogComponent implements OnInit {
     this.dialogRef.close();
     this.addAppointForm.reset()
   }
-  deleteItem(){
+  deleteItem(value:any){
+    if(value=='delete'){
+      this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+        timeOut: 3000,
+      });
+    }
     this.dialogRef.close();
   }
 }
