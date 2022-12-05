@@ -69,10 +69,10 @@
                                 maxlength="300">
                             <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
                                 <div *ngIf="address.errors?.['required']">
-                                    This field is required.
+                                    {{'InputErrorMessages.RequiredField' | translate }}
                                 </div>
                                 <div *ngIf="address.errors?.['maxlength']">
-                                    Please add maximum 300 charaters
+                                    {{'InputErrorMessages.AddressChar' | translate }}
                                 </div>
                             </div>
 
@@ -86,11 +86,11 @@
                                 minlength="10" maxlength="10">
                             <div *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)" class="invalid-feedback">
                                 <div *ngIf="phoneNo.errors?.['required']">
-                                    This field is required.
+                                    {{'InputErrorMessages.RequiredField' | translate }}
                                 </div>
                                 <div
                                     *ngIf="phoneNo.errors?.['maxlength'] || phoneNo.errors?.['minlength'] || phoneNo.errors?.['pattern']">
-                                    Please add valid phone number
+                                    {{'InputErrorMessages.ValidNumber' | translate }}
                                 </div>
                             </div>
                         </div>
@@ -106,13 +106,10 @@
                                 maxlength="30">
                             <div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
                                 <div *ngIf="city.errors?.['required']">
-                                    This field is required.
-                                </div>
-                                <div *ngIf="city.errors?.['maxlength']">
-                                    Please add maximum 30 charaters
+                                    {{'InputErrorMessages.RequiredField' | translate }}
                                 </div>
                                 <div *ngIf="city.errors?.['pattern']">
-                                    Please add valid city
+                                    {{'InputErrorMessages.ValidCity' | translate }}
                                 </div>
                             </div>
 
@@ -127,10 +124,10 @@
                             <div *ngIf="salonName.invalid && (salonName.dirty || salonName.touched)"
                                 class="invalid-feedback">
                                 <div *ngIf="salonName.errors?.['required']">
-                                    This field is required.
+                                    {{'InputErrorMessages.RequiredField' | translate }}
                                 </div>
                                 <div *ngIf="salonName.errors?.['maxlength'] || salonName.errors?.['minlength']">
-                                    Please add atleast 2 and max 60 characters
+                                    {{'InputErrorMessages.NameChar' | translate }}
                                 </div>
                             </div>
                         </div>
@@ -149,13 +146,13 @@
                                 <div *ngIf="country.invalid && (country.dirty || country.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="country.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                     <div *ngIf="country.errors?.['maxlength']">
-                                        Please add maximum 30 charaters
+                                        {{'InputErrorMessages.CityChar' | translate }}
                                     </div>
                                     <div *ngIf="country.errors?.['pattern']">
-                                        Please add valid country
+                                        {{'InputErrorMessages.ValidCountry' | translate }}
                                     </div>
                                 </div>
 
@@ -186,13 +183,13 @@
                                 <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="zipCode.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                     <div *ngIf="zipCode.errors?.['maxlength']">
-                                        Please add maximum 15 charaters
+                                        {{'InputErrorMessages.ZipcodeChar' | translate }} 
                                     </div>
                                     <div *ngIf="zipCode.errors?.['pattern']">
-                                        Please add valid zip code
+                                        {{'InputErrorMessages.ValidZipcode' | translate }}
                                     </div>
                                 </div>
 
@@ -224,7 +221,7 @@
                                 <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="currency.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                 </div>
 
@@ -251,13 +248,13 @@
                                 <div *ngIf="country.invalid && (country.dirty || country.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="country.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                     <div *ngIf="country.errors?.['maxlength']">
-                                        Please add maximum 30 charaters
+                                        {{'InputErrorMessages.CityChar' | translate }}
                                     </div>
                                     <div *ngIf="country.errors?.['pattern']">
-                                        Please add valid country
+                                        {{'InputErrorMessages.ValidCountry' | translate }}
                                     </div>
                                 </div>
 
@@ -272,13 +269,13 @@
                                 <div *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="zipCode.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                     <div *ngIf="zipCode.errors?.['maxlength']">
-                                        Please add maximum 15 charaters
+                                        {{'InputErrorMessages.ZipcodeChar' | translate }}Please add maximum 15 charaters
                                     </div>
                                     <div *ngIf="zipCode.errors?.['pattern']">
-                                        Please add valid zip code
+                                        {{'InputErrorMessages.ValidZipcode' | translate }}
                                     </div>
                                 </div>
                             </div>
@@ -297,7 +294,7 @@
                                 <div *ngIf="currency.invalid && (currency.dirty || currency.touched)"
                                     class="invalid-feedback">
                                     <div *ngIf="currency.errors?.['required']">
-                                        This field is required.
+                                        {{'InputErrorMessages.RequiredField' | translate }}
                                     </div>
                                 </div>
 

@@ -158,10 +158,10 @@
                         maxlength="60" minlength="2">
                     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
                         <div *ngIf="name.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                         <div *ngIf="name.errors?.['maxlength'] || name.errors?.['minlength']">
-                            Please add valid name
+                            {{'InputErrorMessages.ValidName' | translate }}
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         maxlength="60" minlength="2">
                     <div *ngIf="serviceName.invalid && (serviceName.dirty || serviceName.touched)" class="invalid-feedback">
                         <div *ngIf="serviceName.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                     </div>
                 </div>
@@ -191,10 +191,10 @@
                         maxlength="60" minlength="2">
                     <div *ngIf="employeeName.invalid && (employeeName.dirty || employeeName.touched)" class="invalid-feedback">
                         <div *ngIf="employeeName.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                         <div *ngIf="employeeName.errors?.['maxlength'] || employeeName.errors?.['minlength']">
-                            Please add valid employee Name
+                            {{'InputErrorMessages.ValidEmail' | translate }}
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                     <ngx-material-timepicker #startTimeNGX></ngx-material-timepicker>
                     <div *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)" class="invalid-feedback">
                         <div *ngIf="startTime.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                     </div>
 
@@ -226,7 +226,7 @@
                     <div *ngIf="finishTime.invalid && (finishTime.dirty || finishTime.touched)"
                         class="invalid-feedback">
                         <div *ngIf="finishTime.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                     </div>
                 </div>
@@ -243,7 +243,7 @@
 
                     <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
                         <div *ngIf="date.errors?.['required']">
-                            This field is required.
+                            {{'InputErrorMessages.RequiredField' | translate }}
                         </div>
                     </div>
 

@@ -283,5 +283,24 @@
         "BookAccept":"Booking has been accepted",
         "BookReject":"Booking has been rejected",
         "Delete":"Successfully deleted"
+    },
+    "InputErrorMessages":{
+        "RequiredField":"This field is required",
+        "ValidName":"Please enter valid name",
+        "ValidEmail":"Please enter valid email",
+        "EmailChar":"Please add atleast 6 and max 60 characters",
+        "NameChar":"Please add atleast 2 and max 60 characters",
+        "ValidNumber":"Please add valid phone number",
+        "PassChar":"Please add atleast 6 and maximum 10 characters",
+        "PassNotMatch":"Password not matched",
+        "AddressChar":"Please add maximum 300 charaters",
+        "ValidCity":"Please add valid city",
+        "CityChar":"Please add maximum 30 charaters",
+        "ValidCountry":"Please add valid country",
+        "ValidZipcode":"Please add valid zip code",
+        "ZipcodeChar":"Please add maximum 15 charaters",
+        "ValidCurrency":"Please add maximum 15 charaters",
+        "ValidVatID":"Please add valid vat ID",
+        "ValidReg":"Please add valid registration"
     }
 }

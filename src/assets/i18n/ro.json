@@ -283,5 +283,23 @@
         "BookAccept":"Rezervarea a fost acceptată",
         "BookReject":"Rezervarea a fost respinsă",
         "Delete":"S-a șters cu succes"
+    },
+     "InputErrorMessages":{
+        "RequiredField":"Acest câmp este obligatoriu",
+        "ValidEmail":"introduceți un e-mail valid",
+        "EmailChar":"adăugați cel puțin 6 și maximum 60 de caractere",
+        "NameChar":"adăugați cel puțin 2 și maximum 60 de caractere",
+        "ValidNumber":"adăugați un număr de telefon valid",
+        "PassChar":"adăugați cel puțin 6 și maximum 10 de caractere",
+        "PassNotMatch":"Parola nu se potrivește",
+        "AddressChar":"adăugați maximum 300 de caractere",
+        "ValidCity":"adăugați un oraș valid",
+        "CityChar":"adăugați maximum 30 de caractere",
+        "ValidCountry":"adăugați o țară validă",
+        "ValidZipcode":"adăugați un cod poștal valid",
+        "ZipcodeChar":"adăugați maximum 15 caractere",
+        "ValidCurrency":"adăugați maximum 15 caractere",
+        "ValidVatID":"adăugați un cod de TVA valid",
+        "ValidReg":"adăugați o înregistrare validă"
     }
 }
