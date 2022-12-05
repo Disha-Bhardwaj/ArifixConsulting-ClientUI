@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { DatepickerOptions } from 'ng2-datepicker';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dialog',
@@ -13,33 +13,18 @@ export class DialogComponent implements OnInit {
 
   addAppointForm!: FormGroup;
   offerTimeForm!: FormGroup;
-  // options: DatepickerOptions = {};
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService,
     private fb: FormBuilder, public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data1: any) { }
-
+    @Inject(MAT_DIALOG_DATA) public data1: any, public translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.formInitialize();
-    // this.options = {
-    //   placeholder: 'dd/mm/yyyy',
-    //   format: 'dd/MM/yyyy',
-    //   position: 'bottom',
-    //   inputClass: 'form-control input formIn',
-    // };
     this.addAppointForm.reset();
   }
   @ViewChild('startTimeNGX') startTimeNGX: any;
-  // closeTimeField(value:any){
-  //   if(value  == 'addAppStart'){
-      
-  //   }
-  // }
   showAddAppStart = false
  
-  
-
   formInitialize() {
     this.addAppointForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
@@ -80,23 +65,23 @@ export class DialogComponent implements OnInit {
     if (this.offerTimeForm.valid) {
       if ((this.offerTimeForm.value.startDate < this.offerTimeForm.value.finishDate )|| (+this.offerTimeForm.value.startDate === +this.offerTimeForm.value.finishDate)) {
         if(this.offerTimeForm.value.startTime < this.offerTimeForm.value.finishTime){
-          this.toastr.success('Offer time sent to the User', '', {
+          this.toastr.success(this.translateService.instant("ToastMessages.OfferTime"), '', {
             timeOut: 3000,
           });
           this.dialogRef.close();
         }
         else{
-          this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+          this.toastr.error(this.translateService.instant("ToastMessages.TimeError"), this.translateService.instant("ToastMessages.Error"), {
             timeOut: 3000,
           });
         }
       } else {
-        this.toastr.error('Finishing date should be greater than Starting date', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.DateError"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }
     } else {
-      this.toastr.error('Please enter from date and time and to date and time', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.OfferError"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000,
       });
     }
@@ -105,17 +90,17 @@ export class DialogComponent implements OnInit {
   saveAppointment() {
     if (this.addAppointForm.valid) {
       if (this.addAppointForm.value.startTime < this.addAppointForm.value.finishTime) {
-        this.toastr.success('Appointment is saved', '', {
+        this.toastr.success(this.translateService.instant("ToastMessages.Appointment"), '', {
           timeOut: 3000,
         });
         this.dialogRef.close();
       } else {
-        this.toastr.error('Finishing time should be greater than Starting time', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.TimeError"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }
     }else{
-      this.toastr.error('Please fill all the fields', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000,
       });
     }

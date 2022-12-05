@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 declare var $: any;
 @Component({
   selector: 'app-salon-page',
@@ -14,7 +15,7 @@ declare var $: any;
 export class SalonPageComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private fb: FormBuilder, private toastr: ToastrService,
-    private cookies: CookieService, private route: Router) { }
+    private cookies: CookieService, private route: Router, public translateService: TranslateService) { }
 
   salonDetailForm!: FormGroup;
   openingTimeForm!: FormGroup;
@@ -125,7 +126,7 @@ export class SalonPageComponent implements OnInit {
   }
   saveSalonDetails() {
     if (this.salonDetailForm.valid) {
-      this.toastr.success('Salon details saved successfully', '', {
+      this.toastr.success(this.translateService.instant("ToastMessages.SalonSuccess"), '', {
         timeOut: 3000,
       });
       // this.salonDetailForm.reset({
@@ -134,7 +135,7 @@ export class SalonPageComponent implements OnInit {
       this.showEditSalonBtn = false
       this.disableForm('salon')
     } else {
-      this.toastr.error('Please fill all the details', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000
       });
     }
@@ -148,11 +149,11 @@ export class SalonPageComponent implements OnInit {
          || this.openingTimeForm.value.friClose < this.openingTimeForm.value.friOpen
          || this.openingTimeForm.value.satClose < this.openingTimeForm.value.satOpen
          || this.openingTimeForm.value.sunClose < this.openingTimeForm.value.sunOpen) {
-          this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
+          this.toastr.error(this.translateService.instant("ToastMessages.CloseTime"), this.translateService.instant("ToastMessages.Error"), {
             timeOut: 3000
           });
       }else{
-        this.toastr.success('Timings saved successfully', '', {
+        this.toastr.success(this.translateService.instant("ToastMessages.TimeSaved"), '', {
           timeOut: 3000,
         });
         // this.openingTimeForm.reset()
@@ -160,7 +161,7 @@ export class SalonPageComponent implements OnInit {
         this.disableForm('opentime')
       }
     } else {
-      this.toastr.error('Please fill all the details', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000
       });
     }

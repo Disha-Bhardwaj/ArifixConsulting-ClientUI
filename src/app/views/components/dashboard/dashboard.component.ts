@@ -17,8 +17,6 @@ export class DashboardComponent implements OnInit {
   start(value:any){
     this.cookies.set('wizardStart','true')
     this.route.navigateByUrl('/company-Info')
-    // this.initialBox = false
-    // this.steps = value
   }
 
 }

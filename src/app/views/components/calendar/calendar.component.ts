@@ -12,7 +12,6 @@ import {
 } from '@fullcalendar/web-component';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import interactionPlugin from '@fullcalendar/interaction';
 import { INITIAL_EVENTS, createEventId } from '../../common/event-utils';
 
 
@@ -21,7 +20,6 @@ defineFullCalendarElement();
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CalendarComponent implements OnInit {
 
@@ -47,7 +45,6 @@ export class CalendarComponent implements OnInit {
     };
   }
 
-  // calendarVisible = true;
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
     headerToolbar: {
@@ -57,20 +54,11 @@ export class CalendarComponent implements OnInit {
     },
     initialView: 'timeGridDay',
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
-    // weekends: true,
-    // editable: true,
-    // selectable: true,
-    // selectMirror: true,
-    // dayMaxEvents: true,
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
     eventsSet: this.handleEvents.bind(this)
   };
   currentEvents: EventApi[] = [];
-
-  // handleCalendarToggle() {
-  //   this.calendarVisible = !this.calendarVisible;
-  // }
 
   handleWeekendsToggle() {
     this.calendarOptions = {

@@ -252,5 +252,33 @@
             "H8P2": "Repetați pașii de service de la 1 la 4",
             "Head9": "Când este terminat, Faceți clic pe salvare"
         }
+    },
+    "ToastMessages":{
+        "OfferTime":"Ofertă de timp transmisă Utilizatorului",
+        "TimeError":"Timpul de terminare ar trebui să fie mai mare decât ora de începere",
+        "DateError":"Data de încheiere ar trebui să fie mai mare decât Data de începere",
+        "OfferError":"Vă rugăm să introduceți de la data și ora și până la data și ora",
+        "Error":"Eroare",
+        "FillAll":"Vă rugăm să completați tot câmpul",
+        "Appointment":"Numirea este salvată",
+        "CompanyInfo":"Informațiile companiei dvs. au fost salvate cu succes",
+        "ValidEmail":"Vă rugăm să introduceți adresa de e-mail validă a angajatului",
+        "BreakError":"Pauza de la data nu poate fi mai mare decât Pauza până la data",
+        "DetailSaved":"Detaliile sunt salvate cu succes",
+        "Noti":"Notificările dvs. sunt dezactivate de la",
+        "To":"la",
+        "NotiTime":"Timpul de terminare ar trebui să fie mai mare decât ora de începere",
+        "NotiTimeError":"Vă rugăm să introduceți de la și până la oră",
+        "SalonSuccess":"Detaliile salonului au fost salvate cu succes",
+        "TimeSaved":"Timpurile au fost salvate cu succes",
+        "CloseTime":"Timpurile de închidere ar trebui să fie mai mari decât cele de deschidere",
+        "NumberValid":"În câmpul Preț sunt permise doar numere",
+        "EmployeeType":"Vă rugăm să selectați tipul de angajat",
+        "Permission":"Vă rugăm să selectați permisiunile",
+        "TimeEmptyError":"Vă rugăm să completați toate detaliile programului",
+        "ScheduleSaved":"Timpul de deschidere a fost salvat",
+        "JobTitle":"Vă rugăm să introduceți titlul postului",
+        "BookAccept":"Rezervarea a fost acceptată",
+        "BookReject":"Rezervarea a fost respinsă"
     }
 }

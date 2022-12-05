@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 declare var $: any;
 class Structure {
   jobTitle?: string;
@@ -51,7 +52,7 @@ export class PositionsComponent implements OnInit {
   arrayItemList: Structure[] = [];
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
-    private cookies: CookieService, private route: Router) { }
+    private cookies: CookieService, private route: Router, public translateService: TranslateService) { }
 
   ngOnInit(): void {
     if (this.cookies.get('wizardStart') == 'true') {
@@ -72,7 +73,7 @@ export class PositionsComponent implements OnInit {
     var reg = new RegExp('^[0-9]*$');
     let match = reg.test(value)
     if (!match) {
-      this.toastr.error('Only numbers are allowed in Price field', '', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), '', {
         timeOut: 3000,
       });
       this.savedBtnDis = true
@@ -140,7 +141,7 @@ export class PositionsComponent implements OnInit {
         item.showStep = 'scheduleStep';
         item.showEditBtn = true
       } else {
-        this.toastr.error('Please enter the Job title', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.JobTitle"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }
@@ -154,7 +155,7 @@ export class PositionsComponent implements OnInit {
         || item.friClose < item.friOpen
         || item.satClose < item.satOpen
         || item.sunClose < item.sunOpen) {
-        this.toastr.error('Closing timings should be greater then Opening timings', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.CloseTime"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000
         });
       } else if (item.monClose == null || item.monOpen == null
@@ -164,12 +165,12 @@ export class PositionsComponent implements OnInit {
         || item.friClose == null || item.friOpen == null
         || item.satClose == null || item.satOpen == null
         || item.sunClose == null || item.sunOpen == null) {
-        this.toastr.error('Please fill all the schedule time details', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.TimeEmptyError"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000
         });
       }
       else {
-        this.toastr.success('Opening timings has been saved', '', {
+        this.toastr.success(this.translateService.instant("ToastMessages.ScheduleSaved"), '', {
           timeOut: 3000,
         });
         item.showStep = 'permissionStep'
@@ -188,7 +189,7 @@ export class PositionsComponent implements OnInit {
       if (valid) {
         item.showStep = 'employeeTypeStep'
       } else {
-        this.toastr.error('Please select the permissions', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.Permission"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }
@@ -198,7 +199,7 @@ export class PositionsComponent implements OnInit {
       if (item.employeeType != '') {
         item.showStep = 'serviceStep'
       } else {
-        this.toastr.error('Please select the employee type', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.EmployeeType"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }
@@ -224,7 +225,7 @@ export class PositionsComponent implements OnInit {
         }
       });
       if (valid) {
-        this.toastr.success('Details are saved successfully', '', {
+        this.toastr.success(this.translateService.instant("ToastMessages.DetailSaved"), '', {
           timeOut: 3000,
         });
         item.editTitle = true;
@@ -261,7 +262,7 @@ export class PositionsComponent implements OnInit {
         ];
 
       } else {
-        this.toastr.error('Please fill all the values', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       }

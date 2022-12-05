@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormControl } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
 import { Route, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 declare var $: any;
 
 @Component({
@@ -22,7 +23,7 @@ export class BookingComponent implements OnInit {
   options: DatepickerOptions = {};
   
 
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router) {
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private router: Router, public translateService: TranslateService) {
   
    }
   
@@ -71,12 +72,12 @@ export class BookingComponent implements OnInit {
   }
   acceptReject(value: any) {
     if (value == 'accept') {
-      this.toastr.success('Booking has been accepted', '', {
+      this.toastr.success(this.translateService.instant("ToastMessages.BookAccept"), '', {
         timeOut: 3000,
       });
     }
     else {
-      this.toastr.error('Booking has been rejected', '', {
+      this.toastr.error(this.translateService.instant("ToastMessages.BookReject"), '', {
         timeOut: 3000,
       });
 

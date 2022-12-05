@@ -252,5 +252,33 @@
             "H8P2": "Repeat service steps 1 to 4",
             "Head9": "When finished, click save"
         }
+    },
+    "ToastMessages":{
+        "OfferTime":"Offer time sent to the User",
+        "TimeError":"Finishing time should be greater than Starting time",
+        "DateError":"Finishing date should be greater than Starting date",
+        "OfferError":"Please enter from date and time and to date and time",
+        "Error":"Error",
+        "FillAll":"Please fill all the field",
+        "Appointment":"Appointment is saved",
+        "CompanyInfo":"Your company information saved successfully",
+        "ValidEmail":"Please enter valid employee email",
+        "BreakError":"Break from date cannot be greater than Break to date",
+        "DetailSaved":"Details are saved successfully",
+        "Noti":"Your notifications are turned off from",
+        "To":"to",
+        "NotiTime":"Finishing time should be greater than Starting time",
+        "NotiTimeError":"Please enter from and to time",
+        "SalonSuccess":"Salon details saved successfully",
+        "TimeSaved":"Timings saved successfully",
+        "CloseTime":"Closing timings should be greater then Opening timings",
+        "NumberValid":"Only numbers are allowed in Price field",
+        "EmployeeType":"Please select the employee type",
+        "Permission":"Please select the permissions",
+        "TimeEmptyError":"Please fill all the schedule time details",
+        "ScheduleSaved":"Opening timings has been saved",
+        "JobTitle":"Please enter the Job title",
+        "BookAccept":"Booking has been accepted",
+        "BookReject":"Booking has been rejected"
     }
 }

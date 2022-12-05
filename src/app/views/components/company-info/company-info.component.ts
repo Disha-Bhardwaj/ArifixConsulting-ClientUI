@@ -5,6 +5,7 @@ import { DialogComponent } from '../../common/dialog/dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-company-info',
@@ -18,7 +19,7 @@ export class CompanyInfoComponent implements OnInit {
   uploadDoc: any
   showWizard = false
   constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService, 
-    private cookies: CookieService, private route: Router) { }
+    private cookies: CookieService, private route: Router, public translateService: TranslateService) { }
 
   openDialog() {
     this.dialog.open(DialogComponent, {
@@ -54,19 +55,17 @@ export class CompanyInfoComponent implements OnInit {
   }
   saveInfo() {
     if (this.infoForm.valid) {
-      this.toastr.success('Your company information saved successfully', '', {
+      this.toastr.success(this.translateService.instant("ToastMessages.CompanyInfo"), '', {
         timeOut: 3000,
       });
-      // this.infoForm.reset()
       this.showEdit = false
     for (const control of Object.keys(this.infoForm.controls)) {
       this.infoForm.controls[control].disable()
     }
     } else {
-      this.toastr.error('Please fill all the details', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000
       });
-      // this.infoForm.reset()
     }
 
   }

@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatepickerOptions } from 'ng2-datepicker';
+import { TranslateService } from '@ngx-translate/core';
 declare var $: any;
 class Structure {
   editDetails?: boolean;
@@ -23,7 +24,7 @@ class Structure {
 export class StaffComponent implements OnInit {
 
   constructor(private fb: FormBuilder, public dialog: MatDialog, private toastr: ToastrService,
-    private cookies: CookieService, private route: Router) { }
+    private cookies: CookieService, private route: Router, public translateService: TranslateService) { }
 
   showStep = ''
   showWizard = false
@@ -81,7 +82,7 @@ export class StaffComponent implements OnInit {
         this.showStep = value;
       }
       else {
-        this.toastr.error('Please enter valid employee email', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.ValidEmail"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000
         });
       }
@@ -92,21 +93,20 @@ export class StaffComponent implements OnInit {
   // saved details
   saved(dataItem: any, index: any) {
     if (dataItem.position == '' || dataItem.breakDateFrom == null || dataItem.breakDateTo == null) {
-      this.toastr.error('Please enter all the fields', 'Error', {
+      this.toastr.error(this.translateService.instant("ToastMessages.FillAll"), this.translateService.instant("ToastMessages.Error"), {
         timeOut: 3000,
       });
     }
     else{
       if (dataItem.breakDateFrom > dataItem.breakDateTo) {
-        this.toastr.error('Break from date cannot be greater than Break to date', 'Error', {
+        this.toastr.error(this.translateService.instant("ToastMessages.BreakError"), this.translateService.instant("ToastMessages.Error"), {
           timeOut: 3000,
         });
       } else {
-        this.toastr.success('Details are saved successfully', '', {
+        this.toastr.success(this.translateService.instant("ToastMessages.DetailSaved"), '', {
           timeOut: 3000,
         });
         dataItem.editDetails = false;
-        // this.arrayItemList.splice(index, 1)
       }
     }
   }

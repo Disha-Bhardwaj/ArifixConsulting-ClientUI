@@ -27,7 +27,9 @@ button.btn.btn-primary.sendbtn {
   border: 5px solid #e4e4e4;
 }
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: -9px !important;
   border-top-left-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
@@ -62,10 +64,6 @@ button.btn.btn-primary.sendbtn {
 .imgCol2 {
   flex-direction: row-reverse;
 }
-// img.quesIcon {
-//   width: 30px;
-//   height: 30px;
-// }
 img.editIcon {
   margin-right: 15px;
 }
@@ -89,7 +87,6 @@ h2.nameH {
   letter-spacing: -0.25px;
   color: #000000;
 }
-// select.form-control.select,
 .addtoCalDiv {
   font-family: "Maven Pro";
   font-style: normal;
@@ -109,7 +106,6 @@ select:disabled {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  // width: min-content;
   padding: 0px;
   font-family: "Maven Pro";
   font-style: normal;
@@ -122,11 +118,6 @@ select:disabled {
   background-color: rgba(255, 255, 255, 1) !important;
   width: 119px;
 }
-// select:focus,select:valid {
-//   min-width: 90px;
-//   // width: auto;
-// }
-
 .addtoCalDiv {
   display: flex;
   flex-direction: row;
@@ -154,9 +145,6 @@ button.btn.btn-primary.savebtn {
 input:read-only {
   color: #000000 !important;
 }
-// .clicked {
-//   transform: rotate(180deg);
-// }
 .breakArr {
   width: 10px;
   height: 7px;
@@ -200,16 +188,10 @@ mat-icon.mat-icon.notranslate.positionDropIcon.material-icons.mat-ligature-font.
   position: absolute;
   margin-left: 8%;
 }
-// #PosSelect {
-//   -webkit-appearance: none !important;
-//   -moz-appearance: none !important;
-//   appearance: none !important;
-//   // width: 79px;
-// }
 /* media query */
 @media (max-width: 767px) and (min-width: 200px) {
   button.btn.btn-primary.savebtn.addPosBtn {
-    width: 47%;
+    width: 56%;
   }
   .col-lg-4.col-md-4.col-sm-12.topbtncol.emailCol {
     margin-bottom: 5%;
@@ -221,19 +203,17 @@ mat-icon.mat-icon.notranslate.positionDropIcon.material-icons.mat-ligature-font.
   }
 }
 #PosSelect {
-    -webkit-appearance: none !important;
+  -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
-  // background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
   -webkit-appearance: none;
-  // background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
-  // background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  // background-repeat: no-repeat;
-  // background-position-x: 98%;
-  // background-position-y: 50%;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right !important;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right !important;
   appearance: none !important;
   background-size: 12px 11px !important;
   background-position: 99% 50% !important;
-  #safari { background-color:#fff; background-color: rgba(255, 255, 255, 1) !important;}
+  #safari {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1) !important;
+  }
 }
