@@ -61,7 +61,7 @@ h2.nameH {
 }
 button.btn.btn-primary.nextBtn {
   height: 36px;
-  padding: 6px 20px;
+  padding: 6px 9px;
   background: #004fcb;
   font-family: "Open Sans";
   font-style: normal;
@@ -206,6 +206,10 @@ input.form-control.input.ser {
   height: 50px;
   margin-bottom: 17px;
 }
+button.btn.btn-primary.savebtn,
+  button.btn.btn-primary.cancelbtn {
+    padding: 10px !important;
+  }
 /* media query */
 @media (max-width: 1657px) and (min-width: 1425px) {
   .quesJob {
@@ -268,6 +272,7 @@ input.form-control.input.ser {
     height: 50px;
     font-size: 16px;
     letter-spacing: -1px;
+    padding: 10px !important;
   }
   input.form-control.input {
     font-size: 18px;

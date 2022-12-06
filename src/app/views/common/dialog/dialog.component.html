@@ -279,9 +279,9 @@
     <h2 class="headingDialog">{{'DialogContent.PositionPage.Head2' | translate }}</h2>
     <ul>
         <li>
-            {{'DialogContent.PositionPage.H1P1' | translate }}
+            {{'DialogContent.PositionPage.H2P1' | translate }}
         </li>
-        <li>{{'DialogContent.PositionPage.H1P2' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H2P2' | translate }}</li>
     </ul>
 </div>
 <!-- coming from Position page step 3 -->
@@ -322,11 +322,11 @@
     <h2 class="headingDialog">{{'DialogContent.PositionPage.Head6' | translate }}</h2>
     <ul>
         <li>
-            {{'DialogContent.PositionPage.H1P1' | translate }}
+            {{'DialogContent.PositionPage.H6P1' | translate }}
         </li>
-        <li>{{'DialogContent.PositionPage.H1P2' | translate }}</li>
-        <li>{{'DialogContent.PositionPage.H1P3' | translate }}</li>
-        <li>{{'DialogContent.PositionPage.H1P4' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H6P2' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H6P3' | translate }}</li>
+        <li>{{'DialogContent.PositionPage.H6P4' | translate }}</li>
     </ul>
     <h2 class="headingDialog">{{'DialogContent.PositionPage.Head7' | translate }}</h2>
     <ul>
@@ -354,11 +354,13 @@
     <div class="mb-3">
         <div class="row dayRow">
             <div class="col-6">
-                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem('cancel')">{{'buttonsText.Cancel' | translate }}</button>
+                <!-- (click)="deleteItem('cancel')" -->
+                <button class="btn btn-primary savebtn cancelApp" (click)="data.callback('No')"(click)="deleteItem('delete')" >{{'buttonsText.Cancel' | translate }}</button>
             </div>
             <div class="col-6 ">
+                <!-- (click)="deleteItem('delete')" -->
                 <button class="btn btn-primary savebtn cancelApp" style="background-color: #FF3B30; border:none;"
-                    (click)="deleteItem('delete')">{{'buttonsText.Delete' | translate }}</button>
+                    (click)="data.callback('Yes')" (click)="deleteItem('delete')">{{'buttonsText.Delete' | translate }}</button>
             </div>
         </div>
     </div>
@@ -401,11 +403,11 @@
     <div class="mb-3">
         <div class="row dayRow">
             <div class="col-6">
-                <button class="btn btn-primary savebtn cancelApp" (click)="deleteItem('cancel')">{{'buttonsText.Cancel' | translate }}</button>
+                <button class="btn btn-primary savebtn cancelApp" (click)="data.callback('No')" (click)="deleteItem('delete')" (click)="deleteItem('cancel')">{{'buttonsText.Cancel' | translate }}</button>
             </div>
             <div class="col-6 ">
                 <button class="btn btn-primary savebtn cancelApp" style="background-color: #FF3B30; border:none;"
-                    (click)="deleteItem('delete')">{{'buttonsText.Delete' | translate }}</button>
+                (click)="data.callback('Yes')" (click)="deleteItem('delete')" >{{'buttonsText.Delete' | translate }}</button>
             </div>
         </div>
     </div>

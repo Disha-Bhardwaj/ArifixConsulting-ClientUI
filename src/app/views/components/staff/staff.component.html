@@ -100,8 +100,8 @@
                         </div>
                         <div class="form-control addtoCalDiv"> <span class="labelSpan">{{'StaffPage.AddToCalender' |
                                 translate }}</span>
-                            <label class="switch" for="checkbox">
-                                <input type="checkbox" id="checkbox" [(ngModel)]="items.addToCalendar"
+                            <label class="switch" for="checkbox{{i}}">
+                                <input type="checkbox" id="checkbox{{i}}" [(ngModel)]="items.addToCalendar"
                                     [disabled]="!items.editDetails" />
                                 <div class="slider round"></div>
                             </label>
@@ -137,7 +137,7 @@
                             class="labelSpan">{{'StaffPage.DeleteEmployee' | translate }}</span>
                     </div>
                     <div class="form-control addtoCalDiv" style="cursor: pointer;" *ngIf="items.editDetails"
-                        mat-button (click)="openDialog('Staff4')"> <span
+                        mat-button (click)="openDialog('Staff4')" (click)="closeChanges(i)"> <span
                             class="labelSpan">{{'StaffPage.DeleteEmployee' | translate }}</span>
                     </div>
 

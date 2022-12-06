@@ -30,6 +30,7 @@ export class StaffComponent implements OnInit {
   showWizard = false
   infoForm!: FormGroup;
   arrayItemList: Structure[] = [];
+  selectedRemoveIndex:any
 
   adjustWidth(value: any) {
     $('#PosSelect').css('width', value.length * 10 + 20 + 'px')
@@ -129,14 +130,25 @@ export class StaffComponent implements OnInit {
   }
   // close changes
   closeChanges(index: any) {
-    this.arrayItemList.splice(index, 1)
+    this.selectedRemoveIndex = index
+    // this.arrayItemList.splice(index, 1)
   }
   // open dialog box
   openDialog(value: any) {
     this.dialog.open(DialogComponent, {
       data: {
+        callback: this.callBack.bind(this),
         fromPage: value,
       },
     });
+  }
+  // callback
+  callBack(value: string) {
+    if(value == 'Yes'){
+      this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+        timeOut: 3000,
+      });
+      this.arrayItemList.splice(this.selectedRemoveIndex, 1)
+    }
   }
 }

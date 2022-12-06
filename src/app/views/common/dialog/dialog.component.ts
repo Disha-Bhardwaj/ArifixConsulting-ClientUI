@@ -14,9 +14,10 @@ export class DialogComponent implements OnInit {
   addAppointForm!: FormGroup;
   offerTimeForm!: FormGroup;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private toastr: ToastrService,
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { callback: any; fromPage: any }
+  , private toastr: ToastrService,
     private fb: FormBuilder, public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data1: any, public translateService: TranslateService) { }
+     public translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.formInitialize();
@@ -110,11 +111,11 @@ export class DialogComponent implements OnInit {
     this.addAppointForm.reset()
   }
   deleteItem(value:any){
-    if(value=='delete'){
-      this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
-        timeOut: 3000,
-      });
-    }
+    // if(value=='delete'){
+    //   this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+    //     timeOut: 3000,
+    //   });
+    // }
     this.dialogRef.close();
   }
 }

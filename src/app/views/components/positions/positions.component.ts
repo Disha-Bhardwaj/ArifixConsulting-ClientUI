@@ -50,6 +50,7 @@ export class PositionsComponent implements OnInit {
   serviceCount = 0
   savedBtnDis = false
   arrayItemList: Structure[] = [];
+  selectedRemoveIndex:any
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private fb: FormBuilder,
     private cookies: CookieService, private route: Router, public translateService: TranslateService) { }
@@ -83,7 +84,14 @@ export class PositionsComponent implements OnInit {
     }
   }
 
-
+  callBack(value: string) {
+    if(value == 'Yes'){
+      this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+        timeOut: 3000,
+      });
+      this.arrayItemList.splice(this.selectedRemoveIndex, 1)
+    }
+  }
 
   // wizard
   nextWizard() {
@@ -97,6 +105,7 @@ export class PositionsComponent implements OnInit {
   openDialog(value: any) {
     this.dialog.open(DialogComponent, {
       data: {
+        callback: this.callBack.bind(this),
         fromPage: value,
       },
     });
@@ -129,12 +138,14 @@ export class PositionsComponent implements OnInit {
       ]
     })
   }
+  
   // remove position
   removePosition(index: any) {
-    this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
-      timeOut: 3000,
-    });
-    this.arrayItemList.splice(index, 1)
+    this.selectedRemoveIndex = index
+    // this.toastr.success(this.translateService.instant("ToastMessages.Delete"), '', {
+    //   timeOut: 3000,
+    // });
+    // this.arrayItemList.splice(index, 1)
   }
   // click on next button
   clickOnNextBTN(item: any, index: any, goTO: any) {
