@@ -150,7 +150,9 @@
     "NotificationPage": {
         "Service": "Service",
         "Time": "Time",
-        "TurnNotificationsOff": "Turn notifications off"
+        "TurnNotificationsOff": "Turn notifications off",
+        "From":"From",
+        "To":"To"
     },
     "DialogContent": {
         "SalonPage": {

@@ -10,14 +10,14 @@
             </div>
             <div class="notiDivUpper">
                 <div class="boxInp">
-                    <span style="display: flex;align-items: center;">From</span>
+                    <span style="display: flex;align-items: center;">{{'NotificationPage.From' | translate }}</span>
                     <input [ngxTimepicker]="FromTime" readonly class="inputTime" (ngModelChange)="timeValue()"
                      [(ngModel)]="startTime"placeholder="23:00">
                     <ngx-material-timepicker #FromTime></ngx-material-timepicker>
                    
                 </div>
                 <div class="boxInp">
-                    <span style="display: flex;align-items: center;">To</span>
+                    <span style="display: flex;align-items: center;">{{'NotificationPage.To' | translate }}</span>
                     <input [ngxTimepicker]="toTime" readonly  class="inputTime" (ngModelChange)="timeValue()" [(ngModel)]="finishTime"
                     placeholder="06:00" (ngModelChange)="timeValue()">
                     <ngx-material-timepicker #toTime></ngx-material-timepicker>

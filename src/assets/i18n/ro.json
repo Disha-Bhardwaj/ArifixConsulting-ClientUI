@@ -150,7 +150,9 @@
     "NotificationPage": {
         "Service": "Serviciu",
         "Time": "Timp",
-        "TurnNotificationsOff": "Dezactivați notificările"
+        "TurnNotificationsOff": "Dezactivați notificările",
+        "From":"Din",
+        "To":"La"
     },
     "DialogContent": {
         "SalonPage": {
